@@ -1,0 +1,69 @@
+% Paper 5 — canonical number macros (AUTO-GENERATED, do not hand-edit).
+% Source of truth: scripts/canonical_numbers.py -> banked results/*.json.
+% Every value is identical to paper/canonical_numbers.md. Usage in the manuscript:
+%   \input{canonical_macros.tex}  then  \NFgainKeightSixty\,dB, etc.
+% Rule: no number in the text that is not a macro here.
+
+\newcommand{\NFfracCloseSixty}{27\%}  % gate0.json :: G0_1[0].frac_adv
+\newcommand{\NFfracCloseOneForty}{14\%}  % gate0.json :: G0_1[1].frac_adv
+\newcommand{\NFfracOOneSixty}{8\%}  % gate0.json :: G0_1[2].frac_adv
+\newcommand{\NFfracOOneOneForty}{7\%}  % gate0.json :: G0_1[3].frac_adv
+\newcommand{\NFgainKeightSixty}{0.85}  % mean radar_closerange_60GHz_seed*_metrics.json :: dbloss.8.nf (dB)
+\newcommand{\NFgainKeightSixtyCI}{0.66}  % 95% CI half-width of dbloss.8.nf, 60 GHz (dB)
+\newcommand{\NFgainKeightOneForty}{1.60}  % mean radar_closerange_140GHz_seed*_metrics.json :: dbloss.8.nf (dB)
+\newcommand{\NFgainKeightOneFortyCI}{0.64}  % 95% CI half-width of dbloss.8.nf, 140 GHz (dB)
+\newcommand{\NFcdfMedianSixty}{0.00}  % median -10log10(gain_ratio_k4_nf), 60 GHz (dB, pooled n=1671)
+\newcommand{\NFwithinOneDBSixty}{74\%}  % frac gain_ratio_k4_nf within 1 dB, 60 GHz
+\newcommand{\NFcdfMedianOneForty}{0.16}  % median -10log10(gain_ratio_k4_nf), 140 GHz (dB, pooled n=820)
+\newcommand{\NFwithinOneDBOneForty}{63\%}  % frac gain_ratio_k4_nf within 1 dB, 140 GHz
+\newcommand{\FusionRadarDBSixty}{0.85}  % mean radar dbloss.8.nf, 60 GHz (dB)
+\newcommand{\FusionFusedDBSixty}{0.70}  % mean fusion dbloss.8.nf, 60 GHz (dB)
+\newcommand{\FusionPSixty}{0.243}  % paired_t_test p, radar vs fusion dbloss.8.nf, 60 GHz
+\newcommand{\FusionCohenDSixty}{+0.61}  % Cohen d, radar vs fusion dbloss.8.nf, 60 GHz
+\newcommand{\FusionRadarDBOneForty}{1.60}  % mean radar dbloss.8.nf, 140 GHz (dB)
+\newcommand{\FusionFusedDBOneForty}{1.70}  % mean fusion dbloss.8.nf, 140 GHz (dB)
+\newcommand{\FusionPOneForty}{0.469}  % paired_t_test p, radar vs fusion dbloss.8.nf, 140 GHz
+\newcommand{\FusionCohenDOneForty}{-0.36}  % Cohen d, radar vs fusion dbloss.8.nf, 140 GHz
+\newcommand{\DegradClean}{0.607}  % degradation_closerange60.json :: clean.mean
+\newcommand{\DegradLidarOut}{0.561}  % degradation_closerange60.json :: lidar_out.mean
+\newcommand{\DegradMisalign}{0.574}  % degradation_closerange60.json :: misalign5deg.mean
+\newcommand{\DegradRadarOut}{0.349}  % degradation_closerange60.json :: radar_out.mean
+\newcommand{\DegradBothOut}{0.009}  % degradation_closerange60.json :: both_out.mean
+\newcommand{\DSVtwoiTopOne}{23.1}  % mean radar_deepsense_scenario31_seed*.json :: test.theta (%)
+\newcommand{\DSVtwoiTopOneCI}{2.4}  % 95% CI half-width top-1, scenario 31 (%)
+\newcommand{\DSVtwovTopOne}{17.1}  % mean radar_deepsense_scenario36_seed*.json :: test.theta (%)
+\newcommand{\DSVtwovTopOneCI}{5.4}  % 95% CI half-width top-1, scenario 36 (%)
+\newcommand{\DScovKeightVtwoi}{68\%}  % genie_decomp.json :: scenarios.31.cnn_coverage.8.mean
+\newcommand{\DScovKeightVtwov}{49\%}  % genie_decomp.json :: scenarios.36.cnn_coverage.8.mean
+\newcommand{\DSrandomChance}{1.56\%}  % transfer.json :: random (1/64)
+\newcommand{\DSzeroshotVtwoiVtwov}{1.59\%}  % transfer.json :: combos.sc31_to_sc36.top1.mean
+\newcommand{\DSzeroshotSynthVtwoi}{0.84\%}  % transfer.json :: combos.synthetic_to_sc31.top1.mean
+\newcommand{\SceneGapVtwoi}{+10.1}  % genie_decomp.json :: scenarios.31.cnn_minus_knn1.mean (pp, CANONICAL)
+\newcommand{\SceneGapVtwov}{+2.2}  % genie_decomp.json :: scenarios.36.cnn_minus_knn1.mean (pp, CANONICAL)
+\newcommand{\BrEightAbsGain}{-1.05}  % common_nf_absgain.json :: br8.K8_abs_db.mean (dB) -- CAVEAT: n=3 seeds, CIs overlap, DIRECTIONAL only (D-017); never cite as significant
+\newcommand{\BrEightAbsGainCI}{0.95}  % 95% CI half-width, br8.K8_abs_db (dB) -- n=3, overlaps B_r=4
+\newcommand{\BrEightNSeeds}{3}  % E10 ablation seed count (caveat: not significant)
+\newcommand{\OOneGapFarSixty}{0.26}  % mean radar_synthetic_60GHz_seed*_metrics.json :: polar_vs_dft_genie_db.far (dB)
+\newcommand{\OOneGapFarOneForty}{0.21}  % mean radar_synthetic_140GHz_seed*_metrics.json :: polar_vs_dft_genie_db.far (dB)
+\newcommand{\RuleRadarAloneSixty}{0.85}  % rule_sweep.json :: results.60.radar_alone.mean (NF K=8 dB-loss)
+\newcommand{\RuleRadarAloneOneForty}{1.60}  % rule_sweep.json :: results.140.radar_alone.mean (NF K=8 dB-loss)
+\newcommand{\RuleSoftAvgSixty}{0.55}  % rule_sweep.json :: results.60.soft_avg.mean (NF K=8 dB-loss)
+\newcommand{\RuleSoftAvgOneForty}{1.20}  % rule_sweep.json :: results.140.soft_avg.mean (NF K=8 dB-loss)
+\newcommand{\RuleArgmaxConfSixty}{0.79}  % rule_sweep.json :: results.60.argmax_conf.mean (NF K=8 dB-loss)
+\newcommand{\RuleArgmaxConfOneForty}{1.66}  % rule_sweep.json :: results.140.argmax_conf.mean (NF K=8 dB-loss)
+\newcommand{\RuleRadarAngBestRSixty}{0.70}  % rule_sweep.json :: results.60.radar_ang+bestR.mean (NF K=8 dB-loss)
+\newcommand{\RuleRadarAngBestROneForty}{1.70}  % rule_sweep.json :: results.140.radar_ang+bestR.mean (NF K=8 dB-loss)
+\newcommand{\RuleRadarBothSixty}{0.85}  % rule_sweep.json :: results.60.radar_both.mean (NF K=8 dB-loss)
+\newcommand{\RuleRadarBothOneForty}{1.60}  % rule_sweep.json :: results.140.radar_both.mean (NF K=8 dB-loss)
+\newcommand{\RuleTempFourSixty}{0.53}  % rule_sweep.json :: results.60.temp4.mean (NF K=8 dB-loss)
+\newcommand{\RuleTempFourOneForty}{1.07}  % rule_sweep.json :: results.140.temp4.mean (NF K=8 dB-loss)
+\newcommand{\RuleTempEightSixty}{0.61}  % rule_sweep.json :: results.60.temp8.mean (NF K=8 dB-loss)
+\newcommand{\RuleTempEightOneForty}{1.12}  % rule_sweep.json :: results.140.temp8.mean (NF K=8 dB-loss)
+\newcommand{\RuleTempFourPOneForty}{0.044}  % paired_t temp4 vs radar-alone @140GHz -- 1/12 tests, NOT robust (Bonferroni ~0.53)
+\newcommand{\DFTpolarSixty}{0.85}  % dft_sweep.json :: results.60.polar.mean (NF K=8 dB-loss)
+\newcommand{\DFTonlySixty}{8.17}  % dft_sweep.json :: results.60.dft.mean (angle-only j=0 slice)
+\newcommand{\DFTpenaltySixty}{7.31}  % dft_sweep.json :: results.60.dft_minus_polar.mean (dB DFT costs vs polar)
+\newcommand{\DFTpolarOneForty}{1.60}  % dft_sweep.json :: results.140.polar.mean (NF K=8 dB-loss)
+\newcommand{\DFTonlyOneForty}{7.00}  % dft_sweep.json :: results.140.dft.mean (angle-only j=0 slice)
+\newcommand{\DFTpenaltyOneForty}{5.40}  % dft_sweep.json :: results.140.dft_minus_polar.mean (dB DFT costs vs polar)
+

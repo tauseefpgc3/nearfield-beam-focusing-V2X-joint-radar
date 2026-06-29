@@ -1,0 +1,22 @@
+# Consistency audit — fig6_scene_geometry
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\deepsense\genie_decomp.json                            random                             0.015625
+results\deepsense\genie_decomp.json                            scenarios.31.knn1.mean             0.1300160685033495
+results\deepsense\genie_decomp.json                            scenarios.31.knn1.hi               0.14206706830068588
+results\deepsense\genie_decomp.json                            scenarios.31.knn1.mean             0.1300160685033495
+results\deepsense\genie_decomp.json                            scenarios.31.cnn.mean              0.23067513591837555
+results\deepsense\genie_decomp.json                            scenarios.31.cnn.hi                0.2542649014349234
+results\deepsense\genie_decomp.json                            scenarios.31.cnn.mean              0.23067513591837555
+results\deepsense\genie_decomp.json                            scenarios.31.cnn_minus_knn1.mean   0.10065906741502602
+(derived)                                                      sc31 annotated gap = +10.1 pp (from cnn_minus_knn1.mean; CANONICAL — supersedes earlier ~9 pp prose) 
+results\deepsense\genie_decomp.json                            scenarios.36.knn1.mean             0.14986657771828366
+results\deepsense\genie_decomp.json                            scenarios.36.knn1.hi               0.21821477918287305
+results\deepsense\genie_decomp.json                            scenarios.36.knn1.mean             0.14986657771828366
+results\deepsense\genie_decomp.json                            scenarios.36.cnn.mean              0.17137165931188264
+results\deepsense\genie_decomp.json                            scenarios.36.cnn.hi                0.22540162381472684
+results\deepsense\genie_decomp.json                            scenarios.36.cnn.mean              0.17137165931188264
+results\deepsense\genie_decomp.json                            scenarios.36.cnn_minus_knn1.mean   0.021505081593598995
+(derived)                                                      sc36 annotated gap = +2.2 pp (from cnn_minus_knn1.mean; CANONICAL — supersedes earlier ~1 pp prose) 

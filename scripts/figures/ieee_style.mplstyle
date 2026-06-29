@@ -1,0 +1,59 @@
+# IEEE TVT / Vehicular Communications figure style (Paper 5) — STYLING ONLY.
+# Loaded via scripts/_paperkit.setup_mpl(); applied to every figure. Times-equivalent serif
+# sized for ~8 pt at single-column width (3.5 in); thin spines (top/right off), light grid,
+# consistent ~1.3 pt lines and small markers, thin square legend frame, vector PDF + 400 dpi PNG.
+
+# --- fonts: Times-equivalent serif, serif math via STIX ---
+font.family:        serif
+font.serif:         Times New Roman, Times, Nimbus Roman, DejaVu Serif
+mathtext.fontset:   stix
+font.size:          8
+axes.titlesize:     8
+axes.labelsize:     8
+xtick.labelsize:    7
+ytick.labelsize:    7
+legend.fontsize:    7
+
+# --- axes: thin, no top/right spine, light grid ---
+axes.linewidth:     0.6
+axes.spines.top:    False
+axes.spines.right:  False
+axes.grid:          True
+axes.grid.axis:     y
+axes.axisbelow:     True
+grid.color:         b0b0b0
+grid.linewidth:     0.4
+grid.alpha:         0.5
+
+# --- lines / markers: consistent weight & size ---
+lines.linewidth:    1.3
+lines.markersize:   4.0
+lines.markeredgewidth: 0.6
+
+# --- ticks: inward, thin ---
+xtick.direction:    in
+ytick.direction:    in
+xtick.major.width:  0.6
+ytick.major.width:  0.6
+xtick.major.size:   3.0
+ytick.major.size:   3.0
+
+# --- legend: thin square frame, not the heavy default box ---
+legend.frameon:     True
+legend.framealpha:  0.9
+legend.edgecolor:   0.6
+legend.fancybox:    False
+legend.borderpad:   0.4
+legend.handlelength: 1.8
+legend.labelspacing: 0.3
+
+# --- errorbars ---
+errorbar.capsize:   2.0
+
+# --- output: vector PDF + high-dpi PNG preview ---
+figure.dpi:         150
+savefig.dpi:        400
+savefig.bbox:       tight
+savefig.pad_inches: 0.02
+pdf.fonttype:       42
+ps.fonttype:        42

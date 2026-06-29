@@ -1,0 +1,54 @@
+# Consistency audit — fig2_gate0
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\gate0\gate0.json                                       G0_1                               <list n=4>
+results\gate0\gate0.json                                       G0_1.0.role                        PRIMARY (near-field)
+results\gate0\gate0.json                                       G0_1.0.f_ghz                       60
+results\gate0\gate0.json                                       G0_1.0.frac_adv                    0.27
+results\gate0\gate0.json                                       G0_1.1.role                        PRIMARY (near-field)
+results\gate0\gate0.json                                       G0_1.1.f_ghz                       140
+results\gate0\gate0.json                                       G0_1.1.frac_adv                    0.14183333333333334
+results\gate0\gate0.json                                       G0_1.2.role                        ANCHOR (far-field, O1)
+results\gate0\gate0.json                                       G0_1.2.f_ghz                       60
+results\gate0\gate0.json                                       G0_1.2.frac_adv                    0.0808
+results\gate0\gate0.json                                       G0_1.3.role                        ANCHOR (far-field, O1)
+results\gate0\gate0.json                                       G0_1.3.f_ghz                       140
+results\gate0\gate0.json                                       G0_1.3.frac_adv                    0.0676
+results\gate0\gate0.json                                       G0_2                               <list n=2>
+results\gate0\gate0.json                                       G0_2.0.f_ghz                       60
+results\gate0\gate0.json                                       G0_2.0.bins.0.lo                   1.0
+results\gate0\gate0.json                                       G0_2.0.bins.0.hi                   4.0
+results\gate0\gate0.json                                       G0_2.0.bins.0.mean_adv_db          9.087526503773583
+results\gate0\gate0.json                                       G0_2.0.bins.1.lo                   4.0
+results\gate0\gate0.json                                       G0_2.0.bins.1.hi                   7.0
+results\gate0\gate0.json                                       G0_2.0.bins.1.mean_adv_db          3.812191203939213
+results\gate0\gate0.json                                       G0_2.0.bins.2.lo                   7.0
+results\gate0\gate0.json                                       G0_2.0.bins.2.hi                   10.0
+results\gate0\gate0.json                                       G0_2.0.bins.2.mean_adv_db          1.4627710849474358
+results\gate0\gate0.json                                       G0_2.0.bins.3.lo                   10.0
+results\gate0\gate0.json                                       G0_2.0.bins.3.hi                   14.0
+results\gate0\gate0.json                                       G0_2.0.bins.3.mean_adv_db          1.0402899158643353
+results\gate0\gate0.json                                       G0_2.0.bins.4.lo                   14.0
+results\gate0\gate0.json                                       G0_2.0.bins.4.hi                   40.29460462568333
+results\gate0\gate0.json                                       G0_2.0.bins.4.mean_adv_db          0.8512450841862598
+results\gate0\gate0.json                                       G0_2.1.f_ghz                       140
+results\gate0\gate0.json                                       G0_2.1.bins.0.lo                   1.0
+results\gate0\gate0.json                                       G0_2.1.bins.0.hi                   4.0
+results\gate0\gate0.json                                       G0_2.1.bins.0.mean_adv_db          4.284323152159899
+results\gate0\gate0.json                                       G0_2.1.bins.1.lo                   4.0
+results\gate0\gate0.json                                       G0_2.1.bins.1.hi                   7.0
+results\gate0\gate0.json                                       G0_2.1.bins.1.mean_adv_db          0.9874670066174328
+results\gate0\gate0.json                                       G0_2.1.bins.2.lo                   7.0
+results\gate0\gate0.json                                       G0_2.1.bins.2.hi                   10.0
+results\gate0\gate0.json                                       G0_2.1.bins.2.mean_adv_db          0.7836430329160097
+results\gate0\gate0.json                                       G0_2.1.bins.3.lo                   10.0
+results\gate0\gate0.json                                       G0_2.1.bins.3.hi                   14.0
+results\gate0\gate0.json                                       G0_2.1.bins.3.mean_adv_db          0.5851068484357866
+results\gate0\gate0.json                                       G0_2.1.bins.4.lo                   14.0
+results\gate0\gate0.json                                       G0_2.1.bins.4.hi                   17.269116268150004
+results\gate0\gate0.json                                       G0_2.1.bins.4.mean_adv_db          0.7589324002170275
+results\gate0\gate0.json                                       G0_2.1.bins.5.lo                   17.269116268150004
+results\gate0\gate0.json                                       G0_2.1.bins.5.hi                   86.34558134075002
+results\gate0\gate0.json                                       G0_2.1.bins.5.mean_adv_db          0.762645102561746

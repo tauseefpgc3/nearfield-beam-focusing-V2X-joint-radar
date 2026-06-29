@@ -1,0 +1,14 @@
+\begin{tabular}{lllrrr}
+\toprule
+Scenario & Link & Modality & Seeds & n(test) & Top-1 beam (%) \\
+\midrule
+Sc 31 & V2I (RSU) & Radar & 5 & 1374 & 23.05±2.38 \\
+Sc 31 & V2I (RSU) & LiDAR & 5 & 1374 & 10.78±2.12 \\
+Sc 31 & V2I (RSU) & Fusion & 5 & — & 22.55±2.26 \\
+Sc 36 & V2V & Radar & 5 & 1602 & 17.14±5.40 \\
+\midrule
+\multicolumn{6}{l}{\emph{Zero-shot transfer (random = 1.56\%)}} \\
+\multicolumn{3}{l}{real V2I -> real V2V} & & 8267 & 1.59±0.37 \\
+\multicolumn{3}{l}{synthetic close-range -> real V2I} & & 7012 & 0.84±0.75 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,27 @@
+# Consistency audit — table2_fusion_pairedt
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\indomain\radar_closerange_60GHz_seed11_metrics.json    dbloss.8.nf                        0.5014831113388957
+results\indomain\radar_closerange_60GHz_seed22_metrics.json    dbloss.8.nf                        1.18374790783103
+results\indomain\radar_closerange_60GHz_seed33_metrics.json    dbloss.8.nf                        0.6057356309635687
+results\indomain\radar_closerange_60GHz_seed44_metrics.json    dbloss.8.nf                        1.6225093131565225
+results\indomain\radar_closerange_60GHz_seed55_metrics.json    dbloss.8.nf                        0.3606143004480092
+results\indomain\fusion_closerange_60GHz_seed11_metrics.json   dbloss.8.nf                        0.5984215428208453
+results\indomain\fusion_closerange_60GHz_seed22_metrics.json   dbloss.8.nf                        0.7110954084135382
+results\indomain\fusion_closerange_60GHz_seed33_metrics.json   dbloss.8.nf                        0.6418669778100808
+results\indomain\fusion_closerange_60GHz_seed44_metrics.json   dbloss.8.nf                        1.2797368892343408
+results\indomain\fusion_closerange_60GHz_seed55_metrics.json   dbloss.8.nf                        0.28923602939501186
+(derived)                                                      60GHz radar-vs-fusion: n=5, df=4   
+results\indomain\radar_closerange_140GHz_seed11_metrics.json   dbloss.8.nf                        1.9960067066279326
+results\indomain\radar_closerange_140GHz_seed22_metrics.json   dbloss.8.nf                        2.30539934809298
+results\indomain\radar_closerange_140GHz_seed33_metrics.json   dbloss.8.nf                        1.1341768871309856
+results\indomain\radar_closerange_140GHz_seed44_metrics.json   dbloss.8.nf                        1.2445294979706172
+results\indomain\radar_closerange_140GHz_seed55_metrics.json   dbloss.8.nf                        1.3384078240520518
+results\indomain\fusion_closerange_140GHz_seed11_metrics.json  dbloss.8.nf                        1.617459782980608
+results\indomain\fusion_closerange_140GHz_seed22_metrics.json  dbloss.8.nf                        2.5930997279234402
+results\indomain\fusion_closerange_140GHz_seed33_metrics.json  dbloss.8.nf                        1.2473239126366873
+results\indomain\fusion_closerange_140GHz_seed44_metrics.json  dbloss.8.nf                        1.564170126496029
+results\indomain\fusion_closerange_140GHz_seed55_metrics.json  dbloss.8.nf                        1.498446897406813
+(derived)                                                      140GHz radar-vs-fusion: n=5, df=4  

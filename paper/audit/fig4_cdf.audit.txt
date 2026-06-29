@@ -1,0 +1,18 @@
+# Consistency audit — fig4_cdf
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\indomain\radar_closerange_60GHz_seed11_metrics.json    gain_ratio_k4_nf                   <list n=353>
+results\indomain\radar_closerange_60GHz_seed22_metrics.json    gain_ratio_k4_nf                   <list n=356>
+results\indomain\radar_closerange_60GHz_seed33_metrics.json    gain_ratio_k4_nf                   <list n=287>
+results\indomain\radar_closerange_60GHz_seed44_metrics.json    gain_ratio_k4_nf                   <list n=335>
+results\indomain\radar_closerange_60GHz_seed55_metrics.json    gain_ratio_k4_nf                   <list n=340>
+(derived)                                                      60 GHz: pooled n=1671, median=0.000 dB, frac<=1dB=74.4% 
+results\indomain\radar_closerange_140GHz_seed11_metrics.json   gain_ratio_k4_nf                   <list n=165>
+results\indomain\radar_closerange_140GHz_seed22_metrics.json   gain_ratio_k4_nf                   <list n=172>
+results\indomain\radar_closerange_140GHz_seed33_metrics.json   gain_ratio_k4_nf                   <list n=150>
+results\indomain\radar_closerange_140GHz_seed44_metrics.json   gain_ratio_k4_nf                   <list n=191>
+results\indomain\radar_closerange_140GHz_seed55_metrics.json   gain_ratio_k4_nf                   <list n=142>
+(derived)                                                      140 GHz: pooled n=820, median=0.156 dB, frac<=1dB=62.6% 
+(derived)                                                      near-field SUBSET only (3 dB gate), K=4; n=1671 (60 GHz)/820 (140 GHz); far-field users excluded (not all-users). 

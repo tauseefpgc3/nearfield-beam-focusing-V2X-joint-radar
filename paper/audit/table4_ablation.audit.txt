@@ -1,0 +1,52 @@
+# Consistency audit — table4_ablation
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\ablation\br4_seed11.json                               K4_nf_db                           0.40050130124603
+results\ablation\br4_seed22.json                               K4_nf_db                           1.0073239776104408
+results\ablation\br4_seed33.json                               K4_nf_db                           0.7825931170886313
+results\ablation\br4_seed11.json                               K8_nf_db                           0.282736636819197
+results\ablation\br4_seed22.json                               K8_nf_db                           0.25171815942342285
+results\ablation\br4_seed33.json                               K8_nf_db                           0.18976763978910943
+results\ablation\br4_seed11.json                               top1_range_nf                      0.5584415584415584
+results\ablation\br4_seed22.json                               top1_range_nf                      0.6018808777429467
+results\ablation\br4_seed33.json                               top1_range_nf                      0.5407407407407407
+results\ablation\br4_seed11.json                               populated_bins                     3
+results\ablation\br4_seed22.json                               populated_bins                     3
+results\ablation\br4_seed33.json                               populated_bins                     3
+results\ablation\br8_seed11.json                               K4_nf_db                           1.287678158067684
+results\ablation\br8_seed22.json                               K4_nf_db                           2.4822204767417664
+results\ablation\br8_seed33.json                               K4_nf_db                           1.6691775348959068
+results\ablation\br8_seed11.json                               K8_nf_db                           0.5280911278285656
+results\ablation\br8_seed22.json                               K8_nf_db                           0.9846028579330972
+results\ablation\br8_seed33.json                               K8_nf_db                           0.458219540897653
+results\ablation\br8_seed11.json                               top1_range_nf                      0.43909348441926344
+results\ablation\br8_seed22.json                               top1_range_nf                      0.3707865168539326
+results\ablation\br8_seed33.json                               top1_range_nf                      0.37282229965156793
+results\ablation\br8_seed11.json                               populated_bins                     7
+results\ablation\br8_seed22.json                               populated_bins                     7
+results\ablation\br8_seed33.json                               populated_bins                     7
+results\ablation\br16_seed11.json                              K4_nf_db                           2.0520802830949467
+results\ablation\br16_seed22.json                              K4_nf_db                           10.926470460242253
+results\ablation\br16_seed33.json                              K4_nf_db                           2.9743682245609504
+results\ablation\br16_seed11.json                              K8_nf_db                           1.655424974915993
+results\ablation\br16_seed22.json                              K8_nf_db                           6.573890994867095
+results\ablation\br16_seed33.json                              K8_nf_db                           1.49774756333404
+results\ablation\br16_seed11.json                              top1_range_nf                      0.33519553072625696
+results\ablation\br16_seed22.json                              top1_range_nf                      0.33791208791208793
+results\ablation\br16_seed33.json                              top1_range_nf                      0.3771626297577855
+results\ablation\br16_seed11.json                              populated_bins                     13
+results\ablation\br16_seed22.json                              populated_bins                     12
+results\ablation\br16_seed33.json                              populated_bins                     11
+results\ablation\common_nf_absgain.json                        best_b_r                           8
+results\ablation\common_nf_absgain.json                        br4.K8_abs_db.mean                 -2.3454821507136026
+results\ablation\common_nf_absgain.json                        br4.K8_abs_db.hi                   -0.4617175253558441
+results\ablation\common_nf_absgain.json                        br4.K8_abs_db.mean                 -2.3454821507136026
+results\ablation\common_nf_absgain.json                        br8.K8_abs_db.mean                 -1.0499500234921773
+results\ablation\common_nf_absgain.json                        br8.K8_abs_db.hi                   -0.09905553310642012
+results\ablation\common_nf_absgain.json                        br8.K8_abs_db.mean                 -1.0499500234921773
+results\ablation\common_nf_absgain.json                        br16.K8_abs_db.mean                -3.2423547506332397
+results\ablation\common_nf_absgain.json                        br16.K8_abs_db.hi                  3.9275436647148414
+results\ablation\common_nf_absgain.json                        br16.K8_abs_db.mean                -3.2423547506332397
+(derived)                                                      per-gate dB-loss NOT comparable across B_r; common-set absolute gain (banked) selects B_r=8 (D-016). 

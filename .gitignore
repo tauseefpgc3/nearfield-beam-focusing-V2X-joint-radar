@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Datasets & regenerable large artifacts (NOT redistributed — see README §6)
+data/
+*.h5
+deepmimo_scenarios/
+
+# Scratch / logs / build aux
+*.log
+paper/figures/*.aux
+paper/figures/*.synctex.gz
+mactest.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NOTE: checkpoints/ IS tracked here (final cited weights, all <100MB/file). If you prefer
+# to host them on Zenodo/Git-LFS instead, uncomment the next line:
+# checkpoints/

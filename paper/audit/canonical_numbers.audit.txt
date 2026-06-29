@@ -1,0 +1,126 @@
+# Consistency audit — canonical_numbers
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\gate0\gate0.json                                       G0_1                               <list n=4>
+results\gate0\gate0.json                                       G0_1.0.role                        PRIMARY (near-field)
+results\gate0\gate0.json                                       G0_1.0.f_ghz                       60
+results\gate0\gate0.json                                       G0_1.0.frac_adv                    0.27
+results\gate0\gate0.json                                       G0_1.1.role                        PRIMARY (near-field)
+results\gate0\gate0.json                                       G0_1.1.f_ghz                       140
+results\gate0\gate0.json                                       G0_1.1.frac_adv                    0.14183333333333334
+results\gate0\gate0.json                                       G0_1.2.role                        ANCHOR (far-field, O1)
+results\gate0\gate0.json                                       G0_1.2.f_ghz                       60
+results\gate0\gate0.json                                       G0_1.2.frac_adv                    0.0808
+results\gate0\gate0.json                                       G0_1.3.role                        ANCHOR (far-field, O1)
+results\gate0\gate0.json                                       G0_1.3.f_ghz                       140
+results\gate0\gate0.json                                       G0_1.3.frac_adv                    0.0676
+results\indomain\radar_closerange_60GHz_seed11_metrics.json    dbloss.8.nf                        0.5014831113388957
+results\indomain\radar_closerange_60GHz_seed22_metrics.json    dbloss.8.nf                        1.18374790783103
+results\indomain\radar_closerange_60GHz_seed33_metrics.json    dbloss.8.nf                        0.6057356309635687
+results\indomain\radar_closerange_60GHz_seed44_metrics.json    dbloss.8.nf                        1.6225093131565225
+results\indomain\radar_closerange_60GHz_seed55_metrics.json    dbloss.8.nf                        0.3606143004480092
+results\indomain\radar_closerange_140GHz_seed11_metrics.json   dbloss.8.nf                        1.9960067066279326
+results\indomain\radar_closerange_140GHz_seed22_metrics.json   dbloss.8.nf                        2.30539934809298
+results\indomain\radar_closerange_140GHz_seed33_metrics.json   dbloss.8.nf                        1.1341768871309856
+results\indomain\radar_closerange_140GHz_seed44_metrics.json   dbloss.8.nf                        1.2445294979706172
+results\indomain\radar_closerange_140GHz_seed55_metrics.json   dbloss.8.nf                        1.3384078240520518
+results\indomain\radar_closerange_60GHz_seed11_metrics.json    dbloss.8.nf                        0.5014831113388957
+results\indomain\radar_closerange_60GHz_seed22_metrics.json    dbloss.8.nf                        1.18374790783103
+results\indomain\radar_closerange_60GHz_seed33_metrics.json    dbloss.8.nf                        0.6057356309635687
+results\indomain\radar_closerange_60GHz_seed44_metrics.json    dbloss.8.nf                        1.6225093131565225
+results\indomain\radar_closerange_60GHz_seed55_metrics.json    dbloss.8.nf                        0.3606143004480092
+results\indomain\radar_closerange_140GHz_seed11_metrics.json   dbloss.8.nf                        1.9960067066279326
+results\indomain\radar_closerange_140GHz_seed22_metrics.json   dbloss.8.nf                        2.30539934809298
+results\indomain\radar_closerange_140GHz_seed33_metrics.json   dbloss.8.nf                        1.1341768871309856
+results\indomain\radar_closerange_140GHz_seed44_metrics.json   dbloss.8.nf                        1.2445294979706172
+results\indomain\radar_closerange_140GHz_seed55_metrics.json   dbloss.8.nf                        1.3384078240520518
+results\indomain\radar_closerange_60GHz_seed11_metrics.json    gain_ratio_k4_nf                   <list n=353>
+results\indomain\radar_closerange_60GHz_seed22_metrics.json    gain_ratio_k4_nf                   <list n=356>
+results\indomain\radar_closerange_60GHz_seed33_metrics.json    gain_ratio_k4_nf                   <list n=287>
+results\indomain\radar_closerange_60GHz_seed44_metrics.json    gain_ratio_k4_nf                   <list n=335>
+results\indomain\radar_closerange_60GHz_seed55_metrics.json    gain_ratio_k4_nf                   <list n=340>
+results\indomain\radar_closerange_140GHz_seed11_metrics.json   gain_ratio_k4_nf                   <list n=165>
+results\indomain\radar_closerange_140GHz_seed22_metrics.json   gain_ratio_k4_nf                   <list n=172>
+results\indomain\radar_closerange_140GHz_seed33_metrics.json   gain_ratio_k4_nf                   <list n=150>
+results\indomain\radar_closerange_140GHz_seed44_metrics.json   gain_ratio_k4_nf                   <list n=191>
+results\indomain\radar_closerange_140GHz_seed55_metrics.json   gain_ratio_k4_nf                   <list n=142>
+results\indomain\radar_closerange_60GHz_seed11_metrics.json    dbloss.8.nf                        0.5014831113388957
+results\indomain\radar_closerange_60GHz_seed22_metrics.json    dbloss.8.nf                        1.18374790783103
+results\indomain\radar_closerange_60GHz_seed33_metrics.json    dbloss.8.nf                        0.6057356309635687
+results\indomain\radar_closerange_60GHz_seed44_metrics.json    dbloss.8.nf                        1.6225093131565225
+results\indomain\radar_closerange_60GHz_seed55_metrics.json    dbloss.8.nf                        0.3606143004480092
+results\indomain\fusion_closerange_60GHz_seed11_metrics.json   dbloss.8.nf                        0.5984215428208453
+results\indomain\fusion_closerange_60GHz_seed22_metrics.json   dbloss.8.nf                        0.7110954084135382
+results\indomain\fusion_closerange_60GHz_seed33_metrics.json   dbloss.8.nf                        0.6418669778100808
+results\indomain\fusion_closerange_60GHz_seed44_metrics.json   dbloss.8.nf                        1.2797368892343408
+results\indomain\fusion_closerange_60GHz_seed55_metrics.json   dbloss.8.nf                        0.28923602939501186
+results\indomain\radar_closerange_140GHz_seed11_metrics.json   dbloss.8.nf                        1.9960067066279326
+results\indomain\radar_closerange_140GHz_seed22_metrics.json   dbloss.8.nf                        2.30539934809298
+results\indomain\radar_closerange_140GHz_seed33_metrics.json   dbloss.8.nf                        1.1341768871309856
+results\indomain\radar_closerange_140GHz_seed44_metrics.json   dbloss.8.nf                        1.2445294979706172
+results\indomain\radar_closerange_140GHz_seed55_metrics.json   dbloss.8.nf                        1.3384078240520518
+results\indomain\fusion_closerange_140GHz_seed11_metrics.json  dbloss.8.nf                        1.617459782980608
+results\indomain\fusion_closerange_140GHz_seed22_metrics.json  dbloss.8.nf                        2.5930997279234402
+results\indomain\fusion_closerange_140GHz_seed33_metrics.json  dbloss.8.nf                        1.2473239126366873
+results\indomain\fusion_closerange_140GHz_seed44_metrics.json  dbloss.8.nf                        1.564170126496029
+results\indomain\fusion_closerange_140GHz_seed55_metrics.json  dbloss.8.nf                        1.498446897406813
+results\degradation_closerange60.json                          clean.mean                         0.606888044954363
+results\degradation_closerange60.json                          lidar_out.mean                     0.5609726755195761
+results\degradation_closerange60.json                          misalign5deg.mean                  0.5741691519589722
+results\degradation_closerange60.json                          radar_out.mean                     0.3487665344887549
+results\degradation_closerange60.json                          both_out.mean                      0.00884684098206737
+results\indomain\radar_deepsense_scenario31_seed11.json        test.theta                         0.24407753348350525
+results\indomain\radar_deepsense_scenario31_seed22.json        test.theta                         0.25424981117248535
+results\indomain\radar_deepsense_scenario31_seed33.json        test.theta                         0.20995670557022095
+results\indomain\radar_deepsense_scenario31_seed44.json        test.theta                         0.2311178296804428
+results\indomain\radar_deepsense_scenario31_seed55.json        test.theta                         0.21324600279331207
+results\indomain\radar_deepsense_scenario36_seed11.json        test.theta                         0.18511569499969482
+results\indomain\radar_deepsense_scenario36_seed22.json        test.theta                         0.13062499463558197
+results\indomain\radar_deepsense_scenario36_seed33.json        test.theta                         0.21075671911239624
+results\indomain\radar_deepsense_scenario36_seed44.json        test.theta                         0.11999999731779099
+results\indomain\radar_deepsense_scenario36_seed55.json        test.theta                         0.210362046957016
+results\deepsense\genie_decomp.json                            scenarios.31.cnn_coverage.8.mean   0.6791412104249679
+results\deepsense\genie_decomp.json                            scenarios.36.cnn_coverage.8.mean   0.4852393238517519
+results\deepsense\transfer.json                                random                             0.015625
+results\deepsense\transfer.json                                combos.sc31_to_sc36.top1.mean      0.015870327809362525
+results\deepsense\transfer.json                                combos.synthetic_to_sc31.top1.mean 0.008442669709070165
+results\deepsense\genie_decomp.json                            scenarios.31.cnn_minus_knn1.mean   0.10065906741502602
+results\deepsense\genie_decomp.json                            scenarios.36.cnn_minus_knn1.mean   0.021505081593598995
+results\ablation\common_nf_absgain.json                        best_b_r                           8
+results\ablation\common_nf_absgain.json                        br8.K8_abs_db.mean                 -1.0499500234921773
+results\ablation\common_nf_absgain.json                        br8.K8_abs_db.hi                   -0.09905553310642012
+results\ablation\common_nf_absgain.json                        br8.K8_abs_db.per_seed             <list n=3>
+results\indomain\radar_synthetic_60GHz_seed11_metrics.json     polar_vs_dft_genie_db.far          0.26848973054287967
+results\indomain\radar_synthetic_60GHz_seed22_metrics.json     polar_vs_dft_genie_db.far          0.23919084942162014
+results\indomain\radar_synthetic_60GHz_seed33_metrics.json     polar_vs_dft_genie_db.far          0.2530641652623212
+results\indomain\radar_synthetic_60GHz_seed44_metrics.json     polar_vs_dft_genie_db.far          0.2653927046238175
+results\indomain\radar_synthetic_60GHz_seed55_metrics.json     polar_vs_dft_genie_db.far          0.25305402804161015
+results\indomain\radar_synthetic_140GHz_seed11_metrics.json    polar_vs_dft_genie_db.far          0.21849936469553563
+results\indomain\radar_synthetic_140GHz_seed22_metrics.json    polar_vs_dft_genie_db.far          0.21340288918621936
+results\indomain\radar_synthetic_140GHz_seed33_metrics.json    polar_vs_dft_genie_db.far          0.2277466777368141
+results\indomain\radar_synthetic_140GHz_seed44_metrics.json    polar_vs_dft_genie_db.far          0.1949403028503728
+results\indomain\radar_synthetic_140GHz_seed55_metrics.json    polar_vs_dft_genie_db.far          0.2085851707135558
+results\fusion_rules\rule_sweep.json                           results.60.radar_alone.mean        0.8548180527476053
+results\fusion_rules\rule_sweep.json                           results.140.radar_alone.mean       1.6037040527749133
+results\fusion_rules\rule_sweep.json                           results.60.soft_avg.mean           0.5488973181033732
+results\fusion_rules\rule_sweep.json                           results.140.soft_avg.mean          1.1979669489197935
+results\fusion_rules\rule_sweep.json                           results.60.argmax_conf.mean        0.7928780475077686
+results\fusion_rules\rule_sweep.json                           results.140.argmax_conf.mean       1.6553959718294358
+results\fusion_rules\rule_sweep.json                           results.60.radar_ang+bestR.mean    0.7040713695347635
+results\fusion_rules\rule_sweep.json                           results.140.radar_ang+bestR.mean   1.7041000894887155
+results\fusion_rules\rule_sweep.json                           results.60.radar_both.mean         0.8548180527476053
+results\fusion_rules\rule_sweep.json                           results.140.radar_both.mean        1.6037040527749133
+results\fusion_rules\rule_sweep.json                           results.60.temp4.mean              0.5270790158564679
+results\fusion_rules\rule_sweep.json                           results.140.temp4.mean             1.0662377574607302
+results\fusion_rules\rule_sweep.json                           results.60.temp8.mean              0.6127443175042974
+results\fusion_rules\rule_sweep.json                           results.140.temp8.mean             1.1181268980791599
+results\fusion_rules\rule_sweep.json                           results.140.radar_alone.per_seed   <list n=5>
+results\fusion_rules\rule_sweep.json                           results.140.temp4.per_seed         <list n=5>
+results\dft_baseline\dft_sweep.json                            results.60.polar.mean              0.8548180527476053
+results\dft_baseline\dft_sweep.json                            results.60.dft.mean                8.168239385463101
+results\dft_baseline\dft_sweep.json                            results.60.dft_minus_polar.mean    7.313421332715497
+results\dft_baseline\dft_sweep.json                            results.140.polar.mean             1.6037040527749133
+results\dft_baseline\dft_sweep.json                            results.140.dft.mean               7.002708449475241
+results\dft_baseline\dft_sweep.json                            results.140.dft_minus_polar.mean   5.399004396700327

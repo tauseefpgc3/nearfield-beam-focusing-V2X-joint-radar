@@ -1,0 +1,17 @@
+# Base configuration (Paper 5). See docs/05_REPO_STRUCTURE.md.
+seed: 11
+N_antennas: 16384            # 128x128 UPA (D-011 resolved)
+N_side: 128
+antenna_spacing_lambda: 0.5
+codebook: {B_theta: 64, B_r: 8, beta_delta: 1.2}
+
+labeling:
+  # Gain-gated near-field label (supervisor decision): a sample keeps its c.delay
+  # range bin only if its genie polar-vs-DFT advantage >= gain_gate_db; otherwise the
+  # range label is set to the far-field bin (y_r := 0). This makes "near-field" mean a
+  # physically meaningful, convention-independent gain advantage. Matches G0.2's 3 dB.
+  gain_gate_db: 3.0
+
+gate0:
+  near_field_frac_min: 0.20
+  genie_nf_advantage_min_dB: 3.0

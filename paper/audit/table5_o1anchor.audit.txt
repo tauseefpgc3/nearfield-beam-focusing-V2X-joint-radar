@@ -1,0 +1,35 @@
+# Consistency audit — table5_o1anchor
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\indomain\radar_synthetic_60GHz_seed11_metrics.json     polar_vs_dft_genie_db.far          0.26848973054287967
+results\indomain\radar_synthetic_60GHz_seed22_metrics.json     polar_vs_dft_genie_db.far          0.23919084942162014
+results\indomain\radar_synthetic_60GHz_seed33_metrics.json     polar_vs_dft_genie_db.far          0.2530641652623212
+results\indomain\radar_synthetic_60GHz_seed44_metrics.json     polar_vs_dft_genie_db.far          0.2653927046238175
+results\indomain\radar_synthetic_60GHz_seed55_metrics.json     polar_vs_dft_genie_db.far          0.25305402804161015
+results\indomain\radar_synthetic_60GHz_seed11_metrics.json     polar_vs_dft_genie_db.all          0.6316356947752755
+results\indomain\radar_synthetic_60GHz_seed22_metrics.json     polar_vs_dft_genie_db.all          0.5820387298217318
+results\indomain\radar_synthetic_60GHz_seed33_metrics.json     polar_vs_dft_genie_db.all          0.7373117383800678
+results\indomain\radar_synthetic_60GHz_seed44_metrics.json     polar_vs_dft_genie_db.all          0.690896769038556
+results\indomain\radar_synthetic_60GHz_seed55_metrics.json     polar_vs_dft_genie_db.all          0.6455210897821217
+results\indomain\radar_synthetic_60GHz_seed11_metrics.json     dbloss.8.all                       0.0005707183966526876
+results\indomain\radar_synthetic_60GHz_seed22_metrics.json     dbloss.8.all                       0.0031973401069520942
+results\indomain\radar_synthetic_60GHz_seed33_metrics.json     dbloss.8.all                       0.10461174611662243
+results\indomain\radar_synthetic_60GHz_seed44_metrics.json     dbloss.8.all                       0.0017543050362237135
+results\indomain\radar_synthetic_60GHz_seed55_metrics.json     dbloss.8.all                       9.976848736181632e-05
+results\indomain\radar_synthetic_140GHz_seed11_metrics.json    polar_vs_dft_genie_db.far          0.21849936469553563
+results\indomain\radar_synthetic_140GHz_seed22_metrics.json    polar_vs_dft_genie_db.far          0.21340288918621936
+results\indomain\radar_synthetic_140GHz_seed33_metrics.json    polar_vs_dft_genie_db.far          0.2277466777368141
+results\indomain\radar_synthetic_140GHz_seed44_metrics.json    polar_vs_dft_genie_db.far          0.1949403028503728
+results\indomain\radar_synthetic_140GHz_seed55_metrics.json    polar_vs_dft_genie_db.far          0.2085851707135558
+results\indomain\radar_synthetic_140GHz_seed11_metrics.json    polar_vs_dft_genie_db.all          0.5791200242463026
+results\indomain\radar_synthetic_140GHz_seed22_metrics.json    polar_vs_dft_genie_db.all          0.6102840136426816
+results\indomain\radar_synthetic_140GHz_seed33_metrics.json    polar_vs_dft_genie_db.all          0.6533009545612816
+results\indomain\radar_synthetic_140GHz_seed44_metrics.json    polar_vs_dft_genie_db.all          0.5714536113350946
+results\indomain\radar_synthetic_140GHz_seed55_metrics.json    polar_vs_dft_genie_db.all          0.5955891514801093
+results\indomain\radar_synthetic_140GHz_seed11_metrics.json    dbloss.8.all                       0.007441174018908072
+results\indomain\radar_synthetic_140GHz_seed22_metrics.json    dbloss.8.all                       0.09231157089778853
+results\indomain\radar_synthetic_140GHz_seed33_metrics.json    dbloss.8.all                       0.04376259271905676
+results\indomain\radar_synthetic_140GHz_seed44_metrics.json    dbloss.8.all                       0.08331875942610018
+results\indomain\radar_synthetic_140GHz_seed55_metrics.json    dbloss.8.all                       0.10823855850588272

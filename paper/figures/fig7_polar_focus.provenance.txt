@@ -1,0 +1,11 @@
+Fig (polar beam-focusing illustration) — code-derived parameters
+(all from src/codebook/polar.py + steering.py; no literals):
+
+f_c = 60 GHz, N_side = 128 (N=16384), spacing = 0.5 lambda
+d_F = fraunhofer_distance(f_c, N_side=128) = 40.29 m
+user: theta_u = 15.0 deg, r_u = 4.00 m (r_u/d_F = 0.099 -> deep near-field)
+best POLAR codeword: k=323 -> (y_theta=40, y_r=3) = (theta=15.40 deg, r=4.03 m)
+best DFT codeword: angle bin 40 (y_r=0, range=inf -> cannot range-focus)
+
+gain at user — DFT: 831.8, polar: 8397.7; polar advantage = 10.04 dB at the user point.
+Verdict: DFT spreads along range (best DFT range bin = infinity, no range focus); polar focuses to the true (theta, r). PASS if advantage >3 dB.

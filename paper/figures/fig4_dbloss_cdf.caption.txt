@@ -1,0 +1,1 @@
+Fig 4. Empirical CDF of the radar-driven near-field beam-focusing loss relative to the genie, using a K=4 RF verification shortlist. Computed over the NEAR-FIELD SUBSET ONLY (users passing the 3 dB near-field gate, D-013): n=1671 at 60 GHz and n=820 at 140 GHz, pooled across 5 seeds. Far-field users are excluded, so this is not an all-users distribution.

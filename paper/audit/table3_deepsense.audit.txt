@@ -1,0 +1,49 @@
+# Consistency audit — table3_deepsense
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\indomain\radar_deepsense_scenario31_seed11.json        test.theta                         0.24407753348350525
+results\indomain\radar_deepsense_scenario31_seed11.json        test.n                             1393
+results\indomain\radar_deepsense_scenario31_seed22.json        test.theta                         0.25424981117248535
+results\indomain\radar_deepsense_scenario31_seed22.json        test.n                             1353
+results\indomain\radar_deepsense_scenario31_seed33.json        test.theta                         0.20995670557022095
+results\indomain\radar_deepsense_scenario31_seed33.json        test.n                             1386
+results\indomain\radar_deepsense_scenario31_seed44.json        test.theta                         0.2311178296804428
+results\indomain\radar_deepsense_scenario31_seed44.json        test.n                             1324
+results\indomain\radar_deepsense_scenario31_seed55.json        test.theta                         0.21324600279331207
+results\indomain\radar_deepsense_scenario31_seed55.json        test.n                             1374
+results\indomain\lidar_deepsense_scenario31_seed11.json        test.theta                         0.1062455102801323
+results\indomain\lidar_deepsense_scenario31_seed11.json        test.n                             1393
+results\indomain\lidar_deepsense_scenario31_seed22.json        test.theta                         0.0901699960231781
+results\indomain\lidar_deepsense_scenario31_seed22.json        test.n                             1353
+results\indomain\lidar_deepsense_scenario31_seed33.json        test.theta                         0.12265512347221375
+results\indomain\lidar_deepsense_scenario31_seed33.json        test.n                             1386
+results\indomain\lidar_deepsense_scenario31_seed44.json        test.theta                         0.12764351069927216
+results\indomain\lidar_deepsense_scenario31_seed44.json        test.n                             1324
+results\indomain\lidar_deepsense_scenario31_seed55.json        test.theta                         0.09243085980415344
+results\indomain\lidar_deepsense_scenario31_seed55.json        test.n                             1374
+results\indomain\fusion_warmstart_deepsense_scenario31_seed11.json test.theta                         0.24048815667629242
+results\indomain\fusion_warmstart_deepsense_scenario31_seed22.json test.theta                         0.24611973762512207
+results\indomain\fusion_warmstart_deepsense_scenario31_seed33.json test.theta                         0.2135642170906067
+results\indomain\fusion_warmstart_deepsense_scenario31_seed44.json test.theta                         0.22507552802562714
+results\indomain\fusion_warmstart_deepsense_scenario31_seed55.json test.theta                         0.20232896506786346
+results\indomain\radar_deepsense_scenario36_seed11.json        test.theta                         0.18511569499969482
+results\indomain\radar_deepsense_scenario36_seed11.json        test.n                             1599
+results\indomain\radar_deepsense_scenario36_seed22.json        test.theta                         0.13062499463558197
+results\indomain\radar_deepsense_scenario36_seed22.json        test.n                             1600
+results\indomain\radar_deepsense_scenario36_seed33.json        test.theta                         0.21075671911239624
+results\indomain\radar_deepsense_scenario36_seed33.json        test.n                             1599
+results\indomain\radar_deepsense_scenario36_seed44.json        test.theta                         0.11999999731779099
+results\indomain\radar_deepsense_scenario36_seed44.json        test.n                             1600
+results\indomain\radar_deepsense_scenario36_seed55.json        test.theta                         0.210362046957016
+results\indomain\radar_deepsense_scenario36_seed55.json        test.n                             1602
+results\deepsense\transfer.json                                random                             0.015625
+results\deepsense\transfer.json                                combos.sc31_to_sc36.desc           real V2I -> real V2V
+results\deepsense\transfer.json                                combos.sc31_to_sc36.n              8267
+results\deepsense\transfer.json                                combos.sc31_to_sc36.top1.mean      0.015870327809362525
+results\deepsense\transfer.json                                combos.sc31_to_sc36.top1.hi        0.019560670857455414
+results\deepsense\transfer.json                                combos.synthetic_to_sc31.desc      synthetic close-range -> real V2I
+results\deepsense\transfer.json                                combos.synthetic_to_sc31.n         7012
+results\deepsense\transfer.json                                combos.synthetic_to_sc31.top1.mean 0.008442669709070165
+results\deepsense\transfer.json                                combos.synthetic_to_sc31.top1.hi   0.0159547849197105

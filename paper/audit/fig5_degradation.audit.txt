@@ -1,0 +1,20 @@
+# Consistency audit — fig5_degradation
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\degradation_closerange60.json                          clean.mean                         0.606888044954363
+results\degradation_closerange60.json                          clean.lo                           0.580875594725539
+results\degradation_closerange60.json                          clean.hi                           0.632900495183187
+results\degradation_closerange60.json                          lidar_out.mean                     0.5609726755195761
+results\degradation_closerange60.json                          lidar_out.lo                       0.5294175114786915
+results\degradation_closerange60.json                          lidar_out.hi                       0.5925278395604606
+results\degradation_closerange60.json                          misalign5deg.mean                  0.5741691519589722
+results\degradation_closerange60.json                          misalign5deg.lo                    0.5362777151076762
+results\degradation_closerange60.json                          misalign5deg.hi                    0.6120605888102683
+results\degradation_closerange60.json                          radar_out.mean                     0.3487665344887549
+results\degradation_closerange60.json                          radar_out.lo                       0.24330119195005473
+results\degradation_closerange60.json                          radar_out.hi                       0.45423187702745504
+results\degradation_closerange60.json                          both_out.mean                      0.00884684098206737
+results\degradation_closerange60.json                          both_out.lo                        0.0016547775765586624
+results\degradation_closerange60.json                          both_out.hi                        0.01603890438757608
