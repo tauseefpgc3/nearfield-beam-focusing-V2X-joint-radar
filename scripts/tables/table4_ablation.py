@@ -71,7 +71,10 @@ def main():
             "**common** near-field set (identical users), referenced to the finest B_r=16 "
             f"genie. On this metric **B_r={KEPT} wins** ({abs_gain[KEPT][0]:+.2f} dB) and is "
             "kept (D-016) — B_r=4 loses by under-resolving range, B_r=16 by sparse, "
-            "noisy bins.\n")
+            "noisy bins.\n\n_Note: this table stays at 3 seeds — the far-field / range-"
+            "codebook models are **not retrained in the n=20 extension** (which covered only "
+            "the 60/140 GHz close-range radar + fusion predictors); the genie/absolute-gain "
+            "reference columns are seed-independent._\n")
 
     tex = [r"\begin{tabular}{rrrrrr}", r"\toprule",
            " & ".join(hdr).replace("B_r", r"$B_r$").replace("*", r"$^\ddagger$")

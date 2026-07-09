@@ -3,45 +3,46 @@
 
 source JSON                                                    cell                               value
 --------------------------------------------------------------------------------------------------------------
-results\fusion_rules\rule_sweep.json                           results.60.radar_alone.per_seed    <list n=5>
-results\fusion_rules\rule_sweep.json                           results.140.radar_alone.per_seed   <list n=5>
-results\fusion_rules\rule_sweep.json                           results.60.radar_alone.mean        0.8548180527476053
-results\fusion_rules\rule_sweep.json                           results.60.radar_alone.hi          1.5143829395861297
-results\fusion_rules\rule_sweep.json                           results.140.radar_alone.mean       1.6037040527749133
-results\fusion_rules\rule_sweep.json                           results.140.radar_alone.hi         2.2447328194993026
-results\fusion_rules\rule_sweep.json                           results.60.soft_avg.mean           0.5488973181033732
-results\fusion_rules\rule_sweep.json                           results.60.soft_avg.hi             0.7730976776649567
-results\fusion_rules\rule_sweep.json                           results.60.soft_avg.per_seed       <list n=5>
-results\fusion_rules\rule_sweep.json                           results.140.soft_avg.mean          1.1979669489197935
-results\fusion_rules\rule_sweep.json                           results.140.soft_avg.hi            1.543154544980963
-results\fusion_rules\rule_sweep.json                           results.140.soft_avg.per_seed      <list n=5>
-results\fusion_rules\rule_sweep.json                           results.60.argmax_conf.mean        0.7928780475077686
-results\fusion_rules\rule_sweep.json                           results.60.argmax_conf.hi          1.1312827489872657
-results\fusion_rules\rule_sweep.json                           results.60.argmax_conf.per_seed    <list n=5>
-results\fusion_rules\rule_sweep.json                           results.140.argmax_conf.mean       1.6553959718294358
-results\fusion_rules\rule_sweep.json                           results.140.argmax_conf.hi         2.6355810227789416
-results\fusion_rules\rule_sweep.json                           results.140.argmax_conf.per_seed   <list n=5>
-results\fusion_rules\rule_sweep.json                           results.60.radar_ang+bestR.mean    0.7040713695347635
-results\fusion_rules\rule_sweep.json                           results.60.radar_ang+bestR.hi      1.1511392811661172
-results\fusion_rules\rule_sweep.json                           results.60.radar_ang+bestR.per_seed <list n=5>
-results\fusion_rules\rule_sweep.json                           results.140.radar_ang+bestR.mean   1.7041000894887155
-results\fusion_rules\rule_sweep.json                           results.140.radar_ang+bestR.hi     2.345796862621882
-results\fusion_rules\rule_sweep.json                           results.140.radar_ang+bestR.per_seed <list n=5>
-results\fusion_rules\rule_sweep.json                           results.60.radar_both.mean         0.8548180527476053
-results\fusion_rules\rule_sweep.json                           results.60.radar_both.hi           1.5143829395861297
-results\fusion_rules\rule_sweep.json                           results.60.radar_both.per_seed     <list n=5>
-results\fusion_rules\rule_sweep.json                           results.140.radar_both.mean        1.6037040527749133
-results\fusion_rules\rule_sweep.json                           results.140.radar_both.hi          2.2447328194993026
-results\fusion_rules\rule_sweep.json                           results.140.radar_both.per_seed    <list n=5>
-results\fusion_rules\rule_sweep.json                           results.60.temp4.mean              0.5270790158564679
-results\fusion_rules\rule_sweep.json                           results.60.temp4.hi                0.780101914055424
-results\fusion_rules\rule_sweep.json                           results.60.temp4.per_seed          <list n=5>
-results\fusion_rules\rule_sweep.json                           results.140.temp4.mean             1.0662377574607302
-results\fusion_rules\rule_sweep.json                           results.140.temp4.hi               1.5870099755284919
-results\fusion_rules\rule_sweep.json                           results.140.temp4.per_seed         <list n=5>
-results\fusion_rules\rule_sweep.json                           results.60.temp8.mean              0.6127443175042974
-results\fusion_rules\rule_sweep.json                           results.60.temp8.hi                0.9179287546044135
-results\fusion_rules\rule_sweep.json                           results.60.temp8.per_seed          <list n=5>
-results\fusion_rules\rule_sweep.json                           results.140.temp8.mean             1.1181268980791599
-results\fusion_rules\rule_sweep.json                           results.140.temp8.hi               1.8868413876935155
-results\fusion_rules\rule_sweep.json                           results.140.temp8.per_seed         <list n=5>
+results\fusion_rules\rule_sweep_n20.json                       seeds                              <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.60.radar_alone.per_seed    <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.140.radar_alone.per_seed   <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.60.radar_alone.mean        0.7332157436737333
+results\fusion_rules\rule_sweep_n20.json                       results.60.radar_alone.hi          0.9381517693384995
+results\fusion_rules\rule_sweep_n20.json                       results.140.radar_alone.mean       2.043392696058141
+results\fusion_rules\rule_sweep_n20.json                       results.140.radar_alone.hi         3.108362449124965
+results\fusion_rules\rule_sweep_n20.json                       results.60.soft_avg.mean           0.3735742642056019
+results\fusion_rules\rule_sweep_n20.json                       results.60.soft_avg.hi             0.45236320290983334
+results\fusion_rules\rule_sweep_n20.json                       results.60.soft_avg.per_seed       <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.140.soft_avg.mean          0.9135644935478657
+results\fusion_rules\rule_sweep_n20.json                       results.140.soft_avg.hi            1.1598471812083924
+results\fusion_rules\rule_sweep_n20.json                       results.140.soft_avg.per_seed      <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.60.argmax_conf.mean        0.5694004405858618
+results\fusion_rules\rule_sweep_n20.json                       results.60.argmax_conf.hi          0.7049856748133667
+results\fusion_rules\rule_sweep_n20.json                       results.60.argmax_conf.per_seed    <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.140.argmax_conf.mean       1.3553960373423437
+results\fusion_rules\rule_sweep_n20.json                       results.140.argmax_conf.hi         1.7816396823396017
+results\fusion_rules\rule_sweep_n20.json                       results.140.argmax_conf.per_seed   <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.60.radar_ang+bestR.mean    0.5515714271325062
+results\fusion_rules\rule_sweep_n20.json                       results.60.radar_ang+bestR.hi      0.7005022188675187
+results\fusion_rules\rule_sweep_n20.json                       results.60.radar_ang+bestR.per_seed <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.140.radar_ang+bestR.mean   1.4940949278163773
+results\fusion_rules\rule_sweep_n20.json                       results.140.radar_ang+bestR.hi     1.92569509296668
+results\fusion_rules\rule_sweep_n20.json                       results.140.radar_ang+bestR.per_seed <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.60.radar_both.mean         0.6660985979739021
+results\fusion_rules\rule_sweep_n20.json                       results.60.radar_both.hi           0.9107593384227124
+results\fusion_rules\rule_sweep_n20.json                       results.60.radar_both.per_seed     <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.140.radar_both.mean        1.4231252383660813
+results\fusion_rules\rule_sweep_n20.json                       results.140.radar_both.hi          1.8624704536880001
+results\fusion_rules\rule_sweep_n20.json                       results.140.radar_both.per_seed    <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.60.temp4.mean              0.38263605018679075
+results\fusion_rules\rule_sweep_n20.json                       results.60.temp4.hi                0.473542808292964
+results\fusion_rules\rule_sweep_n20.json                       results.60.temp4.per_seed          <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.140.temp4.mean             0.9063088626230945
+results\fusion_rules\rule_sweep_n20.json                       results.140.temp4.hi               1.2226653104889293
+results\fusion_rules\rule_sweep_n20.json                       results.140.temp4.per_seed         <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.60.temp8.mean              0.4418600316508333
+results\fusion_rules\rule_sweep_n20.json                       results.60.temp8.hi                0.5494350609859024
+results\fusion_rules\rule_sweep_n20.json                       results.60.temp8.per_seed          <list n=20>
+results\fusion_rules\rule_sweep_n20.json                       results.140.temp8.mean             0.9782898774323308
+results\fusion_rules\rule_sweep_n20.json                       results.140.temp8.hi               1.309375222008452
+results\fusion_rules\rule_sweep_n20.json                       results.140.temp8.per_seed         <list n=20>

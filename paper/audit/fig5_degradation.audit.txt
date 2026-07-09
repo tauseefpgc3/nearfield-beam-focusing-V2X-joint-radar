@@ -3,18 +3,19 @@
 
 source JSON                                                    cell                               value
 --------------------------------------------------------------------------------------------------------------
-results\degradation_closerange60.json                          clean.mean                         0.606888044954363
-results\degradation_closerange60.json                          clean.lo                           0.580875594725539
-results\degradation_closerange60.json                          clean.hi                           0.632900495183187
-results\degradation_closerange60.json                          lidar_out.mean                     0.5609726755195761
-results\degradation_closerange60.json                          lidar_out.lo                       0.5294175114786915
-results\degradation_closerange60.json                          lidar_out.hi                       0.5925278395604606
-results\degradation_closerange60.json                          misalign5deg.mean                  0.5741691519589722
-results\degradation_closerange60.json                          misalign5deg.lo                    0.5362777151076762
-results\degradation_closerange60.json                          misalign5deg.hi                    0.6120605888102683
-results\degradation_closerange60.json                          radar_out.mean                     0.3487665344887549
-results\degradation_closerange60.json                          radar_out.lo                       0.24330119195005473
-results\degradation_closerange60.json                          radar_out.hi                       0.45423187702745504
-results\degradation_closerange60.json                          both_out.mean                      0.00884684098206737
-results\degradation_closerange60.json                          both_out.lo                        0.0016547775765586624
-results\degradation_closerange60.json                          both_out.hi                        0.01603890438757608
+results\degradation_closerange60_n20.json                      clean.mean                         0.6551648679881796
+results\degradation_closerange60_n20.json                      clean.lo                           0.6349923290082209
+results\degradation_closerange60_n20.json                      clean.hi                           0.6753374069681384
+results\degradation_closerange60_n20.json                      lidar_out.mean                     0.6035784348444018
+results\degradation_closerange60_n20.json                      lidar_out.lo                       0.5857553121566043
+results\degradation_closerange60_n20.json                      lidar_out.hi                       0.6214015575321993
+results\degradation_closerange60_n20.json                      misalign5deg.mean                  0.6353864586269073
+results\degradation_closerange60_n20.json                      misalign5deg.lo                    0.6132700939667962
+results\degradation_closerange60_n20.json                      misalign5deg.hi                    0.6575028232870185
+results\degradation_closerange60_n20.json                      radar_out.mean                     0.33729929796365377
+results\degradation_closerange60_n20.json                      radar_out.lo                       0.3140330924054177
+results\degradation_closerange60_n20.json                      radar_out.hi                       0.3605655035218898
+results\degradation_closerange60_n20.json                      both_out.mean                      0.012646855973228694
+results\degradation_closerange60_n20.json                      both_out.lo                        0.008688256817490268
+results\degradation_closerange60_n20.json                      both_out.hi                        0.01660545512896712
+results\degradation_closerange60_n20.json                      clean.n                            20

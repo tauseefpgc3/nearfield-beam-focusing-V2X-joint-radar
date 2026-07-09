@@ -1,0 +1,60 @@
+# Consistency audit — table12_mobility
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\mobility\future_beam.json                              deltas                             <list n=4>
+results\mobility\future_beam.json                              results.31.0.horizon_s             0.0
+results\mobility\future_beam.json                              results.31.0.mean_disp_m           0.0
+results\mobility\future_beam.json                              results.31.0.top1.mean             0.23078741416662568
+results\mobility\future_beam.json                              results.31.0.top1.hi               0.25985298276293317
+results\mobility\future_beam.json                              results.31.0.coverage.4.mean       0.5559054635186285
+results\mobility\future_beam.json                              results.31.0.coverage.8.mean       0.6965754665138643
+results\mobility\future_beam.json                              results.31.1.horizon_s             0.1
+results\mobility\future_beam.json                              results.31.1.mean_disp_m           0.38650375604629517
+results\mobility\future_beam.json                              results.31.1.top1.mean             0.2297931323292141
+results\mobility\future_beam.json                              results.31.1.top1.hi               0.2570052626764505
+results\mobility\future_beam.json                              results.31.1.coverage.4.mean       0.5552340150303974
+results\mobility\future_beam.json                              results.31.1.coverage.8.mean       0.6812343230854376
+results\mobility\future_beam.json                              results.31.2.horizon_s             0.2
+results\mobility\future_beam.json                              results.31.2.mean_disp_m           0.7736275792121887
+results\mobility\future_beam.json                              results.31.2.top1.mean             0.2339400363474331
+results\mobility\future_beam.json                              results.31.2.top1.hi               0.2644508433470688
+results\mobility\future_beam.json                              results.31.2.coverage.4.mean       0.5563768673396515
+results\mobility\future_beam.json                              results.31.2.coverage.8.mean       0.6985430541498915
+results\mobility\future_beam.json                              results.31.3.horizon_s             0.30000000000000004
+results\mobility\future_beam.json                              results.31.3.mean_disp_m           1.1611530780792236
+results\mobility\future_beam.json                              results.31.3.top1.mean             0.2382595308804288
+results\mobility\future_beam.json                              results.31.3.top1.hi               0.2646537111557614
+results\mobility\future_beam.json                              results.31.3.coverage.4.mean       0.5584543734607629
+results\mobility\future_beam.json                              results.31.3.coverage.8.mean       0.7033581072159382
+results\mobility\future_beam.json                              results.36.0.horizon_s             0.0
+results\mobility\future_beam.json                              results.36.0.mean_disp_m           0.0
+results\mobility\future_beam.json                              results.36.0.top1.mean             0.15799774789018417
+results\mobility\future_beam.json                              results.36.0.top1.hi               0.217248745596538
+results\mobility\future_beam.json                              results.36.0.coverage.4.mean       0.3561041108909361
+results\mobility\future_beam.json                              results.36.0.coverage.8.mean       0.46448064713901244
+results\mobility\future_beam.json                              results.36.1.horizon_s             0.1
+results\mobility\future_beam.json                              results.36.1.mean_disp_m           0.7863034605979919
+results\mobility\future_beam.json                              results.36.1.top1.mean             0.16408180189718857
+results\mobility\future_beam.json                              results.36.1.top1.hi               0.22091895667406047
+results\mobility\future_beam.json                              results.36.1.coverage.4.mean       0.37167922697055505
+results\mobility\future_beam.json                              results.36.1.coverage.8.mean       0.48894106785560343
+results\mobility\future_beam.json                              results.36.2.horizon_s             0.2
+results\mobility\future_beam.json                              results.36.2.mean_disp_m           1.067336916923523
+results\mobility\future_beam.json                              results.36.2.top1.mean             0.17113055700191038
+results\mobility\future_beam.json                              results.36.2.top1.hi               0.2377217965339925
+results\mobility\future_beam.json                              results.36.2.coverage.4.mean       0.3702199745273885
+results\mobility\future_beam.json                              results.36.2.coverage.8.mean       0.4837466451005604
+results\mobility\future_beam.json                              results.36.3.horizon_s             0.30000000000000004
+results\mobility\future_beam.json                              results.36.3.mean_disp_m           1.485548734664917
+results\mobility\future_beam.json                              results.36.3.top1.mean             0.17015477790289119
+results\mobility\future_beam.json                              results.36.3.top1.hi               0.23588131470534554
+results\mobility\future_beam.json                              results.36.3.coverage.4.mean       0.3768244655100166
+results\mobility\future_beam.json                              results.36.3.coverage.8.mean       0.49135648932767995
+results\mobility\future_beam.json                              results.31.0.top1.mean             0.23078741416662568
+results\mobility\future_beam.json                              results.31.0.top1.lo               0.2017218455703182
+results\mobility\future_beam.json                              results.31.3.top1.mean             0.2382595308804288
+results\mobility\future_beam.json                              results.36.0.top1.mean             0.15799774789018417
+results\mobility\future_beam.json                              results.36.0.top1.lo               0.09874675018383032
+results\mobility\future_beam.json                              results.36.3.top1.mean             0.17015477790289119

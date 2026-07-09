@@ -1,0 +1,56 @@
+# Consistency audit — table9_fusion_stats
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\fusion_rules\taskA_stats_n20.json                      n_seeds                            20
+results\fusion_rules\taskA_stats_n20.json                      seeds                              <list n=20>
+results\fusion_rules\taskA_stats_n20.json                      per_seed.60.radar_alone            <list n=20>
+results\fusion_rules\taskA_stats_n20.json                      per_seed.60.radar_ang+bestR        <list n=20>
+results\fusion_rules\taskA_stats_n20.json                      per_seed.60.soft_avg               <list n=20>
+results\fusion_rules\taskA_stats_n20.json                      per_seed.140.radar_alone           <list n=20>
+results\fusion_rules\taskA_stats_n20.json                      per_seed.140.radar_ang+bestR       <list n=20>
+results\fusion_rules\taskA_stats_n20.json                      per_seed.140.soft_avg              <list n=20>
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.radar_mean 0.7332157436737333
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.rule_mean 0.5515714271325062
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.paired_t_p 0.030208420097687278
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.wilcoxon_p 0.017181396484375
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.cohen_d 0.5237523366457818
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.cohen_d_ci95.0 0.2083405956395096
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.cohen_d_ci95.1 1.0127363068620234
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.tost_p 0.0003012913976795112
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.tost_equivalent True
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.radar_mean 0.7332157436737333
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.rule_mean 0.3735742642056019
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.paired_t_p 0.001435017188551479
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.wilcoxon_p 0.000850677490234375
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.cohen_d 0.8329712101205665
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.cohen_d_ci95.0 0.5574833999232566
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.cohen_d_ci95.1 1.3174060125939901
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.tost_p 0.08115632948037406
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.tost_equivalent False
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.radar_mean 2.043392696058141
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.rule_mean 1.4940949278163773
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.paired_t_p 0.1515575804176293
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.wilcoxon_p 0.2305126190185547
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.cohen_d 0.3341033562728623
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.cohen_d_ci95.0 -0.017536579089679108
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.cohen_d_ci95.1 0.6077470451872045
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.tost_p 0.5526314831757355
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.tost_equivalent False
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.radar_mean 2.043392696058141
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.rule_mean 0.9135644935478657
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.paired_t_p 0.016440287895770976
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.wilcoxon_p 0.001209259033203125
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.cohen_d 0.5884200463096296
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.cohen_d_ci95.0 0.4321897011120933
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.cohen_d_ci95.1 1.0839440415286608
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.tost_p 0.9206249092835772
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.tost_equivalent False
+results\fusion_rules\taskA_stats_n20.json                      bonferroni.any_significant         True
+results\fusion_rules\taskA_stats_n20.json                      bonferroni.m                       12
+results\fusion_rules\taskA_stats_n20.json                      bonferroni.significant             <list n=3>
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.paired_t_p 0.001435017188551479
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.paired_t_p 0.016440287895770976
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.tost_equivalent True
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.tost_equivalent False

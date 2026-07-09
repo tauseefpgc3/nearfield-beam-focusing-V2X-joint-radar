@@ -1,12 +1,10 @@
-# Table 1 — In-domain near-field results (close-range, 5 seeds, mean±95%CI)
+# Table 1 — In-domain near-field results (n=20)
 
-| Freq | Modality | Angle top-1 | NF range top-1 | NF cov@4 | NF dB-loss@8 |
+| Freq | Predictor | Angle top-1 | NF range top-1 | NF cov@4 | NF dB-loss@8 |
 |---|---|---|---|---|---|
-| 60 GHz | Radar | 71.4±7.0 | 38.5±2.3 | 60.6±10.6 | 0.85±0.66 |
-| 60 GHz | LiDAR | 43.6±5.3 | 48.1±2.6 | 45.4±6.5 | 2.40±0.85 |
-| 60 GHz | Fusion | 71.4±7.0 | 46.4±3.1 | 60.2±7.0 | 0.70±0.45 |
-| 140 GHz | Radar | 81.0±6.1 | 15.5±2.0 | 46.6±13.0 | 1.60±0.64 |
-| 140 GHz | LiDAR | 35.2±4.7 | 19.9±6.6 | 17.7±4.0 | 5.16±1.80 |
-| 140 GHz | Fusion | 81.0±6.1 | 14.5±4.1 | 38.7±13.9 | 1.70±0.64 |
+| 60 GHz | Soft-avg (recommended) | 78.9±2.3 | 46.4±2.4 | 72.7±3.0 | 0.37±0.08 |
+| 60 GHz | Radar-alone | 74.0±2.1 | 38.8±2.6 | 64.2±3.6 | 0.73±0.20 |
+| 140 GHz | Soft-avg (recommended) | 84.1±1.9 | 15.1±1.7 | 51.6±4.4 | 0.91±0.25 |
+| 140 GHz | Radar-alone | 77.5±6.2 | 13.3±1.7 | 42.7±6.8 | 2.04±1.06 |
 
-Percentages where marked; NF dB-loss@8 in dB (lower is better). NF = near-field subset (3 dB gate).
+20-seed mean±95%CI (D-018). NF = near-field subset (3 dB gate). Soft-avg (C3) is the recommended multimodal predictor; radar-alone is the single-sensor operating point. LiDAR-alone is **not** retrained in the n=20 extension (it remains an n=5 reference — see the n=5 Table 1 variant).

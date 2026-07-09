@@ -1,4 +1,4 @@
-"""DeepSense-trained validation sweep (Paper 5 Batch 3, STEP C) — crash-safe.
+"""DeepSense-trained validation sweep — crash-safe.
 
 Trains radar (PRIMARY), LiDAR + warmstart-fusion (SECONDARY) on the real DeepSense
 scenario, 5 seeds, trajectory-grouped split. Reuses train_single / train_fusion;

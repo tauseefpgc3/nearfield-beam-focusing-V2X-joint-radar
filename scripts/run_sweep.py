@@ -1,4 +1,4 @@
-"""Headline 5-seed sweep orchestrator (Paper 5 Batch 8) — crash-safe & resumable.
+"""Headline 5-seed sweep orchestrator — crash-safe & resumable.
 
 Runs, per (frequency, seed): radar-alone, LiDAR-alone, warmstart-fusion (D-015 config)
 on the close-range PRIMARY data, plus radar on the O1 far-field anchor. Each step is a

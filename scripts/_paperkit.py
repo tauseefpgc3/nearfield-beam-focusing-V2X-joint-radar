@@ -116,10 +116,35 @@ def save_fig(fig, stem: str):
     print(f"  figure -> paper/figures/{stem}.pdf (+png)")
 
 
+# Unicode -> LaTeX (applied to .tex only; the .md keeps the unicode). Prevents pdflatex
+# failures when the manuscript preamble lacks inputenc/unicode-math.
+_TEX_UNICODE = {
+    "—": "---", "–": "--", "±": r"$\pm$", "×": r"$\times$", "−": r"$-$",
+    "≤": r"$\le$", "≥": r"$\ge$", "→": r"$\to$", "≈": r"$\approx$", "≠": r"$\ne$",
+    "Δ": r"$\Delta$", "θ": r"$\theta$", "°": r"$^\circ$", "√": r"$\surd$",
+    "★": r"$\star$", "⋆": r"$\star$", "…": r"\ldots", "’": "'", "“": "``", "”": "''",
+}
+
+
+def _tex_sanitize(s: str) -> str:
+    import re
+    for u, r in _TEX_UNICODE.items():
+        s = s.replace(u, r)
+    # escape a literal percent (LaTeX comment char) unless already \% — but leave
+    # intentional full-line comments (a line whose first non-space char is %) untouched.
+    out = []
+    for line in s.split("\n"):
+        if line.lstrip().startswith("%"):
+            out.append(line)
+        else:
+            out.append(re.sub(r"(?<!\\)%", r"\\%", line))
+    return "\n".join(out)
+
+
 def write_table(stem: str, tex: str, md: str):
     os.makedirs(TAB_DIR, exist_ok=True)
     with open(os.path.join(TAB_DIR, f"{stem}.tex"), "w", encoding="utf-8") as f:
-        f.write(tex)
+        f.write(_tex_sanitize(tex))
     with open(os.path.join(TAB_DIR, f"{stem}.md"), "w", encoding="utf-8") as f:
         f.write(md)
     print(f"  table -> paper/tables/{stem}.tex (+md)")

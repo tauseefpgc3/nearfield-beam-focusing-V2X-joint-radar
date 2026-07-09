@@ -1,6 +1,6 @@
-"""Distance + label distribution report for the synthetic datasets (Batch 2 deliverable).
+"""Distance + label distribution report for the synthetic datasets.
 
-For each processed file prints, per the auditor's request:
+For each processed file prints, per a validation request:
   - frac(d < d_F), frac(y_r > 0), frac(y_r >= 2)
   - full y_r histogram (8 bins)
   - mean(y_r) per distance bin

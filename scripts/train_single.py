@@ -1,4 +1,4 @@
-"""Train a single-modality (radar OR lidar) polar classifier (Paper 5 Batch 5/6).
+"""Train a single-modality (radar OR lidar) polar classifier.
 
 Identical training setup for both modalities (fair comparison): close-range PRIMARY,
 gated labels, trajectory-grouped 70/10/20, seed 11, batch 16, fp16. Reports overall AND
@@ -102,7 +102,11 @@ def overfit_check(model, feat, yt, yr, device, lambda_r, n=100, steps=1500):
 
 
 def train(args):
-    seed_everything(args.seed)
+    # split ALWAYS uses --seed; weight init uses --init-seed if given (D-019: same split,
+    # different inits). --tag / --ckpt-name let a run write to a distinct dir/file without
+    # colliding with any banked checkpoint/JSON. Defaults preserve all prior behavior.
+    init_seed = args.init_seed if getattr(args, "init_seed", None) is not None else args.seed
+    seed_everything(init_seed)
     device = require_cuda()
     torch.cuda.reset_peak_memory_stats()
     feature_key, ModelCls = MODALITY[args.modality]
@@ -120,8 +124,11 @@ def train(args):
         return
 
     dtag = os.path.basename(args.data).replace("_full.h5", "")   # e.g. closerange_60GHz
+    tag = getattr(args, "tag", None) or args.modality
+    cname = getattr(args, "ckpt_name", None) or f"seed{args.seed}"
     tr, va, te = trajectory_grouped_split(traj, seed=args.seed)
-    print(f"split (seed {args.seed}): train {len(tr)} | val {len(va)} | test {len(te)}")
+    print(f"split (seed {args.seed}) init {init_seed} tag {tag} name {cname}: "
+          f"train {len(tr)} | val {len(va)} | test {len(te)}")
     tl = make_loader(feat, yt, yr, tr, args.batch_size, True)
     vl = make_loader(feat, yt, yr, va, args.batch_size, False)
     tel = make_loader(feat, yt, yr, te, args.batch_size, False)
@@ -129,7 +136,7 @@ def train(args):
     opt = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.wd)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=args.epochs)
     scaler = torch.amp.GradScaler("cuda")
-    ckpt_dir = os.path.join(_ROOT, "checkpoints", f"{dtag}_{args.modality}")
+    ckpt_dir = os.path.join(_ROOT, "checkpoints", f"{dtag}_{tag}")
     os.makedirs(ckpt_dir, exist_ok=True)
     history = []
     print(f"\nTraining {args.epochs} epochs, batch {args.batch_size}, lr {args.lr}, "
@@ -159,7 +166,7 @@ def train(args):
               f" | VRAM {vram_mb():.0f} MB | {time.time()-t0:.1f}s")
         if ep % 10 == 0 or ep == args.epochs:
             torch.save(dict(model=model.state_dict(), epoch=ep, args=safe_args(args)),
-                       os.path.join(ckpt_dir, f"seed{args.seed}.pt"))
+                       os.path.join(ckpt_dir, f"{cname}.pt"))
 
     test = detailed_eval(model, tel, device, B_r=b_r)
     print(f"\n=== FINAL {args.modality} (seed {args.seed}) ===")
@@ -168,7 +175,7 @@ def train(args):
     res_dir = os.path.join(_ROOT, "results", "indomain")
     os.makedirs(res_dir, exist_ok=True)
     with open(os.path.join(res_dir,
-              f"{args.modality}_{dtag}_seed{args.seed}.json"), "w") as f:
+              f"{tag}_{dtag}_{cname}.json"), "w") as f:
         json.dump(dict(history=history, test=test, peak_vram_mb=vram_mb(),
                        params=nparams, args=safe_args(args)), f, indent=2)
     print("\nepoch | train_loss | val_range_nf | val_joint")
@@ -188,6 +195,10 @@ def main():
     ap.add_argument("--lr", type=float, default=1e-4)
     ap.add_argument("--wd", type=float, default=1e-5)
     ap.add_argument("--lambda-r", type=float, default=1.0)
+    ap.add_argument("--init-seed", type=int, default=None,
+                    help="weight-init seed (default: --seed); split always uses --seed")
+    ap.add_argument("--tag", default=None, help="checkpoint dir / results suffix (default: modality)")
+    ap.add_argument("--ckpt-name", default=None, help="checkpoint filename stem (default: seed<seed>)")
     ap.add_argument("--overfit", action="store_true")
     train(ap.parse_args())
 

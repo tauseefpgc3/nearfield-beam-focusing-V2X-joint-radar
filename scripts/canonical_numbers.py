@@ -93,20 +93,46 @@ def main():
             f"mean radar_closerange_{fghz}GHz_seed*_metrics.json :: dbloss.8.nf (dB)")
         mac(f"NFgainKeight{FW[fghz]}CI", f"{c['hi']-c['mean']:.2f}",
             f"95% CI half-width of dbloss.8.nf, {fghz} GHz (dB)")
+    # fig:cdf caption uses \NFcdfMedian*/\NFwithinOneDB* for the SOFT-ENSEMBLE curve at n=20
+    # when close_n20 is banked (else n=5 radar). Repointed so the caption is n=20-consistent.
+    _cn20 = os.path.join(RESULTS, "indomain_n20", "close_n20.json")
     for fghz in ("60", "140"):
-        ratios = []
-        for s in SEEDS:
-            ratios.extend(aud.arr(metrics_path("radar", f"closerange_{fghz}GHz", s),
-                                  "gain_ratio_k4_nf"))
+        if os.path.exists(_cn20):
+            ratios = aud.arr(_cn20, f"results.{fghz}.softavg.gain_ratio_k4_nf")
+            src = f"close_n20.json :: results.{fghz}.softavg.gain_ratio_k4_nf (n=20 soft-avg)"
+        else:
+            ratios = []
+            for s in SEEDS:
+                ratios.extend(aud.arr(metrics_path("radar", f"closerange_{fghz}GHz", s),
+                                      "gain_ratio_k4_nf"))
+            src = f"radar_closerange_{fghz}GHz_seed*_metrics.json :: gain_ratio_k4_nf (n=5)"
         d = -10.0 * np.log10(np.clip(np.asarray(ratios, float), 1e-6, 1.0))
-        row(f"K=4 NF dB-loss CDF median, {fghz} GHz", f"{np.median(d):.2f} dB (pooled n={len(d)})",
-            f"median of radar_closerange_{fghz}GHz_seed*_metrics.json :: gain_ratio_k4_nf")
-        row(f"K=4 NF users ≤1 dB of genie, {fghz} GHz", f"{(d<=1.0).mean()*100:.0f}%",
-            f"frac of radar_closerange_{fghz}GHz_seed*_metrics.json :: gain_ratio_k4_nf")
-        mac(f"NFcdfMedian{FW[fghz]}", f"{np.median(d):.2f}",
-            f"median -10log10(gain_ratio_k4_nf), {fghz} GHz (dB, pooled n={len(d)})")
-        mac(f"NFwithinOneDB{FW[fghz]}", f"{(d<=1.0).mean()*100:.0f}\\%",
-            f"frac gain_ratio_k4_nf within 1 dB, {fghz} GHz")
+        row(f"K=4 NF dB-loss CDF median, {fghz} GHz", f"{np.median(d):.2f} dB (n={len(d)})", src)
+        row(f"K=4 NF users ≤1 dB of genie, {fghz} GHz", f"{(d<=1.0).mean()*100:.0f}%", src)
+        mac(f"NFcdfMedian{FW[fghz]}", f"{np.median(d):.2f}", "median NF K=4 dB-loss CDF; " + src)
+        mac(f"NFwithinOneDB{FW[fghz]}", f"{(d<=1.0).mean()*100:.0f}\\%", "frac <=1 dB; " + src)
+
+    # ------------------------------------------- 2b. Headline at n=20 (D-018, AUTHORITATIVE)
+    cn20 = os.path.join(RESULTS, "indomain_n20", "close_n20.json")
+    if os.path.exists(cn20):
+        L.append("")
+        L.append("## 2b. Headline at n=20 (D-018) — SUPERSEDES the n=5 §2 values")
+        for fghz in ("60", "140"):
+            for pred, pm in (("radar", "NFgainKeight"), ("softavg", "SoftAvgGainKeight")):
+                c = mean_ci(aud.arr(cn20, f"results.{fghz}.{pred}.db8_nf"))
+                row(f"{pred} K=8 NF dB-loss, {fghz} GHz (n=20)",
+                    f"{c['mean']:.2f} ± {c['hi']-c['mean']:.2f} dB",
+                    f"close_n20.json :: results.{fghz}.{pred}.db8_nf")
+                mac(f"{pm}{FW[fghz]}Ntwenty", f"{c['mean']:.2f}",
+                    f"close_n20.json :: results.{fghz}.{pred}.db8_nf mean (n=20 dB)")
+            # pooled K=4 CDF stats per predictor
+            for pred, pm in (("radar", "Radar"), ("softavg", "Softavg")):
+                gr = np.asarray(aud.arr(cn20, f"results.{fghz}.{pred}.gain_ratio_k4_nf"), float)
+                dd = -10.0 * np.log10(np.clip(gr, 1e-6, 1.0))
+                mac(f"NFcdfMedian{pm}{FW[fghz]}Ntwenty", f"{np.median(dd):.2f}",
+                    f"close_n20.json median -10log10(gain_ratio_k4_nf) {pred} {fghz}GHz (dB)")
+                mac(f"NFwithinOneDB{pm}{FW[fghz]}Ntwenty", f"{(dd<=1.0).mean()*100:.0f}\\%",
+                    f"close_n20.json frac<=1dB {pred} {fghz}GHz")
 
     # ---------------------------------------------------------------- 3. Fusion
     L.append("")
@@ -135,7 +161,8 @@ def main():
     # ---------------------------------------------------------------- 4. Degradation
     L.append("")
     L.append("## 4. Sensor-degradation robustness (close-range 60 GHz, joint top-1)")
-    dg = os.path.join(RESULTS, "degradation_closerange60.json")
+    _dg20 = os.path.join(RESULTS, "degradation_closerange60_n20.json")
+    dg = _dg20 if os.path.exists(_dg20) else os.path.join(RESULTS, "degradation_closerange60.json")
     deg_mac = {"clean": "DegradClean", "lidar_out": "DegradLidarOut",
                "misalign5deg": "DegradMisalign", "radar_out": "DegradRadarOut",
                "both_out": "DegradBothOut"}
@@ -248,7 +275,8 @@ def main():
     # ---------------------------------------------------------------- 9. DFT-only baseline
     L.append("")
     L.append("## 9. Sensor-driven DFT-only vs polar baseline (appendix; NF K=8 dB-loss)")
-    dfj = os.path.join(RESULTS, "dft_baseline", "dft_sweep.json")
+    _dft20 = os.path.join(RESULTS, "dft_baseline", "dft_sweep_n20.json")
+    dfj = _dft20 if os.path.exists(_dft20) else os.path.join(RESULTS, "dft_baseline", "dft_sweep.json")
     for fghz in ("60", "140"):
         pol = aud.val(dfj, f"results.{fghz}.polar.mean")
         dft = aud.val(dfj, f"results.{fghz}.dft.mean")
@@ -266,13 +294,150 @@ def main():
         mac(f"DFTpenalty{FW[fghz]}", f"{pen:.2f}",
             f"dft_sweep.json :: results.{fghz}.dft_minus_polar.mean (dB DFT costs vs polar)")
 
+    # ---------------------------------------------------------------- 10. Gain vs overhead
+    # prefer the n=20 gain-overhead (D-018) if banked, else the n=5 hierarchical file
+    _go20 = os.path.join(RESULTS, "gain_overhead_n20.json")
+    hp = os.path.join(RESULTS, "baselines", "hierarchical_sweep.json")
+    if os.path.exists(_go20):
+        L.append("")
+        L.append("## 10. Gain vs RF-measurement overhead (n=20; NF K=8 dB-loss)")
+        nm = aud.val(_go20, "hier_measurements")
+        mac("HierMeas", f"{nm}", "gain_overhead_n20.json :: hier_measurements (64 angle + 7 range)")
+        mac("NumKMeas", "8", "our predictor K=8 shortlist size (RF measurements)")
+        mac("HierMeasRatio", f"{round(nm/8)}",
+            "round(HierMeas/8) — measurement ratio vs our K=8 predictor")
+        mac("ExhaustiveMeas", f"{aud.val(_go20, 'exhaustive_measurements')}",
+            "polar codebook size 64*8 (genie sweep)")
+        for fghz in ("60", "140"):
+            hm = aud.val(_go20, f"results.{fghz}.hierarchical.mean")
+            k4 = aud.val(_go20, f"results.{fghz}.softavg.K4.mean")
+            row(f"Hierarchical NF dB-loss, {fghz} GHz (n=20, {nm} meas)", f"{hm:.2f} dB",
+                f"gain_overhead_n20.json :: results.{fghz}.hierarchical.mean")
+            mac(f"HierLoss{FW[fghz]}", f"{hm:.2f}",
+                f"gain_overhead_n20.json :: results.{fghz}.hierarchical.mean (n=20, {nm} meas)")
+            mac(f"NFlossSoftAvgKfour{FW[fghz]}", f"{k4:.2f}",
+                f"gain_overhead_n20.json :: results.{fghz}.softavg.K4.mean (n=20 dB)")
+    elif os.path.exists(hp):
+        L.append("")
+        L.append("## 10. Gain vs RF-measurement overhead (Task B; NF K=8 dB-loss)")
+        nm = aud.val(hp, "n_measurements")
+        mac("HierMeas", f"{nm}", "hierarchical_sweep.json :: n_measurements (angle+range sweep)")
+        mac("ExhaustiveMeas", "512", "polar codebook size B_theta*B_r = 64*8 (genie sweep)")
+        for fghz in ("60", "140"):
+            m = aud.val(hp, f"results.{fghz}.mean")
+            mac(f"HierLoss{FW[fghz]}", f"{m:.2f}",
+                f"hierarchical_sweep.json :: results.{fghz}.mean (NF dB-loss, {nm} meas)")
+
+    # ---------------------------------------------------------------- 11. Task A stats
+    _n20 = os.path.join(RESULTS, "fusion_rules", "taskA_stats_n20.json")
+    tsj = _n20 if os.path.exists(_n20) else os.path.join(RESULTS, "fusion_rules",
+                                                         "taskA_stats.json")
+    if os.path.exists(tsj):
+        L.append("")
+        L.append("## 11. Radar-vs-fusion statistics (Task A; NF K=8 dB-loss)")
+        na = aud.val(tsj, "n_seeds")
+        _src = os.path.basename(tsj)
+        row("Task A seed count", f"{na}",
+            f"results/fusion_rules/{_src} :: n_seeds")
+        mac("TaskANSeeds", f"{na}", f"{_src} :: n_seeds (D-018 powered study)")
+        for fghz in ("60", "140"):
+            # D-015 equivalence + soft-avg significance
+            de = aud.val(tsj, f"comparisons.{fghz}GHz__radar_vs_radar_ang+bestR.tost_p")
+            deq = aud.val(tsj, f"comparisons.{fghz}GHz__radar_vs_radar_ang+bestR.tost_equivalent")
+            sp = aud.val(tsj, f"comparisons.{fghz}GHz__radar_vs_soft_avg.paired_t_p")
+            row(f"D-015 vs radar-alone TOST±0.5 p, {fghz} GHz",
+                f"{de:.3f} (equivalent={deq})",
+                f"taskA_stats.json :: comparisons.{fghz}GHz__radar_vs_radar_ang+bestR.tost_p")
+            _sig = "significant" if sp < 0.05 else "n.s."
+            row(f"Soft-avg vs radar-alone paired-t p, {fghz} GHz", f"{sp:.3f} ({_sig})",
+                f"{_src} :: comparisons.{fghz}GHz__radar_vs_soft_avg.paired_t_p")
+            mac(f"DOETostP{FW[fghz]}", ("$<$0.001" if de < 0.001 else f"{de:.3f}"),
+                f"{_src} :: D-015 vs radar TOST p @{fghz}GHz (equivalent={deq})")
+            mac(f"SoftAvgTP{FW[fghz]}", f"{sp:.3f}",
+                f"{_src} :: soft-avg vs radar paired-t p @{fghz}GHz ({_sig})")
+        anysig = aud.val(tsj, "bonferroni.any_significant")
+        row("Rule sweep Bonferroni: any rule significant vs radar-alone?",
+            f"{'yes' if anysig else 'no'} (m={aud.val(tsj, 'bonferroni.m')})",
+            "taskA_stats.json :: bonferroni.any_significant")
+        mac("BonfAnySig", "yes" if anysig else "no",
+            "taskA_stats.json :: bonferroni.any_significant (m=12 rule x freq comparisons)")
+
+    # ------------------------------------------------ 12. D-019 clean ensemble control
+    cec = os.path.join(RESULTS, "fusion_rules", "ensemble_confound_clean.json")
+    if os.path.exists(cec):
+        L.append("")
+        L.append("## 12. D-019 clean same-split radar-ensemble control (NF K=8 dB-loss)")
+        for fghz in ("60", "140"):
+            cb_all = aud.val(cec, f"results.{fghz}.c_better_in_all_splits")
+            cw_all = aud.val(cec, f"results.{fghz}.c_worse_in_all_splits")
+            verdict = "modality" if cb_all else ("ensembling" if cw_all else "mixed")
+            row(f"D-019 verdict, {fghz} GHz (c'>b' all splits?)", verdict,
+                f"ensemble_confound_clean.json :: results.{fghz}.c_better_in_all_splits")
+            mac(f"DNineteenVerdict{FW[fghz]}", verdict,
+                f"ensemble_confound_clean.json {fghz}GHz (modality|ensembling|mixed); "
+                "all member leakage=0.000")
+
+    # ------------------------------------------------ 13. Mobility future-beam (D-020)
+    fbj = os.path.join(RESULTS, "mobility", "future_beam.json")
+    if os.path.exists(fbj):
+        L.append("")
+        L.append("## 13. Mobility future-beam prediction (DeepSense radar, D-020)")
+        sc_mac = {"31": "Vtwoi", "36": "Vtwov"}
+        dword = {"0": "Dzero", "3": "Dthree"}          # LaTeX-safe (no digits in macro names)
+        for scen in ("31", "36"):
+            for d in ("0", "3"):
+                m = aud.val(fbj, f"results.{scen}.{d}.top1.mean")
+                hz = aud.val(fbj, f"results.{scen}.{d}.horizon_s")
+                row(f"Future-beam top-1, Sc{scen} Δ={d} ({hz:.1f}s)", f"{m*100:.2f}%",
+                    f"results/mobility/future_beam.json :: results.{scen}.{d}.top1.mean")
+                mac(f"Mob{sc_mac[scen]}TopOne{dword[d]}", f"{m*100:.1f}\\%",
+                    f"future_beam.json :: results.{scen}.{d}.top1.mean (horizon {hz:.1f}s)")
+            c8 = aud.val(fbj, f"results.{scen}.3.coverage.8.mean")
+            mac(f"Mob{sc_mac[scen]}CovKeightDthree", f"{c8*100:.0f}\\%",
+                f"future_beam.json :: results.{scen}.3.coverage.8.mean (0.3s horizon)")
+        # horizon / displacement (max = 3 frames; displacement = larger of V2I/V2V)
+        hmax = aud.val(fbj, "results.31.3.horizon_s")
+        dmax = max(aud.val(fbj, "results.31.3.mean_disp_m"),
+                   aud.val(fbj, "results.36.3.mean_disp_m"))
+        mac("MobHorizonMax", f"{hmax:.1f}\\,s", "future_beam.json max horizon (3 frames x 0.1 s)")
+        mac("MobDisplMax", f"{dmax:.1f}\\,m", "future_beam.json max mean displacement, m (V2V)")
+
+    # -------------------------------------- 14. Cascade / manuscript macros (LaTeX-safe)
+    if os.path.exists(N20 := os.path.join(RESULTS, "fusion_rules", "taskA_stats_n20.json")):
+        L.append("")
+        L.append("## 14. Cascade manuscript macros (n=20 fusion + ensemble leakage)")
+        for fghz in ("60", "140"):
+            k = f"comparisons.{fghz}GHz__radar_vs_soft_avg"
+            rm = aud.val(N20, f"{k}.radar_mean"); vm = aud.val(N20, f"{k}.rule_mean")
+            wp = aud.val(N20, f"{k}.wilcoxon_p"); cd = aud.val(N20, f"{k}.cohen_d")
+            mac(f"NFlossRadarNtwenty{FW[fghz]}", f"{rm:.2f}",
+                f"taskA_stats_n20.json :: {k}.radar_mean (n=20 dB)")
+            mac(f"NFlossSoftAvgKeight{FW[fghz]}", f"{vm:.2f}",
+                f"taskA_stats_n20.json :: {k}.rule_mean (n=20 soft-avg K=8 dB)")
+            mac(f"SoftAvgWilcoxon{FW[fghz]}", f"{wp:.3f}",
+                f"taskA_stats_n20.json :: {k}.wilcoxon_p")
+            mac(f"SoftAvgCohenD{FW[fghz]}", f"{cd:+.2f}",
+                f"taskA_stats_n20.json :: {k}.cohen_d")
+        # preserved n=5 soft-avg p-values (historical §5.4)
+        t5 = os.path.join(RESULTS, "fusion_rules", "taskA_stats.json")
+        for fghz in ("60", "140"):
+            p5 = aud.val(t5, f"comparisons.{fghz}GHz__radar_vs_soft_avg.paired_t_p")
+            mac(f"SoftAvgTPFiveSeed{FW[fghz]}", f"{p5:.3f}",
+                f"taskA_stats.json (n=5) :: {fghz}GHz soft-avg vs radar paired-t p")
+        ecj = os.path.join(RESULTS, "fusion_rules", "ensemble_confound.json")
+        if os.path.exists(ecj):
+            lk = max(aud.val(ecj, "results.60.b_leakage_frac.mean"),
+                     aud.val(ecj, "results.140.b_leakage_frac.mean"))
+            mac("EnsLeakFrac", f"{lk*100:.0f}\\%",
+                "ensemble_confound.json :: b_leakage_frac (leaky cross-seed ensemble)")
+
     L.append("")
     L.append("---")
     L.append(f"_Generated from {len(aud.rows)} banked JSON cells. "
              "Regenerate: `python scripts/canonical_numbers.py`._")
 
     os.makedirs(PAPER, exist_ok=True)
-    with open(OUT_MD, "w", encoding="utf-8") as f:
+    with open(OUT_MD, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(L) + "\n")
     print(f"Wrote paper/canonical_numbers.md ({len(aud.rows)} sourced cells)")
 
@@ -285,7 +450,7 @@ def main():
     for name, value, comment in MAC:
         T.append(f"\\newcommand{{\\{name}}}{{{value}}}  % {comment}")
     T.append("")
-    with open(OUT_TEX, "w", encoding="utf-8") as f:
+    with open(OUT_TEX, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(T) + "\n")
     print(f"Wrote paper/canonical_macros.tex ({len(MAC)} macros)")
     aud.write()

@@ -21,7 +21,8 @@ ROWS = [("polar", "Polar (angle×range, ours)"),
 
 def main():
     aud = Audit("table7_dft_baseline")
-    p = os.path.join(RESULTS, "dft_baseline", "dft_sweep.json")
+    _n20 = os.path.join(RESULTS, "dft_baseline", "dft_sweep_n20.json")
+    p = _n20 if os.path.exists(_n20) else os.path.join(RESULTS, "dft_baseline", "dft_sweep.json")
     rows = []
     for key, lab in ROWS:
         cells = []

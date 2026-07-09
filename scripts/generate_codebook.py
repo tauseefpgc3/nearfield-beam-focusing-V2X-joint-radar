@@ -62,7 +62,7 @@ def main() -> None:
             beta_delta=np.float64(BETA_DELTA),
             spacing=np.float64(SPACING),
         )
-        # One line per frequency: shape + d_F (deliverable to auditor).
+        # One line per frequency: shape + d_F (diagnostic output).
         print(f"{f_ghz:>3d} GHz | codebook shape {codebook.shape} | "
               f"d_F = {d_f:.4f} m | saved -> {os.path.relpath(out_path, _ROOT)}")
 

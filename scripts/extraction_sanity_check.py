@@ -1,4 +1,4 @@
-"""Extraction sanity check: DeepMIMO ray-tracing fields vs geometry (deliverable).
+"""Extraction sanity check: DeepMIMO ray-tracing fields vs geometry (diagnostic).
 
 For one LoS-dominant user of the selected BS/grid, confirms the per-path extraction is
 correct independently of the array size (these are scenario properties, unchanged by

@@ -12,6 +12,8 @@ Write-Host "=== Figures ==="
 & $py scripts/figures/fig5_degradation.py
 & $py scripts/figures/fig6_scene_geometry.py
 & $py scripts/figures/fig7_polar_focus.py
+& $py scripts/figures/fig8_mobility.py
+& $py scripts/figures/fig_pareto.py
 
 Write-Host "=== Architecture skeleton (TikZ, Fig 1) ==="
 if (Get-Command pdflatex -ErrorAction SilentlyContinue) {
@@ -34,6 +36,12 @@ Write-Host "=== Tables ==="
 & $py scripts/tables/table5_o1anchor.py
 & $py scripts/tables/table6_fusion_rules.py
 & $py scripts/tables/table7_dft_baseline.py
+& $py scripts/tables/table8_gain_overhead.py
+& $py scripts/eval_taskA_stats.py
+& $py scripts/tables/table9_fusion_stats.py
+& $py scripts/tables/table10_headline_n5_vs_n20.py
+& $py scripts/tables/table11_ensemble_confound.py
+& $py scripts/tables/table12_mobility.py
 
 Write-Host "=== Canonical numbers (single source of truth) ==="
 & $py scripts/canonical_numbers.py

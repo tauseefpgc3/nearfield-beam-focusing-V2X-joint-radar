@@ -26,7 +26,8 @@ CONDS = [
 def main():
     plt = setup_mpl()
     aud = Audit("fig5_degradation")
-    p = os.path.join(RESULTS, "degradation_closerange60.json")
+    _n20 = os.path.join(RESULTS, "degradation_closerange60_n20.json")
+    p = _n20 if os.path.exists(_n20) else os.path.join(RESULTS, "degradation_closerange60.json")
     labels, means, los, his = [], [], [], []
     for key, lab, _ in CONDS:
         m = aud.val(p, f"{key}.mean")
@@ -44,7 +45,8 @@ def main():
     ax.set_xticks(list(x)); ax.set_xticklabels(labels)
     ax.set_ylabel(r"Joint top-1 accuracy ($\theta$, $r$)")
     ax.set_ylim(0, top * 1.18)
-    ax.set_title("Sensor-degradation robustness (5 seeds, 95% CI)")
+    nseed = int(aud.val(p, "clean.n"))
+    ax.set_title(f"Sensor-degradation robustness ({nseed} seeds, 95% CI)")
     save_fig(fig, "fig5_degradation")
     aud.write()
 

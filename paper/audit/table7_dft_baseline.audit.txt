@@ -3,15 +3,15 @@
 
 source JSON                                                    cell                               value
 --------------------------------------------------------------------------------------------------------------
-results\dft_baseline\dft_sweep.json                            results.60.polar.mean              0.8548180527476053
-results\dft_baseline\dft_sweep.json                            results.60.polar.hi                1.5143829395861297
-results\dft_baseline\dft_sweep.json                            results.140.polar.mean             1.6037040527749133
-results\dft_baseline\dft_sweep.json                            results.140.polar.hi               2.2447328194993026
-results\dft_baseline\dft_sweep.json                            results.60.dft.mean                8.168239385463101
-results\dft_baseline\dft_sweep.json                            results.60.dft.hi                  8.970423552388887
-results\dft_baseline\dft_sweep.json                            results.140.dft.mean               7.002708449475241
-results\dft_baseline\dft_sweep.json                            results.140.dft.hi                 7.269338936173172
-results\dft_baseline\dft_sweep.json                            results.60.dft_minus_polar.mean    7.313421332715497
-results\dft_baseline\dft_sweep.json                            results.60.dft_minus_polar.hi      7.823441490313484
-results\dft_baseline\dft_sweep.json                            results.140.dft_minus_polar.mean   5.399004396700327
-results\dft_baseline\dft_sweep.json                            results.140.dft_minus_polar.hi     6.044673176954193
+results\dft_baseline\dft_sweep_n20.json                        results.60.polar.mean              0.7332157436737333
+results\dft_baseline\dft_sweep_n20.json                        results.60.polar.hi                0.9381517693384995
+results\dft_baseline\dft_sweep_n20.json                        results.140.polar.mean             2.043392696058141
+results\dft_baseline\dft_sweep_n20.json                        results.140.polar.hi               3.108362449124965
+results\dft_baseline\dft_sweep_n20.json                        results.60.dft.mean                7.997947764882538
+results\dft_baseline\dft_sweep_n20.json                        results.60.dft.hi                  8.222712288822915
+results\dft_baseline\dft_sweep_n20.json                        results.140.dft.mean               7.22752879464573
+results\dft_baseline\dft_sweep_n20.json                        results.140.dft.hi                 7.546326110780414
+results\dft_baseline\dft_sweep_n20.json                        results.60.dft_minus_polar.mean    7.264732021208803
+results\dft_baseline\dft_sweep_n20.json                        results.60.dft_minus_polar.hi      7.513511417099489
+results\dft_baseline\dft_sweep_n20.json                        results.140.dft_minus_polar.mean   5.1841360985875875
+results\dft_baseline\dft_sweep_n20.json                        results.140.dft_minus_polar.hi     5.995834317040723

@@ -12,10 +12,22 @@
 \newcommand{\NFgainKeightSixtyCI}{0.66}  % 95% CI half-width of dbloss.8.nf, 60 GHz (dB)
 \newcommand{\NFgainKeightOneForty}{1.60}  % mean radar_closerange_140GHz_seed*_metrics.json :: dbloss.8.nf (dB)
 \newcommand{\NFgainKeightOneFortyCI}{0.64}  % 95% CI half-width of dbloss.8.nf, 140 GHz (dB)
-\newcommand{\NFcdfMedianSixty}{0.00}  % median -10log10(gain_ratio_k4_nf), 60 GHz (dB, pooled n=1671)
-\newcommand{\NFwithinOneDBSixty}{74\%}  % frac gain_ratio_k4_nf within 1 dB, 60 GHz
-\newcommand{\NFcdfMedianOneForty}{0.16}  % median -10log10(gain_ratio_k4_nf), 140 GHz (dB, pooled n=820)
-\newcommand{\NFwithinOneDBOneForty}{63\%}  % frac gain_ratio_k4_nf within 1 dB, 140 GHz
+\newcommand{\NFcdfMedianSixty}{0.00}  % median NF K=4 dB-loss CDF; close_n20.json :: results.60.softavg.gain_ratio_k4_nf (n=20 soft-avg)
+\newcommand{\NFwithinOneDBSixty}{83\%}  % frac <=1 dB; close_n20.json :: results.60.softavg.gain_ratio_k4_nf (n=20 soft-avg)
+\newcommand{\NFcdfMedianOneForty}{0.00}  % median NF K=4 dB-loss CDF; close_n20.json :: results.140.softavg.gain_ratio_k4_nf (n=20 soft-avg)
+\newcommand{\NFwithinOneDBOneForty}{65\%}  % frac <=1 dB; close_n20.json :: results.140.softavg.gain_ratio_k4_nf (n=20 soft-avg)
+\newcommand{\NFgainKeightSixtyNtwenty}{0.73}  % close_n20.json :: results.60.radar.db8_nf mean (n=20 dB)
+\newcommand{\SoftAvgGainKeightSixtyNtwenty}{0.37}  % close_n20.json :: results.60.softavg.db8_nf mean (n=20 dB)
+\newcommand{\NFcdfMedianRadarSixtyNtwenty}{0.00}  % close_n20.json median -10log10(gain_ratio_k4_nf) radar 60GHz (dB)
+\newcommand{\NFwithinOneDBRadarSixtyNtwenty}{77\%}  % close_n20.json frac<=1dB radar 60GHz
+\newcommand{\NFcdfMedianSoftavgSixtyNtwenty}{0.00}  % close_n20.json median -10log10(gain_ratio_k4_nf) softavg 60GHz (dB)
+\newcommand{\NFwithinOneDBSoftavgSixtyNtwenty}{83\%}  % close_n20.json frac<=1dB softavg 60GHz
+\newcommand{\NFgainKeightOneFortyNtwenty}{2.04}  % close_n20.json :: results.140.radar.db8_nf mean (n=20 dB)
+\newcommand{\SoftAvgGainKeightOneFortyNtwenty}{0.91}  % close_n20.json :: results.140.softavg.db8_nf mean (n=20 dB)
+\newcommand{\NFcdfMedianRadarOneFortyNtwenty}{0.40}  % close_n20.json median -10log10(gain_ratio_k4_nf) radar 140GHz (dB)
+\newcommand{\NFwithinOneDBRadarOneFortyNtwenty}{57\%}  % close_n20.json frac<=1dB radar 140GHz
+\newcommand{\NFcdfMedianSoftavgOneFortyNtwenty}{0.00}  % close_n20.json median -10log10(gain_ratio_k4_nf) softavg 140GHz (dB)
+\newcommand{\NFwithinOneDBSoftavgOneFortyNtwenty}{65\%}  % close_n20.json frac<=1dB softavg 140GHz
 \newcommand{\FusionRadarDBSixty}{0.85}  % mean radar dbloss.8.nf, 60 GHz (dB)
 \newcommand{\FusionFusedDBSixty}{0.70}  % mean fusion dbloss.8.nf, 60 GHz (dB)
 \newcommand{\FusionPSixty}{0.243}  % paired_t_test p, radar vs fusion dbloss.8.nf, 60 GHz
@@ -24,11 +36,11 @@
 \newcommand{\FusionFusedDBOneForty}{1.70}  % mean fusion dbloss.8.nf, 140 GHz (dB)
 \newcommand{\FusionPOneForty}{0.469}  % paired_t_test p, radar vs fusion dbloss.8.nf, 140 GHz
 \newcommand{\FusionCohenDOneForty}{-0.36}  % Cohen d, radar vs fusion dbloss.8.nf, 140 GHz
-\newcommand{\DegradClean}{0.607}  % degradation_closerange60.json :: clean.mean
-\newcommand{\DegradLidarOut}{0.561}  % degradation_closerange60.json :: lidar_out.mean
-\newcommand{\DegradMisalign}{0.574}  % degradation_closerange60.json :: misalign5deg.mean
-\newcommand{\DegradRadarOut}{0.349}  % degradation_closerange60.json :: radar_out.mean
-\newcommand{\DegradBothOut}{0.009}  % degradation_closerange60.json :: both_out.mean
+\newcommand{\DegradClean}{0.655}  % degradation_closerange60.json :: clean.mean
+\newcommand{\DegradLidarOut}{0.604}  % degradation_closerange60.json :: lidar_out.mean
+\newcommand{\DegradMisalign}{0.635}  % degradation_closerange60.json :: misalign5deg.mean
+\newcommand{\DegradRadarOut}{0.337}  % degradation_closerange60.json :: radar_out.mean
+\newcommand{\DegradBothOut}{0.013}  % degradation_closerange60.json :: both_out.mean
 \newcommand{\DSVtwoiTopOne}{23.1}  % mean radar_deepsense_scenario31_seed*.json :: test.theta (%)
 \newcommand{\DSVtwoiTopOneCI}{2.4}  % 95% CI half-width top-1, scenario 31 (%)
 \newcommand{\DSVtwovTopOne}{17.1}  % mean radar_deepsense_scenario36_seed*.json :: test.theta (%)
@@ -60,10 +72,45 @@
 \newcommand{\RuleTempEightSixty}{0.61}  % rule_sweep.json :: results.60.temp8.mean (NF K=8 dB-loss)
 \newcommand{\RuleTempEightOneForty}{1.12}  % rule_sweep.json :: results.140.temp8.mean (NF K=8 dB-loss)
 \newcommand{\RuleTempFourPOneForty}{0.044}  % paired_t temp4 vs radar-alone @140GHz -- 1/12 tests, NOT robust (Bonferroni ~0.53)
-\newcommand{\DFTpolarSixty}{0.85}  % dft_sweep.json :: results.60.polar.mean (NF K=8 dB-loss)
-\newcommand{\DFTonlySixty}{8.17}  % dft_sweep.json :: results.60.dft.mean (angle-only j=0 slice)
-\newcommand{\DFTpenaltySixty}{7.31}  % dft_sweep.json :: results.60.dft_minus_polar.mean (dB DFT costs vs polar)
-\newcommand{\DFTpolarOneForty}{1.60}  % dft_sweep.json :: results.140.polar.mean (NF K=8 dB-loss)
-\newcommand{\DFTonlyOneForty}{7.00}  % dft_sweep.json :: results.140.dft.mean (angle-only j=0 slice)
-\newcommand{\DFTpenaltyOneForty}{5.40}  % dft_sweep.json :: results.140.dft_minus_polar.mean (dB DFT costs vs polar)
+\newcommand{\DFTpolarSixty}{0.73}  % dft_sweep.json :: results.60.polar.mean (NF K=8 dB-loss)
+\newcommand{\DFTonlySixty}{8.00}  % dft_sweep.json :: results.60.dft.mean (angle-only j=0 slice)
+\newcommand{\DFTpenaltySixty}{7.26}  % dft_sweep.json :: results.60.dft_minus_polar.mean (dB DFT costs vs polar)
+\newcommand{\DFTpolarOneForty}{2.04}  % dft_sweep.json :: results.140.polar.mean (NF K=8 dB-loss)
+\newcommand{\DFTonlyOneForty}{7.23}  % dft_sweep.json :: results.140.dft.mean (angle-only j=0 slice)
+\newcommand{\DFTpenaltyOneForty}{5.18}  % dft_sweep.json :: results.140.dft_minus_polar.mean (dB DFT costs vs polar)
+\newcommand{\HierMeas}{71}  % gain_overhead_n20.json :: hier_measurements (64 angle + 7 range)
+\newcommand{\NumKMeas}{8}  % our predictor K=8 shortlist size (RF measurements)
+\newcommand{\HierMeasRatio}{9}  % round(HierMeas/8) — measurement ratio vs our K=8 predictor
+\newcommand{\ExhaustiveMeas}{512}  % polar codebook size 64*8 (genie sweep)
+\newcommand{\HierLossSixty}{2.56}  % gain_overhead_n20.json :: results.60.hierarchical.mean (n=20, 71 meas)
+\newcommand{\NFlossSoftAvgKfourSixty}{1.12}  % gain_overhead_n20.json :: results.60.softavg.K4.mean (n=20 dB)
+\newcommand{\HierLossOneForty}{2.03}  % gain_overhead_n20.json :: results.140.hierarchical.mean (n=20, 71 meas)
+\newcommand{\NFlossSoftAvgKfourOneForty}{2.65}  % gain_overhead_n20.json :: results.140.softavg.K4.mean (n=20 dB)
+\newcommand{\TaskANSeeds}{20}  % taskA_stats_n20.json :: n_seeds (D-018 powered study)
+\newcommand{\DOETostPSixty}{$<$0.001}  % taskA_stats_n20.json :: D-015 vs radar TOST p @60GHz (equivalent=True)
+\newcommand{\SoftAvgTPSixty}{0.001}  % taskA_stats_n20.json :: soft-avg vs radar paired-t p @60GHz (significant)
+\newcommand{\DOETostPOneForty}{0.553}  % taskA_stats_n20.json :: D-015 vs radar TOST p @140GHz (equivalent=False)
+\newcommand{\SoftAvgTPOneForty}{0.016}  % taskA_stats_n20.json :: soft-avg vs radar paired-t p @140GHz (significant)
+\newcommand{\BonfAnySig}{yes}  % taskA_stats.json :: bonferroni.any_significant (m=12 rule x freq comparisons)
+\newcommand{\DNineteenVerdictSixty}{mixed}  % ensemble_confound_clean.json 60GHz (modality|ensembling|mixed); all member leakage=0.000
+\newcommand{\DNineteenVerdictOneForty}{mixed}  % ensemble_confound_clean.json 140GHz (modality|ensembling|mixed); all member leakage=0.000
+\newcommand{\MobVtwoiTopOneDzero}{23.1\%}  % future_beam.json :: results.31.0.top1.mean (horizon 0.0s)
+\newcommand{\MobVtwoiTopOneDthree}{23.8\%}  % future_beam.json :: results.31.3.top1.mean (horizon 0.3s)
+\newcommand{\MobVtwoiCovKeightDthree}{70\%}  % future_beam.json :: results.31.3.coverage.8.mean (0.3s horizon)
+\newcommand{\MobVtwovTopOneDzero}{15.8\%}  % future_beam.json :: results.36.0.top1.mean (horizon 0.0s)
+\newcommand{\MobVtwovTopOneDthree}{17.0\%}  % future_beam.json :: results.36.3.top1.mean (horizon 0.3s)
+\newcommand{\MobVtwovCovKeightDthree}{49\%}  % future_beam.json :: results.36.3.coverage.8.mean (0.3s horizon)
+\newcommand{\MobHorizonMax}{0.3\,s}  % future_beam.json max horizon (3 frames x 0.1 s)
+\newcommand{\MobDisplMax}{1.5\,m}  % future_beam.json max mean displacement, m (V2V)
+\newcommand{\NFlossRadarNtwentySixty}{0.73}  % taskA_stats_n20.json :: comparisons.60GHz__radar_vs_soft_avg.radar_mean (n=20 dB)
+\newcommand{\NFlossSoftAvgKeightSixty}{0.37}  % taskA_stats_n20.json :: comparisons.60GHz__radar_vs_soft_avg.rule_mean (n=20 soft-avg K=8 dB)
+\newcommand{\SoftAvgWilcoxonSixty}{0.001}  % taskA_stats_n20.json :: comparisons.60GHz__radar_vs_soft_avg.wilcoxon_p
+\newcommand{\SoftAvgCohenDSixty}{+0.83}  % taskA_stats_n20.json :: comparisons.60GHz__radar_vs_soft_avg.cohen_d
+\newcommand{\NFlossRadarNtwentyOneForty}{2.04}  % taskA_stats_n20.json :: comparisons.140GHz__radar_vs_soft_avg.radar_mean (n=20 dB)
+\newcommand{\NFlossSoftAvgKeightOneForty}{0.91}  % taskA_stats_n20.json :: comparisons.140GHz__radar_vs_soft_avg.rule_mean (n=20 soft-avg K=8 dB)
+\newcommand{\SoftAvgWilcoxonOneForty}{0.001}  % taskA_stats_n20.json :: comparisons.140GHz__radar_vs_soft_avg.wilcoxon_p
+\newcommand{\SoftAvgCohenDOneForty}{+0.59}  % taskA_stats_n20.json :: comparisons.140GHz__radar_vs_soft_avg.cohen_d
+\newcommand{\SoftAvgTPFiveSeedSixty}{0.254}  % taskA_stats.json (n=5) :: 60GHz soft-avg vs radar paired-t p
+\newcommand{\SoftAvgTPFiveSeedOneForty}{0.061}  % taskA_stats.json (n=5) :: 140GHz soft-avg vs radar paired-t p
+\newcommand{\EnsLeakFrac}{89\%}  % ensemble_confound.json :: b_leakage_frac (leaky cross-seed ensemble)
 

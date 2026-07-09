@@ -2,13 +2,13 @@
 \toprule
 Combination rule & 60\,GHz & $p$ & 140\,GHz & $p$ \\
 \midrule
-Radar-alone (reference) & 0.85±0.66 & — & 1.60±0.64 & — \\
-Soft-avg (C3 confidence-weighted) & 0.55±0.22 & 0.254 & 1.20±0.35 & 0.061 \\
-Argmax-confidence (both heads) & 0.79±0.34 & 0.704 & 1.66±0.98 & 0.901 \\
-Radar angle + best-range (D-015, headline) & 0.70±0.45 & 0.243 & 1.70±0.64 & 0.469 \\
-Radar angle + radar range & 0.85±0.66 & 1.000 & 1.60±0.64 & 1.000 \\
-Temperature C3 (T=4) & 0.53±0.25 & 0.153 & 1.07±0.52 & 0.044* \\
-Temperature C3 (T=8) & 0.61±0.31 & 0.169 & 1.12±0.77 & 0.147 \\
+Radar-alone (reference) & 0.73$\pm$0.20 & --- & 2.04$\pm$1.06 & --- \\
+Soft-avg (C3 confidence-weighted) & 0.37$\pm$0.08 & 0.001* & 0.91$\pm$0.25 & 0.016* \\
+Argmax-confidence (both heads) & 0.57$\pm$0.14 & 0.079 & 1.36$\pm$0.43 & 0.100 \\
+Radar angle + best-range (D-015, single-sensor rule) & 0.55$\pm$0.15 & 0.030* & 1.49$\pm$0.43 & 0.152 \\
+Radar angle + radar range & 0.67$\pm$0.24 & 0.518 & 1.42$\pm$0.44 & 0.096 \\
+Temperature C3 (T=4) & 0.38$\pm$0.09 & 0.001* & 0.91$\pm$0.32 & 0.010* \\
+Temperature C3 (T=8) & 0.44$\pm$0.11 & 0.002* & 0.98$\pm$0.33 & 0.016* \\
 \bottomrule
 \end{tabular}
-% * p<0.05 uncorrected; the single starred case (temp4, 140GHz) fails Bonferroni correction across 12 tests.%
+% * p<0.05 uncorrected; Soft-avg (C3 confidence-weighted) @60GHz, Temperature C3 (T=4) @60GHz, Temperature C3 (T=8) @60GHz survive Bonferroni (x12).%

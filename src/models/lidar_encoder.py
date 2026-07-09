@@ -3,7 +3,7 @@
 docs/02 §4.2: "Same CNN on 2-channel BEV." So `LidarEncoder` reuses the exact radar
 encoder architecture (4 GroupNorm conv blocks 32->64->128->256 -> GAP -> projection ->
 d_z), applied to the (2, 150, 100) BEV (point-count + mean-intensity). GroupNorm, not
-BatchNorm (D9). This mirrors Batch 5 for a fair single-modality radar-vs-LiDAR comparison.
+BatchNorm (D9). This mirrors the radar single-modality setup for a fair single-modality radar-vs-LiDAR comparison.
 """
 from __future__ import annotations
 

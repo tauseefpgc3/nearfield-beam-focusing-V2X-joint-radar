@@ -1,4 +1,4 @@
-"""Train the radar+LiDAR cross-attention fusion predictor (Paper 5 Batch 7).
+"""Train the radar+LiDAR cross-attention fusion predictor.
 
 3-branch (radar / LiDAR / fused) supervision, modality dropout (p=0.15 each, never both,
 train only), confidence-weighted ensemble at eval. Same close-range 60 GHz, seed 11,

@@ -13,6 +13,8 @@ $PY scripts/figures/fig4_cdf.py
 $PY scripts/figures/fig5_degradation.py
 $PY scripts/figures/fig6_scene_geometry.py
 $PY scripts/figures/fig7_polar_focus.py
+$PY scripts/figures/fig8_mobility.py
+$PY scripts/figures/fig_pareto.py
 
 echo "=== Architecture skeleton (TikZ, Fig 1) ==="
 if command -v pdflatex >/dev/null 2>&1; then
@@ -33,6 +35,12 @@ $PY scripts/tables/table4_ablation.py
 $PY scripts/tables/table5_o1anchor.py
 $PY scripts/tables/table6_fusion_rules.py
 $PY scripts/tables/table7_dft_baseline.py
+$PY scripts/tables/table8_gain_overhead.py
+$PY scripts/eval_taskA_stats.py
+$PY scripts/tables/table9_fusion_stats.py
+$PY scripts/tables/table10_headline_n5_vs_n20.py
+$PY scripts/tables/table11_ensemble_confound.py
+$PY scripts/tables/table12_mobility.py
 
 echo "=== Canonical numbers (single source of truth) ==="
 $PY scripts/canonical_numbers.py

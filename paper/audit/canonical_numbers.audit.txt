@@ -36,16 +36,16 @@ results\indomain\radar_closerange_140GHz_seed22_metrics.json   dbloss.8.nf      
 results\indomain\radar_closerange_140GHz_seed33_metrics.json   dbloss.8.nf                        1.1341768871309856
 results\indomain\radar_closerange_140GHz_seed44_metrics.json   dbloss.8.nf                        1.2445294979706172
 results\indomain\radar_closerange_140GHz_seed55_metrics.json   dbloss.8.nf                        1.3384078240520518
-results\indomain\radar_closerange_60GHz_seed11_metrics.json    gain_ratio_k4_nf                   <list n=353>
-results\indomain\radar_closerange_60GHz_seed22_metrics.json    gain_ratio_k4_nf                   <list n=356>
-results\indomain\radar_closerange_60GHz_seed33_metrics.json    gain_ratio_k4_nf                   <list n=287>
-results\indomain\radar_closerange_60GHz_seed44_metrics.json    gain_ratio_k4_nf                   <list n=335>
-results\indomain\radar_closerange_60GHz_seed55_metrics.json    gain_ratio_k4_nf                   <list n=340>
-results\indomain\radar_closerange_140GHz_seed11_metrics.json   gain_ratio_k4_nf                   <list n=165>
-results\indomain\radar_closerange_140GHz_seed22_metrics.json   gain_ratio_k4_nf                   <list n=172>
-results\indomain\radar_closerange_140GHz_seed33_metrics.json   gain_ratio_k4_nf                   <list n=150>
-results\indomain\radar_closerange_140GHz_seed44_metrics.json   gain_ratio_k4_nf                   <list n=191>
-results\indomain\radar_closerange_140GHz_seed55_metrics.json   gain_ratio_k4_nf                   <list n=142>
+results\indomain_n20\close_n20.json                            results.60.softavg.gain_ratio_k4_nf <list n=6530>
+results\indomain_n20\close_n20.json                            results.140.softavg.gain_ratio_k4_nf <list n=3201>
+results\indomain_n20\close_n20.json                            results.60.radar.db8_nf            <list n=20>
+results\indomain_n20\close_n20.json                            results.60.softavg.db8_nf          <list n=20>
+results\indomain_n20\close_n20.json                            results.60.radar.gain_ratio_k4_nf  <list n=6530>
+results\indomain_n20\close_n20.json                            results.60.softavg.gain_ratio_k4_nf <list n=6530>
+results\indomain_n20\close_n20.json                            results.140.radar.db8_nf           <list n=20>
+results\indomain_n20\close_n20.json                            results.140.softavg.db8_nf         <list n=20>
+results\indomain_n20\close_n20.json                            results.140.radar.gain_ratio_k4_nf <list n=3201>
+results\indomain_n20\close_n20.json                            results.140.softavg.gain_ratio_k4_nf <list n=3201>
 results\indomain\radar_closerange_60GHz_seed11_metrics.json    dbloss.8.nf                        0.5014831113388957
 results\indomain\radar_closerange_60GHz_seed22_metrics.json    dbloss.8.nf                        1.18374790783103
 results\indomain\radar_closerange_60GHz_seed33_metrics.json    dbloss.8.nf                        0.6057356309635687
@@ -66,11 +66,11 @@ results\indomain\fusion_closerange_140GHz_seed22_metrics.json  dbloss.8.nf      
 results\indomain\fusion_closerange_140GHz_seed33_metrics.json  dbloss.8.nf                        1.2473239126366873
 results\indomain\fusion_closerange_140GHz_seed44_metrics.json  dbloss.8.nf                        1.564170126496029
 results\indomain\fusion_closerange_140GHz_seed55_metrics.json  dbloss.8.nf                        1.498446897406813
-results\degradation_closerange60.json                          clean.mean                         0.606888044954363
-results\degradation_closerange60.json                          lidar_out.mean                     0.5609726755195761
-results\degradation_closerange60.json                          misalign5deg.mean                  0.5741691519589722
-results\degradation_closerange60.json                          radar_out.mean                     0.3487665344887549
-results\degradation_closerange60.json                          both_out.mean                      0.00884684098206737
+results\degradation_closerange60_n20.json                      clean.mean                         0.6551648679881796
+results\degradation_closerange60_n20.json                      lidar_out.mean                     0.6035784348444018
+results\degradation_closerange60_n20.json                      misalign5deg.mean                  0.6353864586269073
+results\degradation_closerange60_n20.json                      radar_out.mean                     0.33729929796365377
+results\degradation_closerange60_n20.json                      both_out.mean                      0.012646855973228694
 results\indomain\radar_deepsense_scenario31_seed11.json        test.theta                         0.24407753348350525
 results\indomain\radar_deepsense_scenario31_seed22.json        test.theta                         0.25424981117248535
 results\indomain\radar_deepsense_scenario31_seed33.json        test.theta                         0.20995670557022095
@@ -118,9 +118,53 @@ results\fusion_rules\rule_sweep.json                           results.60.temp8.
 results\fusion_rules\rule_sweep.json                           results.140.temp8.mean             1.1181268980791599
 results\fusion_rules\rule_sweep.json                           results.140.radar_alone.per_seed   <list n=5>
 results\fusion_rules\rule_sweep.json                           results.140.temp4.per_seed         <list n=5>
-results\dft_baseline\dft_sweep.json                            results.60.polar.mean              0.8548180527476053
-results\dft_baseline\dft_sweep.json                            results.60.dft.mean                8.168239385463101
-results\dft_baseline\dft_sweep.json                            results.60.dft_minus_polar.mean    7.313421332715497
-results\dft_baseline\dft_sweep.json                            results.140.polar.mean             1.6037040527749133
-results\dft_baseline\dft_sweep.json                            results.140.dft.mean               7.002708449475241
-results\dft_baseline\dft_sweep.json                            results.140.dft_minus_polar.mean   5.399004396700327
+results\dft_baseline\dft_sweep_n20.json                        results.60.polar.mean              0.7332157436737333
+results\dft_baseline\dft_sweep_n20.json                        results.60.dft.mean                7.997947764882538
+results\dft_baseline\dft_sweep_n20.json                        results.60.dft_minus_polar.mean    7.264732021208803
+results\dft_baseline\dft_sweep_n20.json                        results.140.polar.mean             2.043392696058141
+results\dft_baseline\dft_sweep_n20.json                        results.140.dft.mean               7.22752879464573
+results\dft_baseline\dft_sweep_n20.json                        results.140.dft_minus_polar.mean   5.1841360985875875
+results\gain_overhead_n20.json                                 hier_measurements                  71
+results\gain_overhead_n20.json                                 exhaustive_measurements            512
+results\gain_overhead_n20.json                                 results.60.hierarchical.mean       2.563724998614826
+results\gain_overhead_n20.json                                 results.60.softavg.K4.mean         1.1206287659095133
+results\gain_overhead_n20.json                                 results.140.hierarchical.mean      2.02679860370437
+results\gain_overhead_n20.json                                 results.140.softavg.K4.mean        2.6527692303769617
+results\fusion_rules\taskA_stats_n20.json                      n_seeds                            20
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.tost_p 0.0003012913976795112
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.tost_equivalent True
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.paired_t_p 0.001435017188551479
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.tost_p 0.5526314831757355
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.tost_equivalent False
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.paired_t_p 0.016440287895770976
+results\fusion_rules\taskA_stats_n20.json                      bonferroni.any_significant         True
+results\fusion_rules\taskA_stats_n20.json                      bonferroni.m                       12
+results\fusion_rules\ensemble_confound_clean.json              results.60.c_better_in_all_splits  False
+results\fusion_rules\ensemble_confound_clean.json              results.60.c_worse_in_all_splits   False
+results\fusion_rules\ensemble_confound_clean.json              results.140.c_better_in_all_splits False
+results\fusion_rules\ensemble_confound_clean.json              results.140.c_worse_in_all_splits  False
+results\mobility\future_beam.json                              results.31.0.top1.mean             0.23078741416662568
+results\mobility\future_beam.json                              results.31.0.horizon_s             0.0
+results\mobility\future_beam.json                              results.31.3.top1.mean             0.2382595308804288
+results\mobility\future_beam.json                              results.31.3.horizon_s             0.30000000000000004
+results\mobility\future_beam.json                              results.31.3.coverage.8.mean       0.7033581072159382
+results\mobility\future_beam.json                              results.36.0.top1.mean             0.15799774789018417
+results\mobility\future_beam.json                              results.36.0.horizon_s             0.0
+results\mobility\future_beam.json                              results.36.3.top1.mean             0.17015477790289119
+results\mobility\future_beam.json                              results.36.3.horizon_s             0.30000000000000004
+results\mobility\future_beam.json                              results.36.3.coverage.8.mean       0.49135648932767995
+results\mobility\future_beam.json                              results.31.3.horizon_s             0.30000000000000004
+results\mobility\future_beam.json                              results.31.3.mean_disp_m           1.1611530780792236
+results\mobility\future_beam.json                              results.36.3.mean_disp_m           1.485548734664917
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.radar_mean 0.7332157436737333
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.rule_mean 0.3735742642056019
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.wilcoxon_p 0.000850677490234375
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.cohen_d 0.8329712101205665
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.radar_mean 2.043392696058141
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.rule_mean 0.9135644935478657
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.wilcoxon_p 0.001209259033203125
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.cohen_d 0.5884200463096296
+results\fusion_rules\taskA_stats.json                          comparisons.60GHz__radar_vs_soft_avg.paired_t_p 0.2544769622454314
+results\fusion_rules\taskA_stats.json                          comparisons.140GHz__radar_vs_soft_avg.paired_t_p 0.06060794694450966
+results\fusion_rules\ensemble_confound.json                    results.60.b_leakage_frac.mean     0.8940120671873343
+results\fusion_rules\ensemble_confound.json                    results.140.b_leakage_frac.mean    0.8946604639984488

@@ -1,0 +1,45 @@
+# Consistency audit — table8_gain_overhead
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\gain_overhead_n20.json                                 hier_measurements                  71
+results\gain_overhead_n20.json                                 n_seeds                            20
+results\gain_overhead_n20.json                                 results.60.hierarchical.mean       2.563724998614826
+results\gain_overhead_n20.json                                 results.60.hierarchical.hi         2.7838595707382567
+results\gain_overhead_n20.json                                 results.60.hierarchical.mean       2.563724998614826
+results\gain_overhead_n20.json                                 results.140.hierarchical.mean      2.02679860370437
+results\gain_overhead_n20.json                                 results.140.hierarchical.hi        2.1476479455207027
+results\gain_overhead_n20.json                                 results.140.hierarchical.mean      2.02679860370437
+results\gain_overhead_n20.json                                 results.60.softavg.K1.mean         4.530832956236112
+results\gain_overhead_n20.json                                 results.60.softavg.K1.hi           5.238526710929915
+results\gain_overhead_n20.json                                 results.140.softavg.K1.mean        6.936843338952622
+results\gain_overhead_n20.json                                 results.140.softavg.K1.hi          7.66302222624733
+results\gain_overhead_n20.json                                 results.60.softavg.K2.mean         2.673713711264523
+results\gain_overhead_n20.json                                 results.60.softavg.K2.hi           3.1502206617143402
+results\gain_overhead_n20.json                                 results.140.softavg.K2.mean        5.2708246101826415
+results\gain_overhead_n20.json                                 results.140.softavg.K2.hi          5.8028044693214555
+results\gain_overhead_n20.json                                 results.60.softavg.K4.mean         1.1206287659095133
+results\gain_overhead_n20.json                                 results.60.softavg.K4.hi           1.3791642329162785
+results\gain_overhead_n20.json                                 results.140.softavg.K4.mean        2.6527692303769617
+results\gain_overhead_n20.json                                 results.140.softavg.K4.hi          3.1523700590607207
+results\gain_overhead_n20.json                                 results.60.softavg.K8.mean         0.3735742642056019
+results\gain_overhead_n20.json                                 results.60.softavg.K8.hi           0.45236320290983334
+results\gain_overhead_n20.json                                 results.140.softavg.K8.mean        0.9135644935478657
+results\gain_overhead_n20.json                                 results.140.softavg.K8.hi          1.1598471812083924
+results\gain_overhead_n20.json                                 results.60.radar.K1.mean           6.433195421851117
+results\gain_overhead_n20.json                                 results.60.radar.K1.hi             7.189047330140664
+results\gain_overhead_n20.json                                 results.140.radar.K1.mean          9.337145810910702
+results\gain_overhead_n20.json                                 results.140.radar.K1.hi            11.837837568132663
+results\gain_overhead_n20.json                                 results.60.radar.K2.mean           4.10254712803142
+results\gain_overhead_n20.json                                 results.60.radar.K2.hi             4.774830704821909
+results\gain_overhead_n20.json                                 results.140.radar.K2.mean          7.267846164078217
+results\gain_overhead_n20.json                                 results.140.radar.K2.hi            9.08402297236262
+results\gain_overhead_n20.json                                 results.60.radar.K4.mean           2.0445875335710775
+results\gain_overhead_n20.json                                 results.60.radar.K4.hi             2.4726426874000236
+results\gain_overhead_n20.json                                 results.140.radar.K4.mean          4.162918795198381
+results\gain_overhead_n20.json                                 results.140.radar.K4.hi            5.692097483952902
+results\gain_overhead_n20.json                                 results.60.radar.K8.mean           0.7332157436737333
+results\gain_overhead_n20.json                                 results.60.radar.K8.hi             0.9381517693384995
+results\gain_overhead_n20.json                                 results.140.radar.K8.mean          2.043392696058141
+results\gain_overhead_n20.json                                 results.140.radar.K8.hi            3.108362449124965

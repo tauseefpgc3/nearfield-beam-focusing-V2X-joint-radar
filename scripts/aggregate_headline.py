@@ -1,4 +1,4 @@
-"""Aggregate the headline sweep into the main results table + statistics (Batch 8).
+"""Aggregate the headline sweep into the main results table + statistics.
 
 Reads results/indomain/{modality}_{dtag}_seed{seed}_metrics.json across seeds and reports:
   - close-range headline table (radar/LiDAR/fusion x {60,140}): mean +/- 95% CI

@@ -1,4 +1,4 @@
-"""Generate the synthetic multi-modal dataset from DeepMIMO O1 (Paper 5, Batch 2).
+"""Generate the synthetic multi-modal dataset from DeepMIMO O1.
 
 Pipeline per user (docs/04 Step 6; decisions D-008/D-009/D-010):
   1. DeepMIMO O1 ray-tracing geometry -> in-FoV per-path (azimuth, range, gain)

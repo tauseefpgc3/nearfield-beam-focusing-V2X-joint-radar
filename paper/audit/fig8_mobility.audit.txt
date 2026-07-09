@@ -1,0 +1,30 @@
+# Consistency audit — fig8_mobility
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\mobility\future_beam.json                              deltas                             <list n=4>
+results\mobility\future_beam.json                              results.31.0.horizon_s             0.0
+results\mobility\future_beam.json                              results.31.0.top1.mean             0.23078741416662568
+results\mobility\future_beam.json                              results.31.0.top1.hi               0.25985298276293317
+results\mobility\future_beam.json                              results.31.1.horizon_s             0.1
+results\mobility\future_beam.json                              results.31.1.top1.mean             0.2297931323292141
+results\mobility\future_beam.json                              results.31.1.top1.hi               0.2570052626764505
+results\mobility\future_beam.json                              results.31.2.horizon_s             0.2
+results\mobility\future_beam.json                              results.31.2.top1.mean             0.2339400363474331
+results\mobility\future_beam.json                              results.31.2.top1.hi               0.2644508433470688
+results\mobility\future_beam.json                              results.31.3.horizon_s             0.30000000000000004
+results\mobility\future_beam.json                              results.31.3.top1.mean             0.2382595308804288
+results\mobility\future_beam.json                              results.31.3.top1.hi               0.2646537111557614
+results\mobility\future_beam.json                              results.36.0.horizon_s             0.0
+results\mobility\future_beam.json                              results.36.0.top1.mean             0.15799774789018417
+results\mobility\future_beam.json                              results.36.0.top1.hi               0.217248745596538
+results\mobility\future_beam.json                              results.36.1.horizon_s             0.1
+results\mobility\future_beam.json                              results.36.1.top1.mean             0.16408180189718857
+results\mobility\future_beam.json                              results.36.1.top1.hi               0.22091895667406047
+results\mobility\future_beam.json                              results.36.2.horizon_s             0.2
+results\mobility\future_beam.json                              results.36.2.top1.mean             0.17113055700191038
+results\mobility\future_beam.json                              results.36.2.top1.hi               0.2377217965339925
+results\mobility\future_beam.json                              results.36.3.horizon_s             0.30000000000000004
+results\mobility\future_beam.json                              results.36.3.top1.mean             0.17015477790289119
+results\mobility\future_beam.json                              results.36.3.top1.hi               0.23588131470534554

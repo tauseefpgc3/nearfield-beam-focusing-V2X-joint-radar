@@ -1,4 +1,4 @@
-"""Process DeepSense6G Scenario 36 (V2V, 4-array format) -> HDF5 (Paper 5 Batch 3, E7).
+"""Process DeepSense6G Scenario 36 (V2V, 4-array format) -> HDF5.
 
 Option A (per-array 64-beam, apples-to-apples with scenario 31): use radar1 + pwr1 only.
 Radar cube axis VERIFIED for scenario 36: (rx=4, chirps=256, samples=128) — range is the

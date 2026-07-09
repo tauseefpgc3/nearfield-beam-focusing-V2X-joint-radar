@@ -51,7 +51,7 @@ d_F = 2 * D^2 / lambda
 | 60 GHz | 0.004997  | **40.29 m**            | ~38 m               |
 | 140 GHz| 0.002141  | **17.27 m**            | ~16 m               |
 
-**Ballpark discrepancy (flagged for auditor):** the supervisor's `~38/~16 m` used the
+**Ballpark discrepancy (flagged for review):** the supervisor's `~38/~16 m` used the
 `(128/32)^2 = 16` scaling from the old 32×32 values; the *exact* per-side formula keeps
 the `-1`, i.e. `(127/31)^2 = 16.78`, giving `40.29/17.27 m` (~6–8% higher). The locked
 D-002 formula is authoritative, so the **true targets are 86.35/40.29/17.27 m**; the
@@ -145,7 +145,7 @@ codebook reach full rank — a direct benefit of the 128×128 geometry. This sat
 
 ## D-008 — Synthetic channel = near-field reconstruction from DeepMIMO geometry
 
-**Decision (user-approved, Batch 2):** DeepMIMO v4 generates **far-field/planar** channels
+**Decision (user-approved, this phase):** DeepMIMO v4 generates **far-field/planar** channels
 (its `steering_vec` takes only azimuth/elevation, no range — confirmed in source). Using
 those channels directly would force every polar label to `j=0` (a planar wave's best
 polar codeword is always the far-field one), collapsing `y_r` and making Gate-0 G0.2
@@ -166,7 +166,7 @@ h = Σ_ℓ αₗ · spherical_steering(θₗ_az, rₗ)        (src/data/deepmimo
   match the azimuth×range codebook scope (locked decision — no elevation sampling).
 - **D-008a — per-path range proxy:** `rₗ = c·delayₗ` (total path length). Exact for the
   LoS path (which dominates the focusing label); for NLoS it is the apparent-source
-  distance proxy rather than the BS-to-first-bounce distance. **Flagged for the auditor**
+  distance proxy rather than the BS-to-first-bounce distance. **Flagged for review**
   — switchable to the `inter_pos`-based BS-side bounce distance
   (`range_via_inter_pos`). *Verified on real O1 (BS3, user 1234):* the two agree for LoS
   (293.5 vs 293.4 m) but diverge for NLoS (e.g. a 2-bounce path: `c·delay`=304 m vs
@@ -188,7 +188,7 @@ h = Σ_ℓ αₗ · spherical_steering(θₗ_az, rₗ)        (src/data/deepmimo
 `04_DATASET_SETUP.md` §6 calls the synthetic sensors a "proof-of-concept stand-in" and
 gives the recipe (Gaussian reflector at a range bin + seeded clutter; LiDAR points on a
 user bounding box + ground + seeded scatter) but not every constant. Choices made here
-(module constants, not magic numbers), **flagged for the auditor as tunable**:
+(module constants, not magic numbers), **flagged for review as tunable**:
 
 - Radar: `RANGE_RES_M = 1.2 m` → 256 range bins span 307.2 m (O1 user distances reach
   ~292 m; 0.6 m would clamp ~25% of users). Range bin = `round(d/1.2)`, clamped to
@@ -217,7 +217,7 @@ generation of all 498k users is infeasible (~130 GB of sensor tensors); 5000 fit
 ~8 GB budget (docs/04) and is ample for the distribution previews. Increase `--max-users`
 for the final training set once the near-field scope is resolved at Gate-0.
 
-**Original finding (32×32, Batch 2):** the BS sits at **z = 6 m** while users are on the
+**Original finding (32×32, this phase):** the BS sits at **z = 6 m** while users are on the
 ground, so the minimum BS→user distance is ≥ ~8 m ≫ `d_F` (2.4 m @ 60 GHz, 1.0 m @
 140 GHz). **No users were near-field** (`frac(d<d_F)=0.0000`), so polar labels collapsed
 to the far-field bin.
@@ -270,7 +270,7 @@ attr to each HDF5. Reporting (`report_distributions.py`) shows the regime three 
 `frac(d<d_F)`, raw `frac(y_r>0)`, and `frac(adv>=3 dB)` (the anchor), plus the 0.5 dB
 marginal band.
 
-**Flagged for auditor (open):** the gate sets `y_r:=0` per the instruction but leaves
+**Flagged for review (open):** the gate sets `y_r:=0` per the instruction but leaves
 `y_theta` unchanged; for ~150–190 sub-gate samples/file the kept `y_theta` differs from
 the DFT-optimal angle. Whether gated-to-far-field samples should also take the
 DFT-optimal `y_theta` is a labeling choice to confirm before Gate-0.
@@ -347,7 +347,7 @@ when a sample is gated to far-field, `y_theta` is **recomputed as the DFT-optima
 **Written BEFORE the warmstart run; outcome reported either way. This rule is fixed now
 and cannot become post-hoc.**
 
-Context: the combiner sweep (Batch 7 follow-up) proved fusion's only shortfall is that the
+Context: the combiner sweep proved fusion's only shortfall is that the
 jointly-trained in-fusion radar branch (angle 0.746) underperforms the standalone radar
 model (0.768), which erases LiDAR's real but small range gain. Standard fix (docs/10 D4):
 **warmstart the radar branch from the Batch-5 checkpoint** (frozen first — cleanest test),
@@ -365,13 +365,13 @@ analyzed-neutral result.
 **Run protocol (one configuration, no sweep, no target-chasing):** init radar encoder +
 radar head from `checkpoints/closerange_60GHz_radar/seed11.pt`; **freeze the radar branch
 first** (cleanest test); train LiDAR branch + cross-attn + fused head at lr 1e-4; same
-modality dropout, split, epochs as Batch 7. Only if frozen fails to train the rest, fall
+modality dropout, split, epochs as before. Only if frozen fails to train the rest, fall
 back to radar-branch lr 1e-5, and report which was used and why. Do not try multiple
 warmstart variants and pick the best.
 
 ---
 
-## D-016 — DeepSense real-data role (label-trust gate result, Batch 3)
+## D-016 — DeepSense real-data role (label-trust gate result, this phase)
 
 DeepSense6G has **no full channel** (per-DFT-beam power only), so polar labels are
 reconstructed and low-trust (G0.4). Scenario 31 (dev format, V2V, 7012 frames, 52
@@ -390,7 +390,7 @@ beam-selection** only. **Near-field beam-focusing-gain validation remains synthe
 (stated in the paper §V.A / §VI.B). DeepSense is never used to claim near-field gain, and
 (per G0.4) is validation-only — not a near-field training set.
 
-### D-016 addendum — radar cube-axis bug (Batch 3 diagnosis)
+### D-016 addendum — radar cube-axis bug
 
 The first DeepSense radar pass gave only ~12% top-1 angle (below published radar-aided
 baselines). Diagnosis: the DeepSense radar cube is **(rx=4, chirps=256, samples=250)** —
@@ -425,3 +425,81 @@ noisy bins. **CAVEAT (must travel with the number):** this rests on **n=3 seeds*
 **directional** result reported honestly (anti-HARK), NOT a significant win. The system
 model is unchanged (B_θ×B_r = 64×8 = 512). Supersedes the earlier mislabel of this choice
 as "D-016" (D-016 is the DeepSense real-data role; it does not concern B_r).
+
+## D-018 — PRE-REGISTERED: 20-seed radar-vs-fusion powered comparison (written BEFORE training)
+
+Reviewer flagged the fusion comparison as under-powered (n=5). We commit, **before running any
+of the new training**, to a 20-seed study and to reporting whatever it yields.
+
+- **Seeds:** the 5 existing {11,22,33,44,55} plus 15 new {66,77,88,99,110,121,132,143,154,
+  165,176,187,198,209,220} = **20 total**, at **60 and 140 GHz**, close-range scenario.
+- **Config:** identical to seeds 11–55 — same hyperparameters (Adam lr 1e-4, wd 1e-5, 50
+  epochs, batch 16, fp16, CosineAnnealing), same **trajectory-grouped splits regenerated per
+  seed**, same **warm-start-fusion-from-radar** procedure (`sweep_taskA.py`, resumable). GPU
+  required (no CPU fallback); checkpoints saved with scrubbed (repo-relative) args.
+- **Primary endpoint:** near-field beam-focusing loss @ K=8, **radar-alone vs soft-avg (C3)**,
+  per frequency.
+- **Secondary endpoint:** radar-alone vs **D-015 radar-primary**, **TOST ±0.5 dB equivalence**.
+- **Tests (all reported):** paired t-test AND Wilcoxon signed-rank; Cohen's d_z with
+  bootstrap 95% CI; TOST ±0.5 dB; **Bonferroni** over the full rule×frequency sweep.
+- **Decision rule, committed now (whatever n=20 shows is what the paper reports):**
+  - If soft-avg is **significant after Bonferroni** → paper reframes to *"the soft ensemble
+    yields a small significant gain; radar-primary is an equivalence-tested single-sensor
+    operating point."*
+  - If **not significant** → the negative result stands, now adequately powered.
+- **Forbidden:** no retuning, no seed selection, no stopping early on a favourable interim
+  result. Missed expectations are reported, never retuned (anti-HARK).
+- **Banking:** n=20 stats → `results/fusion_rules/taskA_stats_n20.json` (the n=5
+  `taskA_stats.json` is **not** overwritten); Table 9 + macros regenerate at n=20; the
+  headline radar/fusion K=8 numbers are reported n=5-vs-n=20 side by side.
+
+## D-019 — PRE-REGISTERED: clean same-split radar-ensemble control (written BEFORE training)
+
+The n=20 eval-only radar-3-ensemble (Table 11) was ~89% test-leakage-contaminated (members
+trained on other seeds' splits). This is the leakage-FREE replacement, committed before any
+training.
+
+- **Design:** for each split seed s in {11,22,33} x {60,140} GHz, train **3 radar models on
+  s's OWN train split**, varying ONLY the weight-init seed (inits {201,202,203}); identical
+  hyperparameters/data to the banked radar runs otherwise. All 3 members are evaluated on
+  s's held-out test set -> no member ever sees a test trajectory of its split.
+- **LEAKAGE ASSERTION (hard-fail):** the computed fraction of s's NF-test trajectories that
+  appear in ANY member's train set must be **0.000**; if not, the chain stops.
+- **Endpoint:** NF K=8 dB-loss, per split: (b') same-split radar-3-ensemble (C3
+  confidence-weighted soft-average of the 3 inits, both heads) vs (c') the multimodal
+  soft-avg (existing fusion checkpoint for split s; no retraining), on the SAME test set.
+- **Inference:** per-sample paired bootstrap over the shared NF test users within each split
+  (mean delta = dbloss_b' - dbloss_c', 95% CI, two-sided p), plus sign-consistency across
+  the 3 splits.
+- **Interpretation key (committed):**
+  - (c') > (b') consistently (c' lower loss) -> the LiDAR modality contributes beyond
+    generic ensembling.
+  - (c') ~ (b') -> the gain is substantially generic ensembling; the paper says so and notes
+    the radar-3-ensemble costs 3x radar compute vs a single fused pass.
+  - mixed across splits -> reported as mixed.
+- **Decision rule:** whatever the data shows is reported; no retuning, no split selection.
+- **Banking:** `results/fusion_rules/ensemble_confound_clean.json`; Table 11 gains Panel B.
+
+## D-020 — Mobility future-beam prediction on real DeepSense (motivation + protocol)
+
+**Motivation (TVT):** vehicles in Sc31 (V2I) / Sc36 (V2V) move across consecutive frames;
+predicting the beam Delta frames AHEAD from sensors at frame t demonstrates the predictor
+under genuine mobility, not just same-frame estimation.
+
+- **Data:** existing processed DeepSense radar features (no new downloads). Build
+  (X_t -> y_{t+Delta}) pairs for Delta in {0,1,2,3} **within each trajectory only** (frames
+  are contiguous/ordered within a trajectory; never pair across trajectory boundaries).
+  Respect the banked trajectory-grouped splits; assert no trajectory is in both train and
+  test of any split.
+- **Frame interval / horizon:** DeepSense6G nominal ~10 Hz -> 0.1 s/frame. Measured mean
+  per-frame range change: Sc31 ~0.39 m, Sc36 ~0.79 m (V2V faster). So Delta in {1,2,3} maps
+  to ~0.1/0.2/0.3 s ahead (Sc31 ~0.4/0.8/1.2 m; Sc36 ~0.8/1.6/2.4 m displacement).
+- **Train:** radar branch only, 5 seeds {11,22,33,44,55}, per (scenario, Delta), same
+  hyperparameters as the banked DeepSense runs (per-(scenario,Delta) separate models — kept
+  identical across Delta for comparability).
+- **ANCHOR TRIPWIRE (hard-fail):** Delta=0 must reproduce the banked top-1 accuracies
+  (23.05% Sc31, 17.14% Sc36) within the 5-seed 95% CI. Evaluate the Delta=0 anchor FIRST;
+  if it fails, stop the chain and do not train Delta in {1,2,3}.
+- **Report/bank:** per (scenario, Delta) top-1 + top-K coverage @ {4,8}, 5-seed mean+/-95%CI
+  -> `results/mobility/future_beam.json`; table + accuracy-vs-horizon figure; new macros.
+- Report achieved numbers as-is; no retuning.

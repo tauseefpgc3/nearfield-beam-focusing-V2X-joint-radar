@@ -1,0 +1,35 @@
+# Consistency audit — table10_headline_n5_vs_n20
+# Every figure/table number traces to a results/*.json cell below.
+
+source JSON                                                    cell                               value
+--------------------------------------------------------------------------------------------------------------
+results\fusion_rules\taskA_stats.json                          comparisons.60GHz__radar_vs_radar_ang+bestR.radar_mean 0.8548180527476053
+results\fusion_rules\taskA_stats.json                          comparisons.60GHz__radar_vs_radar_ang+bestR.rule_mean 0.7040713695347635
+results\fusion_rules\taskA_stats.json                          comparisons.60GHz__radar_vs_radar_ang+bestR.paired_t_p 0.2432942474305554
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.radar_mean 0.7332157436737333
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.rule_mean 0.5515714271325062
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.paired_t_p 0.030208420097687278
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_radar_ang+bestR.wilcoxon_p 0.017181396484375
+results\fusion_rules\taskA_stats.json                          comparisons.60GHz__radar_vs_soft_avg.radar_mean 0.8548180527476053
+results\fusion_rules\taskA_stats.json                          comparisons.60GHz__radar_vs_soft_avg.rule_mean 0.5488973181033732
+results\fusion_rules\taskA_stats.json                          comparisons.60GHz__radar_vs_soft_avg.paired_t_p 0.2544769622454314
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.radar_mean 0.7332157436737333
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.rule_mean 0.3735742642056019
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.paired_t_p 0.001435017188551479
+results\fusion_rules\taskA_stats_n20.json                      comparisons.60GHz__radar_vs_soft_avg.wilcoxon_p 0.000850677490234375
+results\fusion_rules\taskA_stats.json                          comparisons.140GHz__radar_vs_radar_ang+bestR.radar_mean 1.6037040527749133
+results\fusion_rules\taskA_stats.json                          comparisons.140GHz__radar_vs_radar_ang+bestR.rule_mean 1.7041000894887155
+results\fusion_rules\taskA_stats.json                          comparisons.140GHz__radar_vs_radar_ang+bestR.paired_t_p 0.46936455246397746
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.radar_mean 2.043392696058141
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.rule_mean 1.4940949278163773
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.paired_t_p 0.1515575804176293
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_radar_ang+bestR.wilcoxon_p 0.2305126190185547
+results\fusion_rules\taskA_stats.json                          comparisons.140GHz__radar_vs_soft_avg.radar_mean 1.6037040527749133
+results\fusion_rules\taskA_stats.json                          comparisons.140GHz__radar_vs_soft_avg.rule_mean 1.1979669489197935
+results\fusion_rules\taskA_stats.json                          comparisons.140GHz__radar_vs_soft_avg.paired_t_p 0.06060794694450966
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.radar_mean 2.043392696058141
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.rule_mean 0.9135644935478657
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.paired_t_p 0.016440287895770976
+results\fusion_rules\taskA_stats_n20.json                      comparisons.140GHz__radar_vs_soft_avg.wilcoxon_p 0.001209259033203125
+results\fusion_rules\taskA_stats.json                          n_seeds                            5
+results\fusion_rules\taskA_stats_n20.json                      n_seeds                            20

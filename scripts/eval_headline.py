@@ -1,4 +1,4 @@
-"""Full headline metrics for one trained checkpoint (Paper 5 Batch 8).
+"""Full headline metrics for one trained checkpoint.
 
 top-1 theta/range (overall + near-field), K=1,2,4,8 joint coverage + beam-focusing
 dB-loss vs genie (overall + near-field), and the near-field gain-ratio array (E5 CDF

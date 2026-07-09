@@ -1,4 +1,4 @@
-"""Train the radar-only (angle, range) polar classifier (Paper 5 Batch 5).
+"""Train the radar-only (angle, range) polar classifier.
 
 Single-modality baseline on the close-range PRIMARY dataset. GPU-only (mixed precision),
 trajectory-grouped split, gated labels (y_theta_gated / y_r_gated).

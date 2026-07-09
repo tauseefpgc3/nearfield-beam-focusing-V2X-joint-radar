@@ -1,4 +1,4 @@
-"""DeepSense real-data angle eval (Paper 5 Batch 3, STEP C).
+"""DeepSense real-data angle eval.
 
 DeepSense is far-field (y_r=0), so the real-data metric is ANGLE: top-1 beam accuracy and
 angle top-K beam-selection coverage (does the true mmWave beam land in the model's top-K

@@ -34,6 +34,7 @@ if _ROOT not in sys.path:
 from scripts.eval_fusion_rules import combine            # the audited rule definitions
 from src.data.splits import trajectory_grouped_split
 from src.eval.statistics import mean_ci
+from src.models.radar_encoder import RadarPolarModel
 from src.models.sensing_polar import BRANCHES, SensingPolarPredictor
 
 B_THETA, B_R, K = 64, 8, 8
@@ -46,13 +47,20 @@ STORE_KEY = {"temp4.0": "temp4", "temp8.0": "temp8"}
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--seeds", type=int, nargs="*", default=SEEDS)
+    ap.add_argument("--out", default="rule_sweep.json",
+                    help="output filename under results/fusion_rules/")
+    args = ap.parse_args()
+    seeds = args.seeds
     if not torch.cuda.is_available():
         sys.exit("CUDA NOT AVAILABLE — STOP.")
     device = torch.device("cuda")
-    print(f"GPU: {torch.cuda.get_device_name(0)}")
+    print(f"GPU: {torch.cuda.get_device_name(0)} | seeds={seeds} -> {args.out}")
     stored_rules = ["radar_alone"] + [STORE_KEY.get(r, r) for r in FUSION_RULES]
     out = {"K": K, "metric": "near-field K=8 beam-focusing dB-loss vs genie (lower=better)",
-           "seeds": SEEDS, "freqs": FREQS, "rules": stored_rules, "results": {}}
+           "seeds": seeds, "freqs": FREQS, "rules": stored_rules, "results": {}}
 
     for fghz in FREQS:
         data = os.path.join(_ROOT, "data", "processed", f"closerange_{fghz}GHz_full.h5")
@@ -61,12 +69,7 @@ def main():
         cbc = torch.from_numpy(np.conj(cb)).to(device, dtype=torch.complex64)
         per_rule = {r: [] for r in FUSION_RULES}
         radar_alone = []
-        for seed in SEEDS:
-            # radar-alone reference: the banked radar-only metric (paper-consistent)
-            rm = json.load(open(os.path.join(_ROOT, "results", "indomain",
-                          f"radar_closerange_{fghz}GHz_seed{seed}_metrics.json")))
-            radar_alone.append(rm["dbloss"]["8"]["nf"])
-
+        for seed in seeds:
             with h5py.File(data, "r") as hf:
                 traj = hf["trajectory_id"][:]
                 _, _, te = trajectory_grouped_split(traj, seed=seed)
@@ -76,15 +79,24 @@ def main():
                 yr = hf["y_r_gated"][te].astype(np.int64)
                 chan = hf["channel"][te]
             nf = yr > 0
-            ckpt = os.path.join(_ROOT, "checkpoints", f"closerange_{fghz}GHz_fusion_warmstart",
-                                f"seed{seed}.pt")
+            fck = os.path.join(_ROOT, "checkpoints", f"closerange_{fghz}GHz_fusion_warmstart",
+                               f"seed{seed}.pt")
             model = SensingPolarPredictor(d_z=128, B_theta=B_THETA, B_r=B_R).to(device)
-            model.load_state_dict(torch.load(ckpt, map_location=device,
+            model.load_state_dict(torch.load(fck, map_location=device,
                                              weights_only=False)["model"])
             model.eval()
+            # radar-alone reference: the standalone radar model, computed the SAME way as
+            # eval_headline (self-contained -> works for seeds without a banked _metrics.json).
+            rck = os.path.join(_ROOT, "checkpoints", f"closerange_{fghz}GHz_radar",
+                               f"seed{seed}.pt")
+            rmodel = RadarPolarModel(d_z=128, B_theta=B_THETA, B_r=B_R).to(device)
+            rmodel.load_state_dict(torch.load(rck, map_location=device,
+                                              weights_only=False)["model"])
+            rmodel.eval()
 
             n = len(te)
             dbl = {r: np.zeros(n) for r in FUSION_RULES}
+            dbl_radar = np.zeros(n)
             with torch.no_grad():
                 for s in range(0, n, 256):
                     e = min(s + 256, n)
@@ -95,6 +107,9 @@ def main():
                                            for b in BRANCHES])      # (3,B,64)
                         prg = torch.stack([F.softmax(o[f"{b}_range_logits"].float(), 1)
                                            for b in BRANCHES])      # (3,B,8)
+                        ro = rmodel(xr[s:e].to(device))
+                        rpt = ro["theta_logits"].float().softmax(1)
+                        rpr = ro["range_logits"].float().softmax(1)
                     cth, crg = pth.max(-1).values, prg.max(-1).values
                     gains = (cbc @ h.T).abs().pow(2).T              # (b,512) |f^H h|^2
                     genie = gains.max(1).values
@@ -104,9 +119,13 @@ def main():
                         idx = joint.topk(K, 1).indices
                         real = gains.gather(1, idx).max(1).values
                         dbl[r][s:e] = (10 * torch.log10(genie / real.clamp_min(1e-30))).cpu().numpy()
+                    rjoint = (rpt.unsqueeze(2) * rpr.unsqueeze(1)).reshape(e - s, 512)
+                    rreal = gains.gather(1, rjoint.topk(K, 1).indices).max(1).values
+                    dbl_radar[s:e] = (10 * torch.log10(genie / rreal.clamp_min(1e-30))).cpu().numpy()
+            radar_alone.append(float(dbl_radar[nf].mean()))
             for r in FUSION_RULES:
                 per_rule[r].append(float(dbl[r][nf].mean()))
-            print(f"  {fghz}GHz seed{seed}: " +
+            print(f"  {fghz}GHz seed{seed}: radar_alone={radar_alone[-1]:.2f} " +
                   " ".join(f"{r}={per_rule[r][-1]:.2f}" for r in FUSION_RULES))
 
         res = {"radar_alone": dict(per_seed=radar_alone, **mean_ci(radar_alone))}
@@ -116,8 +135,8 @@ def main():
 
     od = os.path.join(_ROOT, "results", "fusion_rules")
     os.makedirs(od, exist_ok=True)
-    json.dump(out, open(os.path.join(od, "rule_sweep.json"), "w"), indent=2)
-    print("Wrote results/fusion_rules/rule_sweep.json")
+    json.dump(out, open(os.path.join(od, args.out), "w"), indent=2)
+    print(f"Wrote results/fusion_rules/{args.out}")
     for fghz in FREQS:
         print(f"  [{fghz}GHz K=8 NF dB-loss mean] " +
               " ".join(f"{r}={out['results'][fghz][r]['mean']:.2f}" for r in stored_rules))

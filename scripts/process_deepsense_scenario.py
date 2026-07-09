@@ -1,4 +1,4 @@
-"""Process a DeepSense6G *development-format* scenario -> HDF5 (Paper 5 Batch 3).
+"""Process a DeepSense6G *development-format* scenario -> HDF5.
 
 Targets the scenario31-style layout (single 60 GHz power array, single radar/lidar,
 `unit1_beam` best-beam label, `unit1_loc`/`unit2_loc` GPS). DeepSense has NO channel, so

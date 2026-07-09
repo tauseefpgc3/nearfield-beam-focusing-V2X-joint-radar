@@ -37,13 +37,19 @@ FREQS = ["60", "140"]
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--seeds", type=int, nargs="*", default=SEEDS)
+    ap.add_argument("--out", default="dft_sweep.json")
+    args = ap.parse_args()
+    seeds = args.seeds
     if not torch.cuda.is_available():
         sys.exit("CUDA NOT AVAILABLE — STOP.")
     device = torch.device("cuda")
-    print(f"GPU: {torch.cuda.get_device_name(0)}")
+    print(f"GPU: {torch.cuda.get_device_name(0)} | seeds={seeds} -> {args.out}")
     dft_cols = torch.arange(0, B_THETA * B_R, B_R, device=device)   # j=0 -> 64 DFT codewords
     out = {"K": K, "metric": "near-field K=8 realized dB-loss vs polar genie (lower=better)",
-           "seeds": SEEDS, "freqs": FREQS, "results": {}}
+           "seeds": seeds, "freqs": FREQS, "results": {}}
 
     for fghz in FREQS:
         data = os.path.join(_ROOT, "data", "processed", f"closerange_{fghz}GHz_full.h5")
@@ -51,7 +57,7 @@ def main():
                                   f"polar_codebook_{fghz}GHz.npz"))["codebook"]
         cbc = torch.from_numpy(np.conj(cb)).to(device, dtype=torch.complex64)
         polar_db, dft_db = [], []
-        for seed in SEEDS:
+        for seed in seeds:
             with h5py.File(data, "r") as hf:
                 traj = hf["trajectory_id"][:]
                 _, _, te = trajectory_grouped_split(traj, seed=seed)
@@ -100,8 +106,8 @@ def main():
 
     od = os.path.join(_ROOT, "results", "dft_baseline")
     os.makedirs(od, exist_ok=True)
-    json.dump(out, open(os.path.join(od, "dft_sweep.json"), "w"), indent=2)
-    print("Wrote results/dft_baseline/dft_sweep.json")
+    json.dump(out, open(os.path.join(od, args.out), "w"), indent=2)
+    print(f"Wrote results/dft_baseline/{args.out}")
     for fghz in FREQS:
         r = out["results"][fghz]
         print(f"  [{fghz}GHz K=8 NF dB-loss] polar={r['polar']['mean']:.2f} "

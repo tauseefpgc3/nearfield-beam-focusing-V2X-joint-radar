@@ -1,4 +1,4 @@
-"""Sensor-degradation eval (E6) on the warmstart-fusion models (Paper 5 Batch 8).
+"""Sensor-degradation eval (E6) on the warmstart-fusion models.
 
 For each seed's close-range 60 GHz fusion checkpoint, evaluate the confidence-weighted
 ensemble (the graceful-degradation mechanism, C3) under: clean, radar-out, lidar-out,
@@ -51,13 +51,19 @@ def joint_acc(model, xr, xl, yt, yr, device, mode, bs=256):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--seeds", type=int, nargs="*", default=SEEDS)
+    ap.add_argument("--out", default="degradation_closerange60.json",
+                    help="output filename under results/")
+    args = ap.parse_args()
     if not torch.cuda.is_available():
         sys.exit("CUDA NOT AVAILABLE — STOP.")
     device = torch.device("cuda")
     with h5py.File(DATA, "r") as hf:
         traj = hf["trajectory_id"][:]
         results = {m: [] for m in MODES}
-        for seed in SEEDS:
+        for seed in args.seeds:
             ckpt = os.path.join(_ROOT, "checkpoints",
                                 "closerange_60GHz_fusion_warmstart", f"seed{seed}.pt")
             if not os.path.exists(ckpt):
@@ -88,8 +94,10 @@ def main():
     print(f"\n[both-out leakage check] {bo:.4f} "
           f"({'PASS <=5%, no leakage (GroupNorm worked)' if bo <= 0.05 else 'FAIL >5% — D9 LEAKAGE'})"
           f"  | random ref 1/512 = {1/512:.4f}")
-    with open(os.path.join(_ROOT, "results", "degradation_closerange60.json"), "w") as f:
-        json.dump({m: summary[m] for m in MODES} | {"per_seed": results}, f, indent=2)
+    with open(os.path.join(_ROOT, "results", args.out), "w") as f:
+        json.dump({m: summary[m] for m in MODES}
+                  | {"per_seed": results, "n_seeds": len(args.seeds)}, f, indent=2)
+    print(f"Wrote results/{args.out} (n={len(args.seeds)} seeds)")
 
 
 if __name__ == "__main__":

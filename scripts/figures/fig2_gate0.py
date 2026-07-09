@@ -68,6 +68,17 @@ def main():
     axb.legend()
     fig.tight_layout()
     save_fig(fig, "fig2_gate0")
+    # caption sidecar — framing updated per D-018/D-019 (diagram unchanged)
+    with open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__)))), "paper", "figures", "fig2_gate0.caption.txt"),
+            "w", encoding="utf-8") as fh:
+        fh.write("Fig 2. Near-field occurrence (Gate-0). Panel (a): fraction of users whose "
+                 "genie polar-vs-DFT advantage exceeds 3 dB (close-range PRIMARY vs O1 "
+                 "far-field ANCHOR). Panel (b): mean genie advantage vs distance. This "
+                 "characterises the near-field regime the predictor targets. The recommended "
+                 "operating point is the soft-avg (C3) multimodal predictor; radar-alone is "
+                 "the single-sensor fallback (see Tables 1-2, n=20). Genie quantities are "
+                 "seed-independent.\n")
     aud.write()
 
 

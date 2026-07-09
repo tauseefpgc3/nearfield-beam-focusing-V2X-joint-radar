@@ -21,11 +21,22 @@ KS = [1, 2, 4, 8]
 FREQS = [("60", "60 GHz", "#1f77b4", "o"), ("140", "140 GHz", "#d62728", "s")]
 
 
+import os as _os
+from _paperkit import RESULTS
+_N20 = _os.path.join(RESULTS, "indomain_n20", "close_n20.json")
+_USE_N20 = _os.path.exists(_N20)
+_KEY = {"coverage": "cov", "dbloss": "db"}   # close_n20 field names
+
+
 def series(aud: Audit, fghz: str, field: str):
+    """radar top-K series, n=20 (close_n20) if banked else n=5 (per-seed metrics)."""
     means, los, his = [], [], []
     for k in KS:
-        vals = [aud.val(metrics_path("radar", f"closerange_{fghz}GHz", s),
-                        f"{field}.{k}.nf") for s in SEEDS]
+        if _USE_N20:
+            vals = aud.arr(_N20, f"results.{fghz}.radar.{_KEY[field]}{k}_nf")
+        else:
+            vals = [aud.val(metrics_path("radar", f"closerange_{fghz}GHz", s),
+                            f"{field}.{k}.nf") for s in SEEDS]
         c = mean_ci(vals)
         means.append(c["mean"]); los.append(c["mean"] - c["lo"]); his.append(c["hi"] - c["mean"])
     return means, [los, his]

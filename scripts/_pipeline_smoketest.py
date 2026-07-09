@@ -1,4 +1,4 @@
-"""PIPELINE SMOKE TEST on PLACEHOLDER geometry -- NOT the real O1 deliverable.
+"""PIPELINE SMOKE TEST on PLACEHOLDER geometry -- NOT the real O1 target.
 
 The real O1_60/O1_140 download is blocked by a deepmimo.net 429 rate-limit. To prove the
 Batch-2 plumbing (near-field channel reconstruction -> exact label -> seeded radar/LiDAR
@@ -7,7 +7,7 @@ functions used by ``generate_synthetic_multimodal.py`` on FABRICATED per-path ge
 
 Output file is named ``_smoketest_*`` and must NEVER be presented as O1 DeepMIMO data.
 Once the download clears, ``python scripts/generate_synthetic_multimodal.py`` produces
-the real deliverable with identical code paths.
+the real target with identical code paths.
 """
 from __future__ import annotations
 

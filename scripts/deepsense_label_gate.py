@@ -1,4 +1,4 @@
-"""DeepSense label-trust gate (G0.3 + G0.4) — MUST pass before any training (Batch 3).
+"""DeepSense label-trust gate (G0.3 + G0.4) — MUST pass before any training.
 
 Runs on a PROCESSED DeepSense HDF5 (schema below); format-agnostic w.r.t. the raw
 DeepSense files. DeepSense has NO full channel, so polar labels are reconstructed from
