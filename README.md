@@ -1,7 +1,6 @@
-# Sensing-Aided Near-Field Beam Focusing for THz V2X — Code & Results
+# Overcoming Near-Field Beam-Focusing Loss in Terahertz V2X: Radar-Driven Joint Angle–Range Prediction
 
-Public reproduction package for the paper *"Sensing-Aided Near-Field Beam Focusing for
-THz V2X: Joint Angle–Range Prediction with Radar and LiDAR Priors."*
+Public reproduction package for the paper *"Overcoming Near-Field Beam-Focusing Loss in Terahertz V2X: Radar-Driven Joint Angle–Range Prediction"*
 
 This work predicts **near-field (spherical-wavefront) beam-focusing codewords** — joint
 **angle × range** — for THz V2X links directly from on-board **radar** and **LiDAR**, so a
