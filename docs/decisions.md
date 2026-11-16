@@ -642,3 +642,107 @@ passes, sequential, + C3 soft-average). GPU: fp32 and fp16-autocast, 50 warm-up 
 iterations with `cuda.synchronize`, median and p90. CPU: fp32, default thread count and 1
 thread, 10 warm-up + 100 timed. Supplementary: CPU time of `radar_preprocessing` on one
 (4,256,256) cube. Hardware recorded. Output `results/revision/B8_cost.json`.
+
+---
+
+# TVT major revision (VT-2026-05521), Phase 2a — corrected setup + gate experiment
+
+## D-029 — PRE-REGISTERED: corrected close-range setup and 5-seed gate experiment (written 2026-11-16, BEFORE any data generation)
+
+**Why.** Phase 1 and its independent verification (`scripts/verify/`, `results/verify/`)
+showed the D-014 setup cannot support the paper's claims: the synthetic radar places the
+target at the exact true range bin on the codebook's own angle grid (a learning-free peak
+picker beats the learned models); the 128x128 UPA with an azimuth-only codebook loses
+~18 dB once the D-014 heights are applied; 64 angles under-sample the aperture (genie
+~5.6 dB below the matched-filter bound). This entry fixes a corrected setup and a small
+gate experiment: does a learned predictor beat a geometric radar baseline? Either answer
+is reported as it comes out.
+
+**Freeze rule.** Every value below is fixed once tag `revision-plan-v1` exists. A change
+forced later is recorded here as a dated deviation with its reason. No setting is tuned
+after seeing how the methods compare.
+
+**Decision taken before any data (2026-11-16):** the instruction specified 128 angles.
+An analytic, data-free sweep of the codebook (pure line-of-sight points on a deterministic
+(u, r) grid, `scripts/phase2/p0_codebook_property.py`) gives a genie-vs-matched-filter gap
+of 1.38 / 1.30 dB (60 / 140 GHz) at 128 angles (critical sampling; 3.9 dB at mid-beam),
+~1.8 dB once the expected multipath share (~0.5 dB) is added, so the 1 dB check would fail
+by construction. **Angular sampling is raised to 2x oversampling (256 angles)** to remove
+the scalloping loss (analytic LoS gap 0.45 / 0.35 dB, ~0.8–0.9 dB with multipath).
+Decided by the PI before any data was generated. The 1 dB stop rule is unchanged.
+
+### Parameters
+
+| Group | Parameter | Value | Physical reason |
+|---|---|---|---|
+| Frame | axes | x = array boresight (horizontal), y = horizontal along the array, z = up, ground z = 0 | one right-handed frame for channel and sensors |
+| Array | type | horizontal ULA along y, **128 elements**, spacing λ/2, centred at (0, 0, **2.0 m**) | a horizontal ULA's response depends only on (u = p_y/‖p‖, r = ‖p‖), so a (u, r) codebook stays exact with heights |
+| Array | carriers | 60 and 140 GHz | as before |
+| Array | d_F = 2D²/λ, D = 127·λ/2 | 40.3 m / 17.3 m | users 1–20 m are near-field-capable |
+| Users | count / seed | 6000 per frequency (same users at both), `SCENARIO_SEED = 20261116`, `default_rng(SCENARIO_SEED + idx)` | same size as D-014; new stream so nothing is reused from tuned data |
+| Users | horizontal distance d | U[1, 20] m | D-014 range |
+| Users | azimuth θ (from array centre, horizontal) | U[−60°, +60°] | D-014 arc |
+| Users | antenna position | (d cosθ, d sinθ, **1.5 m**) — vehicle roof centre | D-014 vehicle antenna height |
+| Users | vehicle heading ψ | U[0, 2π) | vehicles approach from any direction; affects radar/LiDAR shape only |
+| Channel | model | h = Σ_ℓ g_ℓ · a(p_ℓ), a_n(p) = exp(−j2π/λ(‖p − q_n‖ − ‖p − q_0‖)), q_n element n, q_0 array centre | existing spherical-wave model, now in 3D |
+| Channel | LoS | p_0 = user antenna, g_0 = 1 | unit LoS as before |
+| Channel | reflections | K ~ U{2,3,4} point scatterers; horizontal range U[1, 25] m, azimuth U[−90°, 90°], height U[0.5, 3.0] m; \|g\| = 10^(−U[10,20]/20), phase U[0, 2π) | D-014 multipath, with plausible heights (vehicles, poles, facades) |
+| Codebook | angles | **B_θ = 256**, u_i = (2i − 255)/256 (uniform in sine) | 2x oversampled vs the 128-element aperture (see decision above) |
+| Codebook | ranges | B_r = 8: r_0 = ∞ (DFT), r_j = 1.2·127²·λ/(8j), j = 1..7 → 60 GHz 12.09…1.73 m, 140 GHz 5.18…0.74 m | same Cui–Dai rule (β_Δ = 1.2) |
+| Codebook | codeword / order | f_{i,j} = a(u_i, r_j)/√128, flat k = 8i + j | as D-006 |
+| Labels | definition | G_k = \|f_k^H h\|² (float64); label = smallest k with G_k ≥ (1 − 1e-12)·max G; (y_θ, y_r) = divmod(k, 8) | raw genie argmax, deterministic ties; **no gain gate** |
+| Labels | advantage | adv = 10 log10(max_k G / max_{j=0} G) | genie polar-over-DFT advantage |
+| Check | genie vs bound | gap_u = 10 log10(‖h_u‖² / max_k G_k), mean over all 6000 users | **STOP and report if the mean exceeds 1 dB at either frequency** |
+| Radar | carrier / array | 77 GHz FMCW, 3TX×4RX TDM-MIMO → **12-element virtual horizontal ULA**, λ_r/2 | a typical single-chip automotive radar |
+| Radar | mount | phase centre at (0, **+0.50 m**, **1.20 m**), i.e. offset (0, +0.5, −0.8) m from the comms array centre, boresight +x | separate radar unit on the same pole; the offset is known to all methods |
+| Radar | range | bandwidth 1.5 GHz → ΔR = 0.10 m; 256 fast-time samples → 0–25.6 m | resolves 1–20 m users with margin |
+| Radar | slow time | 64 chirps; static scene (all vehicles v = 0) | close-range users are static, as before |
+| Radar | angle grid | **101 bins uniform in angle, −75° … +75°, step 1.5°**, conventional beamforming on the 12 virtual elements (sin φ = p_y/‖p‖ for a horizontal ULA) | not the codebook grid (uniform in angle, different count); covers the ±60° arc as seen from the offset radar |
+| Radar | target | vehicle as **6 point scatterers**: body-frame offsets uniform in the 4.5 m × 2.0 m footprint, heights U[0.3, 1.5] m, rotated by ψ about the vehicle centre; amplitudes U[0.3, 1.0] normalised to Σa² = 1, phases U[0, 2π) | extended target with several dominant scattering centres; none is guaranteed at the antenna |
+| Radar | clutter | 12 point reflectors, amplitude 0.25·U[0.3, 1.0] (relative to the vehicle total), slant range U[1, 25] m, sin(azimuth) of U[−90°, 90°], Doppler U[−16, 16] bins | the existing clutter model, rescaled to the new range span |
+| Radar | SNR | **20, 10, 0 dB**, defined as the vehicle's coherent-integration SNR: noise variance per raw complex sample σ² = (256·64·12)/10^(SNR/10) with Σa² = 1 (window losses not included) | a per-raw-sample definition would leave every level > 45 dB after integration and test nothing |
+| Radar | noise seeds | geometry/clutter seed `BASE_RADAR = 20261117 + idx` (shared across SNR); noise seed `BASE_RADAR + 1_000_003·(1 + SNR-index) + idx` | SNR changes the noise only |
+| Radar | processing | Hann window in range and Doppler; range FFT 256; Doppler FFT 64 (fftshift); RD = Σ_elements \|·\|² (256×64); RA = Σ_Doppler \|beamformed\|² (256×101); 10·log10(·+1e-12), then min–max to [0, 1] per map; tensor (2, 256, 128): ch0 = RD zero-padded to 128 columns, ch1 = RA zero-padded to 128 columns | the existing two-channel input shape and encoder |
+| LiDAR | model | existing `simulate_point_cloud` model (400 car / 1500 ground / 600 background points, same intensities), sensor at the comms array (0, 0, 2.0 m): ground z = −2.0 m, car box 4.5×2.0×1.5 m with its base on the ground, rotated by ψ; `lidar_preprocessing` unchanged | keep the model, apply the heights |
+| LiDAR | seed | `BASE_LIDAR = 20261118 + idx` | deterministic |
+| Split | blocks | 15 azimuth sectors of 8° (−60…60°) × 4 distance bands ([1, 5.75), [5.75, 10.5), [10.5, 15.25), [15.25, 20] m) = 60 contiguous blocks | test users form contiguous regions, not interleaved |
+| Split | assignment | in each band, 3 sectors → test, 2 → val, 10 → train, chosen by `default_rng(2029)` | ≈ 20 / 13 / 67 %, every distance band in test |
+| Split | guard | train and val users within 0.5 m (horizontal) of any test user are dropped | no test user has a training neighbour inside 0.5 m |
+| Split | sharing | one fixed split for both frequencies and all seeds | a seed changes only the weight init (and the data order / dropout draws that follow from it) |
+| Training | models | `RadarPolarModel` and `SensingPolarPredictor` (3 branches, cross-attention, C3), d_z = 128, heads 256 × 8 | the paper's architectures |
+| Training | configuration (all seeds) | Adam lr 1e-4, wd 1e-5, cosine over 50 epochs, batch 16, fp16; loss CE(θ) + CE(r); modality dropout p = 0.15 each (never both); three-branch model warm-started from the same-seed radar-alone checkpoint with the **radar branch unfrozen**; final-epoch checkpoint used (no early stopping) | the established recipe, one configuration |
+| Training | SNR | each train/val user is assigned one SNR from {20, 10, 0} by `default_rng(2030)`; test is evaluated at each SNR separately | one deployed model must work without knowing the SNR |
+| Seeds | | 11, 22, 33, 44, 55; both frequencies | gate experiment only |
+
+### Methods compared (same fixed test set, same gains)
+
+- **(a) radar-alone CNN** and **(b) three-branch soft-average (C3)**: joint score p_θ(i)·p_r(j) computed in float64; top-K = the K largest scores, ties broken by lower flat index.
+- **(c) geometric picker** (reads only the radar input tensor ch1 plus known constants). Peak = argmax of the RA map over range bins ≥ 3 and all angles, refined by 3-point parabolic interpolation in range and in angle; slant range R̂ and radar angle φ̂ → radar-frame position with p_y = R̂ sin φ̂, Δz = 1.5 − 1.2 m (known antenna height), p_x = √max(R̂² − p_y² − Δz², 0); add the mount offset → comms-frame (û, r̂); î = nearest u_i, rings ranked by \|1/r_j − 1/r̂\| (1/r_0 = 0).
+  - **c1 range sweep at the peak angle:** K-list = (î, ring rank 1..K).
+  - **c2 2 angles × 4 ranges:** angles î and the second-nearest u_i to û; order (ring rank, angle rank): K = 1 → (î, ring 1); K = 2 → both angles at ring 1; K = 4 → 2 × 2; K = 8 → 2 × 4.
+  - **Selection on the validation set only**, per frequency: the variant with the lower validation all-user loss averaged over K ∈ {1, 2, 4, 8} and the three SNRs is "(c)"; the other is reported as supplementary.
+- **(d) two-stage sweep** (channel measurements, noise-free; SNR-independent): measure all 256 far-field (j = 0) beams, take the best angle, then the 7 remaining rings at that angle (263 measurements); loss = genie / best of those 263.
+
+### Metrics, sets, statistics
+
+- Loss vs genie: L = 10 log10(max_k G / max_{k ∈ S} G) for shortlist S, K ∈ {1, 2, 4, 8}.
+- Sets (test users): **all users (primary)**; **adv ≥ 3 dB (secondary)**; **sensitivity cut: horizontal d ≥ 1.6 m** (users closer than 1.6 m excluded; the 60 GHz deepest ring is 1.73 m).
+- Each SNR (20, 10, 0 dB) separately.
+- Learned methods: per-seed means, then 5-seed mean with t-based 95% CI.
+- **Paired per-user bootstrap**, (a) vs (c) and (b) vs (c): Δ_u = (5-seed mean loss of the learned method for user u) − (picker loss for user u); 10,000 resamples of test users, `default_rng(0)`, percentile 95% CI of mean Δ; also the number of seeds whose mean beats the picker.
+- Also reported: the fraction of users with adv ≥ 3 dB (all 6000 and test), the mean genie-DFT loss over all users (all 6000 and test), the genie-vs-bound gap (mean, median, p95), the split sizes and guard drops, and the selected picker variant.
+
+### How the result will be read (fixed now)
+
+- For each (frequency, SNR, K, set) cell: **learned better** if the bootstrap CI of Δ lies entirely below 0; **picker better** if entirely above 0; otherwise **no detectable difference**. Every cell is reported.
+- **Gate verdict** (primary cell = all users, 10 dB SNR, K = 4 and K = 8, both frequencies), for (b) vs (c):
+  - "learned beats the geometric baseline" if (b) is better in all four of those cells;
+  - "geometric baseline beats learned" if (c) is better in all four;
+  - otherwise "mixed", stated with the cells.
+- Effect sizes are reported in dB with their CIs; no threshold for "practically relevant" is claimed beyond that.
+- **Not in this phase:** no 20-seed campaign, no edits to `main.tex` or banked files.
+
+### Files
+
+Scripts `scripts/phase2/`; data `data/processed/phase2/`; checkpoints `checkpoints/phase2/`;
+results `results/phase2/` (`gate_results.json`, `checks.json`).
