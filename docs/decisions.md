@@ -503,3 +503,142 @@ under genuine mobility, not just same-frame estimation.
 - **Report/bank:** per (scenario, Delta) top-1 + top-K coverage @ {4,8}, 5-seed mean+/-95%CI
   -> `results/mobility/future_beam.json`; table + accuracy-vs-horizon figure; new macros.
 - Report achieved numbers as-is; no retuning.
+
+---
+
+# TVT major revision (VT-2026-05521), Phase 1 — eval-only diagnostics
+
+Entries D-021..D-028 are written and committed **BEFORE** any of the Part-B diagnostics
+are run. All are **eval-only**: banked checkpoints + banked data, no retraining, no data
+regeneration, no edits to existing banked JSON. Outputs go to `results/revision/`, one
+JSON per item; scripts live in `scripts/revision/`. Whatever each diagnostic shows is
+reported as-is, including results that weaken the paper. No metric, subset, seed set or
+baseline definition below may be changed after seeing results; any deviation forced by
+an implementation problem is reported as a deviation, with the reason.
+
+**Context discovered in Part A (before this entry):** the banked fusion checkpoints for
+the original seeds {11,22,33,44,55} were trained with the radar branch FROZEN
+(`args.freeze_radar=True`), the 15 new seeds {66..220} with it UNFROZEN
+(`sweep_taskA.py` never passes `--freeze-radar`). The n=20 pool therefore mixes two
+training configurations. This is reported; it does not change any definition below.
+
+## D-021 — Common conventions + B1 subset dependence
+
+**Conventions (apply to D-021..D-027 unless stated).**
+- Data `data/processed/closerange_{60,140}GHz_full.h5`; labels `y_theta_gated`,
+  `y_r_gated`. Seeds = the 20 D-018 seeds. Test set of seed s =
+  `trajectory_grouped_split(trajectory_id, seed=s)[2]` (identical to the banked evals).
+- Gains `G = |conj(codebook) @ h|^2` over all 512 codewords (complex64 on GPU, as in the
+  banked evals). Polar genie = `max_k G`. Loss of a shortlist S:
+  `10 log10(genie / max_{k in S} G_k)` dB. **Genie-DFT loss** =
+  `10 log10(genie / max over the 64 j=0 codewords)`.
+- Inference under fp16 autocast (as banked). Joint score = `p_theta(i) * p_r(j)`; top-K
+  shortlist = the K highest joint scores.
+- Predictors: **radar-alone** = standalone `checkpoints/closerange_{f}GHz_radar/seed{s}.pt`;
+  **soft-avg** = C3 `combine("soft_avg")` on `closerange_{f}GHz_fusion_warmstart/seed{s}.pt`;
+  **radar-primary** = `combine("radar_ang+bestR")` on the same checkpoint;
+  **DFT-restricted** = radar-alone's top-K *angles* mapped to their j=0 codewords
+  (definition of `scripts/eval_dft_baseline.py`).
+- **User sets** (within each seed's test set): (i) all close-range test users;
+  (ii) `distance < d_F` (d_F = 40.29 m / 17.27 m); (iii) `y_r_gated > 0` — the >=3 dB
+  genie-advantage subset used in the paper (equivalently `polar_adv_db >= 3.0`);
+  (iv) complement of (iii).
+- **Aggregation:** per-seed mean over the set, then mean and t-based 95% CI over the 20
+  seeds. Also reported: pooled-over-seeds median, and set sizes (per-seed mean/min/max and
+  number of unique users across the 20 seeds).
+- **Reproduction tripwire:** B1 set (iii), K=8, radar-alone and soft-avg per-seed values
+  must reproduce `results/fusion_rules/rule_sweep_n20.json` within 0.01 dB. If not, stop
+  and report before interpreting anything.
+
+**B1.** Loss vs the polar genie at K in {1,2,4,8} for soft-avg, radar-alone,
+DFT-restricted, plus the genie-DFT loss (K-independent), on sets (i)-(iv), both
+frequencies. Output `results/revision/B1_subsets.json`.
+
+## D-022 — B2: does the range head matter?
+
+For soft-avg (primary) and radar-alone (secondary), on sets (i)-(iv):
+- At K=4 and K=8: mean number of distinct angles and distinct ranges in the shortlist;
+  fraction of samples whose K=8 shortlist is exactly one angle with all 8 ranges.
+- Baseline (a) **angle + range sweep**: the predictor's top-1 angle (`argmax p_theta`) with
+  all 8 range codewords measured (8 measurements); loss = genie / max_j G(i_hat, j).
+  Compared against the predictor's own K=8 shortlist (also 8 measurements).
+- Baseline (b) **range prior**: the predictor's `p_theta` with `p_r` replaced by the
+  seed's training-set empirical `y_r_gated` distribution (train split of that seed, no
+  smoothing); top-K at K in {1,2,4,8}.
+Same loss definition, sets and aggregation as D-021. Output `results/revision/B2_range_head.json`.
+
+## D-023 — B3: primary-endpoint tests on the 15 new seeds alone
+
+Inputs: the banked per-seed NF K=8 losses in `results/fusion_rules/rule_sweep_n20.json`
+(no recomputation of the endpoint). Seed sets: **new15** = {66,...,220};
+**all20** (recomputed, must match `taskA_stats_n20.json`); **orig5** = {11,...,55}
+(context). For each set and frequency: radar-alone vs soft-avg and radar-alone vs
+radar-primary — paired t, Wilcoxon signed-rank (scipy), Cohen's d_z with 10,000-resample
+bootstrap 95% CI (seed 0), TOST +/-0.5 dB (alpha 0.05); Bonferroni over the full
+6-rule x 2-frequency family (m=12), all exactly as `scripts/eval_taskA_stats.py`. Note:
+new15 = unfrozen-radar configuration only; orig5 = frozen. Output
+`results/revision/B3_new_seeds.json`.
+
+## D-024 — B4: mobility persistence (DeepSense Sc31, Sc36)
+
+Seeds: the 5 banked mobility seeds {11,22,33,44,55} (only these exist; 20 not available).
+- **Fixed sample set** per (scenario, seed): source frames t (original-file indexing,
+  pairs rebuilt exactly as `build_mobility_pairs.py`) such that frame t+3 exists in the same
+  trajectory AND t's trajectory is in the TEST split of every Delta in {1,2,3} dataset
+  under that seed (splits recomputed per Delta dataset exactly as `eval_mobility.py`).
+  The same set is used for all horizons.
+- Per Delta in {1,2,3}: beam-change rate `P(y_{t+Delta} != y_t)`; persistence top-1
+  `P(y_t == y_{t+Delta})`; our top-1 (the Delta-trained model
+  `mobility_sc{S}_delta{Delta}_radar/seed{s}.pt`) overall, on changed frames and on
+  unchanged frames. Supplementary: persistence coverage at K in {4,8} (the K beam indices
+  nearest to y_t, ties to the lower index) vs our coverage@K; the Delta=0 model's top-1
+  against y_{t+Delta}; change rate over all within-trajectory pairs of the whole file.
+- 5-seed mean and 95% CI. Output `results/revision/B4_mobility.json`.
+
+## D-025 — B5: learning-free baselines on the synthetic data
+
+Same metrics (loss vs polar genie at K in {1,2,4,8}), sets (i)-(iv), seeds, aggregation as D-021.
+- **(a) Radar peak picking.** RA map = `radar_features[1, :, :64]` (256 range x 64 angle;
+  angle grid identical to the codebook's, verified in A4). Peak (rb, a) = argmax.
+  d_hat = max(rb,1) * 1.2 m. j_hat = argmin_j |1/r_j - 1/d_hat| with 1/r_0 = 0 (uniform-in-1/r
+  polar grid). Shortlist: all 512 codewords ranked by L1 index distance
+  |i - a| + |j - j_hat|; ties by smaller |j - j_hat|, then smaller |i - a|, then lower flat
+  index. Supplementary (a2): peak angle with all 8 ranges (K=8 only).
+- **(b) 1-NN on raw sensor features.** Reference set = the seed's train split.
+  (b1) radar features flattened (65,536-dim), Euclidean; (b2) radar flattened and LiDAR
+  BEV flattened concatenated, each block divided by its mean train-set L2 norm, Euclidean.
+  Shortlist = joint codewords `(y_theta_gated, y_r_gated)` of the nearest neighbours in
+  distance order, de-duplicated, until K unique.
+Output `results/revision/B5_learning_free.json`.
+
+## D-026 — B6: both-sensors-dropped check
+
+All 20 seeds x both frequencies, fusion checkpoints, C3 soft-avg, on each seed's test set.
+- Primary mechanism = the paper's both-out (`radar_dropout=True, lidar_dropout=True`,
+  encoder features zeroed). Secondary = raw input tensors set to zero.
+- Report: joint top-1 accuracy (60 GHz must reproduce the banked 1.26% n=20 mean of
+  `results/degradation_closerange60_n20.json`); frequency of the most common joint label in
+  the test set; number of distinct predicted joint classes; the predicted class(es) and
+  their test-set frequency; angle-only and range-only top-1; mean entropy of p_theta and p_r
+  vs log(64) and log(8).
+Output `results/revision/B6_both_dropped.json`.
+
+## D-027 — B7: calibration
+
+ECE with 15 equal-width confidence bins (confidence = max softmax, correctness = top-1),
+all test users of each seed, 20 seeds x both frequencies, angle head and range head
+separately. Predictors: fusion-model radar / LiDAR / fused branches, the C3 soft-avg
+ensemble, and the standalone radar model. Conditions: clean; radar dropped
+(`radar_dropout=True`); LiDAR dropped (`lidar_dropout=True`) — standalone radar clean only.
+Also report accuracy and mean confidence. 20-seed mean and 95% CI. Output
+`results/revision/B7_calibration.json`.
+
+## D-028 — B8: cost
+
+Parameter counts (total) and single-sample (batch=1) inference latency, excluding sensor
+preprocessing, for: radar branch alone (`RadarPolarModel`); full three-branch
+`SensingPolarPredictor` + C3 combine; a 3x radar ensemble (3 `RadarPolarModel` forward
+passes, sequential, + C3 soft-average). GPU: fp32 and fp16-autocast, 50 warm-up + 300 timed
+iterations with `cuda.synchronize`, median and p90. CPU: fp32, default thread count and 1
+thread, 10 warm-up + 100 timed. Supplementary: CPU time of `radar_preprocessing` on one
+(4,256,256) cube. Hardware recorded. Output `results/revision/B8_cost.json`.
