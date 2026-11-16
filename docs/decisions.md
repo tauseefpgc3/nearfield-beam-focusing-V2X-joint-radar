@@ -769,3 +769,55 @@ Decided by the PI before any data was generated. The 1 dB stop rule is unchanged
 
 Scripts `scripts/phase2/`; data `data/processed/phase2/`; checkpoints `checkpoints/phase2/`;
 results `results/phase2/` (`gate_results.json`, `checks.json`).
+
+## D-030 — EXPLORATORY: Phase 2b feasibility check (written 2026-11-16, before any Phase 2b run)
+
+**Status: exploratory.** Nothing in this entry is pre-registered as confirmatory, and no
+confirmatory claim will be made from it. Its purpose is to establish whether any
+sensing-aided scheme can approach the genie on the D-029 setup, after the Phase 2a gate
+(`results/phase2/gate_results.json`) showed every sensing method 14–26 dB from the genie
+at K ≤ 8, the radar-alone CNN not training (loss at the label prior in all 10 runs) and the
+three-branch model's loss flat across SNR. Results are reported as they come out.
+
+**Kept frozen:** the D-029 users, channels, gains, codebook (256 × 8), labels, radar and
+LiDAR data, split, and Phase 2a checkpoints. No D-029 setting changes.
+
+**Common tool — local sweep of M beams** (noise-free channel measurements, as method (d)):
+from a position estimate p̂ (horizontal x, y; antenna height 1.5 m known) compute
+r̂ = ‖p̂ − (0, 0, 2)‖, û = ŷ / r̂; take the A codebook angles nearest û (by |u_i − û|) and
+the R rings ranked by |1/r_j − 1/r̂| (1/r_0 = 0), sweep all A × R = M beams, keep the best.
+Loss = 10 log10(genie / best of the M). M ∈ {8, 16, 32, 64}; shapes A × R with R ≤ 8,
+A ∈ {M/8, …, M} in powers of 2 (M = 8: 1×8, 2×4, 4×2, 8×1; M = 64: 8×8, 16×4, 32×2, 64×1).
+**The shape is chosen per (frequency, error source, M) by the lowest mean validation loss**;
+test is reported with that shape. The 263-measurement sweep (d) is the reference.
+
+- **E1 Radar ablation.** The five Phase 2a three-branch checkpoints per frequency, test
+  set, 20/10/0 dB: loss at K ∈ {1, 2, 4, 8} with the normal input vs with the radar tensor
+  replaced by zeros (and, for completeness, with the LiDAR tensor zeroed). The difference
+  shows whether the model uses the radar.
+- **E2 Accuracy needed (no learning).** True antenna position plus i.i.d. Gaussian error,
+  σ ∈ {0.02, 0.05, 0.1, 0.2, 0.5, 1.0} m per horizontal axis (x, y), `default_rng(2032)`
+  (one draw per user and σ, validation and test drawn from the same stream, by user index).
+  Shape chosen per σ and M on validation.
+- **E3 Accuracy achieved.** Position-error distribution (range = error along the
+  array-to-user horizontal direction, sideways = perpendicular horizontal component;
+  median, p90, RMS) of (i) the Phase 2a selected radar picker estimate (centroid + training
+  bias) at 20 dB, and (ii) a geometric LiDAR estimator on the raw point cloud (regenerated
+  deterministically from the D-029 LiDAR seeds): drop points with z < −1.8 m (ground at
+  −2.0 m) or z > 0.0 m; 2D histogram at 0.5 m; take the densest cell; collect points within
+  3.0 m of it; two iterations of re-centring on the median and re-collecting; vehicle
+  centre = midpoint of the cluster's extent along its two principal axes (PCA; heading
+  recovered up to 180°, which is irrelevant here); antenna = vehicle centre + known offset
+  (zero: the D-029 antenna is the roof centre). Each estimate then seeds the same local
+  sweep, shape chosen on validation with that estimator.
+- **E4 Can the radar network learn?** `RadarPolarModel`, seed 11, 60 GHz, training and
+  validation users all at 20 dB, fp32, Adam lr ∈ {1e-3, 3e-4}, weight decay 1e-5, cosine
+  over 50 epochs, batch 16, final epoch. Reported: training loss vs the label-prior entropy
+  H(y_θ) + H(y_r) of the training labels, validation angle accuracy (exact and ±1 class),
+  ring accuracy, and validation sideways position error |u_pred − u_true|·r_true. Test is
+  not used in E4.
+
+**Also:** the two Phase 2a diagnostic scripts (overfit check, picker-error check) are
+moved into `scripts/phase2/`. No edits to `main.tex` or banked files.
+
+**Files.** Scripts `scripts/phase2/p5_*.py`; results `results/phase2/feasibility/`.
