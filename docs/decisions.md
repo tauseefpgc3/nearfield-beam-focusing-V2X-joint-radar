@@ -925,3 +925,36 @@ radar methods (no antenna offset to recover).
 
 **Files.** Scripts `scripts/phase3/`; data `data/processed/phase3/`; checkpoints
 `checkpoints/phase3/`; results `results/phase3/`. No edits to `main.tex` or banked files.
+
+### D-031 design addendum (2026-11-17, validation only; before any test evaluation)
+
+Fixed on training and validation data only. The test split has not been loaded by any
+Phase 3 script before this point. The frozen designs follow.
+
+- **LiDAR geometric estimator** (`scripts/phase3/lidar_estimator.py`). Pipeline: ground removal
+  (z ∈ [0.15, 1.7] m) → 0.2 m occupancy grid, 8-connected clusters, largest with diagonal ≤ 6 m and
+  ≥ 20 points → heading by L-shape closeness fitting on body-side points (z ≤ Z_SIDE, ≥ 30 points;
+  else the min-area rectangle) → box from the visible faces with the known 4.5 × 1.8 m footprint →
+  front/back from cabin-level points (z ≥ Z_CAB) in the rear-cabin zone ξ ∈ (−1.6+δ, −0.8−δ) under
+  each heading hypothesis (needs a lead of ≥ N_CAB) → antenna = centre − 1.3 m · forward.
+  - Tuned on validation by a 64-point grid. Result: AMBIG = near (unresolved frames take the
+    hypothesis nearer the sensor), Z_CAB = 1.1, N_CAB = 3, δ = 0.05, TOL = 0.2, Z_SIDE = 0.6.
+  - Fallback: the training-median antenna position (9.12, 0.68) m.
+  - Validation results: mean sweep loss 1.10 dB; error median 0.065 m, p90 0.58 m; fallback 0%;
+    front/back resolved 92%.
+- **Networks** (`scripts/phase3/train_net.py`, seed-11 pilots, head {P, H} × lr {1e-3, 3e-4}).
+  Every sensor chose **H, lr 1e-3** (Gaussian-target cross-entropy; local soft-argmax readout).
+
+  | Sensor | Validation sweep (dB) | Validation error median / p90 (m) | Final train loss / prior |
+  |---|---|---|---|
+  | Radar | 7.05 | 0.82 / 2.09 | 4.88 / 8.69 |
+  | LiDAR | 0.50 | 0.030 / 0.080 | 2.84 / 8.69 |
+  | Fused | 0.33 | 0.028 / 0.074 | 2.84 / 8.69 |
+
+  - The learning check passes for every chosen configuration.
+  - Radar P stayed at the prior at both learning rates: 9.9357 / 9.9350 against 9.9357. It was
+    not chosen.
+  - Seeds 22, 33, 44 and 55 are trained with the chosen configuration. Seed 11 reuses its pilot.
+- **Evaluation** (`scripts/phase3/eval_test.py`, frozen at this tag): sweep shape chosen per
+  method, frequency, M and seed on validation; the remaining rules are as pre-registered above.
+- Records: `results/phase3/design_lidar_estimator.json` and `results/phase3/design_networks.json`.
