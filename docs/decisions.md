@@ -821,3 +821,107 @@ test is reported with that shape. The 263-measurement sweep (d) is the reference
 moved into `scripts/phase2/`. No edits to `main.tex` or banked files.
 
 **Files.** Scripts `scripts/phase2/p5_*.py`; results `results/phase2/feasibility/`.
+
+## D-031 — PRE-REGISTERED: Phase 3a realistic LiDAR, location-aware networks, 5-seed test (written 2026-11-16, before any Phase 3a data)
+
+**Why.** Phase 2b (D-030, exploratory) found that a LiDAR-seeded local sweep reached ~0.9 dB
+at 32 beams, but with an idealised LiDAR (points through the whole car volume, no
+occlusion, antenna at the box centre), and that the global-average-pooled radar CNN cannot
+learn (one class for all users). This phase makes the LiDAR realistic, repairs the
+networks with a location-aware design, and tests whether the result survives.
+
+**Kept frozen (D-029):** array, codebook, channels, gains, labels, users (antenna positions
+and headings psi), split (train 3005 / val 793 / test 1193), radar data and radar spec, and
+the Phase 2a radar picker (centroid + training bias, selected in Phase 2a).
+
+**Protocol.** Tag `revision-plan-v2` on this entry before any LiDAR data. All design choices
+(estimator thresholds, network head and learning rate, sweep shape) are made on training
+and validation users only. When fixed, they are recorded in a dated addendum below,
+committed and tagged `revision-design-v2`; only then is the test set evaluated, once.
+
+### New parameters
+
+| Group | Parameter | Value | Physical reason |
+|---|---|---|---|
+| LiDAR sensor | type | 64-channel mechanical spinning LiDAR, Hesai Pandar64-class (simplified to uniform channel spacing) | typical roadside-unit LiDAR |
+| LiDAR sensor | mount | (0, 0, 2.0 m), at the comms array, no tilt | same pole as D-029 |
+| LiDAR sensor | vertical FOV / channels | −25° … +15°, 64 channels uniform (0.635° step) | Pandar64 FOV |
+| LiDAR sensor | horizontal resolution | 0.2° (1800 azimuths per revolution, 10 Hz), full 360° | Pandar64 at 10 Hz |
+| LiDAR sensor | range | 0.3 – 200 m | Pandar64 |
+| LiDAR sensor | range noise | N(0, 0.02 m) along each ray | Pandar64 range accuracy ±2 cm |
+| LiDAR sensor | return dropout | each return independently lost with p = 0.10 | dark / specular surfaces, glass |
+| LiDAR scene | rendering | ray casting: each ray returns its first hit among the vehicle and the ground plane (world z = 0), so only surfaces visible from the sensor return points (occlusion and self-shadowing) | realistic visibility |
+| LiDAR scene | background | 600 clutter points uniform in x ∈ [−20, 40], y ∈ [−20, 20], z ∈ [0, 4] m (world), as the existing model; removed if inside the vehicle or if the sensor-to-point segment crosses the vehicle; same range noise and dropout | kept from the existing model, now occluded |
+| LiDAR scene | intensities | vehicle U(0.4, 1.0), ground U(0, 0.2), background U(0, 0.5) | existing model |
+| Vehicle | shape | two boxes: body 4.5 m (L) × 1.8 m (W), z 0 – 1.0 m; cabin 2.4 m × 1.6 m, z 1.0 – 1.5 m, centred 0.4 m behind the body centre | passenger-car silhouette; the rear-biased cabin breaks front/back symmetry, as on real cars |
+| Vehicle | frame | origin = body footprint centre, xi forward along heading psi (frozen D-029 psi), eta left | |
+| Vehicle | antenna | fixed at (xi, eta, z) = (−1.3 m, 0, 1.5 m): roof-mounted shark-fin at the rear of the cabin roof, on the centreline | typical roof antenna; 1.3 m from the vehicle centre |
+| Vehicle | placement | antenna position = frozen D-029 `ant_xyz`; vehicle centre = antenna − R(psi)·(−1.3, 0) | keeps channels and labels unchanged |
+| LiDAR | seed | `default_rng(20261119 + idx)` (background, intensities, noise, dropout, in that order) | deterministic |
+| LiDAR BEV (network input) | grid | 0.2 m cells, x ∈ [−3.2, 22.4) m (128), y ∈ [−20.8, 20.8) m (208) | covers every user (x ≥ 0.56, \|y\| ≤ 16.9 m) at the accuracy the sweep needs |
+| LiDAR BEV | channels | log(1 + point count); max point height above ground in the cell / 2 m (0 if empty); mean intensity | occupancy, shape (cabin) and reflectivity |
+| Radar BEV (network input) | warp | Phase 2a 20 dB range–angle channel (frozen data), bilinearly resampled onto the same BEV grid: each cell (x, y) at the known antenna height 1.5 m → slant range and sin(phi) seen from the radar (0, 0.5, 1.2) → RA bin coordinates; cells outside the RA grid = 0 | puts radar and LiDAR in one Cartesian frame so a location-aware network can read position directly |
+
+**Known inconsistency (frozen radar spec):** the D-029 radar scatterers are drawn around the
+antenna position (body centred on the antenna); the LiDAR vehicle is centred 1.3 m from the
+antenna. The radar spec is closed (D-029 deviation 1), so it is not changed. This favours the
+radar methods (no antenna offset to recover).
+
+### Methods (each seeds the same local sweep)
+
+- **Local sweep (from D-030):** horizontal estimate → (u, r) with the known 1.5 m height;
+  A nearest angles × R nearest rings (in 1/r), A·R = M ∈ {8, 16, 32, 64}, shapes
+  A ∈ {M/8, M/4, M/2, M}; best of the M noise-free measurements; loss vs genie.
+  **Shape chosen per (method, frequency, M, seed) on validation.**
+- **Radar picker:** Phase 2a selected variant, unchanged.
+- **LiDAR geometric estimator** (raw point cloud): ground removal by height; clustering of
+  the remaining points into connected occupied cells; the vehicle cluster selected by size;
+  heading from L-shape (rectangle) fitting of the cluster footprint over the visible faces;
+  box placed from the visible faces using the known body size 4.5 × 1.8 m; front/back from
+  the cabin (points above the body top lie on the rear-biased cabin); antenna = centre +
+  known offset. A fixed fallback for frames with no valid cluster. Thresholds (ground
+  height, cell size, minimum cluster size, maximum extent, cabin height) and the fallback
+  are tuned on train/val only and recorded in the design addendum.
+- **Networks** (radar-only: radar BEV; LiDAR-only: LiDAR BEV; fused: both, concatenated at
+  the input), all with two coordinate channels (x, y) appended: a U-Net on the BEV grid
+  (4 levels, widths 32/64/128/256, GroupNorm(8), ReLU, bilinear upsampling with skip
+  connections) giving one logit map at full resolution — no global pooling. Output options,
+  chosen on validation:
+  - **P (position):** soft-argmax of the map → (x, y); smooth-L1 loss in metres.
+  - **H (cell scores):** cross-entropy against a Gaussian target (sigma = 0.2 m) centred on
+    the true antenna; estimate = soft-argmax within the 5 × 5 cells around the arg-max cell.
+  Training: AdamW, weight decay 1e-4, cosine schedule, 40 epochs, batch 16, fp32, final
+  epoch; training users with radar at 20 dB; no augmentation. The network predicts the
+  antenna position, which does not depend on the carrier, so one model per seed serves
+  both frequencies.
+  - **Design selection (seed 11 only, validation only):** head ∈ {P, H} × lr ∈ {1e-3, 3e-4},
+    per sensor configuration; criterion = mean validation sweep loss over M ∈ {8, 16, 32,
+    64} and both frequencies. The chosen configuration is then trained for seeds 11–55.
+  - **Learning check (before the 5-seed runs):** the chosen configuration's final training
+    loss must fall below the prior level — P: smooth-L1 of always predicting the training
+    median position; H: cross-entropy of the mean training target map. **If any model
+    fails, stop and report.**
+
+### Test evaluation (once, after `revision-design-v2`)
+
+- Seeds 11, 22, 33, 44, 55; 60 and 140 GHz; radar at 20 dB.
+- Loss vs genie by M ∈ {8, 16, 32, 64}: all test users (primary), adv ≥ 3 dB (secondary).
+  Networks: 5-seed mean with t-based 95% CI.
+- Position error of each method: range (along the array-to-user horizontal direction) and
+  sideways (perpendicular): median and p90 of the absolute error (networks: pooled over
+  seeds, plus the per-seed range).
+- Paired per-user bootstrap (10,000 resamples, `default_rng(0)`, percentile 95% CI) of the
+  per-user loss difference (network: 5-seed mean per user):
+  - radar network − radar picker; LiDAR network − LiDAR geometric estimator;
+  - fused network − best single-sensor method, where "best" is the single-sensor method
+    (radar picker, LiDAR geometric, radar network, LiDAR network) with the lowest
+    validation loss at that (frequency, M).
+  Reading: "network better" if the CI is entirely below 0, "worse" if entirely above,
+  otherwise "no detectable difference".
+- References: the 263-beam two-stage sweep; the Phase 2b sigma-vs-M curve (D-030 E2).
+- Also reported: the fraction of frames where the LiDAR estimator used its fallback; the
+  number of users whose vehicle footprint covers the pole (0, 0) (frozen users, reported
+  only).
+
+**Files.** Scripts `scripts/phase3/`; data `data/processed/phase3/`; checkpoints
+`checkpoints/phase3/`; results `results/phase3/`. No edits to `main.tex` or banked files.
