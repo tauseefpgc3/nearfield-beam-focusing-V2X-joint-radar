@@ -700,14 +700,14 @@ Decided by the PI before any data was generated. The 1 dB stop rule is unchanged
 | Radar | angle grid | **101 bins uniform in angle, −75° … +75°, step 1.5°**, conventional beamforming on the 12 virtual elements (sin φ = p_y/‖p‖ for a horizontal ULA) | not the codebook grid (uniform in angle, different count); covers the ±60° arc as seen from the offset radar |
 | Radar | target | vehicle as **6 point scatterers**: body-frame offsets uniform in the 4.5 m × 2.0 m footprint, heights U[0.3, 1.5] m, rotated by ψ about the vehicle centre; amplitudes U[0.3, 1.0] normalised to Σa² = 1, phases U[0, 2π) | extended target with several dominant scattering centres; none is guaranteed at the antenna |
 | Radar | clutter | 12 point reflectors, amplitude 0.25·U[0.3, 1.0] (relative to the vehicle total), slant range U[1, 25] m, sin(azimuth) of U[−90°, 90°], Doppler U[−16, 16] bins | the existing clutter model, rescaled to the new range span |
-| Radar | SNR | **20, 10, 0 dB**, defined as the vehicle's coherent-integration SNR: noise variance per raw complex sample σ² = (256·64·12)/10^(SNR/10) with Σa² = 1 (window losses not included) | a per-raw-sample definition would leave every level > 45 dB after integration and test nothing |
+| Radar | SNR | **20 dB = primary condition; 10 and 0 dB = stress tests**, reported separately and not used for the headline comparison or for picker selection. Each level is defined as the vehicle's coherent-integration SNR: noise variance per raw complex sample σ² = (256·64·12)/10^(SNR/10) with Σa² = 1 (window losses not included) | a per-raw-sample definition would leave every level > 45 dB after integration and test nothing |
 | Radar | noise seeds | geometry/clutter seed `BASE_RADAR = 20261117 + idx` (shared across SNR); noise seed `BASE_RADAR + 1_000_003·(1 + SNR-index) + idx` | SNR changes the noise only |
 | Radar | processing | Hann window in range and Doppler; range FFT 256; Doppler FFT 64 (fftshift); RD = Σ_elements \|·\|² (256×64); RA = Σ_Doppler \|beamformed\|² (256×101); 10·log10(·+1e-12), then min–max to [0, 1] per map; tensor (2, 256, 128): ch0 = RD zero-padded to 128 columns, ch1 = RA zero-padded to 128 columns | the existing two-channel input shape and encoder |
 | LiDAR | model | existing `simulate_point_cloud` model (400 car / 1500 ground / 600 background points, same intensities), sensor at the comms array (0, 0, 2.0 m): ground z = −2.0 m, car box 4.5×2.0×1.5 m with its base on the ground, rotated by ψ; `lidar_preprocessing` unchanged | keep the model, apply the heights |
 | LiDAR | seed | `BASE_LIDAR = 20261118 + idx` | deterministic |
 | Split | blocks | 15 azimuth sectors of 8° (−60…60°) × 4 distance bands ([1, 5.75), [5.75, 10.5), [10.5, 15.25), [15.25, 20] m) = 60 contiguous blocks | test users form contiguous regions, not interleaved |
-| Split | assignment | in each band, 3 sectors → test, 2 → val, 10 → train, chosen by `default_rng(2029)` | ≈ 20 / 13 / 67 %, every distance band in test |
-| Split | guard | train and val users within 0.5 m (horizontal) of any test user are dropped | no test user has a training neighbour inside 0.5 m |
+| Split | assignment | **deterministic rotation**: sectors s = 0..14 (s = 0 is −60…−52°); in band b = 0..3, test = {(b + 5k) mod 15, k = 0,1,2}, val = {(b + 3 + 5k) mod 15, k = 0,1}, rest train | held-out sectors rotate across bands: no sector is test in more than one band and every sector is in training in ≥ 3 bands |
+| Split | guard | **training** users within 0.5 m (horizontal) of any test user are dropped (validation is not guarded; it is never trained on) | no test user has a training neighbour inside 0.5 m; expected sizes ≈ 46 % train / 13 % val / 20 % test of users |
 | Split | sharing | one fixed split for both frequencies and all seeds | a seed changes only the weight init (and the data order / dropout draws that follow from it) |
 | Training | models | `RadarPolarModel` and `SensingPolarPredictor` (3 branches, cross-attention, C3), d_z = 128, heads 256 × 8 | the paper's architectures |
 | Training | configuration (all seeds) | Adam lr 1e-4, wd 1e-5, cosine over 50 epochs, batch 16, fp16; loss CE(θ) + CE(r); modality dropout p = 0.15 each (never both); three-branch model warm-started from the same-seed radar-alone checkpoint with the **radar branch unfrozen**; final-epoch checkpoint used (no early stopping) | the established recipe, one configuration |
@@ -717,10 +717,15 @@ Decided by the PI before any data was generated. The 1 dB stop rule is unchanged
 ### Methods compared (same fixed test set, same gains)
 
 - **(a) radar-alone CNN** and **(b) three-branch soft-average (C3)**: joint score p_θ(i)·p_r(j) computed in float64; top-K = the K largest scores, ties broken by lower flat index.
-- **(c) geometric picker** (reads only the radar input tensor ch1 plus known constants). Peak = argmax of the RA map over range bins ≥ 3 and all angles, refined by 3-point parabolic interpolation in range and in angle; slant range R̂ and radar angle φ̂ → radar-frame position with p_y = R̂ sin φ̂, Δz = 1.5 − 1.2 m (known antenna height), p_x = √max(R̂² − p_y² − Δz², 0); add the mount offset → comms-frame (û, r̂); î = nearest u_i, rings ranked by \|1/r_j − 1/r̂\| (1/r_0 = 0).
+- **(c) geometric picker** (reads only the radar input tensor ch1, its per-frame dB normalisation constants — radar-derived, stored with the tensor — and known constants). The aim is the strongest reasonable geometric baseline. Two position estimates:
+  - **E1 strongest return:** peak = argmax of the RA map over range bins ≥ 3 and all angles, refined by 3-point parabolic interpolation in range and in angle → slant range R̂, radar angle φ̂.
+  - **E2 intensity-weighted centroid:** the target cluster = RA cells within ±15 range bins (±1.5 m) and ±8 angle bins (±12°) of the peak, with power ≥ peak − 10 dB and 4-connected to the peak cell; weights = linear power; centroid of the cells' horizontal radar-frame coordinates (R cos φ, R sin φ) → R̂ = norm of the centroid, sin φ̂ = centroid y / R̂.
+  - **Bias correction (optional, per estimate):** constants b_R = median(R_true − R̂) and b_s = median(sin φ_true − sin φ̂) over the training users at their assigned SNR, where (R_true, φ_true) is the true antenna position seen from the radar; applied as R̂ + b_R, clip(sin φ̂ + b_s, −1, 1). Fitted separately for E1 and E2; training set only.
+  - Conversion (all variants): slant range R̂ and radar angle φ̂ → radar-frame position with p_y = R̂ sin φ̂, Δz = 1.5 − 1.2 m (known antenna height), p_x = √max(R̂² − p_y² − Δz², 0); add the mount offset → comms-frame (û, r̂); î = nearest u_i, rings ranked by \|1/r_j − 1/r̂\| (1/r_0 = 0).
   - **c1 range sweep at the peak angle:** K-list = (î, ring rank 1..K).
   - **c2 2 angles × 4 ranges:** angles î and the second-nearest u_i to û; order (ring rank, angle rank): K = 1 → (î, ring 1); K = 2 → both angles at ring 1; K = 4 → 2 × 2; K = 8 → 2 × 4.
-  - **Selection on the validation set only**, per frequency: the variant with the lower validation all-user loss averaged over K ∈ {1, 2, 4, 8} and the three SNRs is "(c)"; the other is reported as supplementary.
+  - Variants: {E1, E2} × {no bias, bias-corrected} × {c1, c2} = 8.
+  - **Selection on the validation set only**, per frequency: the variant with the lowest validation all-user loss averaged over K ∈ {1, 2, 4, 8} **at 20 dB** (the primary condition) is "(c)" and is used unchanged at 10 and 0 dB; all 8 are reported as supplementary.
 - **(d) two-stage sweep** (channel measurements, noise-free; SNR-independent): measure all 256 far-field (j = 0) beams, take the best angle, then the 7 remaining rings at that angle (263 measurements); loss = genie / best of those 263.
 
 ### Metrics, sets, statistics
@@ -735,12 +740,18 @@ Decided by the PI before any data was generated. The 1 dB stop rule is unchanged
 ### How the result will be read (fixed now)
 
 - For each (frequency, SNR, K, set) cell: **learned better** if the bootstrap CI of Δ lies entirely below 0; **picker better** if entirely above 0; otherwise **no detectable difference**. Every cell is reported.
-- **Gate verdict** (primary cell = all users, 10 dB SNR, K = 4 and K = 8, both frequencies), for (b) vs (c):
+- **Gate verdict** (primary cell = all users, **20 dB** SNR, K = 4 and K = 8, both frequencies), for (b) vs (c); 10 and 0 dB cells are stress-test results and do not enter the verdict:
   - "learned beats the geometric baseline" if (b) is better in all four of those cells;
   - "geometric baseline beats learned" if (c) is better in all four;
   - otherwise "mixed", stated with the cells.
 - Effect sizes are reported in dB with their CIs; no threshold for "practically relevant" is claimed beyond that.
 - **Not in this phase:** no 20-seed campaign, no edits to `main.tex` or banked files.
+
+### Amendment 1 (2026-11-16, PI instruction; before the tag and before any data)
+
+1. Radar SNR: 20 dB is primary; 10 and 0 dB are stress tests, reported separately, not used for the headline. Consequently the gate cell moves from 10 dB to 20 dB, and picker selection uses 20 dB validation loss only (the original criterion averaged the three SNRs, which would let the stress tests choose the headline baseline).
+2. Picker: added the intensity-weighted centroid (E2) and a training-set constant bias correction for either estimate; 8 variants, selected on validation only.
+3. Split: data-free check `scripts/phase2/p0_split_check.py` (deterministic 0.05° × 0.01 m grid, each point labelled with its line-of-sight nearest codeword). **Result for the original `default_rng(2029)` assignment: FAIL** — sector 0 (−60…−52°) was held out in all four bands, sectors 0, 3, 10 were test in two bands, and 18 angle classes (17–26, 185–192) occurred only in test. **Replaced by the deterministic rotation above: PASS** — at both frequencies every angle class (184 in test, 222 in train) and every ring in test (60 GHz rings 1–7; 140 GHz rings 0–5) also occurs in training. Joint (angle, ring) classes are not all covered (60 GHz: 296 of 469 test joint classes absent from training; 140 GHz: 259 of 421), which the factorised angle/range heads tolerate; reported as a property of the block split. The guard now applies to training users only. After generation the same check is repeated on the real labels; any failure is reported as a deviation, without re-splitting.
 
 ### Files
 
