@@ -753,6 +753,18 @@ Decided by the PI before any data was generated. The 1 dB stop rule is unchanged
 2. Picker: added the intensity-weighted centroid (E2) and a training-set constant bias correction for either estimate; 8 variants, selected on validation only.
 3. Split: data-free check `scripts/phase2/p0_split_check.py` (deterministic 0.05° × 0.01 m grid, each point labelled with its line-of-sight nearest codeword). **Result for the original `default_rng(2029)` assignment: FAIL** — sector 0 (−60…−52°) was held out in all four bands, sectors 0, 3, 10 were test in two bands, and 18 angle classes (17–26, 185–192) occurred only in test. **Replaced by the deterministic rotation above: PASS** — at both frequencies every angle class (184 in test, 222 in train) and every ring in test (60 GHz rings 1–7; 140 GHz rings 0–5) also occurs in training. Joint (angle, ring) classes are not all covered (60 GHz: 296 of 469 test joint classes absent from training; 140 GHz: 259 of 421), which the factorised angle/range heads tolerate; reported as a property of the block split. The guard now applies to training users only. After generation the same check is repeated on the real labels; any failure is reported as a deviation, without re-splitting.
 
+### Deviation 1 (2026-11-16, PI decision; after a sensor check, before any method was run)
+
+**What changed (radar only):**
+1. **Range–angle map from the zero-Doppler bin.** RA = |beamformed|² at the zero-Doppler bin (index 32 of the fftshifted 64-bin Doppler axis) instead of power summed over all 64 Doppler bins. RD map, windows, angle grid, normalisation and tensor layout unchanged.
+2. **6 of the 12 clutter reflectors are static.** The first 6 clutter reflectors in draw order have zero Doppler; their Doppler value is still drawn (so the random stream and every position/strength draw are unchanged) and then set to 0. Strength and position distributions unchanged; the other 6 keep Doppler U[−16, 16] bins.
+
+**Reasons (physical).** (1) A static target's energy sits in one Doppler bin; summing power over all 64 bins adds the noise of 63 empty bins (~18 dB) and is not correct coherent processing for a static scene. (2) Real roadside clutter (poles, signs, kerbs, parked cars) is mostly static, so it must remain in the zero-Doppler map; a scene where all clutter is Doppler-separated would be unrealistically clean.
+
+**How it was found.** A sensor-level check on training users only (`scripts/phase2/diag_radar2.py`): under the frozen processing the vehicle was the strongest range–angle return for 9% of 300 training users at the primary 20 dB condition. No model had been trained and no method had been run or compared.
+
+**Statements.** (1) Decided after a sensor check and before any method was run. (2) The choice was made on physical grounds, not on the peak-rate figures (the check compared processing options, but the adopted combination — zero-Doppler plus static clutter — was chosen for physical realism and was not itself evaluated before this entry). (3) **The radar specification is closed after this deviation:** no further changes unless a check shows an outright bug, which will be reported to the PI before any change.
+
 ### Files
 
 Scripts `scripts/phase2/`; data `data/processed/phase2/`; checkpoints `checkpoints/phase2/`;
