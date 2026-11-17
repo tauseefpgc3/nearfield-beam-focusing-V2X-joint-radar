@@ -67,12 +67,13 @@ def gauss_target(xy, sig=0.2):
     t = torch.exp(-(dx ** 2 + dy ** 2) / (2 * sig ** 2)); return t / t.flatten(1).sum(1)[:, None, None]
 
 
-def load_inputs(sensor, idx):
+def load_inputs(sensor, idx, radar_bev=None, lidar_bev=None):
+    """radar_bev / lidar_bev: paths (D-032 plumbing); default = the Phase 3a files."""
     parts = []
     if sensor in ("radar", "fused"):
-        with h5py.File(os.path.join(P3, "radar_bev20.h5"), "r") as hf: parts.append(hf["bev"][idx])
+        with h5py.File(radar_bev or os.path.join(P3, "radar_bev20.h5"), "r") as hf: parts.append(hf["bev"][idx])
     if sensor in ("lidar", "fused"):
-        with h5py.File(os.path.join(P3, "lidar_bev.h5"), "r") as hf: parts.append(hf["bev"][idx])
+        with h5py.File(lidar_bev or os.path.join(P3, "lidar_bev.h5"), "r") as hf: parts.append(hf["bev"][idx])
     return torch.from_numpy(np.concatenate(parts, 1))   # float16 in RAM
 
 
@@ -89,11 +90,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sensor", choices=["radar", "lidar", "fused"], required=True); ap.add_argument("--head", choices=["P", "H"], required=True)
     ap.add_argument("--lr", type=float, required=True); ap.add_argument("--seed", type=int, required=True); ap.add_argument("--epochs", type=int, default=40)
+    ap.add_argument("--radar_bev", default=None); ap.add_argument("--lidar_bev", default=None); ap.add_argument("--suffix", default="")
     a = ap.parse_args(); seed_everything(a.seed); dev = torch.device("cuda"); torch.backends.cudnn.benchmark = True
-    tag = f"{a.sensor}_{a.head}_lr{a.lr:g}_s{a.seed}"
+    tag = f"{a.sensor}_{a.head}_lr{a.lr:g}_s{a.seed}{a.suffix}"
     with h5py.File(os.path.join(P2, "split.h5"), "r") as hf: tr = np.sort(hf["train"][:]); va = np.sort(hf["val"][:])
     with h5py.File(os.path.join(P2, "users.h5"), "r") as hf: xy = torch.tensor(hf["ant_xyz"][:, :2], dtype=torch.float32)
-    Xtr, Xva = load_inputs(a.sensor, tr), load_inputs(a.sensor, va); Ytr = xy[tr]
+    Xtr, Xva = load_inputs(a.sensor, tr, a.radar_bev, a.lidar_bev), load_inputs(a.sensor, va, a.radar_bev, a.lidar_bev); Ytr = xy[tr]
     model = UNet(Xtr.shape[1]).to(dev)
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=1e-4); sch = torch.optim.lr_scheduler.CosineAnnealingLR(opt, a.epochs)
     # prior level

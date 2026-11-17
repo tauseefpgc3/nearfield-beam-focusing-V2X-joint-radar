@@ -1,0 +1,137 @@
+{
+ "A1a_radar": {
+  "scatterer_power_centroid_rel_antenna_vehicle_frame_m": {
+   "mean_xi": 0.006876647565265793,
+   "mean_eta": 0.0018482589428170718,
+   "sd_xi": 0.6026231080419228
+  },
+  "lidar_body_centre_rel_antenna_xi_m": 1.3,
+  "radar_net": {
+   "mean_err_along_heading_m": -0.027182201014472808,
+   "mean_err_lateral_m": -0.055752116372357136,
+   "median_dist_to_antenna_m": 0.9003502509371134,
+   "median_dist_to_lidar_body_centre_m": 1.530300804074786
+  },
+  "reading": "radar vehicle scatterers are drawn uniformly over a 4.5 x 2 m box centred on the true antenna; a radar consistent with the LiDAR scene would see the body centred 1.3 m ahead of the antenna"
+ },
+ "A1b_car_removed": {
+  "n_users": 398,
+  "lidar_net_err_median_m": 9.186452393989123,
+  "lidar_net_corr_pred_true_x": 0.02151005174249672,
+  "lidar_net_corr_pred_true_y": -0.04091858086743102,
+  "lidar_net_pred_sd_m": [
+   4.201405284134873,
+   4.7646345300235105
+  ],
+  "geometric_fallback_rate": 1.0,
+  "geometric_err_median_m": 7.455669750295925,
+  "loss": {
+   "60GHz_M8": {
+    "lidar_net_no_car": 32.70746781317709,
+    "prior": 33.69566260519197
+   },
+   "60GHz_M64": {
+    "lidar_net_no_car": 18.220709880972716,
+    "prior": 19.88391343659861
+   },
+   "140GHz_M8": {
+    "lidar_net_no_car": 32.70412155801521,
+    "prior": 33.87949137500981
+   },
+   "140GHz_M64": {
+    "lidar_net_no_car": 17.954703865532565,
+    "prior": 20.179513759616707
+   }
+  }
+ },
+ "A1c_fused_sensor_zeroed": {
+  "none_zeroed": {
+   "err_median_m": 0.02968126323114397,
+   "60GHz_M8": 0.9379144008126399,
+   "60GHz_M64": 0.2462669227943685,
+   "140GHz_M8": 0.9934481145864815,
+   "140GHz_M64": 0.23343765330667363
+  },
+  "radar_zeroed": {
+   "err_median_m": 0.06478185873102588,
+   "60GHz_M8": 1.230420787177748,
+   "60GHz_M64": 0.27898226180799324,
+   "140GHz_M8": 1.2937164803769687,
+   "140GHz_M64": 0.27315925159251353
+  },
+  "lidar_zeroed": {
+   "err_median_m": 22.511248341757696,
+   "60GHz_M8": 29.340696954973946,
+   "60GHz_M64": 14.949417246027929,
+   "140GHz_M8": 29.42168557699901,
+   "140GHz_M64": 14.890130909905986
+  }
+ },
+ "A1d": {
+  "stored_vs_fresh_bev_max_abs_diff": 0.0,
+  "point_order_bev_max_abs_diff": 0.0,
+  "point_order_geometric_max_abs_diff_m": 0.0,
+  "bev_grid_world_fixed": {
+   "x0": -3.2,
+   "y0": -20.8,
+   "cell": 0.2,
+   "nx": 128,
+   "ny": 208
+  }
+ },
+ "A2": {
+  "shift_slope_x": 0.9766738390071849,
+  "shift_slope_y": 1.0273399887250387,
+  "shift_residual_rms_m": 0.04133460143782814,
+  "shift_n_users": 199,
+  "decoding": "arg-max cell then softmax-weighted mean of cell centres in a 5x5 window (sub-cell)",
+  "pred_offset_from_cell_centre_mean_abs_cells": {
+   "x": 0.2294600755086602,
+   "y": 0.23733260094727748,
+   "uniform": 0.25
+  },
+  "err_vs_distance": [
+   {
+    "d": "1-5 m",
+    "n": 250,
+    "lidar_net_seed11_med_m": 0.07209702906379567,
+    "lidar_net_5seed_mean_pred_med_m": 0.0646220392212416,
+    "geometric_med_m": 0.05413774950617911,
+    "vehicle_returns_med": 7273.0,
+    "azimuth_spacing_m": 0.010471975511965978
+   },
+   {
+    "d": "5-10 m",
+    "n": 318,
+    "lidar_net_seed11_med_m": 0.027924322225659104,
+    "lidar_net_5seed_mean_pred_med_m": 0.021330534683851134,
+    "geometric_med_m": 0.06217514854270016,
+    "vehicle_returns_med": 2871.0,
+    "azimuth_spacing_m": 0.026179938779914945
+   },
+   {
+    "d": "10-15 m",
+    "n": 293,
+    "lidar_net_seed11_med_m": 0.027704418104204983,
+    "lidar_net_5seed_mean_pred_med_m": 0.019603000785724224,
+    "geometric_med_m": 0.07306934328466812,
+    "vehicle_returns_med": 919.0,
+    "azimuth_spacing_m": 0.04363323129985824
+   },
+   {
+    "d": "15-20 m",
+    "n": 332,
+    "lidar_net_seed11_med_m": 0.02970571651889245,
+    "lidar_net_5seed_mean_pred_med_m": 0.022738002750771417,
+    "geometric_med_m": 0.06663825945321267,
+    "vehicle_returns_med": 458.0,
+    "azimuth_spacing_m": 0.06110397711232149
+   }
+  ],
+  "vehicle_returns_test": {
+   "median": 1272.0,
+   "p5": 356.6,
+   "min": 199
+  }
+ }
+}

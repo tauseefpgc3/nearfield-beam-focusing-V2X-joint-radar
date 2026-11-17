@@ -1,0 +1,49 @@
+{
+ "train": {
+  "n": 3005,
+  "identical_to_recomputed": true
+ },
+ "val": {
+  "n": 793,
+  "identical_to_recomputed": true
+ },
+ "test": {
+  "n": 1193,
+  "identical_to_recomputed": true
+ },
+ "disjoint": true,
+ "min_test_to_train_m": 0.500003892952626,
+ "min_test_to_val_m": 0.22685548801930122,
+ "min_val_to_train_m": 0.028172912528447287,
+ "test_blocks_shared_with_train_or_val": 0,
+ "n_test_blocks": 12,
+ "split_keys_read_by_script": {
+  "lidar_v2.py": [],
+  "radar_bev.py": [],
+  "lidar_estimator.py": [],
+  "tune_lidar_estimator.py": [
+   "train",
+   "val"
+  ],
+  "train_net.py": [
+   "train",
+   "val"
+  ],
+  "select_design.py": [
+   "val"
+  ],
+  "eval_test.py": [
+   "test",
+   "val"
+  ]
+ },
+ "render_smoke_users_0_1_2_3_10_50": {
+  "0": "guard-dropped train-block user (in no split)",
+  "1": "guard-dropped train-block user (in no split)",
+  "2": "train",
+  "3": "guard-dropped train-block user (in no split)",
+  "10": "train",
+  "50": "guard-dropped train-block user (in no split)"
+ },
+ "n_guard_dropped": 1009
+}

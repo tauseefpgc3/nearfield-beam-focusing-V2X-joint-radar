@@ -1,0 +1,58 @@
+{
+ "n_tail": 60,
+ "tail_loss_threshold_db": 4.653459272529635,
+ "share_of_total_loss_from_tail": 0.9218907442455663,
+ "mean_loss_all": 0.9255423805069435,
+ "mean_loss_without_tail": 0.0761218515685147,
+ "tags": {
+  "front_back": {
+   "tail": 0.0,
+   "rest": 0.0,
+   "n_tail": 0
+  },
+  "pole": {
+   "tail": 0.2,
+   "rest": 0.00794351279788173,
+   "n_tail": 12
+  },
+  "close": {
+   "tail": 0.6166666666666667,
+   "rest": 0.01676963812886143,
+   "n_tail": 37
+  },
+  "few_returns": {
+   "tail": 0.0,
+   "rest": 0.0529567519858782,
+   "n_tail": 0
+  },
+  "large_error": {
+   "tail": 0.7166666666666667,
+   "rest": 0.009708737864077669,
+   "n_tail": 43
+  },
+  "small_error": {
+   "tail": 0.06666666666666667,
+   "rest": 0.9567519858781994,
+   "n_tail": 4
+  }
+ },
+ "tail_unexplained": 0,
+ "distance_median_m": {
+  "tail": 1.7462637809123374,
+  "rest": 10.8925229423916
+ },
+ "err_median_m": {
+  "tail": 0.5432481143403964,
+  "rest": 0.022997500004925085
+ },
+ "adv60_median_db": {
+  "tail": 5.274157660724297,
+  "rest": 0.34828999464545574
+ },
+ "returns_median": {
+  "tail": 7103.0,
+  "rest": 1158.0
+ },
+ "n_pole_test": 21,
+ "n_close_test": 56
+}

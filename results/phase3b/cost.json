@@ -1,0 +1,33 @@
+{
+ "gpu_bev_cell_agreement_min": 0.9989858774038461,
+ "points_per_frame_median": 53401.0,
+ "lidar_bev_ms": {
+  "cpu_numpy": 2.7250000057392754,
+  "gpu_torch": 1.2916000050609
+ },
+ "geometric_estimator_cpu_ms": 2.668599998287391,
+ "radar_preprocess_ms": {
+  "cuda": 0.963999998930376,
+  "cpu": 3.0244999943533912
+ },
+ "radar_picker_cpu_ms": 0.1568000006955117,
+ "radar_net": {
+  "parameters": 1948289,
+  "inference_ms_cuda": 2.3035500053083524,
+  "inference_ms_cpu": 18.42400000168709
+ },
+ "lidar_net": {
+  "parameters": 1948865,
+  "inference_ms_cuda": 2.463999997416977,
+  "inference_ms_cpu": 18.766000001050998
+ },
+ "fused_net": {
+  "parameters": 1949153,
+  "inference_ms_cuda": 2.2834999981569126,
+  "inference_ms_cpu": 18.472199990355875
+ },
+ "hardware": {
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "cpu_threads": 16
+ }
+}
