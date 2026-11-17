@@ -1130,3 +1130,133 @@ test users.
 `results/phase3b/`. The Phase 3a and 3b scripts and results and `scripts/verify3` /
 `results/verify3` are committed to the release repo at the end. No edits to `main.tex` or
 banked files.
+
+## D-033 — PRE-REGISTERED: Phase 3c, varied vehicles at 20 seeds, DeepSense LiDAR check, paper assets (written 2026-11-17, before any Phase 3c training)
+
+**Frozen at `revision-design-v2`** (with D-029 deviation 2 and D-032): array, codebook,
+channels, users, split, the LiDAR and radar specs, the varied-vehicle generator of D-032 item
+3a, the geometric estimator and its tuned parameters, the network architecture (coordinate
+U-Net, H head, local soft-argmax) and its training settings (AdamW, lr 1e-3, wd 1e-4,
+cosine, 40 epochs, batch 16, fp32, final epoch), and the sweep (A × R = M, shape chosen on
+validation). There is no re-tuning.
+
+**Test-set history.** The frozen simulated test split has been evaluated in Phases 2a, 2b,
+3a and 3b. C1 evaluates it again with the same frozen rules; no Phase 3c design choice uses
+it. The DeepSense test split (C2) is new and is evaluated once, after training.
+
+### C1. Varied vehicles, 20 seeds (headline)
+
+**Training.** LiDAR net (varied), seeds 66, 77, …, 220 (15 runs), on the varied-vehicle
+BEVs (`data/processed/phase3b/lidar_bev_var.h5`), exactly as the 5 seeds 11–55 of D-032.
+Learning check: final training loss below the prior.
+
+**Methods**
+- LiDAR geometric (frozen; still assumes 4.5 × 1.8 m and the 1.3 m antenna offset);
+- LiDAR net, single vehicle (20 seeds, D-032);
+- LiDAR net, varied-trained (20 seeds).
+
+**Sweep shape.** Chosen per method, frequency, M and seed on validation users of the
+method's own training condition: the standard validation set for the geometric estimator
+and the single-vehicle net, the varied validation set for the varied-trained net (as D-032
+item 3a).
+
+**Test sets**
+- varied-vehicle test set (main): the antenna position on the car is unknown to the
+  methods;
+- standard test set (identical vehicles): the antenna position on the car is known.
+
+**Reported** for each test set, f ∈ {60, 140} GHz, M ∈ {8, 16, 32, 64}, and subsets all
+users, adv ≥ 3 dB, horizontal distance ≥ 2 m:
+- loss vs genie: networks as the 20-seed mean with t-based 95% CI; the geometric estimator as
+  a single value with a per-user bootstrap 95% CI;
+- share within 1 dB;
+- position error: median and p90 of the horizontal Euclidean error, and of its range and
+  sideways components.
+
+**How it is read.**
+- Headline comparison: varied-trained net vs geometric, on the varied test set, all users,
+  M ∈ {8, 16}, both frequencies (4 cells). Same rule as the D-032 primary endpoint: paired
+  per-user bootstrap (10,000, `default_rng(0)`) of the 20-seed mean minus geometric, plus a
+  seed-level one-sample t-test with Holm over the 4 cells. "Better" needs every CI below 0
+  and every Holm p < 0.05; "worse" is the mirror; else "no detectable difference".
+- Secondary: varied-trained vs single-vehicle net (paired bootstrap of the two 20-seed
+  means, and a Welch t-test on the seed means), and both nets vs geometric, in every
+  reported cell. These are read by CI only.
+
+### C2. Real-data check (DeepSense 6G, LiDAR)
+
+**Source** (copied read-only from the lab share; the share is left untouched; the data are
+not committed to the release repo, which has `data/deepsense_raw/` in `.gitignore`):
+`\\TAUSEEFLABPC\d\DataSet\deepsense and Deepmimo\Deepsense\`
+
+| Scenario | Type | Source files | LiDAR |
+|---|---|---|---|
+| 8 | V2I | `scenario8.zip` (28,738 entries; 4,044 LiDAR frames) | 2-D scan (range, angle), about 16 m range |
+| 31 | V2I | `scenario31_new.zip` (35,074 entries; 7,013 LiDAR frames) | in archive |
+| 36 | V2V | `Scenario36/`: `scenario36.csv/.mat/.p`, `scenario36_lidar.zip.001–.002`, `scenario36_pwr.zip.001`, `scenario36_gps.zip.001` | in archive |
+
+The scenario-36 radar, camera and satellite archives (about 112 GB) are not copied: they are
+not used, and they would not fit on the local disk.
+
+**Task.** Per frame, predict the best beam = arg-max of the measured beam-power vector
+(64-beam codebook; angle only, no near-field range labels). If a scenario has several
+arrays, the label is the best (array, beam) pair over all of them and the output covers all
+pairs.
+
+**Split.** Per scenario, whole sequences (`seq_index`) are assigned at random,
+`default_rng(20261118)`, to train/val/test in order until each holds about 60/20/20% of
+the frames. No sequence spans two splits.
+
+**Input (adapt only the grid).** LiDAR points in the sensor frame → BEV with the D-031
+channels (log count, max height / 2, mean intensity). A channel the sensor does not provide
+(height, intensity on a 2-D scan) is set to 0. ROI, cell size and grid size (divisible by
+8) are fixed per scenario from the training frames only and recorded in a dated design
+addendum before any C2 training. The coordinate channels are normalised to the new grid.
+
+**Network (adapt only the output).** The coordinate U-Net trunk is unchanged. The output
+conv has 1 + B channels (B = number of beams or array-beam pairs): channel 0 is the
+location logit map, softmax over cells = p(cell); channels 1..B are per-cell beam logits
+ℓ(cell, b). Beam probability P(b) = Σ_cells p(cell) · softmax_b ℓ(cell, b). The network
+thus localises the user and reads the beam at that location. Loss: cross-entropy of
+log P(b) vs the best beam. Training settings as frozen (AdamW, lr 1e-3, wd 1e-4, cosine,
+40 epochs, batch 16, fp32, final epoch). Seeds 11, 22, …, 220 (20 seeds). Learning check:
+final training loss below the prior (the entropy of the training-beam marginal).
+
+**Baselines**
+- most common beam: the K most frequent training labels;
+- 1-NN on LiDAR features: the BEV log-count channel, 4 × 4 average-pooled, L2-normalised;
+  the nearest training frame (Euclidean); its measured power vector ranks the top-K;
+- geometric estimator → nearest beam, only if calibration allows. It needs a 3-D cloud with
+  a determinable ground plane and sensor height, and a beam-angle map. The beam-angle
+  offset is fitted on training frames only (one boresight offset, least circular error).
+  If any of these is missing, it is reported as not applicable with the reason.
+
+**Metrics**, per scenario, on the test split:
+- top-K accuracy and mean power loss vs the best beam, 10 log10(P_best / max over the
+  top-K of P), at K ∈ {1, 3, 5, 8} (median also given);
+- beam-change rate: the fraction of consecutive frame pairs within a sequence whose label
+  changes, for the ground truth and for each method's top-1 prediction.
+
+**How it is read.** Network: 20-seed mean with t-based 95% CI. Net vs each baseline:
+sequence-cluster bootstrap (resample test sequences, 10,000, `default_rng(0)`) of the
+difference in top-1 accuracy and in K = 1 and K = 3 power loss → better / worse / no
+detectable difference. This is a real-data check, not a near-field claim.
+
+The earlier DeepSense results (radar network, D-016 to D-024) are superseded for the paper
+and are not used for any claim.
+
+### C3. Paper assets
+
+One script, `scripts/paper_v2/build_assets.py`, regenerates everything from banked JSONs
+(`results/phase2/feasibility/`, `results/phase3b/`, `results/phase3c/`) into
+`paper_assets_v2/`:
+- `canonical_macros_v2.tex` (macro names letters only);
+- table `.tex` files;
+- figure PDFs.
+
+`scripts/paper_v2/trace_check.py` checks that every number in the tables, macros and figure
+labels traces to a banked JSON value. No edits to `main.tex` or banked files.
+
+**Files.** Scripts `scripts/phase3c/`, `scripts/paper_v2/`; data
+`data/processed/phase3c/`; checkpoints `checkpoints/phase3/` (suffix `_var`) and
+`checkpoints/phase3c/`; results `results/phase3c/`.

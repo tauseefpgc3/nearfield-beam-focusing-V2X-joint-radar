@@ -25,3 +25,6 @@ Thumbs.db
 # NOTE: checkpoints/ IS tracked here (final cited weights, all <100MB/file). If you prefer
 # to host them on Zenodo/Git-LFS instead, uncomment the next line:
 # checkpoints/
+
+# DeepSense 6G raw data (own licence; never committed)
+data/deepsense_raw/
