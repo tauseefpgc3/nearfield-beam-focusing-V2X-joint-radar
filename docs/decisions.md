@@ -1260,3 +1260,58 @@ labels traces to a banked JSON value. No edits to `main.tex` or banked files.
 **Files.** Scripts `scripts/phase3c/`, `scripts/paper_v2/`; data
 `data/processed/phase3c/`; checkpoints `checkpoints/phase3/` (suffix `_var`) and
 `checkpoints/phase3c/`; results `results/phase3c/`.
+
+### D-033 design addendum (written 2026-11-17, before any C2 training; training frames and file formats only)
+
+**Copy check.** All 9 copied files match the source sizes byte for byte (`scenario8.zip`
+910,993,649; `scenario31_new.zip` 8,614,298,522; scenario-36 LiDAR parts 8,522,825,728 +
+394,361,348; power 88,623,841; GPS 12,535,384; index files). The extracted archives give
+4,043 / 7,012 / 24,799 frames (LiDAR + beam power) for scenarios 8 / 31 / 36.
+
+**Labels.** Best beam = arg-max of the measured power vector (0-based). The CSV beam indices
+of scenarios 8 and 31 are 1-based (CSV = arg-max + 1 for 100% of frames). Scenario 36 has four
+64-beam arrays: label = array × 64 + beam over 256 pairs; it equals the CSV
+`unit1_overall-beam` for 100% of frames.
+
+**Splits** (`default_rng(20261118)`, whole sequences):
+
+| Scenario | LiDAR | Frames train / val / test | Sequences train / val / test |
+|---|---|---|---|
+| 8 (V2I) | 2-D scan, about 255 points per frame | 2,432 / 849 / 762 | 50 / 17 / 16 |
+| 31 (V2I) | 3-D, about 16,500 points, x/y/z (z up) + intensity | 4,219 / 1,592 / 1,201 | 31 / 13 / 8 |
+| 36 (V2V) | 3-D Ouster, about 15,300 valid points, x/y/z (mm) + reflectivity | 15,000 / 5,000 / 4,799 | 75 / 25 / 24 |
+
+**Grid rule** (from every 5th training frame): horizontal range clip R_c = min(99th percentile
+of training-point range, 51.2 m); ROI = [0.5, 99.5] percentile box of x and y within R_c;
+cell = the smallest of 0.2, 0.25, 0.4, 0.5, 0.8, 1.0, 1.25 m with both sides ≤ 128 cells
+(sides rounded up to a multiple of 8). The cap of 128 keeps the scenario-36 inputs at about
+2.4 GB in RAM and its 20 seeds at about 10 GPU-hours. Height = z − z_ground (2nd percentile of
+training z within R_c), clipped at 0, / 2; intensity / training 99th percentile, clipped to 1.
+
+| Scenario | R_c (m) | Cell (m) | Grid | z_ground (m) |
+|---|---|---|---|---|
+| 8 | 14.2 | 0.2 | 96 × 120 | – (2-D: height and intensity channels 0) |
+| 31 | 51.2 | 0.8 | 104 × 104 | −0.98 |
+| 36 | 51.2 | 0.8 | 96 × 96 | −2.44 |
+
+Values are in `results/phase3c/c2_design_ds{8,31,36}.json`.
+
+**Geometric estimator.**
+- Scenario 8: not applicable (2-D scan; the frozen estimator needs a 3-D cloud).
+- Scenario 36: not applicable (V2V: the LiDAR moves with the receiving car; there is no heading
+  for a LiDAR-to-GPS azimuth offset; four arrays).
+- Scenario 31: applicable.
+  - The frozen estimator and parameters run on clouds shifted by −z_ground.
+  - Beam angles θ_b = circular median of the GPS azimuth of the user (unit 2) seen from the
+    base station (unit 1, local east-north), over training frames with label b.
+  - One LiDAR-to-GPS azimuth offset = circular median of (LiDAR azimuth − GPS azimuth) over
+    non-fallback training frames.
+  - Top-K = the K beams whose θ_b is nearest the corrected LiDAR azimuth. Frames where the
+    estimator falls back use the most-common-beam ranking.
+
+**Code.**
+- `scripts/phase3c/ds_prepare.py`, `train_ds.py` (output adaptation exactly as D-033),
+  `chain_ds.sh` and `eval_c2.py`.
+- A 2-epoch smoke run (scenario 8, seed 1, checkpoint deleted) checked that the code runs;
+  no setting was changed after it.
+- Training order: scenario 8, then 31, then 36, after C1.
