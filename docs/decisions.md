@@ -958,3 +958,175 @@ Phase 3 script before this point. The frozen designs follow.
 - **Evaluation** (`scripts/phase3/eval_test.py`, frozen at this tag): sweep shape chosen per
   method, frequency, M and seed on validation; the remaining rules are as pre-registered above.
 - Records: `results/phase3/design_lidar_estimator.json` and `results/phase3/design_networks.json`.
+
+## D-029 deviation 2 — radar vehicle scatterers centred on the antenna (bug, leak) (2026-11-17)
+
+**Found by** the Phase 3b audit (`scripts/verify3/`, `results/verify3/a1_a2.json`, item A1a).
+**Bug.** `scripts/phase2/p1_radar.py` drew the 6 vehicle scatterers in a box centred on the
+**true antenna position** (ξ ~ U(−2.25, 2.25), η ~ U(−1, 1) around `ant_xy`). In the Phase 3
+scene the antenna sits 1.3 m behind the body centre, so the radar saw a car centred on the
+answer. The evidence:
+- The scatterers' power-weighted centre lies on the antenna (mean ξ = 0.007 m).
+- The radar net's mean error along the heading is −0.03 m.
+- The radar net's median distance to the antenna is 0.90 m, against 1.53 m to the body centre.
+
+This is a leak of the antenna position into the radar input. It affects the radar picker, the
+radar network and the fused network. The LiDAR inputs and the geometric estimator are not
+affected (audit A1b, A1d, A6).
+**Fix (PI decision, 2026-11-17).** Draw the 6 scatterers in the car body: a 4.5 × 1.8 m footprint
+around the **true body centre** c = antenna + 1.3 m · (cos ψ, sin ψ), the same body as the LiDAR
+scene. The draws are ξ ~ U(−2.25, 2.25) and η ~ U(−0.9, 0.9); height, amplitude and phase are
+unchanged. The rng and the draw order are unchanged (same number and order of draws). Nothing
+else in the radar spec changes:
+- array, waveform, the 12 clutter reflectors (6 static), SNR definition and noise seeds;
+- zero-Doppler range-angle processing;
+- the BEV warp.
+
+The fixed data goes to `data/processed/phase3b/`; the Phase 2a files stay as the record.
+**Consequence.** The Phase 3a radar-picker, radar-network and fused-network results
+(`results/phase3/test_results.json`) are superseded. The Phase 3a LiDAR network and
+geometric-estimator results are unaffected; audit A4 reproduces them exactly.
+
+## D-032 — PRE-REGISTERED: Phase 3b, 20-seed campaign on the fixed radar, stress, varied vehicles (written 2026-11-17, before any Phase 3b data)
+
+**Frozen at `revision-design-v2`:**
+- array, codebook, channels, users and split; the radar spec (with deviation 2 above); the
+  LiDAR spec;
+- the geometric estimator and its tuned parameters;
+- the network architecture (coordinate U-Net, H head, local soft-argmax) and its training
+  settings (AdamW, lr 1e-3, wd 1e-4, cosine, 40 epochs, batch 16, fp32);
+- the sweep (A × R = M, shape chosen per method, frequency, M and seed on validation).
+
+There is no re-tuning. The radar and fused networks are retrained on the fixed radar with
+exactly these settings. `train_net.py` gains only path and tag arguments (`--radar_bev`,
+`--lidar_bev`, `--suffix`), with defaults unchanged.
+
+**Test-set history.** The frozen test split was also used for evaluation in Phases 2a
+(D-029) and 2b (D-030). No Phase 3 design choice used it: audit A3 checked every Phase 3
+design script, and only `eval_test.py`, run once after `revision-design-v2`, reads it.
+
+### Methods
+
+| Name | What |
+|---|---|
+| radar picker | Phase 2a centroid picker on the fixed 20 dB radar. The bias is re-estimated by the frozen rule: median of (true − estimate) in (R, sin φ) over training users at their assigned SNR. The output is converted to xy at antenna height 1.5 m. |
+| LiDAR geometric | frozen estimator (`results/phase3/design_lidar_estimator.json`) |
+| radar net | H, lr 1e-3, trained on the fixed 20 dB radar BEV |
+| LiDAR net | H, lr 1e-3, the Phase 3a LiDAR BEV (seeds 11–55 reused) |
+| fused net | H, lr 1e-3, fixed radar BEV + LiDAR BEV |
+| LiDAR net (varied) | as the LiDAR net, trained on varied-vehicle BEVs (item 3a below), 5 seeds |
+
+**Seeds (B1).** 20 seeds: 11, 22, …, 55 and 66, 77, …, 220 (step 11). A seed changes only
+the weight initialisation and the mini-batch order. Data, split and noise are fixed.
+
+**Learning check.** Each network's final training loss is compared with its prior level. If
+the radar network does not get below the prior, that is reported as the result, and the
+remaining items still run.
+
+### Primary endpoint (B1)
+
+**LiDAR net vs LiDAR geometric, all test users, M ∈ {8, 16}, at 60 and 140 GHz (4 cells).**
+- (i) Paired per-user bootstrap of Δ = (20-seed mean per-user loss of the net) − (geometric
+  loss), with 10,000 resamples, `default_rng(0)` and a percentile 95% CI.
+- (ii) Seed-level test: for each seed s, Δ_s = mean test loss of seed s − mean test loss of the
+  geometric estimator. Run a two-sided one-sample t-test of the 20 Δ_s against 0, with
+  Wilcoxon signed-rank as a secondary.
+- **"LiDAR net better"** requires, in all 4 cells, a bootstrap CI entirely below 0 **and** a
+  Holm-adjusted t-test p < 0.05 (Holm over the 4 cells).
+- **"LiDAR net worse"** requires the mirror condition. Anything else is "no detectable
+  difference".
+
+### Secondary (B2, B3)
+
+**Tables (B2)** for every method, at 60 and 140 GHz and M ∈ {8, 16, 32, 64}:
+- Loss vs genie:
+  - networks: 20-seed mean with t-based 95% CI;
+  - radar picker and geometric estimator: single deterministic value.
+- Share of users within 1 dB.
+- Position error: median and p90 of the range and sideways components.
+
+**Subsets:**
+- (a) all test users;
+- (b) r < d_F, where r is the 3-D distance from the array centre to the antenna and
+  d_F = 2D²/λ with D = 127λ/2. That is 40.3 m at 60 GHz (every user) and 17.3 m at 140 GHz;
+- (c) adv ≥ 3 dB;
+- (d) sensitivity cut, item 3c: users with horizontal distance ≥ 2 m, crossed with (a)–(c).
+
+**Bootstraps** (as D-031):
+- radar net − radar picker;
+- LiDAR net − LiDAR geometric;
+- fused net − best single-sensor method. The best single-sensor method is chosen at each
+  (f, M) by the lowest validation loss among the radar picker, LiDAR geometric, radar net and
+  LiDAR net.
+
+The references are the 263-beam sweep and the Phase 2b error-vs-beams curve.
+
+**Value of range focusing (B3).** Every sweep is repeated with the far-field ring only:
+the A = M nearest angles at ring 0. Reported: the far-field-only loss and
+Δ_focus = far-field-only − full, per method, f, M and subset. Positive values mean range
+focusing helps. The genie's far-field-only loss (= adv) is given as a reference.
+
+### Stress tests (B4): evaluation only, frozen models (all 20 seeds), shape from clean validation
+
+| Setting | Change | Methods evaluated |
+|---|---|---|
+| LiDAR 32 channels | every 2nd of the 64 elevation channels (same −25…+15° FOV) | LiDAR net, fused net, geometric |
+| LiDAR 16 channels | every 4th channel | same |
+| LiDAR dropout 30% | P_drop 0.10 → 0.30 | same |
+| LiDAR noise 5 cm | σ_r 0.02 → 0.05 m | same |
+| radar 10 dB, 0 dB | fixed radar at the existing D-029 SNR levels | radar net, fused net, radar picker |
+| fused, radar removed | radar channel set to 0 | fused net |
+| fused, LiDAR removed | LiDAR channels set to 0 | fused net |
+
+The test (and validation) scenes are re-rendered with the same per-user seeds; only the
+stated parameter changes.
+
+### Cost (B5)
+
+For each network:
+- the number of parameters;
+- per-frame time at batch 1, on the GPU (RTX 5060 Laptop) and on the CPU:
+  - preprocessing: LiDAR point cloud → BEV; radar cube → range-angle map → BEV warp;
+  - inference.
+
+For the geometric estimator: per-frame CPU time. All times are medians over 200 test frames,
+after warm-up.
+
+### Added items (PI, 2026-11-17)
+
+**3a. Varied vehicles.** The vehicle is drawn per user with `default_rng(20261121 + idx)`:
+- length L ~ U(3.8, 5.0) m; width W ~ U(1.65, 1.95) m;
+- roof height H ~ U(1.35, 1.50) m. This is the compact-to-mid-size passenger-car range. The cap
+  at 1.50 m is there because the frozen channels put the antenna phase centre at 1.5 m, so the
+  fin rises 0–0.15 m above the roof;
+- body box L × W × (2/3)H;
+- cabin: length 0.533 L, width W − 0.2, from (2/3)H to H, rear edge at ξ = −0.356 L (the
+  frozen template, scaled);
+- antenna on the centreline at ξ_a ~ U(−0.34 L, −0.20 L) (template: −0.289 L). The car is
+  placed so that this point coincides with the frozen antenna position, so users and channels
+  are unchanged;
+- LiDAR noise seeds are unchanged.
+
+The steps:
+1. Evaluate the frozen LiDAR net (20 seeds) and the frozen geometric estimator (which still
+   assumes 4.5 × 1.8 m and 1.3 m) on the varied-vehicle test set. Evaluation only.
+2. Train the 5-seed LiDAR net (varied), seeds 11–55, frozen settings, on the varied-vehicle
+   training users.
+3. Report it on the varied test set next to the single-vehicle results.
+
+Radar and fused are not evaluated on varied vehicles, because the radar scene keeps the
+standard body.
+
+**3b. Antenna-offset error.** The car is re-rendered with the true antenna 1.3 + δ m behind the
+body centre, for δ ∈ {−0.5, −0.2, −0.1, +0.1, +0.2, +0.5} m. The geometric estimator still
+assumes 1.3 m, which is equivalent to its assumed offset being wrong by δ. Evaluated: the
+geometric estimator and the frozen LiDAR net; sweep loss at all M and both frequencies, all
+test users.
+
+**3c.** Every B2 table is also given with users closer than 2 m (horizontal) excluded.
+
+**Files.** Scripts `scripts/phase3b/`; data `data/processed/phase3b/`; checkpoints
+`checkpoints/phase3/` with suffix `_r2` (fixed radar) or `_var` (varied vehicles); results
+`results/phase3b/`. The Phase 3a and 3b scripts and results and `scripts/verify3` /
+`results/verify3` are committed to the release repo at the end. No edits to `main.tex` or
+banked files.
