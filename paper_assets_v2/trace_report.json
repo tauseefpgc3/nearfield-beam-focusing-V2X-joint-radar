@@ -1,6 +1,6 @@
 {
- "values_rechecked": 787,
- "keys_rechecked": 113,
+ "values_rechecked": 1038,
+ "keys_rechecked": 138,
  "files": {
   "canonical_macros_v2.tex": {
    "numbers": 151,
@@ -45,6 +45,18 @@
     "95"
    ]
   },
+  "tab_motion.tex": {
+   "numbers": 140,
+   "untraced": [],
+   "protocol_constants": [
+    "95"
+   ]
+  },
+  "tab_motion_poserr.tex": {
+   "numbers": 66,
+   "untraced": [],
+   "protocol_constants": []
+  },
   "tab_realdata.tex": {
    "numbers": 111,
    "untraced": [],
@@ -57,6 +69,14 @@
    "untraced": [],
    "protocol_constants": [
     "20",
+    "95"
+   ]
+  },
+  "tab_realdata_visible.tex": {
+   "numbers": 82,
+   "untraced": [],
+   "protocol_constants": [
+    "2",
     "95"
    ]
   },
@@ -87,6 +107,11 @@
   },
   "fig_loss_vs_beams.pdf": {
    "numbers": 16,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "fig_motion.pdf": {
+   "numbers": 20,
    "untraced": [],
    "protocol_constants": []
   },

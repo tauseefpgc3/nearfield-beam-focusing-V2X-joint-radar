@@ -1,0 +1,19 @@
+\begin{table*}[t]\centering\caption{Moving vehicle, standard test set, $M$=8: mean loss vs.\ genie (dB) when the car moves at speed $v$ along its heading between the LiDAR frame and the beam sweep. Delay $\tau$ = LiDAR frame age, uniform over one frame period, plus processing (LiDAR net: mean 52.7 ms, 95th percentile 98.8 ms). Motion-compensated: position projected forward with the velocity from two consecutive LiDAR estimates of the same car. Reference sweep: beams chosen at the frame instant and used 2.35 ms later.}\label{tab:motion}
+\small\begin{tabular}{@{}lcccccccccccc@{}}\toprule
+ & \multicolumn{6}{c}{60 GHz, $v$ (m/s)} & \multicolumn{6}{c}{140 GHz, $v$ (m/s)} \\
+\cmidrule(lr){2-7}\cmidrule(lr){8-13}
+Method & 0 & 2 & 5 & 10 & 15 & 20 & 0 & 2 & 5 & 10 & 15 & 20 \\\midrule
+\multicolumn{13}{@{}l}{\emph{All users}} \\
+LiDAR net & 0.87 & 1.27 & 3.23 & 7.00 & 10.18 & 12.68 & 0.92 & 1.33 & 3.29 & 7.02 & 10.23 & 12.71 \\
+LiDAR net, motion-compensated & 0.90 & 1.03 & 1.20 & 1.32 & 1.40 & 1.49 & 0.96 & 1.09 & 1.27 & 1.37 & 1.45 & 1.55 \\
+LiDAR geometric & 1.81 & 2.14 & 3.57 & 6.93 & 10.06 & 12.65 & 1.88 & 2.20 & 3.63 & 6.94 & 10.13 & 12.70 \\
+LiDAR geometric, motion-compensated & 1.85 & 1.86 & 2.00 & 2.14 & 2.14 & 2.15 & 1.92 & 1.93 & 2.06 & 2.22 & 2.21 & 2.24 \\
+Reference sweep & 0.67 & 0.68 & 0.70 & 0.74 & 0.77 & 0.81 & 0.09 & 0.10 & 0.14 & 0.22 & 0.28 & 0.32 \\
+\midrule
+\multicolumn{13}{@{}l}{\emph{Users with near-field advantage $\geq$ 3 dB}} \\
+LiDAR net & 4.05 & 6.14 & 12.89 & 18.68 & 21.34 & 23.17 & 12.92 & 15.62 & 21.63 & 25.43 & 26.86 & 27.60 \\
+LiDAR net, motion-compensated & 4.17 & 4.82 & 5.67 & 6.26 & 6.51 & 6.92 & 13.14 & 14.38 & 15.50 & 15.97 & 15.02 & 16.29 \\
+LiDAR geometric & 9.06 & 10.87 & 15.14 & 18.59 & 20.76 & 23.13 & 22.51 & 25.71 & 24.63 & 23.26 & 24.81 & 27.55 \\
+LiDAR geometric, motion-compensated & 9.03 & 8.91 & 9.41 & 10.07 & 9.82 & 9.51 & 22.43 & 21.81 & 21.84 & 23.90 & 23.63 & 20.63 \\
+Reference sweep & 4.10 & 4.12 & 4.17 & 4.16 & 4.05 & 3.97 & 2.27 & 2.32 & 2.71 & 3.37 & 3.89 & 4.25 \\
+\bottomrule\end{tabular}\end{table*}

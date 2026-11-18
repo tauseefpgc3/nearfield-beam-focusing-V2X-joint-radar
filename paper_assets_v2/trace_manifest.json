@@ -13162,6 +13162,4107 @@
   },
   {
    "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    0
+   ],
+   "text": "0"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    1
+   ],
+   "text": "2"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    2
+   ],
+   "text": "5"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    3
+   ],
+   "text": "10"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    4
+   ],
+   "text": "15"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    5
+   ],
+   "text": "20"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|0|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tau_ms",
+    "lidar_net",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "52.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tau_ms",
+    "lidar_net",
+    "p95"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "98.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep_time_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.35"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|0|all"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|0|all"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "subset_sizes",
+    "60",
+    "adv_ge3"
+   ],
+   "text": "3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|0|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|2|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.27"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|5|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|10|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "7.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|15|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "10.18"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|20|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.68"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|0|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|2|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.33"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|5|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.29"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|10|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "7.02"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|15|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "10.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|20|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.71"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|0|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.90"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|2|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|5|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.20"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|10|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|15|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.40"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|20|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.49"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|0|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.96"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|2|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.09"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|5|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.27"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|10|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.37"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|15|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.45"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|20|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.55"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|0|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|2|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|5|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.57"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|10|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.93"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|15|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "10.06"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|20|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.65"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|0|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.88"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|2|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.20"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|5|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|10|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.94"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|15|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "10.13"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|20|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.70"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|0|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.85"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|2|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.86"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|5|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|10|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|15|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|20|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.15"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|0|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|2|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.93"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|5|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.06"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|10|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.22"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|15|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.21"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|20|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.24"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|0|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|2|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.68"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|5|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.70"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|10|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.74"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|15|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.77"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|20|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|0|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.09"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|2|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.10"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|5|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|10|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.22"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|15|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.28"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|20|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|0|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|2|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|5|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.89"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|10|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "18.68"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|15|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "21.34"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|20|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "23.17"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|0|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|2|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.62"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|5|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "21.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|10|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "25.43"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|15|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "26.86"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|20|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "27.60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|0|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.17"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|2|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.82"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|5|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "5.67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|10|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.26"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|15|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.51"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|60|8|20|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|0|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "13.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|2|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "14.38"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|5|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.50"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|10|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.97"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|15|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.02"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|comp|140|8|20|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "16.29"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|0|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.06"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|2|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "10.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|5|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|10|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "18.59"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|15|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.76"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|60|8|20|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "23.13"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|0|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "22.51"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|2|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "25.71"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|5|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "24.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|10|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "23.26"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|15|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "24.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|stale|140|8|20|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "27.55"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|0|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|2|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "8.91"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|5|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.41"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|10|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "10.07"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|15|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.82"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|60|8|20|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.51"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|0|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "22.43"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|2|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "21.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|5|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "21.84"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|10|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "23.90"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|15|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "23.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|comp|140|8|20|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|0|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.10"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|2|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.12"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|5|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.17"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|10|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|15|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "60|20|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.97"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|0|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.27"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|2|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|5|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.71"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|10|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.37"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|15|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.89"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "sweep263",
+    "140|20|adv_ge3"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.25"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    0
+   ],
+   "text": "0"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    1
+   ],
+   "text": "2"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    2
+   ],
+   "text": "5"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    3
+   ],
+   "text": "10"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    4
+   ],
+   "text": "15"
+  },
+  {
+   "kind": "key",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speeds",
+    5
+   ],
+   "text": "20"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|0",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "3.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|0",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|2",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "11.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|2",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "21"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|5",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "26.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|5",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "48"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|10",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "53.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|10",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "95"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|15",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "79.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|15",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "141"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|20",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "104.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|stale|20",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "186"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|0",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "3.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|0",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "10"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|2",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "4.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|2",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "12"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|5",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "4.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|5",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|10",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "4.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|10",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "15"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|15",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "4.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|15",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|20",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "4.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_net|comp|20",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "17"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|0",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "6.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|0",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "59"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|2",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "14.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|2",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "47"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|5",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "30.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|5",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "56"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|10",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "54.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|10",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "99"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|15",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "79.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|15",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "144"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|20",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "101.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|stale|20",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "186"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|0",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "6.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|0",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "61"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|2",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "7.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|2",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|5",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "7.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|5",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|10",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "7.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|10",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "61"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|15",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "7.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|15",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "65"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|20",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "8.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "position_error",
+    "test|lidar_geometric|comp|20",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.0f}",
+   "text": "67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_net|0",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_net|2",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.30"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_net|5",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.38"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_net|10",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.40"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_net|15",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.44"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_net|20",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.43"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_geometric|0",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_geometric|2",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.27"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_geometric|5",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_geometric|10",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.37"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_geometric|15",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.42"
+  },
+  {
+   "kind": "value",
+   "target": "tab_motion_poserr.tex",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "speed_error",
+    "test|lidar_geometric|20",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.44"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "scenario"
+   ],
+   "text": "31"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "top1_acc"
+   ],
+   "text": "1"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "top3_acc"
+   ],
+   "text": "3"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "loss1_mean_db"
+   ],
+   "text": "1"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "loss3_mean_db"
+   ],
+   "text": "3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "n"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "1188"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "G"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "7.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "top1_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "all",
+    "network",
+    "top1_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "top3_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "18.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "top3_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "all",
+    "network",
+    "top3_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "loss1_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.82"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "loss1_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "all",
+    "network",
+    "loss1_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "loss3_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.48"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "network",
+    "loss3_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "all",
+    "network",
+    "loss3_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "most_common",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "7.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "most_common",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "18.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "most_common",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.82"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "most_common",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.48"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "most_common",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-0.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "most_common",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "most_common",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-0.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "most_common",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "one_nn",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "9.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "one_nn",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "20.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "one_nn",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.75"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "one_nn",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "one_nn",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-4.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "one_nn",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "1.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "one_nn",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-5.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "one_nn",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "2.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "geometric",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "4.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "geometric",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "9.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "geometric",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.88"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "geometric",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.76"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "geometric",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "1.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "geometric",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "4.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "geometric",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "all",
+    "baselines",
+    "geometric",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "5.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "n"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "566"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "G"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "network",
+    "top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "1.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "network",
+    "top1_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "visible",
+    "network",
+    "top1_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "1.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "network",
+    "top3_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "12.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "network",
+    "top3_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "visible",
+    "network",
+    "top3_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "network",
+    "loss1_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.13"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "network",
+    "loss1_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "visible",
+    "network",
+    "loss1_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "network",
+    "loss3_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.79"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "network",
+    "loss3_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "visible",
+    "network",
+    "loss3_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "most_common",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "most_common",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "12.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "most_common",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.15"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "most_common",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.79"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "most_common",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "most_common",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "most_common",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "most_common",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "1.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "one_nn",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "14.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "one_nn",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "30.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "one_nn",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.76"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "one_nn",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "one_nn",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-20.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "one_nn",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-6.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "one_nn",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-22.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "one_nn",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-4.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "geometric",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "6.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "geometric",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "12.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "geometric",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.98"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "geometric",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "geometric",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-7.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "geometric",
+    "network_minus_baseline",
+    "top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-2.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "geometric",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-8.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_visible.tex",
+   "src": "results/phase3e/e3_visible.json",
+   "path": [
+    "visible",
+    "baselines",
+    "geometric",
+    "network_minus_baseline",
+    "top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "-1.6"
+  },
+  {
+   "kind": "key",
    "target": "fig_loss_vs_beams.pdf",
    "src": "results/phase3b/results_b.json",
    "path": [
@@ -14304,6 +18405,126 @@
    "kind": "tick",
    "target": "fig_beam_ula.pdf",
    "text": "0"
+  },
+  {
+   "kind": "key",
+   "target": "fig_motion.pdf",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|0|all"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "fig_motion.pdf",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|60|8|0|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "fig_motion.pdf",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|0|all"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "fig_motion.pdf",
+   "src": "results/phase3e/motion.json",
+   "path": [
+    "tables",
+    "test|lidar_net|stale|140|8|0|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "15"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "20"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "0.1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "0.3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "30"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "15"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_motion.pdf",
+   "text": "20"
   }
  ],
  "skipped": []

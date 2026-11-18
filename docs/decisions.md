@@ -1670,3 +1670,64 @@ network top-1 of 1.1% (visible) vs 13.8% (not visible). No confirmatory claim.
 New tables tab_motion and tab_realdata_visible, and figure fig_motion (loss vs speed, M = 8,
 standard set, both frequencies, stale vs compensated, sweep reference). Then regenerate all
 assets and run the trace check (must PASS).
+
+### D-035 results (2026-11-18)
+
+**Bug checks.**
+- The renderer copy reproduces the stored BEVs exactly (standard and varied, 25 users each).
+- Net inference matches preds_d to 7e-15 m.
+- E1 at v = 0 reproduces results_d.json to 4.4e-16 dB.
+- E3 all-frames top-1 equals c2.json exactly.
+
+**Deviations.**
+- None in the analyses.
+- Asset-only fixes: on fig_motion the x tick label "2" is omitted, because pdftotext merged "0"
+  and "2" into "02" (the 2 m/s point is still plotted). The caption says "p90" instead of
+  "90th percentile".
+
+**τ (ms).**
+
+| Method | Mean | 95th percentile |
+|---|---|---|
+| LiDAR net | 52.7 | 98.8 |
+| Geometric | 51.6 | 97.7 |
+
+Users moved to within 1 m of the array: at most 4 (at v ≥ 10 m/s).
+
+**E1 — stale estimate.** Standard test set, all users, M = 8, 60 GHz.
+- LiDAR net loss: 0.87 / 1.27 / 3.23 / 7.00 / 10.18 / 12.68 dB at v = 0 / 2 / 5 / 10 / 15 / 20 m/s.
+- Increase over static: +0.40 [0.26, 0.54] dB at 2 m/s; +2.36 dB at 5 m/s; +11.81 dB at 20 m/s.
+- Geometric: 1.81 → 12.65 dB.
+- 140 GHz: within 0.1 dB of 60 GHz.
+- M = 64 is far more tolerant: LiDAR net 0.19 → 1.32 dB at 20 m/s.
+- Median position error at the sweep instant (LiDAR net): 3.1 cm static, 26.9 cm at 5 m/s,
+  104 cm at 20 m/s.
+- Break-even vs the reference sweep: at M = 8 both methods are already above the sweep at rest
+  (0.87 vs 0.67 dB). At 60 GHz, all users, the LiDAR net crosses at 2 m/s (M = 16),
+  10 m/s (M = 32) and 15 m/s (M = 64). At 140 GHz it is above the sweep at every M and speed
+  (the sweep is 0.09 dB).
+- Geometric at M = 64 dips at low speed (0.62 → 0.41 dB). This is not a bug: its 140 large
+  errors (> 0.3 m) lie about 1.2 m ahead along the heading, so forward motion partly cancels them.
+
+**E2 — compensation from two frames 0.1 s apart.**
+- LiDAR net, M = 8, 60 GHz, all users: 0.90 / 1.03 / 1.20 / 1.32 / 1.40 / 1.49 dB.
+- E2 − E1: +0.04 [0.02, 0.05] dB at v = 0 (velocity noise costs slightly at rest);
+  −0.24 [−0.38, −0.10] at 2 m/s; −11.19 [−11.85, −10.54] at 20 m/s.
+- Residual median error: 3.4 → 4.8 cm (p90 10 → 17 cm).
+- Speed-estimate error, median: 0.14–0.44 m/s.
+- Geometric compensated: 1.85 → 2.15 dB. Varied set at 2 m/s: compensation hurts the geometric
+  estimator (+0.35 [0.08, 0.62] dB) and helps from 5 m/s.
+- On the users with adv ≥ 3 dB the residual loss is still large at 140 GHz
+  (LiDAR net, compensated, 13–16 dB at M = 8).
+
+**E3 — exploratory, post-hoc.** DeepSense scenario 31, car-visible frames
+(n = 566, G = 8) vs all frames (n = 1,188).
+- Network top-1: 1.1% (visible) vs 7.8% (all).
+- Most-common beam: 0.5% vs 7.7%.
+- 1-NN: 14.7% vs 9.3%.
+- Geometric: 6.0% vs 4.5%.
+- The network behaves like the most-common prior; its all-frames accuracy comes from frames
+  without a visible car.
+
+**Assets.** New: tab_motion, tab_motion_poserr, tab_realdata_visible, fig_motion. Trace check
+PASS (1,038 values, 138 keys).

@@ -20,7 +20,8 @@ J = dict(b="results/phase3b/results_b.json", cost="results/phase3b/cost.json", c
          cdf="results/phase3c/position_error_cdf.json", e23="results/phase2/feasibility/e23_sweep.json",
          d8="results/phase3c/c2_design_ds8.json", d31="results/phase3c/c2_design_ds31.json", d36="results/phase3c/c2_design_ds36.json",
          a4="results/verify4/a4.json", a6="results/verify4/a6.json", a6b="results/verify4/a6b_realdata_ci.json",
-         d="results/phase3d/results_d.json", b4="results/phase3d/b4_timing.json")
+         d="results/phase3d/results_d.json", b4="results/phase3d/b4_timing.json",
+         m3e="results/phase3e/motion.json", e3="results/phase3e/e3_visible.json")
 # protocol constants (D-032/D-033 definitions, not results); the trace check reports them separately
 CONST = {"95", "1", "3", "2", "10", "20", "0"}
 FR, MS = (60, 140), (8, 16, 32, 64)
@@ -467,11 +468,99 @@ def fig_nearfield():
     cb.set_ticks([-20, -15, -10, -5, 0]); cb.set_ticklabels(["-20", "-15", "-10", "-5", "0"]); save(fig, name)
 
 
+# ============================================================== D-035 (sensor age and speed)
+MOT_ROWS = [("lidar_net", "stale", "LiDAR net"), ("lidar_net", "comp", "LiDAR net, motion-compensated"),
+            ("lidar_geometric", "stale", "LiDAR geometric"), ("lidar_geometric", "comp", "LiDAR geometric, motion-compensated")]
+
+
+def _speeds(t):
+    return [R.key(t, "m3e", ["speeds", k], str(v)) for k, v in enumerate(R.get("m3e", ["speeds"]))]
+
+
+def tab_motion():
+    t = "tab_motion.tex"
+    if not R.has("m3e"): R.skipped.append(t); return
+    V = R.get("m3e", ["speeds"]); sp = _speeds(t); n = len(V)
+    body = ("\\begin{table*}[t]\\centering\\caption{Moving vehicle, standard test set, $M$=" + R.key(t, "m3e", ["tables", "test|lidar_net|stale|60|8|0|all"], "8")
+            + ": mean loss vs.\\ genie (dB) when the car moves at speed $v$ along its heading between the LiDAR frame and the beam sweep. Delay $\\tau$ = LiDAR frame age, "
+            "uniform over one frame period, plus processing (LiDAR net: mean " + R.v(t, "m3e", ["tau_ms", "lidar_net", "mean"], "{:.1f}") + " ms, 95th percentile "
+            + R.v(t, "m3e", ["tau_ms", "lidar_net", "p95"], "{:.1f}") + " ms). Motion-compensated: position projected forward with the velocity from two consecutive LiDAR "
+            "estimates of the same car. Reference sweep: beams chosen at the frame instant and used " + R.v(t, "m3e", ["sweep_time_ms"], "{:.2f}") + " ms later.}\\label{tab:motion}\n"
+            "\\small\\begin{tabular}{@{}l" + "c" * (2 * n) + "@{}}\\toprule\n & \\multicolumn{" + str(n) + "}{c}{" + R.key(t, "m3e", ["tables", "test|lidar_net|stale|60|8|0|all"], "60")
+            + " GHz, $v$ (m/s)} & \\multicolumn{" + str(n) + "}{c}{" + R.key(t, "m3e", ["tables", "test|lidar_net|stale|140|8|0|all"], "140") + " GHz, $v$ (m/s)} \\\\\n"
+            "\\cmidrule(lr){2-" + str(n + 1) + "}\\cmidrule(lr){" + str(n + 2) + "-" + str(2 * n + 1) + "}\nMethod & " + " & ".join(sp + sp) + " \\\\\\midrule\n")
+    for sub, st in (("all", "All users"), ("adv_ge3", "Users with near-field advantage $\\geq$ " + R.key(t, "b", ["subset_sizes", "60", "adv_ge3"], "3") + " dB")):
+        body += f"\\multicolumn{{{2 * n + 1}}}{{@{{}}l}}{{\\emph{{{st}}}}} \\\\\n"
+        for m, mode, nm in MOT_ROWS:
+            body += nm + " & " + " & ".join(R.v(t, "m3e", ["tables", f"test|{m}|{mode}|{f}|8|{v}|{sub}", "mean"]) for f in FR for v in V) + " \\\\\n"
+        body += "Reference sweep & " + " & ".join(R.v(t, "m3e", ["sweep263", f"{f}|{v}|{sub}"]) for f in FR for v in V) + " \\\\\n"
+        body += "\\midrule\n" if sub == "all" else ""
+    body += "\\bottomrule\\end{tabular}\\end{table*}\n"; wtab(t, body)
+
+
+def tab_motion_poserr():
+    t = "tab_motion_poserr.tex"
+    if not R.has("m3e"): R.skipped.append(t); return
+    V = R.get("m3e", ["speeds"]); sp = _speeds(t)
+    body = ("\\begin{table}[t]\\centering\\caption{Moving vehicle, standard test set: horizontal position error (cm, median / p90) at the sweep instant, "
+            "and speed-estimate error (m/s, median) of the two-frame velocity.}\\label{tab:motion_poserr}\n"
+            "\\small\\begin{tabular}{@{}l" + "c" * len(V) + "@{}}\\toprule\n$v$ (m/s) & " + " & ".join(sp) + " \\\\\\midrule\n")
+    for m, mode, nm in MOT_ROWS:
+        body += nm + " & " + " & ".join(R.v(t, "m3e", ["position_error", f"test|{m}|{mode}|{v}", "median"], "{:.1f}", scale=100) + " / "
+                                       + R.v(t, "m3e", ["position_error", f"test|{m}|{mode}|{v}", "p90"], "{:.0f}", scale=100) for v in V) + " \\\\\n"
+    body += "\\midrule\n"
+    for m, nm in (("lidar_net", "Speed error, LiDAR net"), ("lidar_geometric", "Speed error, LiDAR geometric")):
+        body += nm + " & " + " & ".join(R.v(t, "m3e", ["speed_error", f"test|{m}|{v}", "median"]) for v in V) + " \\\\\n"
+    body += "\\bottomrule\\end{tabular}\\end{table}\n"; wtab(t, body)
+
+
+def tab_realdata_visible():
+    t = "tab_realdata_visible.tex"
+    if not R.has("e3"): R.skipped.append(t); return
+    body = ("\\begin{table*}[t]\\centering\\caption{Exploratory, post-hoc: DeepSense 6G scenario " + R.key(t, "e3", ["scenario"], "31")
+            + " test frames, all frames vs.\\ frames where the receiving car is visible in the LiDAR (at least 3 returns within 2 m of its GPS-projected position; subset "
+            "defined after the results were seen). Top-$K$ accuracy (\\%) and mean power loss (dB); network: mean $\\pm$ half-width of the 95\\% CI over seeds. "
+            "Last two columns: network minus baseline, top-1 (pp), 95\\% sequence-cluster bootstrap and cluster-robust $t$ intervals over the $G$ test sequences.}\\label{tab:realdata_visible}\n"
+            "\\small\\begin{tabular}{@{}llcccccc@{}}\\toprule\nFrames & Method & top-" + R.key(t, "e3", ["all", "network", "top1_acc"], "1") + " & top-"
+            + R.key(t, "e3", ["all", "network", "top3_acc"], "3") + " & loss, $K$=" + R.key(t, "e3", ["all", "network", "loss1_mean_db"], "1") + " & loss, $K$="
+            + R.key(t, "e3", ["all", "network", "loss3_mean_db"], "3") + " & $\\Delta$ top-1, bootstrap & $\\Delta$ top-1, $t$ \\\\\\midrule\n")
+    NMB = dict(most_common="Most common beam", one_nn="1-NN, LiDAR features", geometric="LiDAR geometric")
+    for sub, sn in (("all", "All"), ("visible", "Car visible")):
+        lab = sn + " ($n$=" + R.v(t, "e3", [sub, "n"], "{:.0f}") + ", $G$=" + R.v(t, "e3", [sub, "G"], "{:.0f}") + ")"
+        net = [sub, "network"]
+        cell = lambda k, sc, fmt: R.v(t, "e3", net + [k, "mean"], fmt, scale=sc) + " $\\pm$ " + R.v(t, "e3", net + [k, "hi"], fmt, op="half_diff", path2=net + [k, "lo"], scale=sc)
+        body += (lab + " & Network & " + " & ".join([cell("top1_acc", 100.0, "{:.1f}"), cell("top3_acc", 100.0, "{:.1f}"), cell("loss1_mean_db", 1.0, "{:.2f}"),
+                                                    cell("loss3_mean_db", 1.0, "{:.2f}")]) + " & & \\\\\n")
+        for b, bn in NMB.items():
+            bb = [sub, "baselines", b]; c = bb + ["network_minus_baseline", "top1_acc"]
+            ci = lambda lo, hi: "[" + R.v(t, "e3", c + [lo], "{:.1f}", scale=100) + ", " + R.v(t, "e3", c + [hi], "{:.1f}", scale=100) + "]"
+            body += (" & " + bn + " & " + R.v(t, "e3", bb + ["top1_acc"], "{:.1f}", scale=100) + " & " + R.v(t, "e3", bb + ["top3_acc"], "{:.1f}", scale=100) + " & "
+                     + R.v(t, "e3", bb + ["loss1_mean_db"]) + " & " + R.v(t, "e3", bb + ["loss3_mean_db"]) + " & " + ci("boot_lo", "boot_hi") + " & " + ci("t_lo", "t_hi") + " \\\\\n")
+        body += "\\midrule\n" if sub == "all" else ""
+    body += "\\bottomrule\\end{tabular}\\end{table*}\n"; wtab(t, body)
+
+
+def fig_motion():
+    name = "fig_motion.pdf"
+    if not R.has("m3e"): R.skipped.append(name); return
+    V = np.array(R.get("m3e", ["speeds"])); fig, axs = plt.subplots(1, 2, figsize=(7.0, 2.3), sharey=True)
+    for ax, f in zip(axs, FR):
+        for m, mode, nm in MOT_ROWS:
+            cs = [R.get("m3e", ["tables", f"test|{m}|{mode}|{f}|8|{v}|all"]) for v in V]; c, mk, _ = STY[m]
+            ax.plot(V, [x["mean"] for x in cs], color=c, marker=mk, ls="-" if mode == "stale" else "--", label=nm)
+            if mode == "stale" and m == "lidar_net": ax.fill_between(V, [x["lo"] for x in cs], [x["hi"] for x in cs], color=c, alpha=0.18, lw=0)
+        ax.plot(V, [R.get("m3e", ["sweep263", f"{f}|{v}|all"]) for v in V], color=MUTED, ls=":", lw=1.2, label="Reference sweep")
+        ax.set_yscale("log"); ax.minorticks_off(); ax.set_yticks([0.1, 0.3, 1, 3, 10, 30], ["0.1", "0.3", "1", "3", "10", "30"])
+        xt = [v for v in V if v != 2]; ax.set_xticks(xt, [str(int(v)) for v in xt]); ax.set_xlabel("Vehicle speed, $v$ (m/s)")
+        ax.set_title(R.key(name, "m3e", ["tables", f"test|lidar_net|stale|{f}|8|0|all"], str(f)) + " GHz, $M$=" + R.key(name, "m3e", ["tables", f"test|lidar_net|stale|{f}|8|0|all"], "8"))
+    axs[0].set_ylabel("Loss vs. genie (dB)"); legend_top(fig, axs[0], 5); save(fig, name)
+
+
 def main():
     for d in (FIG, TAB): os.makedirs(d, exist_ok=True)
     macros(); tab_setup(); tab_main(); tab_varied(); tab_stress(); tab_cost(); tab_realdata(); tab_realdata_cmp()
-    tab_baselines(); tab_fixed_shape(); tab_acq_time()
-    fig_loss_vs_beams(); fig_required_accuracy(); fig_position_cdf(); fig_varied_offset(); fig_stress(); fig_focus_value(); fig_nearfield()
+    tab_baselines(); tab_fixed_shape(); tab_acq_time(); tab_motion(); tab_motion_poserr(); tab_realdata_visible()
+    fig_loss_vs_beams(); fig_required_accuracy(); fig_position_cdf(); fig_varied_offset(); fig_stress(); fig_focus_value(); fig_nearfield(); fig_motion()
     json.dump(dict(constants=sorted(CONST), items=R.items, skipped=R.skipped), open(os.path.join(OUT, "trace_manifest.json"), "w"), indent=1)
     print("items", len(R.items), "skipped", R.skipped)
 

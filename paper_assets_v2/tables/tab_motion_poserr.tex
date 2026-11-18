@@ -1,0 +1,11 @@
+\begin{table}[t]\centering\caption{Moving vehicle, standard test set: horizontal position error (cm, median / p90) at the sweep instant, and speed-estimate error (m/s, median) of the two-frame velocity.}\label{tab:motion_poserr}
+\small\begin{tabular}{@{}lcccccc@{}}\toprule
+$v$ (m/s) & 0 & 2 & 5 & 10 & 15 & 20 \\\midrule
+LiDAR net & 3.1 / 9 & 11.5 / 21 & 26.9 / 48 & 53.6 / 95 & 79.0 / 141 & 104.1 / 186 \\
+LiDAR net, motion-compensated & 3.4 / 10 & 4.1 / 12 & 4.5 / 14 & 4.7 / 15 & 4.9 / 16 & 4.8 / 17 \\
+LiDAR geometric & 6.6 / 59 & 14.5 / 47 & 30.3 / 56 & 54.5 / 99 & 79.9 / 144 & 101.6 / 186 \\
+LiDAR geometric, motion-compensated & 6.9 / 61 & 7.5 / 60 & 7.5 / 60 & 7.9 / 61 & 7.9 / 65 & 8.2 / 67 \\
+\midrule
+Speed error, LiDAR net & 0.14 & 0.30 & 0.38 & 0.40 & 0.44 & 0.43 \\
+Speed error, LiDAR geometric & 0.14 & 0.27 & 0.32 & 0.37 & 0.42 & 0.44 \\
+\bottomrule\end{tabular}\end{table}
