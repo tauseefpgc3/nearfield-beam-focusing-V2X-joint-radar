@@ -1,0 +1,24 @@
+\begin{table}[t]\centering\caption{Stress tests on frozen models: loss vs.\ the genie beam (dB), all test users, and median position error.}\label{tab:stress}
+\small\begin{tabular}{@{}llcccc@{}}\toprule
+Setting & Method & 60, $M$=8 & 60, $M$=64 & 140, $M$=8 & error (m) \\\midrule
+LiDAR, 32 channels & LiDAR geometric & 1.86 & 0.56 & 1.93 & 0.067 \\
+ & LiDAR net & 0.86 & 0.16 & 0.91 & 0.045 \\
+ & Fused net & 0.90 & 0.16 & 0.95 & 0.045 \\
+LiDAR, 16 channels & LiDAR geometric & 2.89 & 0.52 & 2.96 & 0.077 \\
+ & LiDAR net & 2.33 & 0.32 & 2.38 & 0.077 \\
+ & Fused net & 2.37 & 0.22 & 2.42 & 0.075 \\
+LiDAR, 30\% dropout & LiDAR geometric & 1.77 & 0.54 & 1.84 & 0.064 \\
+ & LiDAR net & 0.82 & 0.18 & 0.87 & 0.032 \\
+ & Fused net & 0.87 & 0.21 & 0.92 & 0.032 \\
+LiDAR, 5 cm noise & LiDAR geometric & 1.93 & 0.74 & 2.00 & 0.108 \\
+ & LiDAR net & 0.92 & 0.21 & 0.98 & 0.032 \\
+ & Fused net & 0.98 & 0.26 & 1.03 & 0.033 \\
+Radar, 10 dB & Radar picker & 31.61 & 17.20 & 31.72 & 11.058 \\
+ & Radar net & 31.76 & 17.14 & 31.90 & 9.175 \\
+ & Fused net & 0.92 & 0.23 & 0.97 & 0.031 \\
+Radar, 0 dB & Radar picker & 31.79 & 17.39 & 31.85 & 11.084 \\
+ & Radar net & 32.16 & 17.80 & 32.32 & 9.428 \\
+ & Fused net & 0.92 & 0.22 & 0.97 & 0.031 \\
+Fused, radar removed & Fused net & 1.23 & 0.33 & 1.29 & 0.056 \\
+Fused, LiDAR removed & Fused net & 29.99 & 15.71 & 30.09 & 20.800 \\
+\bottomrule\end{tabular}\end{table}

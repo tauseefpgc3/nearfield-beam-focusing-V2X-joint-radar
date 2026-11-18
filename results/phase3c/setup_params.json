@@ -1,0 +1,98 @@
+{
+ "array": {
+  "elements": 128,
+  "spacing": "half wavelength",
+  "height_m": 2.0,
+  "axis": "y"
+ },
+ "codebook": {
+  "angles": 256,
+  "rings": 8,
+  "size": 2048,
+  "sweep_reference_beams": 263
+ },
+ "users": {
+  "total": 6000,
+  "antenna_height_m": 1.5,
+  "distance_min_m": 1.0,
+  "distance_max_m": 20.0,
+  "angle_max_deg": 60.0,
+  "reflections_min": 2,
+  "reflections_max": 4,
+  "split": {
+   "train": 3005,
+   "val": 793,
+   "test": 1193
+  },
+  "guard_dropped": 1009
+ },
+ "frequencies": {
+  "60": {
+   "wavelength_mm": 4.996540966666666,
+   "aperture_m": 0.3172803513833333,
+   "fraunhofer_m": 40.29460462568333,
+   "ring_radii_m": [
+    12.088381387704999,
+    6.044190693852499,
+    4.029460462568333,
+    3.0220953469262497,
+    2.4176762775409997,
+    2.0147302312841666,
+    1.7269116268149998
+   ]
+  },
+  "140": {
+   "wavelength_mm": 2.1413747,
+   "aperture_m": 0.13597729345,
+   "fraunhofer_m": 17.269116268150004,
+   "ring_radii_m": [
+    5.180734880445,
+    2.5903674402225,
+    1.726911626815,
+    1.29518372011125,
+    1.0361469760889999,
+    0.8634558134075,
+    0.7401049829207142
+   ]
+  }
+ },
+ "lidar": {
+  "channels": 64,
+  "elevation_min_deg": -25.0,
+  "elevation_max_deg": 15.0,
+  "azimuth_step_deg": 0.2,
+  "range_noise_m": 0.02,
+  "dropout": 0.1,
+  "sensor_height_m": 2.0,
+  "bev_cell_m": 0.2,
+  "bev_cells_x": 128,
+  "bev_cells_y": 208,
+  "body_length_m": 4.5,
+  "body_width_m": 1.8,
+  "antenna_offset_m": 1.3
+ },
+ "radar": {
+  "carrier_ghz": 77,
+  "virtual_elements": 12,
+  "chirps": 64,
+  "samples": 256,
+  "range_bin_m": 0.1,
+  "angle_bins": 101,
+  "vehicle_scatterers": 6,
+  "clutter": 12,
+  "snr_db": [
+   20,
+   10,
+   0
+  ]
+ },
+ "training": {
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "epochs": 40,
+  "batch": 16,
+  "schedule": "cosine",
+  "seeds": 20
+ }
+}

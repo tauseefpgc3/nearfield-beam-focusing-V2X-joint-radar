@@ -1,0 +1,10 @@
+\begin{table}[t]\centering\caption{Cost per frame (batch 1, median ms; GPU: laptop GPU). Preprocessing: point cloud or radar cube to BEV.}\label{tab:cost}
+\small\begin{tabular}{@{}lrcccc@{}}\toprule
+Method & Parameters & \multicolumn{2}{c}{Preprocessing} & \multicolumn{2}{c}{Inference} \\
+ & & GPU & CPU & GPU & CPU \\\midrule
+Radar net & 1{,}948{,}289 & 1.0 & 3.0 & 2.3 & 18 \\
+LiDAR net & 1{,}948{,}865 & 1.3 & 2.7 & 2.5 & 19 \\
+Fused net & 1{,}949{,}153 & 1.3 + 1.0 & 2.7 + 3.0 & 2.3 & 18 \\
+LiDAR geometric & -- & -- & -- & -- & 2.7 \\
+Radar picker & -- & 1.0 & 3.0 & -- & 0.2 \\
+\bottomrule\end{tabular}\end{table}

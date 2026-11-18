@@ -1,0 +1,9792 @@
+{
+ "constants": [
+  "0",
+  "1",
+  "10",
+  "2",
+  "20",
+  "3",
+  "95"
+ ],
+ "items": [
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.64"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.96"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "7.59"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.55"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.68"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.96"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "7.54"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.48"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.81"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.46"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.04"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.62"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.88"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.52"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.07"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.63"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "19.86"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.36"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.56"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.08"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "19.91"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.38"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.52"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.00"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.61"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.39"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.19"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.65"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.40"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.18"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.93"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.43"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.23"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.98"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.72"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.45"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.22"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "sweep263|60|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|8",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.95"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|8",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.31"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|8",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.60"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|8",
+    "p_t_holm"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1e}",
+   "text": "4.3e-18"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|16",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.85"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|16",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.21"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|16",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.52"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|16",
+    "p_t_holm"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1e}",
+   "text": "4.3e-18"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "far_field_only",
+    "lidar_net|60|8|all",
+    "delta_focus",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.03"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "far_field_only",
+    "lidar_net|60|64|all",
+    "delta_focus",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.28"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "far_field_only",
+    "genie_ff_only|60|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.38"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/nearfield_char.json",
+   "path": [
+    "60",
+    "share_adv_ge3_all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "10.7"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "frequencies",
+    "60",
+    "fraunhofer_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "40.3"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "sweep263|140|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.09"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|8",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.96"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|8",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.33"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|8",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.60"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|8",
+    "p_t_holm"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1e}",
+   "text": "4.3e-18"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|16",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.87"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|16",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.24"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|16",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.53"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|16",
+    "p_t_holm"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1e}",
+   "text": "4.0e-18"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "far_field_only",
+    "lidar_net|140|8|all",
+    "delta_focus",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.19"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "far_field_only",
+    "lidar_net|140|64|all",
+    "delta_focus",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.36"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "far_field_only",
+    "genie_ff_only|140|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.41"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/nearfield_char.json",
+   "path": [
+    "140",
+    "share_adv_ge3_all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "1.9"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "frequencies",
+    "140",
+    "fraunhofer_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "17.3"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "position_error",
+    "lidar_net",
+    "all",
+    "range",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "1.6"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "position_error",
+    "lidar_net",
+    "all",
+    "sideways",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "2.0"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "position_error",
+    "lidar_geometric",
+    "all",
+    "range",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "6.2"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "position_error",
+    "lidar_geometric",
+    "all",
+    "sideways",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "1.8"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "position_error",
+    "radar_net",
+    "all",
+    "range",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "85.8"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "position_error",
+    "radar_net",
+    "all",
+    "sideways",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "108.1"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "position_error",
+    "radar_picker",
+    "all",
+    "range",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "87.4"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "position_error",
+    "radar_picker",
+    "all",
+    "sideways",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "80.1"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.33"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_geometric",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.89"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "antenna_offset_error",
+    "+0.1",
+    "lidar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.16"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "antenna_offset_error",
+    "+0.2",
+    "lidar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.13"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "antenna_offset_error",
+    "+0.5",
+    "lidar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.49"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_net",
+    "parameters"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:,.0f}",
+   "text": "1,948,289"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_net",
+    "inference_ms_cuda"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.3"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_net",
+    "inference_ms_cpu"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "18"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_net",
+    "parameters"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:,.0f}",
+   "text": "1,948,865"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_net",
+    "inference_ms_cuda"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.5"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_net",
+    "inference_ms_cpu"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "19"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "fused_net",
+    "parameters"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:,.0f}",
+   "text": "1,949,153"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "fused_net",
+    "inference_ms_cuda"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.3"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "fused_net",
+    "inference_ms_cpu"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "18"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "60|8",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.91"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "60|8",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-3.51"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "60|8",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.33"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.14"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.43"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.23"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.81"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.27"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "60|16",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.53"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "60|16",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-3.07"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "60|16",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.01"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.43"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.30"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.91"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.46"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.61"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.39"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "140|8",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.93"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "140|8",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-3.53"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "140|8",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.34"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.21"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.48"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.29"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.88"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.32"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "140|16",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.55"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "140|16",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-3.10"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "headline",
+    "cells",
+    "140|16",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.03"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.49"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.34"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.94"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.52"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.65"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.42"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|lidar_geometric",
+    "all",
+    "euclid",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "23.4"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|single_vehicle_net",
+    "all",
+    "euclid",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "18.8"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|varied_trained_net",
+    "all",
+    "euclid",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "20.1"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "56.0"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "most_common",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "12.7"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "one_nn",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "41.2"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top3_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "88.2"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "most_common",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "27.6"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "one_nn",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "72.7"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "7.8"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "most_common",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "7.7"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "one_nn",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "9.3"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "geometric",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "4.5"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top3_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "18.7"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "most_common",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "18.7"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "one_nn",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "20.8"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "geometric",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "9.8"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "19.6"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "most_common",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "17.2"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "one_nn",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "19.4"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top3_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "40.3"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "most_common",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "50.0"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "one_nn",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "38.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "array",
+    "elements"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "128"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "array",
+    "height_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "2"
+  },
+  {
+   "kind": "key",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "frequencies",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "frequencies",
+    "140"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "frequencies",
+    "60",
+    "fraunhofer_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "40.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "frequencies",
+    "140",
+    "fraunhofer_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "17.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "codebook",
+    "angles"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "256"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "codebook",
+    "rings"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "codebook",
+    "size"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "2048"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "codebook",
+    "sweep_reference_beams"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "263"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "total"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "6000"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "distance_min_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "distance_max_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "20"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "angle_max_deg"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "antenna_height_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "1.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "reflections_min"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "reflections_max"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "split",
+    "train"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "3005"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "split",
+    "val"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "793"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "split",
+    "test"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "1193"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "users",
+    "guard_dropped"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "1009"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "channels"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "elevation_min_deg"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "-25"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "elevation_max_deg"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "15"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "azimuth_step_deg"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "0.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "range_noise_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.02"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "dropout"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0%}",
+   "text": "10%"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "sensor_height_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "bev_cell_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "0.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "bev_cells_x"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "128"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "bev_cells_y"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "208"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "body_length_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "4.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "body_width_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "1.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "lidar",
+    "antenna_offset_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "1.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "radar",
+    "carrier_ghz"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "77"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "radar",
+    "virtual_elements"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "12"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "radar",
+    "samples"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "256"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "radar",
+    "chirps"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "radar",
+    "vehicle_scatterers"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "radar",
+    "clutter"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "12"
+  },
+  {
+   "kind": "key",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "training",
+    "optimizer"
+   ],
+   "text": "AdamW"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "training",
+    "lr"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "0.001"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "training",
+    "weight_decay"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "0.0001"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "training",
+    "epochs"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "40"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "training",
+    "batch"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_setup.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "training",
+    "seeds"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:g}",
+   "text": "20"
+  },
+  {
+   "kind": "key",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|32|all"
+   ],
+   "text": "32"
+  },
+  {
+   "kind": "key",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|64|all"
+   ],
+   "text": "64"
+  },
+  {
+   "kind": "key",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "140"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.96"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "7.59"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.55"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.68"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.96"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "7.54"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_picker|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.48"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.46"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.04"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.62"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.88"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.52"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.07"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "19.86"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|8|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "radar_net|60|8|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.30"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.36"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|16|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "radar_net|60|16|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.56"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|32|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "radar_net|60|32|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.25"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.08"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|60|64|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "radar_net|60|64|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "19.91"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|8|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "radar_net|140|8|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.30"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.38"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|16|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "radar_net|140|16|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.31"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.52"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|32|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "radar_net|140|32|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.25"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "radar_net|140|64|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "radar_net|140|64|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|8|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "lidar_net|60|8|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.06"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.61"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|16|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "lidar_net|60|16|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.39"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|32|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "lidar_net|60|32|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.04"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.19"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|64|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "lidar_net|60|64|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|8|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "lidar_net|140|8|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.06"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.65"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|16|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "lidar_net|140|16|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.40"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|32|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "lidar_net|140|32|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.04"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.18"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|64|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "lidar_net|140|64|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.93"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|8|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "fused_net|60|8|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|16|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "fused_net|60|16|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.04"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.43"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|32|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "fused_net|60|32|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.04"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|60|64|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "fused_net|60|64|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.98"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|8|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "fused_net|140|8|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.72"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|16|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "fused_net|140|16|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.04"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|32|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.45"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|32|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "fused_net|140|32|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.04"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|64|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.22"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "fused_net|140|64|all",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "tables",
+    "fused_net|140|64|all",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "sweep263|60|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "sweep263|140|all"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.09"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|8",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.95"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|8",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.31"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|8",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|16",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.85"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|16",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.21"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "60|16",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.52"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|8",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.96"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|8",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.33"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|8",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|16",
+    "bootstrap",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|16",
+    "bootstrap",
+    "lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.24"
+  },
+  {
+   "kind": "value",
+   "target": "tab_main.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "primary",
+    "cells",
+    "140|16",
+    "bootstrap",
+    "hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.53"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "subset_sizes",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "subset_sizes",
+    "140"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "subset_sizes",
+    "60",
+    "adv_ge3"
+   ],
+   "text": "3"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "subset_sizes",
+    "60",
+    "d_ge_2m"
+   ],
+   "text": "2"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|60|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|60|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|140|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|140|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "subset_sizes",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|60|8|adv_ge3"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|lidar_geometric",
+    "all",
+    "euclid",
+    "p90"
+   ],
+   "text": "90"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.43"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "6.21"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.49"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|60|8|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "16.38"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|lidar_geometric|60|8|d_ge_2m",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "5.29"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|lidar_geometric",
+    "all",
+    "euclid",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "23.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|lidar_geometric",
+    "all",
+    "euclid",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "225.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.43"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.30"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.48"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.34"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|60|8|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "11.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|single_vehicle_net|60|8|d_ge_2m",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.69"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|single_vehicle_net",
+    "all",
+    "euclid",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "18.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|single_vehicle_net",
+    "all",
+    "euclid",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "43.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.91"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.29"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.94"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|60|8|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "13.22"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "varied|varied_trained_net|60|8|d_ge_2m",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.41"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|varied_trained_net",
+    "all",
+    "euclid",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "20.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "varied|varied_trained_net",
+    "all",
+    "euclid",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "46.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.46"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.88"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.52"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|60|8|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.06"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|lidar_geometric|60|8|d_ge_2m",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.86"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "standard|lidar_geometric",
+    "all",
+    "euclid",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "6.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "standard|lidar_geometric",
+    "all",
+    "euclid",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "58.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.61"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.65"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|60|8|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|single_vehicle_net|60|8|d_ge_2m",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.37"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "standard|single_vehicle_net",
+    "all",
+    "euclid",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "3.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "standard|single_vehicle_net",
+    "all",
+    "euclid",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "9.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.27"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.39"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.42"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|60|8|adv_ge3",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "10.10"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "tables",
+    "standard|varied_trained_net|60|8|d_ge_2m",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.49"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "standard|varied_trained_net",
+    "all",
+    "euclid",
+    "median"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "12.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_varied.tex",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "position_error",
+    "standard|varied_trained_net",
+    "all",
+    "euclid",
+    "p90"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "34.7"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|64|all"
+   ],
+   "text": "64"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "140"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|140|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch"
+   ],
+   "text": "32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "lidar_geometric",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.86"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "lidar_geometric",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.56"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "lidar_geometric",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.93"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "lidar_geometric",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.067"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "lidar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.86"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "lidar_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "lidar_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.91"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "lidar_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.045"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "fused_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.90"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "fused_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "fused_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.95"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch",
+    "fused_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.045"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_geometric",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.89"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_geometric",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.52"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_geometric",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.96"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_geometric",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.077"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.33"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.38"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "lidar_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.077"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "fused_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.37"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "fused_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.22"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "fused_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.42"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch",
+    "fused_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.075"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30"
+   ],
+   "text": "30"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "lidar_geometric",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.77"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "lidar_geometric",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.54"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "lidar_geometric",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.84"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "lidar_geometric",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.064"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "lidar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.82"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "lidar_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.18"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "lidar_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "lidar_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.032"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "fused_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "fused_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.21"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "fused_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30",
+    "fused_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.032"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm"
+   ],
+   "text": "5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "lidar_geometric",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.93"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "lidar_geometric",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.74"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "lidar_geometric",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "lidar_geometric",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.108"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "lidar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "lidar_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.21"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "lidar_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.98"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "lidar_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.032"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "fused_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.98"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "fused_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.26"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "fused_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm",
+    "fused_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.033"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB"
+   ],
+   "text": "10"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "radar_picker",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "31.61"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "radar_picker",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.20"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "radar_picker",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "31.72"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "radar_picker",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "11.058"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "radar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "31.76"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "radar_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "radar_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "31.90"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "radar_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "9.175"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "fused_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "fused_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "fused_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.97"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_10dB",
+    "fused_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.031"
+  },
+  {
+   "kind": "key",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB"
+   ],
+   "text": "0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "radar_picker",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "31.79"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "radar_picker",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.39"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "radar_picker",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "31.85"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "radar_picker",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "11.084"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "radar_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "32.16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "radar_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.80"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "radar_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "32.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "radar_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "9.428"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "fused_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "fused_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.22"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "fused_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.97"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "radar_0dB",
+    "fused_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.031"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "fused_radar_removed",
+    "fused_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "fused_radar_removed",
+    "fused_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.33"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "fused_radar_removed",
+    "fused_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.29"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "fused_radar_removed",
+    "fused_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.056"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "fused_lidar_removed",
+    "fused_net",
+    "60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "29.99"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "fused_lidar_removed",
+    "fused_net",
+    "60|64",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.71"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "fused_lidar_removed",
+    "fused_net",
+    "140|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "30.09"
+  },
+  {
+   "kind": "value",
+   "target": "tab_stress.tex",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "fused_lidar_removed",
+    "fused_net",
+    "err_median_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "20.800"
+  },
+  {
+   "kind": "key",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "hardware",
+    "gpu"
+   ],
+   "text": "laptop GPU"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_net",
+    "parameters"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:,.0f}",
+   "text": "1,948,289"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_preprocess_ms",
+    "cuda"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "1.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_preprocess_ms",
+    "cpu"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "3.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_net",
+    "inference_ms_cuda"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_net",
+    "inference_ms_cpu"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "18"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_net",
+    "parameters"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:,.0f}",
+   "text": "1,948,865"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_bev_ms",
+    "gpu_torch"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "1.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_bev_ms",
+    "cpu_numpy"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_net",
+    "inference_ms_cuda"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_net",
+    "inference_ms_cpu"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "19"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "fused_net",
+    "parameters"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:,.0f}",
+   "text": "1,949,153"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_bev_ms",
+    "gpu_torch"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "1.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_preprocess_ms",
+    "cuda"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "1.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "lidar_bev_ms",
+    "cpu_numpy"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_preprocess_ms",
+    "cpu"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "3.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "fused_net",
+    "inference_ms_cuda"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "fused_net",
+    "inference_ms_cpu"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "18"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "geometric_estimator_cpu_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_preprocess_ms",
+    "cuda"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "1.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_preprocess_ms",
+    "cpu"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "3.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_cost.tex",
+   "src": "results/phase3b/cost.json",
+   "path": [
+    "radar_picker_cpu_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "0.2"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top1_acc"
+   ],
+   "text": "1"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top3_acc"
+   ],
+   "text": "3"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top5_acc"
+   ],
+   "text": "5"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top8_acc"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "loss1_mean_db"
+   ],
+   "text": "1"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "loss3_mean_db"
+   ],
+   "text": "3"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "scenario"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "56.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top1_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds8",
+    "network",
+    "top1_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "4.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top3_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "88.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top3_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds8",
+    "network",
+    "top3_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "3.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top5_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "95.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top5_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds8",
+    "network",
+    "top5_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "2.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top8_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "97.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "top8_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds8",
+    "network",
+    "top8_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "1.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "loss1_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.37"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "loss1_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds8",
+    "network",
+    "loss1_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.24"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "loss3_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "loss3_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds8",
+    "network",
+    "loss3_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.04"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "beam_change_rate",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "54.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "network",
+    "beam_change_rate",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds8",
+    "network",
+    "beam_change_rate",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "3.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "most_common",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "12.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "most_common",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "27.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "most_common",
+    "top5_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "36.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "most_common",
+    "top8_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "44.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "most_common",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.48"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "most_common",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "most_common",
+    "beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "one_nn",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "41.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "one_nn",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "72.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "one_nn",
+    "top5_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "85.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "one_nn",
+    "top8_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "89.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "one_nn",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.53"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "one_nn",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.28"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "baselines",
+    "one_nn",
+    "beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "73.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "ground_truth_beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "69.0"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "scenario"
+   ],
+   "text": "31"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "7.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top1_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds31",
+    "network",
+    "top1_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top3_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "18.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top3_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds31",
+    "network",
+    "top3_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top5_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "29.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top5_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds31",
+    "network",
+    "top5_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top8_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "41.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "top8_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds31",
+    "network",
+    "top8_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "loss1_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.82"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "loss1_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds31",
+    "network",
+    "loss1_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "loss3_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.48"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "loss3_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds31",
+    "network",
+    "loss3_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "beam_change_rate",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "network",
+    "beam_change_rate",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds31",
+    "network",
+    "beam_change_rate",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "most_common",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "7.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "most_common",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "18.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "most_common",
+    "top5_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "29.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "most_common",
+    "top8_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "41.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "most_common",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.82"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "most_common",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.48"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "most_common",
+    "beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "one_nn",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "9.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "one_nn",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "20.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "one_nn",
+    "top5_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "29.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "one_nn",
+    "top8_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "36.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "one_nn",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.75"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "one_nn",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "one_nn",
+    "beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "62.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "geometric",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "4.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "geometric",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "9.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "geometric",
+    "top5_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "15.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "geometric",
+    "top8_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "21.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "geometric",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.88"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "geometric",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.76"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "baselines",
+    "geometric",
+    "beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "61.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "ground_truth_beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "63.2"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "scenario"
+   ],
+   "text": "36"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "19.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top1_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds36",
+    "network",
+    "top1_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top3_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "40.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top3_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds36",
+    "network",
+    "top3_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "1.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top5_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "47.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top5_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds36",
+    "network",
+    "top5_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "2.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top8_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "52.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "top8_acc",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds36",
+    "network",
+    "top8_acc",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "2.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "loss1_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.07"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "loss1_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds36",
+    "network",
+    "loss1_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.28"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "loss3_mean_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "7.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "loss3_mean_db",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds36",
+    "network",
+    "loss3_mean_db",
+    "lo"
+   ],
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.31"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "beam_change_rate",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "42.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "network",
+    "beam_change_rate",
+    "hi"
+   ],
+   "op": "half_diff",
+   "path2": [
+    "ds36",
+    "network",
+    "beam_change_rate",
+    "lo"
+   ],
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "2.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "most_common",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "17.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "most_common",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "50.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "most_common",
+    "top5_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "58.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "most_common",
+    "top8_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "70.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "most_common",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.88"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "most_common",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.68"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "most_common",
+    "beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "0.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "one_nn",
+    "top1_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "19.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "one_nn",
+    "top3_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "38.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "one_nn",
+    "top5_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "45.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "one_nn",
+    "top8_acc"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "50.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "one_nn",
+    "loss1_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "9.39"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "one_nn",
+    "loss3_mean_db"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "8.75"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "baselines",
+    "one_nn",
+    "beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "36.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "ground_truth_beam_change_rate"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "41.4"
+  },
+  {
+   "kind": "key",
+   "target": "fig_loss_vs_beams.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "fig_loss_vs_beams.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "140"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "16"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "32"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "64"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "0.1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "0.3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "30"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "16"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "32"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_loss_vs_beams.pdf",
+   "text": "64"
+  },
+  {
+   "kind": "key",
+   "target": "fig_required_accuracy.pdf",
+   "src": "results/phase2/feasibility/e23_sweep.json",
+   "path": [
+    "freqs",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "fig_required_accuracy.pdf",
+   "src": "results/phase2/feasibility/e23_sweep.json",
+   "path": [
+    "freqs",
+    "140"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_required_accuracy.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_required_accuracy.pdf",
+   "text": "16"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_required_accuracy.pdf",
+   "text": "32"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_required_accuracy.pdf",
+   "text": "64"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_required_accuracy.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_required_accuracy.pdf",
+   "text": "3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_required_accuracy.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_required_accuracy.pdf",
+   "text": "30"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_required_accuracy.pdf",
+   "text": "100"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "100"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "1000"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "\u22120.2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "0.0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "0.2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "0.4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "0.6"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "0.8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "1.0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "1.2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "100"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_position_cdf.pdf",
+   "text": "1000"
+  },
+  {
+   "kind": "key",
+   "target": "fig_varied_offset.pdf",
+   "src": "results/phase3c/c1.json",
+   "path": [
+    "subset_sizes",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "fig_varied_offset.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "fig_varied_offset.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_geometric|60|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "fig_varied_offset.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "fig_varied_offset.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "fig_varied_offset.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "16"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "32"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "64"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "0.1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "0.3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "-0.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "-0.2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "0.2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "0.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "6"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "7"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_varied_offset.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch"
+   ],
+   "text": "32"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30"
+   ],
+   "text": "30"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm"
+   ],
+   "text": "5"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_32ch"
+   ],
+   "text": "32"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_16ch"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_drop30"
+   ],
+   "text": "30"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "stress",
+    "lidar_noise5cm"
+   ],
+   "text": "5"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "fig_stress.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "tables",
+    "lidar_net|60|64|all"
+   ],
+   "text": "64"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "Nominal"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "32 channels"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "16 channels"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "30% dropout"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "5 cm noise"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "0.0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "0.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "1.0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "1.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "2.0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "2.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "3.0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "3.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "Nominal"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "32 channels"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "16 channels"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "30% dropout"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_stress.pdf",
+   "text": "5 cm noise"
+  },
+  {
+   "kind": "key",
+   "target": "fig_focus_value.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "subset_sizes",
+    "60",
+    "adv_ge3"
+   ],
+   "text": "3"
+  },
+  {
+   "kind": "key",
+   "target": "fig_focus_value.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "fig_focus_value.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "140"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "fig_focus_value.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "fig_focus_value.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "d_F_m",
+    "140"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "\u22120.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0.0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "1.0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "1.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "\u22120.2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "\u22120.1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0.0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0.1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0.2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0.3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0.4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0.5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "16"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "32"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "64"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "\u22122"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "6"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "16"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "32"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "64"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "\u22121"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_focus_value.pdf",
+   "text": "6"
+  },
+  {
+   "kind": "key",
+   "target": "fig_nearfield_char.pdf",
+   "src": "results/phase3c/nearfield_char.json",
+   "path": [
+    "60"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "fig_nearfield_char.pdf",
+   "src": "results/phase3c/nearfield_char.json",
+   "path": [
+    "140"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "fig_nearfield_char.pdf",
+   "src": "results/phase3b/results_b.json",
+   "path": [
+    "subset_sizes",
+    "60",
+    "adv_ge3"
+   ],
+   "text": "3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "6"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "7"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "9"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "20"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "40"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "60"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "80"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "100"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_nearfield_char.pdf",
+   "text": "120"
+  },
+  {
+   "kind": "value",
+   "target": "fig_beam_ula.pdf",
+   "src": "results/phase3c/nearfield_beam_map.json",
+   "path": [
+    "frequency_ghz"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "60"
+  },
+  {
+   "kind": "value",
+   "target": "fig_beam_ula.pdf",
+   "src": "results/phase3c/nearfield_beam_map.json",
+   "path": [
+    "focus_range_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "3"
+  },
+  {
+   "kind": "value",
+   "target": "fig_beam_ula.pdf",
+   "src": "results/phase3c/nearfield_beam_map.json",
+   "path": [
+    "focus_angle_deg"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "20"
+  },
+  {
+   "kind": "value",
+   "target": "fig_beam_ula.pdf",
+   "src": "results/phase3c/nearfield_beam_map.json",
+   "path": [
+    "depth_3db_min_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.2"
+  },
+  {
+   "kind": "value",
+   "target": "fig_beam_ula.pdf",
+   "src": "results/phase3c/nearfield_beam_map.json",
+   "path": [
+    "depth_3db_max_m"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "7.4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "6"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "\u22122"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "\u22121"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "1"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "3"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "0"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "2"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "4"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "6"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "8"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "-20"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "-15"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "-10"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "-5"
+  },
+  {
+   "kind": "tick",
+   "target": "fig_beam_ula.pdf",
+   "text": "0"
+  }
+ ],
+ "skipped": []
+}

@@ -1,0 +1,90 @@
+{
+ "values_rechecked": 518,
+ "keys_rechecked": 72,
+ "files": {
+  "canonical_macros_v2.tex": {
+   "numbers": 149,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "tab_cost.tex": {
+   "numbers": 22,
+   "untraced": [],
+   "protocol_constants": [
+    "1"
+   ]
+  },
+  "tab_main.tex": {
+   "numbers": 89,
+   "untraced": [],
+   "protocol_constants": [
+    "95"
+   ]
+  },
+  "tab_realdata.tex": {
+   "numbers": 108,
+   "untraced": [],
+   "protocol_constants": [
+    "95"
+   ]
+  },
+  "tab_setup.tex": {
+   "numbers": 45,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "tab_stress.tex": {
+   "numbers": 92,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "tab_varied.tex": {
+   "numbers": 58,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "fig_beam_ula.pdf": {
+   "numbers": 25,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "fig_focus_value.pdf": {
+   "numbers": 32,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "fig_loss_vs_beams.pdf": {
+   "numbers": 16,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "fig_nearfield_char.pdf": {
+   "numbers": 19,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "fig_position_cdf.pdf": {
+   "numbers": 14,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "fig_required_accuracy.pdf": {
+   "numbers": 13,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "fig_stress.pdf": {
+   "numbers": 11,
+   "untraced": [],
+   "protocol_constants": []
+  },
+  "fig_varied_offset.pdf": {
+   "numbers": 27,
+   "untraced": [],
+   "protocol_constants": []
+  }
+ },
+ "skipped_assets": [],
+ "failures": [],
+ "verdict": "PASS"
+}

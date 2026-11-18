@@ -89,19 +89,20 @@ def geometric_s31(hf, tr, te, lab, n_beams):
 def run(s):
     dev = torch.device("cuda")
     with h5py.File(os.path.join(T.DATA, f"ds{s}.h5"), "r") as hf:
-        sp = hf["split"][:]; tr = np.where(sp == 0)[0]; te = np.where(sp == 2)[0]
         P = hf["power"][:].astype(np.float64); lab = hf["label"][:].astype(int); seq = hf["seq"][:]; row = hf["row"][:]
+        ok = np.isfinite(P).all(1)                     # raw DeepSense power vectors with NaN entries are excluded from scoring
+        sp = hf["split"][:]; tr = np.where((sp == 0) & ok)[0]; te = np.where((sp == 2) & ok)[0]
         Xte = torch.from_numpy(hf["bev"][te]); nb = P.shape[1]
         feat = lambda X: F.normalize(F.avg_pool2d(torch.from_numpy(X[:, :1]).float(), 4).flatten(1), dim=1)
         Ftr = feat(hf["bev"][tr]); Fte = feat(hf["bev"][te])
-        R = dict(scenario=s, n_test=int(len(te)), test_sequences=int(len(np.unique(seq[te]))), beams=nb)
+        R = dict(scenario=s, excluded_nonfinite_power=dict(train=int(((sp == 0) & ~ok).sum()), test=int(((sp == 2) & ~ok).sum())), n_test=int(len(te)), test_sequences=int(len(np.unique(seq[te]))), beams=nb)
         # ---- network
         runs, learn = [], []
         for sd in SEEDS20:
             ck = torch.load(os.path.join(T.CK, f"ds{s}_s{sd}.pt"), map_location="cpu", weights_only=False)
             m = T.build(hf); m.load_state_dict(ck["model"], strict=True); m = m.to(dev)
             runs.append(T.predict(m, Xte, dev)); h = ck["history"][-1]
-            learn.append(dict(seed=sd, final_train_loss=h["train_loss"], prior=h["prior"], below_prior=h["train_loss"] < h["prior"], val_top1=h["val_top1"]))
+            learn.append(dict(seed=sd, final_train_loss=h["train_loss"], prior=h["prior"], below_prior=h["train_loss"] < h["prior"], relative_drop=1 - h["train_loss"] / h["prior"], learned=h["train_loss"] < 0.95 * h["prior"], val_top1=h["val_top1"]))
         geo_rank, geo_cal = (geometric_s31(hf, tr, te, lab, nb) if s == 31 else (None, None))
     R["learning_check"] = learn
     Pt, Lt, St, Rt = P[te], lab[te], seq[te], row[te]

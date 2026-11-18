@@ -1315,3 +1315,39 @@ Values are in `results/phase3c/c2_design_ds{8,31,36}.json`.
 - A 2-epoch smoke run (scenario 8, seed 1, checkpoint deleted) checked that the code runs;
   no setting was changed after it.
 - Training order: scenario 8, then 31, then 36, after C1.
+
+## D-033 results note (after all Phase 3c runs; 2026-11-18)
+
+Recorded after the runs. No pre-registered design setting was changed; the items below are
+evaluation-side deviations and incidents, disclosed here.
+
+**Interrupted run.** The training queue was stopped for a laptop restart while scenario 36,
+seed 209 was at epoch 30. No checkpoint is written before the final epoch, so the run was
+repeated from the start with the same seed and settings. The log line "FAILED ds36_s209" in
+`results/phase3c/logs/lane_ds.out` is that stop.
+
+**Non-finite power vectors (deviation).** 79 scenario 31 frames have NaN entries in the raw
+DeepSense power vector: 49 in train, 17 in validation and 13 in test. Scenarios 8 and 36 have none.
+- `eval_c2.py` excludes these frames from scoring and from the training pool of the baselines;
+  the counts are in `c2.json` (`excluded_nonfinite_power`).
+- Their labels (arg-max with NaN) were still used when the network was trained, about 1% of
+  scenario 31 training frames. Retraining was not done.
+
+**Learning check (clarification).** "train loss < prior" alone is met trivially by a run that sits
+at the prior. `eval_c2.py` also reports the relative drop and `learned` = final train loss
+< 0.95 × prior.
+- Scenario 8: 20/20 learned (drop 37–79%).
+- Scenario 36: 20/20 learned (drop 66–87%).
+- Scenario 31: 0/20 learned (drop ≤ 0.5%); the network predicts the training beam marginal and
+  matches the most-common-beam baseline. This is reported as a negative result; no tuning was
+  done, since the design is frozen.
+
+**Headline reading.**
+- C1: varied-trained net better than the geometric estimator in all four headline cells. The
+  single-vehicle net is better than the varied-trained net in every cell (secondary).
+- C2: the network is better than both baselines on scenario 8. On scenario 31 there is no learning.
+  On scenario 36 there is no detectable top-1 difference from 1-NN or the most common beam, and
+  the network is worse than the most common beam at top-3 and above.
+
+**Trace check.** `scripts/paper_v2/trace_check.py` treats the dataset name "DeepSense 6G" as
+text. Final verdict: PASS (518 values, 72 keys, every table and figure number traced).
