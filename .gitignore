@@ -8,7 +8,7 @@ __pycache__/
 venv/
 
 # Datasets & regenerable large artifacts (NOT redistributed — see README §6)
-data/
+/data/
 *.h5
 deepmimo_scenarios/
 
