@@ -1574,3 +1574,99 @@ after the fix, and the old numbers are kept.
 - C3: results_d.json, set "varied", subset adv_ge3 (LiDAR net 11.05 / 6.60 / 3.04 / 1.25 dB at 60 GHz vs sweep 4.10).
 
 **Assets:** regenerated (new: tab_realdata_cmp, tab_baselines, tab_fixed_shape, tab_acq_time); trace check PASS (787 values, 113 keys).
+
+## D-035 — Phase 3e: sensor age and vehicle speed (evaluation only) — pre-registered 2026-11-18
+
+**Scope.** No training. Frozen checkpoints and frozen static predictions only
+(results/phase3d/preds_d.npz). Frozen sweep shapes: the static validation choice per seed,
+as in eval_d. Tag `revision-plan-v6` is set on the commit that adds this entry, before any
+Phase 3e run.
+
+**Methods.**
+- LiDAR net: single-vehicle net, H head, lr 1e-3, 20 seeds.
+- Geometric estimator: frozen D-031 estimator.
+- Both are evaluated on the standard test set and the varied test set (1,193 users each).
+- Reference: the 263-beam sweep.
+
+### E1 — stale estimate
+
+**Timing.** τ_i = a_i + p_m.
+- a_i is the LiDAR frame age, uniform on [0, 100 ms] (10 Hz, sweep instant uniform within the
+  frame period). It is drawn once per test user from `default_rng(2035)` in sorted test-index
+  order and shared by all methods.
+- p_m is the measured processing time from results/phase3d/b4_timing.json (`processing_ms`):
+  3.76 ms for the LiDAR net, 2.67 ms for the geometric estimator.
+- Air time (M × 8.92 µs, at most 0.57 ms) is excluded: at most 1.1 cm at 20 m/s.
+- Reported: mean and 95th percentile of τ per method.
+
+**Motion.**
+- Speeds v ∈ {0, 2, 5, 10, 15, 20} m/s along each car's heading ψ.
+- True antenna at sweep time: p + v·τ_i·(cos ψ, sin ψ, 0).
+- Reflectors are static (positions and complex gains unchanged, as in the channel model).
+- The channel is recomputed with p1_channels.channel and the same codebook. The genie is the
+  best of the 2048 codewords on the moved channel.
+
+**Estimate.** The static estimate from the LiDAR frame at t0 (preds_d), unchanged.
+
+**Metric.** Loss vs genie (dB) on the moved channel.
+- M ∈ {8, 16, 32, 64}; 60 and 140 GHz.
+- Subsets: all users, and users with static adv ≥ 3 dB. Membership is fixed across speeds.
+- Networks: 20-seed mean with a t-interval over seeds. Geometric: per-user bootstrap.
+
+**Reference sweep.** Beams chosen on the channel at t0, used at t0 + 263 × 8.92 µs (2.35 ms).
+
+**Bug check.** v = 0 must reproduce the results_d.json cells to 1e-9 dB. Otherwise stop and debug.
+
+**Read.**
+1. Primary: the loss increase over v = 0 at M = 8, standard test set, all users, per frequency,
+   with a paired per-user bootstrap CI (10,000 resamples, seed 0).
+2. Break-even speed: the smallest v in the grid at which the method's mean loss exceeds the
+   reference sweep's loss at that speed, per frequency, M and subset.
+
+### E2 — motion compensation from two LiDAR frames
+
+**Second frame.** An earlier frame at t0 − 0.1 s, with the car at p − v·0.1·(cos ψ, sin ψ).
+- Same vehicle (standard or varied) and same static background clutter: the original stream
+  `LV.SEED + i`, first 1,800 draws.
+- Fresh range noise, intensities and dropout from `default_rng(40000000 + 10000·k + i)`,
+  where k is the speed index 0–5. Rendered at v = 0 too, so the velocity estimate carries
+  estimator noise at rest.
+
+**Estimates.**
+- The same frozen estimator on the earlier frame (each of the 20 nets with its own
+  predictions; the geometric estimator).
+- v̂ = (p̂(t0) − p̂(t0 − 0.1)) / 0.1, a 2-D vector.
+- Projected position p̂(t0) + v̂·τ_i. No gating; the estimators' own errors and fallbacks are
+  kept.
+
+**Metrics.** As E1, plus:
+- Horizontal Euclidean residual position error (median, p90): stale (E1) vs projected (E2),
+  per speed.
+- Speed-estimate error |v̂ − v| (median, p90).
+- Paired E2 − E1 loss difference: M = 8, all users, both frequencies, both sets, per-user
+  bootstrap.
+
+**Read.** Compensation helps at a speed if the E2 − E1 CI lies below 0, and hurts if it lies
+above 0.
+
+### E3 — real data, exploratory and post-hoc
+
+**Data.** DeepSense scenario 31 test frames (finite power).
+
+**Subset.** Visible = the A3b definition: rotation from a3_ds31.json at lag 0, and at least
+3 non-ground points within 2 m of the GPS-projected receiver. 566 of 1,188 frames.
+
+**Methods.** The existing 20 networks and the baselines (most-common beam, 1-NN, geometric).
+- Metrics as eval_c2: top-K (K = 1, 3, 5, 8) and mean loss (K = 1, 3).
+- Network minus baseline, with the number of visible-subset sequences G, the cluster
+  bootstrap and the cluster-t interval (the A6 rule for scenario 31).
+- Reported next to the all-frames result.
+
+**Label.** Exploratory and post-hoc. The subset was defined after A3b had already shown
+network top-1 of 1.1% (visible) vs 13.8% (not visible). No confirmatory claim.
+
+### Assets
+
+New tables tab_motion and tab_realdata_visible, and figure fig_motion (loss vs speed, M = 8,
+standard set, both frequencies, stale vs compensated, sweep reference). Then regenerate all
+assets and run the trace check (must PASS).
