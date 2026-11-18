@@ -28,3 +28,4 @@ Thumbs.db
 
 # DeepSense 6G raw data (own licence; never committed)
 data/deepsense_raw/
+results/verify4/a3_local/

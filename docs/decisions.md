@@ -1518,3 +1518,21 @@ after the fix, and the old numbers are kept.
   method (as in B5) plus the 263-beam sweep.
 
 **End.** Regenerate the paper assets and rerun the trace check.
+
+### D-034 deviations (dated)
+
+**2026-11-18, 19:05 — A3 lag window ±10 → ±20 frames (before the lag test ran).**
+- The scenario 36 CSV shows constant per-device file-timestamp offsets relative to the row
+  time: power −0.655 s, LiDAR +1.29 s (±0.02), radar +1.31 s, GPS and camera ≈ 0.
+- A true LiDAR misalignment of that size (about 13 frames) would lie outside ±10, so the
+  search window is widened.
+- The best lag within ±10 is still reported.
+
+**2026-11-18, 19:20 — B5 index offset 1,000,000 → 10,000,000 (before any fresh data were
+generated).**
+- Every generator stream is seeded as base + user index, with bases 20261116 (geometry and
+  channel), 20261117 (radar) and 20261119 (LiDAR), and radar noise at
+  20261117 + 1,000,003 · (1 + s).
+- With index 1,000,000 + k, the new users' geometry seeds (21261116 + k) would equal the
+  original users' 20 dB radar-noise seeds (21261120 + i).
+- With 10,000,000 + k, no new stream seed equals any original one.
