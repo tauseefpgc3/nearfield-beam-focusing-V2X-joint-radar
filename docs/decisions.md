@@ -1521,15 +1521,14 @@ after the fix, and the old numbers are kept.
 
 ### D-034 deviations (dated)
 
-**2026-11-18, 19:05 — A3 lag window ±10 → ±20 frames (before the lag test ran).**
+**2026-11-18 — A3 lag window ±10 → ±20 frames.** The change was made in the A3 script before any A3 run, but this note was only written at 18:40, after the scenario 31 A3 run (which already used ±20) and as the scenario 36 run started. (The times first written here, 19:05 and 19:20, were wrong; corrected at 18:50.)
 - The scenario 36 CSV shows constant per-device file-timestamp offsets relative to the row
   time: power −0.655 s, LiDAR +1.29 s (±0.02), radar +1.31 s, GPS and camera ≈ 0.
 - A true LiDAR misalignment of that size (about 13 frames) would lie outside ±10, so the
   search window is widened.
 - The best lag within ±10 is still reported.
 
-**2026-11-18, 19:20 — B5 index offset 1,000,000 → 10,000,000 (before any fresh data were
-generated).**
+**2026-11-18, 18:40 — B5 index offset 1,000,000 → 10,000,000.** The script used 10,000,000 from its first run; this note was written as that generation started (18:40).
 - Every generator stream is seeded as base + user index, with bases 20261116 (geometry and
   channel), 20261117 (radar) and 20261119 (LiDAR), and radar noise at
   20261117 + 1,000,003 · (1 + s).
