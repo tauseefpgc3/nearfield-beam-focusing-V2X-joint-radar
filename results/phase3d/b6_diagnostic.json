@@ -1,0 +1,24 @@
+{
+ "label_equals_genie_argmax": 1.0,
+ "train": {
+  "prior_top8_loss_db": 23.797837583222055,
+  "distinct_codewords": 556,
+  "share_codeword_seen_in_train": 1.0,
+  "net_top1": 0.2249584026622296,
+  "net_top8_loss_db": 1.4980718572235376
+ },
+ "val": {
+  "prior_top8_loss_db": 31.311085466189528,
+  "distinct_codewords": 257,
+  "share_codeword_seen_in_train": 0.6935687263556116,
+  "net_top1": 0.029003783102143757,
+  "net_top8_loss_db": 11.875981060162749
+ },
+ "test": {
+  "prior_top8_loss_db": 27.523994544802253,
+  "distinct_codewords": 353,
+  "share_codeword_seen_in_train": 0.6588432523051132,
+  "net_top1": 0.020955574182732608,
+  "net_top8_loss_db": 15.920477933631908
+ }
+}

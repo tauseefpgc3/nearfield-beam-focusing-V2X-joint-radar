@@ -1,17 +1,41 @@
 {
- "values_rechecked": 518,
- "keys_rechecked": 72,
+ "values_rechecked": 787,
+ "keys_rechecked": 113,
  "files": {
   "canonical_macros_v2.tex": {
-   "numbers": 149,
+   "numbers": 151,
    "untraced": [],
    "protocol_constants": []
+  },
+  "tab_acq_time.tex": {
+   "numbers": 52,
+   "untraced": [],
+   "protocol_constants": [
+    "1",
+    "3"
+   ]
+  },
+  "tab_baselines.tex": {
+   "numbers": 108,
+   "untraced": [],
+   "protocol_constants": [
+    "1",
+    "3"
+   ]
   },
   "tab_cost.tex": {
    "numbers": 22,
    "untraced": [],
    "protocol_constants": [
     "1"
+   ]
+  },
+  "tab_fixed_shape.tex": {
+   "numbers": 44,
+   "untraced": [],
+   "protocol_constants": [
+    "1",
+    "3"
    ]
   },
   "tab_main.tex": {
@@ -22,9 +46,17 @@
    ]
   },
   "tab_realdata.tex": {
-   "numbers": 108,
+   "numbers": 111,
    "untraced": [],
    "protocol_constants": [
+    "95"
+   ]
+  },
+  "tab_realdata_cmp.tex": {
+   "numbers": 109,
+   "untraced": [],
+   "protocol_constants": [
+    "20",
     "95"
    ]
   },

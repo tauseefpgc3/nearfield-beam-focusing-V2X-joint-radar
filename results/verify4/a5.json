@@ -1,0 +1,176 @@
+{
+ "cells": {
+  "sweep263|60": {
+   "reproduced": 0.6710351610112739,
+   "banked": 0.6710351610112739,
+   "abs_diff": 0.0
+  },
+  "lidar_net|standard|60|8": {
+   "reproduced": 0.8671549498716653,
+   "banked": 0.8671549498716651,
+   "abs_diff": 2.220446049250313e-16
+  },
+  "lidar_net|varied|60|8": {
+   "reproduced": 2.429991746253452,
+   "banked": 2.429991746253452,
+   "abs_diff": 0.0
+  },
+  "geometric|standard|60|8": {
+   "reproduced": 1.8133133407556654,
+   "banked": 1.8133133407556654,
+   "abs_diff": 0.0
+  },
+  "geometric|varied|60|8": {
+   "reproduced": 6.136998385271438,
+   "banked": 6.136998385271438,
+   "abs_diff": 0.0
+  },
+  "lidar_net|standard|60|16": {
+   "reproduced": 0.6111554336464198,
+   "banked": 0.6111554336464199,
+   "abs_diff": 1.1102230246251565e-16
+  },
+  "lidar_net|varied|60|16": {
+   "reproduced": 1.3048658839484737,
+   "banked": 1.304865883948474,
+   "abs_diff": 2.220446049250313e-16
+  },
+  "geometric|standard|60|16": {
+   "reproduced": 1.4629894141434518,
+   "banked": 1.4629894141434518,
+   "abs_diff": 0.0
+  },
+  "geometric|varied|60|16": {
+   "reproduced": 4.4334971605676,
+   "banked": 4.4334971605676,
+   "abs_diff": 0.0
+  },
+  "lidar_net|standard|60|32": {
+   "reproduced": 0.3852811688681352,
+   "banked": 0.3852811688681353,
+   "abs_diff": 1.1102230246251565e-16
+  },
+  "lidar_net|varied|60|32": {
+   "reproduced": 0.5947238224115562,
+   "banked": 0.5947238224115564,
+   "abs_diff": 2.220446049250313e-16
+  },
+  "geometric|standard|60|32": {
+   "reproduced": 1.04227349004491,
+   "banked": 1.04227349004491,
+   "abs_diff": 0.0
+  },
+  "geometric|varied|60|32": {
+   "reproduced": 2.22074846058941,
+   "banked": 2.22074846058941,
+   "abs_diff": 0.0
+  },
+  "lidar_net|standard|60|64": {
+   "reproduced": 0.1918122714985471,
+   "banked": 0.1918122714985471,
+   "abs_diff": 0.0
+  },
+  "lidar_net|varied|60|64": {
+   "reproduced": 0.2392025829892185,
+   "banked": 0.23920258298921845,
+   "abs_diff": 5.551115123125783e-17
+  },
+  "geometric|standard|60|64": {
+   "reproduced": 0.6244738492110801,
+   "banked": 0.6244738492110801,
+   "abs_diff": 0.0
+  },
+  "geometric|varied|60|64": {
+   "reproduced": 0.8874177627972832,
+   "banked": 0.8874177627972832,
+   "abs_diff": 0.0
+  },
+  "sweep263|140": {
+   "reproduced": 0.09140490554967734,
+   "banked": 0.09140490554967734,
+   "abs_diff": 0.0
+  },
+  "lidar_net|standard|140|8": {
+   "reproduced": 0.9189597008268822,
+   "banked": 0.9189597008268825,
+   "abs_diff": 3.3306690738754696e-16
+  },
+  "lidar_net|varied|140|8": {
+   "reproduced": 2.482967519132736,
+   "banked": 2.4829675191327345,
+   "abs_diff": 1.3322676295501878e-15
+  },
+  "geometric|standard|140|8": {
+   "reproduced": 1.876902438366999,
+   "banked": 1.876902438366999,
+   "abs_diff": 0.0
+  },
+  "geometric|varied|140|8": {
+   "reproduced": 6.21012382166176,
+   "banked": 6.21012382166176,
+   "abs_diff": 0.0
+  },
+  "lidar_net|standard|140|16": {
+   "reproduced": 0.651818759745196,
+   "banked": 0.6518187597451964,
+   "abs_diff": 4.440892098500626e-16
+  },
+  "lidar_net|varied|140|16": {
+   "reproduced": 1.3445052926047736,
+   "banked": 1.3445052926047731,
+   "abs_diff": 4.440892098500626e-16
+  },
+  "geometric|standard|140|16": {
+   "reproduced": 1.5238794691286721,
+   "banked": 1.5238794691286721,
+   "abs_diff": 0.0
+  },
+  "geometric|varied|140|16": {
+   "reproduced": 4.492715218341184,
+   "banked": 4.492715218341184,
+   "abs_diff": 0.0
+  },
+  "lidar_net|standard|140|32": {
+   "reproduced": 0.40415310740222027,
+   "banked": 0.40415310740222027,
+   "abs_diff": 0.0
+  },
+  "lidar_net|varied|140|32": {
+   "reproduced": 0.6085373285468797,
+   "banked": 0.60853732854688,
+   "abs_diff": 3.3306690738754696e-16
+  },
+  "geometric|standard|140|32": {
+   "reproduced": 1.0662055927107748,
+   "banked": 1.0662055927107748,
+   "abs_diff": 0.0
+  },
+  "geometric|varied|140|32": {
+   "reproduced": 2.259890005912231,
+   "banked": 2.259890005912231,
+   "abs_diff": 0.0
+  },
+  "lidar_net|standard|140|64": {
+   "reproduced": 0.181164496526445,
+   "banked": 0.181164496526445,
+   "abs_diff": 0.0
+  },
+  "lidar_net|varied|140|64": {
+   "reproduced": 0.22698520583346354,
+   "banked": 0.22698520583346346,
+   "abs_diff": 8.326672684688674e-17
+  },
+  "geometric|standard|140|64": {
+   "reproduced": 0.6266231655232428,
+   "banked": 0.6266231655232428,
+   "abs_diff": 0.0
+  },
+  "geometric|varied|140|64": {
+   "reproduced": 0.865256198669808,
+   "banked": 0.865256198669808,
+   "abs_diff": 0.0
+  }
+ },
+ "max_abs_diff_db": 1.3322676295501878e-15,
+ "verdict": "PASS"
+}

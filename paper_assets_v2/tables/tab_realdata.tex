@@ -1,18 +1,18 @@
 \begin{table*}[t]\centering\caption{DeepSense 6G test splits (whole sequences held out): top-$K$ accuracy (\%), power loss vs.\ the best beam (dB, mean), and the top-1 beam-change rate between consecutive frames (\%). Network: mean $\pm$ half-width of the 95\% CI over seeds.}\label{tab:realdata}
 \small\begin{tabular}{@{}llccccccc@{}}\toprule
 Scenario & Method & top-1 & top-3 & top-5 & top-8 & loss, $K$=1 & loss, $K$=3 & change \\\midrule
-8 (V2I) & LiDAR net & 56.0 $\pm$ 4.3 & 88.2 $\pm$ 3.8 & 95.3 $\pm$ 2.8 & 97.9 $\pm$ 1.7 & 0.37 $\pm$ 0.24 & 0.05 $\pm$ 0.04 & 54.3 $\pm$ 3.8 \\
+8 (V2I), $G$=16 & LiDAR net & 56.0 $\pm$ 4.3 & 88.2 $\pm$ 3.8 & 95.3 $\pm$ 2.8 & 97.9 $\pm$ 1.7 & 0.37 $\pm$ 0.24 & 0.05 $\pm$ 0.04 & 54.3 $\pm$ 3.8 \\
  & Most common beam & 12.7 & 27.6 & 36.1 & 44.4 & 3.48 & 2.87 & 0.0 \\
  & 1-NN, LiDAR features & 41.2 & 72.7 & 85.4 & 89.8 & 0.53 & 0.28 & 73.3 \\
  & Ground truth & \multicolumn{6}{c}{} & 69.0 \\
 \midrule
-31 (V2I) & LiDAR net & 7.8 $\pm$ 0.1 & 18.7 $\pm$ 0.0 & 29.3 $\pm$ 0.0 & 41.8 $\pm$ 0.0 & 0.82 $\pm$ 0.00 & 0.48 $\pm$ 0.00 & 0.5 $\pm$ 0.7 \\
+31 (V2I), $G$=8 & LiDAR net & 7.8 $\pm$ 0.1 & 18.7 $\pm$ 0.0 & 29.3 $\pm$ 0.0 & 41.8 $\pm$ 0.0 & 0.82 $\pm$ 0.00 & 0.48 $\pm$ 0.00 & 0.5 $\pm$ 0.7 \\
  & Most common beam & 7.7 & 18.7 & 29.3 & 41.8 & 0.82 & 0.48 & 0.0 \\
  & 1-NN, LiDAR features & 9.3 & 20.8 & 29.3 & 36.8 & 0.75 & 0.64 & 62.8 \\
  & LiDAR geometric & 4.5 & 9.8 & 15.2 & 21.2 & 0.88 & 0.76 & 61.4 \\
  & Ground truth & \multicolumn{6}{c}{} & 63.2 \\
 \midrule
-36 (V2V) & LiDAR net & 19.6 $\pm$ 0.9 & 40.3 $\pm$ 1.6 & 47.0 $\pm$ 2.0 & 52.6 $\pm$ 2.3 & 9.07 $\pm$ 0.28 & 7.32 $\pm$ 0.31 & 42.0 $\pm$ 2.3 \\
+36 (V2V), $G$=24 & LiDAR net & 19.6 $\pm$ 0.9 & 40.3 $\pm$ 1.6 & 47.0 $\pm$ 2.0 & 52.6 $\pm$ 2.3 & 9.07 $\pm$ 0.28 & 7.32 $\pm$ 0.31 & 42.0 $\pm$ 2.3 \\
  & Most common beam & 17.2 & 50.0 & 58.9 & 70.4 & 12.88 & 3.68 & 0.0 \\
  & 1-NN, LiDAR features & 19.4 & 38.7 & 45.7 & 50.2 & 9.39 & 8.75 & 36.7 \\
  & Ground truth & \multicolumn{6}{c}{} & 41.4 \\

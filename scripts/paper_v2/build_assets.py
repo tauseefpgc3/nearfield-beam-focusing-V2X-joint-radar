@@ -18,7 +18,9 @@ OUT = os.path.join(ROOT, "paper_assets_v2"); FIG = os.path.join(OUT, "figures");
 J = dict(b="results/phase3b/results_b.json", cost="results/phase3b/cost.json", c1="results/phase3c/c1.json", c2="results/phase3c/c2.json",
          setup="results/phase3c/setup_params.json", nf="results/phase3c/nearfield_char.json", map="results/phase3c/nearfield_beam_map.json",
          cdf="results/phase3c/position_error_cdf.json", e23="results/phase2/feasibility/e23_sweep.json",
-         d8="results/phase3c/c2_design_ds8.json", d31="results/phase3c/c2_design_ds31.json", d36="results/phase3c/c2_design_ds36.json")
+         d8="results/phase3c/c2_design_ds8.json", d31="results/phase3c/c2_design_ds31.json", d36="results/phase3c/c2_design_ds36.json",
+         a4="results/verify4/a4.json", a6="results/verify4/a6.json", a6b="results/verify4/a6b_realdata_ci.json",
+         d="results/phase3d/results_d.json", b4="results/phase3d/b4_timing.json")
 # protocol constants (D-032/D-033 definitions, not results); the trace check reports them separately
 CONST = {"95", "1", "3", "2", "10", "20", "0"}
 FR, MS = (60, 140), (8, 16, 32, 64)
@@ -97,9 +99,11 @@ def macros():
         add(f"GenieFarFieldOnly{W[f]}", R.v(t, "b", ["far_field_only", f"genie_ff_only|{f}|all"]))
         add(f"ShareAdvPct{W[f]}", R.v(t, "nf", [str(f), "share_adv_ge3_all"], "{:.1f}", scale=100))
         add(f"FraunhoferM{W[f]}", R.v(t, "setup", ["frequencies", str(f), "fraunhofer_m"], "{:.1f}"))
-    for m, nm in (("lidar_net", "LidarNet"), ("lidar_geometric", "LidarGeo"), ("radar_net", "RadarNet"), ("radar_picker", "RadarPicker")):
-        for a, an in (("range", "Range"), ("sideways", "Side")):
-            add(f"PosErr{nm}{an}Cm", R.v(t, "b", ["position_error", m, "all", a, "median"], "{:.1f}", scale=100))
+    # D-034 A4: horizontal Euclidean error everywhere (quantile index 50 = median, 90 = p90 of position_error_cdf.json)
+    for m, nm in (("lidar_net", "LidarNet"), ("lidar_geometric", "LidarGeo"), ("radar_net", "RadarNet"), ("radar_picker", "RadarPicker"), ("fused_net", "FusedNet")):
+        R.key(t, "cdf", ["quantiles", 50], "50"); R.key(t, "cdf", ["quantiles", 90], "90")
+        add(f"PosErr{nm}MedianCm", R.v(t, "cdf", ["standard", m, 50], "{:.1f}", scale=100))
+        add(f"PosErr{nm}PNinetyCm", R.v(t, "cdf", ["standard", m, 90], "{:.1f}", scale=100))
     add("StressSixteenChLidarNetSixtyMEight", R.v(t, "b", ["stress", "lidar_16ch", "lidar_net", "60|8", "mean"]))
     add("StressSixteenChGeoSixtyMEight", R.v(t, "b", ["stress", "lidar_16ch", "lidar_geometric", "60|8", "mean"]))
     for d, dn in (("+0.1", "PointOne"), ("+0.2", "PointTwo"), ("+0.5", "PointFive")):
@@ -241,7 +245,7 @@ def tab_realdata():
             + " & loss, $K$=" + R.key(t, "c2", [next(iter(R.get("c2", []))), "network", "loss3_mean_db"], "3") + " & change \\\\\\midrule\n")
     NMB = dict(most_common="Most common beam", one_nn="1-NN, LiDAR features", geometric="LiDAR geometric")
     for s in R.get("c2", []):
-        sn = R.key(t, "c2", [s, "scenario"], s[2:]) + (" (V2V)" if s == "ds36" else " (V2I)")
+        sn = R.key(t, "c2", [s, "scenario"], s[2:]) + (" (V2V)" if s == "ds36" else " (V2I)") + ", $G$=" + R.v(t, "c2", [s, "test_sequences"], "{:.0f}")
         net = [s, "network"]; cell = lambda k, sc=100.0, fmt="{:.1f}": R.v(t, "c2", net + [k, "mean"], fmt, scale=sc) + " $\\pm$ " + R.v(t, "c2", net + [k, "hi"], fmt, op="half_diff", path2=net + [k, "lo"], scale=sc)
         body += f"{sn} & LiDAR net & " + " & ".join([cell(f"top{K}_acc") for K in (1, 3, 5, 8)] + [cell(f"loss{K}_mean_db", 1.0, "{:.2f}") for K in (1, 3)] + [cell("beam_change_rate")]) + " \\\\\n"
         for b, bn in NMB.items():
@@ -252,6 +256,88 @@ def tab_realdata():
         body += f" & Ground truth & \\multicolumn{{6}}{{c}}{{}} & {R.v(t, 'c2', [s, 'ground_truth_beam_change_rate'], '{:.1f}', scale=100)} \\\\\n"
         body += "\\midrule\n" if s != list(R.get("c2", []))[-1] else ""
     body += "\\bottomrule\\end{tabular}\\end{table*}\n"; wtab(t, body)
+
+
+def tab_realdata_cmp():
+    """D-034 A6: paired real-data comparisons with the number of test sequences G next to every CI;
+    cluster-robust t-interval added where the A6 coverage check switched the rule (G small)."""
+    t = "tab_realdata_cmp.tex"
+    if not R.has("a6b"): R.skipped.append(t); return
+    A = R.get("a6b", []); NMB = dict(most_common="Most common beam", one_nn="1-NN, LiDAR features", geometric="LiDAR geometric")
+    body = ("\\begin{table*}[t]\\centering\\caption{DeepSense 6G test splits: network (20-seed mean) minus baseline, frame-pooled. Brackets: 95\\% sequence-cluster "
+            "bootstrap CI over the $G$ held-out test sequences; second line ($t$): cluster-robust $t$-interval with $G-1$ degrees of freedom, reported where the "
+            "coverage check found the bootstrap under-covering. Top-1 in percentage points (higher is better); losses in dB (lower is better).}\\label{tab:realdata_cmp}\n"
+            "\\small\\begin{tabular}{@{}lllccc@{}}\\toprule\nScenario & $G$ & Baseline & $\\Delta$ top-" + R.key(t, "a6b", ["ds8", "cells", "most_common|top1_acc"], "1")
+            + " (pp) & $\\Delta$ loss, $K$=" + R.key(t, "a6b", ["ds8", "cells", "most_common|loss1_db"], "1") + " (dB) & $\\Delta$ loss, $K$="
+            + R.key(t, "a6b", ["ds8", "cells", "most_common|loss3_db"], "3") + " (dB) \\\\\\midrule\n")
+    keys = list(A); ms = [("top1_acc", 100.0, "{:.1f}"), ("loss1_db", 1.0, "{:.2f}"), ("loss3_db", 1.0, "{:.2f}")]
+    for s in keys:
+        sn = R.key(t, "c2", [s, "scenario"], s[2:]) + (" (V2V)" if s == "ds36" else " (V2I)"); g = R.v(t, "a6b", [s, "G"], "{:.0f}"); first = True
+        for b, bn in NMB.items():
+            if f"{b}|top1_acc" not in A[s]["cells"]: continue
+            c = lambda k, q, sc, fmt: R.v(t, "a6b", [s, "cells", f"{b}|{k}", q], fmt, scale=sc)
+            body += (f"{sn if first else ''} & {g if first else ''} & {bn} & "
+                     + " & ".join(f"{c(k, 'mean', sc, fm)} [{c(k, 'boot_lo', sc, fm)}, {c(k, 'boot_hi', sc, fm)}]" for k, sc, fm in ms) + " \\\\\n")
+            if R.get("a6b", [s, "report_t"]):
+                body += " & & \\quad $t$ & " + " & ".join(f"[{c(k, 't_lo', sc, fm)}, {c(k, 't_hi', sc, fm)}]" for k, sc, fm in ms) + " \\\\\n"
+            first = False
+        body += "\\midrule\n" if s != keys[-1] else ""
+    body += "\\bottomrule\\end{tabular}\\end{table*}\n"; wtab(t, body)
+
+
+D_METHODS = [("lidar_net", "LiDAR net"), ("fused_net", "Fused net"), ("lidar_geometric", "LiDAR geometric"), ("varied_trained_net", "LiDAR net, varied-trained"),
+             ("codeword_classifier", "Direct codeword classifier"), ("one_nn_lidar", "1-NN, LiDAR"), ("radar_net", "Radar net"),
+             ("radar_ensemble3", "Radar net, 3-model ensemble"), ("radar_picker", "Radar picker"), ("one_nn_radar", "1-NN, radar")]
+
+
+def tab_baselines():
+    """D-034 B1/B2/B5/B6: added baselines on the standard test set and the fresh test set (evaluated once)."""
+    t = "tab_baselines.tex"
+    if not R.has("d"): R.skipped.append(t); return
+    cols = [(st, f, M) for st in ("test", "fresh") for f in FR for M in (8, 16)]
+    body = ("\\begin{table*}[t]\\centering\\caption{Mean loss vs.\\ genie (dB, all users) on the standard test set and on a fresh test set of new users drawn in the "
+            "test blocks with a new seed (evaluated once). Networks: mean over seeds; shape chosen on validation. Last row: the reference sweep.}\\label{tab:baselines}\n"
+            "\\small\\begin{tabular}{@{}l" + "c" * len(cols) + "@{}}\\toprule\n & \\multicolumn{4}{c}{Standard test set} & \\multicolumn{4}{c}{Fresh test set} \\\\\n"
+            "\\cmidrule(lr){2-5}\\cmidrule(lr){6-9}\nMethod & " + " & ".join(R.key(t, "d", ["tables", f"{st}|lidar_net|{f}|{M}|all"], str(f)) + " GHz, $M$=" + R.key(t, "d", ["tables", f"{st}|lidar_net|{f}|{M}|all"], str(M)) for st, f, M in cols) + " \\\\\\midrule\n")
+    for m, nm in D_METHODS:
+        body += nm + " & " + " & ".join(R.v(t, "d", ["tables", f"{st}|{m}|{f}|{M}|all", "mean"]) for st, f, M in cols) + " \\\\\n"
+    body += ("Reference sweep (" + R.key(t, "d", ["tables", "test|sweep263|60|263|all"], "263") + " beams) & "
+             + " & ".join(R.v(t, "d", ["tables", f"{st}|sweep263|{f}|263|all", "mean"]) for st, f, M in cols) + " \\\\\n")
+    body += "\\bottomrule\\end{tabular}\\end{table*}\n"; wtab(t, body)
+
+
+def tab_fixed_shape():
+    """D-034 B3: validation-chosen sweep shape vs the fixed 'top M/8 angles x 8 rings' shape (standard test set, 60 GHz)."""
+    t = "tab_fixed_shape.tex"
+    if not R.has("d"): R.skipped.append(t); return
+    body = ("\\begin{table}[t]\\centering\\caption{Standard test set, " + R.key(t, "d", ["tables", "test|lidar_net|60|8|all"], "60") + " GHz, mean loss vs.\\ genie (dB): "
+            "sweep shape chosen on validation vs.\\ a fixed shape of the top $M/8$ angles $\\times$ all " + R.key(t, "setup", ["codebook", "rings"], "8") + " rings.}\\label{tab:fixed_shape}\n"
+            "\\small\\begin{tabular}{@{}lcccc@{}}\\toprule\nMethod & \\multicolumn{2}{c}{$M$=" + R.key(t, "d", ["tables", "test|lidar_net|60|8|all"], "8") + "} & \\multicolumn{2}{c}{$M$="
+            + R.key(t, "d", ["tables", "test|lidar_net|60|16|all"], "16") + "} \\\\\n & chosen & fixed & chosen & fixed \\\\\\midrule\n")
+    for m, nm in D_METHODS:
+        if f"{m}|60|8" not in R.get("d", ["fixed_shape_baseline_test"]): continue
+        body += nm + " & " + " & ".join(R.v(t, "d", ["tables", f"test|{m}|60|{M}|all", "mean"]) + " & " + R.v(t, "d", ["fixed_shape_baseline_test", f"{m}|60|{M}", "mean"]) for M in (8, 16)) + " \\\\\n"
+    body += "\\bottomrule\\end{tabular}\\end{table}\n"; wtab(t, body)
+
+
+def tab_acq_time():
+    """D-034 B4: acquisition time = M x T_beam + sensor frame age + processing, vs the reference sweep."""
+    t = "tab_acq_time.tex"
+    if not R.has("b4"): R.skipped.append(t); return
+    tb = "primary_120kHz_1sym"
+    body = ("\\begin{table}[t]\\centering\\caption{Acquisition time (ms), $M$=" + R.key(t, "b4", ["rows", f"lidar_net|{tb}|8"], "8") + ", $T_\\mathrm{beam}$ = one OFDM symbol with normal CP at "
+            + R.key(t, "b4", ["T_beam_us", tb], "120") + " kHz (" + R.v(t, "b4", ["T_beam_us", tb]) + " $\\mu$s). Latency adds the sensor frame age: LiDAR at "
+            + R.key(t, "b4", ["sensor_latency_s", "lidar"], "10") + " Hz (mean " + R.v(t, "b4", ["sensor_latency_s", "lidar", "mean"], "{:.0f}", scale=1000) + ", worst "
+            + R.v(t, "b4", ["sensor_latency_s", "lidar", "worst"], "{:.0f}", scale=1000) + " ms), radar (mean " + R.v(t, "b4", ["sensor_latency_s", "radar", "mean"], "{:.0f}", scale=1000)
+            + ", worst " + R.v(t, "b4", ["sensor_latency_s", "radar", "worst"], "{:.0f}", scale=1000) + " ms). Processing measured on one laptop GPU, batch 1.}\\label{tab:acq_time}\n"
+            "\\small\\begin{tabular}{@{}lcccc@{}}\\toprule\nMethod & air & processing & latency, mean & latency, worst \\\\\\midrule\n")
+    for m, nm in D_METHODS:
+        if m == "varied_trained_net": continue
+        k = ["rows", f"{m}|{tb}|8"]
+        body += nm + " & " + " & ".join(R.v(t, "b4", k + [q], "{:.3f}" if q == "air_ms" else "{:.1f}") for q in ("air_ms", "processing_ms", "latency_mean_ms", "latency_worst_ms")) + " \\\\\n"
+    body += ("Reference sweep (" + R.key(t, "d", ["tables", "test|sweep263|60|263|all"], "263") + " beams) & " + R.v(t, "b4", ["sweep263", tb, "air_ms"], "{:.3f}") + " & -- & "
+             + R.v(t, "b4", ["sweep263", tb, "air_ms"], "{:.1f}") + " & " + R.v(t, "b4", ["sweep263", tb, "air_ms"], "{:.1f}") + " \\\\\n")
+    body += "\\bottomrule\\end{tabular}\\end{table}\n"; wtab(t, body)
 
 
 # ============================================================== figures
@@ -275,7 +361,7 @@ def fig_loss_vs_beams():
 
 def fig_required_accuracy():
     name = "fig_required_accuracy.pdf"; E = R.get("e23", []); sig = ["sigma0.02", "sigma0.05", "sigma0.1", "sigma0.2", "sigma0.5", "sigma1"]
-    xerr = np.array([np.mean([E["errors"][s][a]["median_abs"] for a in ("range", "sideways")]) for s in sig])
+    xerr = np.array([R.get("a4", ["e2_euclidean", s, "euclid_median_m"]) for s in sig])   # D-034 A4: Euclidean
     fig, ax = plt.subplots(figsize=(3.5, 2.5))
     for f, ls in ((60, "-"), (140, "--")):
         req = []
@@ -287,10 +373,10 @@ def fig_required_accuracy():
             req.append(xerr[0] if k == 0 else 10 ** np.interp(1.0, [y[k - 1], y[k]], np.log10([xerr[k - 1], xerr[k]])))
         ax.plot(MS, np.array(req) * 100, color=INK, ls=ls, marker="o", label=f"Required for 1 dB, {R.key(name, 'e23', ['freqs', str(f)], str(f))} GHz")
     for m in ("lidar_net", "lidar_geometric", "radar_net", "radar_picker"):
-        e = R.get("b", ["position_error", m, "all"]); a = (e["range"]["median"] + e["sideways"]["median"]) / 2 * 100
+        a = R.get("cdf", ["standard", m, 50]) * 100
         ax.axhline(a, color=STY[m][0], lw=1.2, label=f"Achieved: {STY[m][2]}")
     ax.set_xscale("log", base=2); ax.set_yscale("log"); ax.set_xticks(MS, [str(M) for M in MS]); ax.minorticks_off()
-    ax.set_yticks([1, 3, 10, 30, 100], ["1", "3", "10", "30", "100"]); ax.set_xlabel("Beams swept, $M$"); ax.set_ylabel("Median per-axis position error (cm)")
+    ax.set_yticks([1, 3, 10, 30, 100], ["1", "3", "10", "30", "100"]); ax.set_xlabel("Beams swept, $M$"); ax.set_ylabel("Median position error (cm)")
     ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1.0)); save(fig, name)
 
 
@@ -383,7 +469,8 @@ def fig_nearfield():
 
 def main():
     for d in (FIG, TAB): os.makedirs(d, exist_ok=True)
-    macros(); tab_setup(); tab_main(); tab_varied(); tab_stress(); tab_cost(); tab_realdata()
+    macros(); tab_setup(); tab_main(); tab_varied(); tab_stress(); tab_cost(); tab_realdata(); tab_realdata_cmp()
+    tab_baselines(); tab_fixed_shape(); tab_acq_time()
     fig_loss_vs_beams(); fig_required_accuracy(); fig_position_cdf(); fig_varied_offset(); fig_stress(); fig_focus_value(); fig_nearfield()
     json.dump(dict(constants=sorted(CONST), items=R.items, skipped=R.skipped), open(os.path.join(OUT, "trace_manifest.json"), "w"), indent=1)
     print("items", len(R.items), "skipped", R.skipped)

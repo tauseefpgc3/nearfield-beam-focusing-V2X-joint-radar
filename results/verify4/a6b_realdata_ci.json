@@ -1,0 +1,212 @@
+{
+ "ds8": {
+  "G": 16,
+  "n_test": 762,
+  "report_t": true,
+  "cells": {
+   "most_common|top1_acc": {
+    "mean": 0.4332020997375328,
+    "boot_lo": 0.40990402950622246,
+    "boot_hi": 0.4567490092596121,
+    "t_lo": 0.40703551089247597,
+    "t_hi": 0.45936868858258967,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   },
+   "most_common|loss1_db": {
+    "mean": -3.1061040747422823,
+    "boot_lo": -3.22839160658143,
+    "boot_hi": -2.9651033487473852,
+    "t_lo": -3.257413134430703,
+    "t_hi": -2.9547950150538616,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   },
+   "most_common|loss3_db": {
+    "mean": -2.823098115963393,
+    "boot_lo": -2.935723465474701,
+    "boot_hi": -2.689630268390923,
+    "t_lo": -2.965207123308244,
+    "t_hi": -2.680989108618542,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   },
+   "one_nn|top1_acc": {
+    "mean": 0.14842519685039368,
+    "boot_lo": 0.1194109415047123,
+    "boot_hi": 0.17685099146308458,
+    "t_lo": 0.11631049277585784,
+    "t_hi": 0.18053990092492953,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   },
+   "one_nn|loss1_db": {
+    "mean": -0.16083037126765137,
+    "boot_lo": -0.23699690487909658,
+    "boot_hi": -0.09391335413571257,
+    "t_lo": -0.24309997398849423,
+    "t_hi": -0.07856076854680852,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   },
+   "one_nn|loss3_db": {
+    "mean": -0.23240870181680967,
+    "boot_lo": -0.2860402246242007,
+    "boot_hi": -0.1810451897130085,
+    "t_lo": -0.29295332890139975,
+    "t_hi": -0.1718640747322196,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   }
+  }
+ },
+ "ds31": {
+  "G": 8,
+  "n_test": 1188,
+  "report_t": true,
+  "cells": {
+   "most_common|top1_acc": {
+    "mean": 0.00021043771043770783,
+    "boot_lo": -0.0021276809365120084,
+    "boot_hi": 0.0024457666122910944,
+    "t_lo": -0.002856965874214023,
+    "t_hi": 0.0032778412950894386,
+    "verdict_boot": "no detectable difference",
+    "banked_max_abs_diff": 0.0
+   },
+   "most_common|loss1_db": {
+    "mean": -0.0009322693654683781,
+    "boot_lo": -0.004383850005448795,
+    "boot_hi": 0.003058937667973351,
+    "t_lo": -0.005820124373510882,
+    "t_hi": 0.003955585642574126,
+    "verdict_boot": "no detectable difference",
+    "banked_max_abs_diff": 0.0
+   },
+   "most_common|loss3_db": {
+    "mean": -1.2464106930623741e-17,
+    "boot_lo": -2.787667008060667e-17,
+    "boot_hi": 1.4033736276258169e-18,
+    "t_lo": -3.1039318054737904e-17,
+    "t_hi": 6.111104193490422e-18,
+    "verdict_boot": "no detectable difference",
+    "banked_max_abs_diff": 0.0
+   },
+   "one_nn|top1_acc": {
+    "mean": -0.014941077441077448,
+    "boot_lo": -0.044599844599844604,
+    "boot_hi": 0.017524961168331687,
+    "t_lo": -0.05620054269892478,
+    "t_hi": 0.02631838781676988,
+    "verdict_boot": "no detectable difference",
+    "banked_max_abs_diff": 0.0
+   },
+   "one_nn|loss1_db": {
+    "mean": 0.068750894371652,
+    "boot_lo": -0.043777614027870886,
+    "boot_hi": 0.1785874141008815,
+    "t_lo": -0.07760293879204772,
+    "t_hi": 0.2151047275353517,
+    "verdict_boot": "no detectable difference",
+    "banked_max_abs_diff": 0.0
+   },
+   "one_nn|loss3_db": {
+    "mean": -0.15905209834350922,
+    "boot_lo": -0.33241677200788006,
+    "boot_hi": -0.02967987806219031,
+    "t_lo": -0.34918545859533023,
+    "t_hi": 0.031081261908311786,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   },
+   "geometric|top1_acc": {
+    "mean": 0.03303872053872054,
+    "boot_lo": 0.013418518911852651,
+    "boot_hi": 0.049440137812230826,
+    "t_lo": 0.008514562671933647,
+    "t_hi": 0.05756287840550743,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   },
+   "geometric|loss1_db": {
+    "mean": -0.06340571224873917,
+    "boot_lo": -0.13915739690373757,
+    "boot_hi": -0.0006337077028423901,
+    "t_lo": -0.15211398248904828,
+    "t_hi": 0.02530255799156994,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   },
+   "geometric|loss3_db": {
+    "mean": -0.27973723799318023,
+    "boot_lo": -0.495405586697055,
+    "boot_hi": -0.1519989637801049,
+    "t_lo": -0.4888408175200234,
+    "t_hi": -0.07063365846633707,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   }
+  }
+ },
+ "ds36": {
+  "G": 24,
+  "n_test": 4799,
+  "report_t": false,
+  "cells": {
+   "most_common|top1_acc": {
+    "mean": 0.023296520108355905,
+    "boot_lo": -0.0879990623046468,
+    "boot_hi": 0.13516729885132311,
+    "t_lo": -0.09638141308432242,
+    "t_hi": 0.14297445330103423,
+    "verdict_boot": "no detectable difference",
+    "banked_max_abs_diff": 0.0
+   },
+   "most_common|loss1_db": {
+    "mean": -3.8137040295076146,
+    "boot_lo": -8.4237481219044,
+    "boot_hi": 0.049854384511307234,
+    "t_lo": -8.280154644959794,
+    "t_hi": 0.6527465859445645,
+    "verdict_boot": "no detectable difference",
+    "banked_max_abs_diff": 0.0
+   },
+   "most_common|loss3_db": {
+    "mean": 3.640699807697557,
+    "boot_lo": 1.8144188419807001,
+    "boot_hi": 5.6588302550314795,
+    "t_lo": 1.5796988915684995,
+    "t_hi": 5.701700723826614,
+    "verdict_boot": "network worse",
+    "banked_max_abs_diff": 0.0
+   },
+   "one_nn|top1_acc": {
+    "mean": 0.0014169618670556376,
+    "boot_lo": -0.027224563607500904,
+    "boot_hi": 0.029614998079026882,
+    "t_lo": -0.029247304869420187,
+    "t_hi": 0.032081228603531464,
+    "verdict_boot": "no detectable difference",
+    "banked_max_abs_diff": 0.0
+   },
+   "one_nn|loss1_db": {
+    "mean": -0.3244187928851432,
+    "boot_lo": -1.53167112630786,
+    "boot_hi": 0.7392328459583152,
+    "t_lo": -1.5393815815379877,
+    "t_hi": 0.8905439957677013,
+    "verdict_boot": "no detectable difference",
+    "banked_max_abs_diff": 0.0
+   },
+   "one_nn|loss3_db": {
+    "mean": -1.434633653978339,
+    "boot_lo": -2.6971678777465087,
+    "boot_hi": -0.33770959238975506,
+    "t_lo": -2.6895857114805253,
+    "t_hi": -0.1796815964761529,
+    "verdict_boot": "network better",
+    "banked_max_abs_diff": 0.0
+   }
+  }
+ }
+}

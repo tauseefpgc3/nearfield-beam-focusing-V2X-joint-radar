@@ -1,0 +1,18 @@
+\begin{table*}[t]\centering\caption{DeepSense 6G test splits: network (20-seed mean) minus baseline, frame-pooled. Brackets: 95\% sequence-cluster bootstrap CI over the $G$ held-out test sequences; second line ($t$): cluster-robust $t$-interval with $G-1$ degrees of freedom, reported where the coverage check found the bootstrap under-covering. Top-1 in percentage points (higher is better); losses in dB (lower is better).}\label{tab:realdata_cmp}
+\small\begin{tabular}{@{}lllccc@{}}\toprule
+Scenario & $G$ & Baseline & $\Delta$ top-1 (pp) & $\Delta$ loss, $K$=1 (dB) & $\Delta$ loss, $K$=3 (dB) \\\midrule
+8 (V2I) & 16 & Most common beam & 43.3 [41.0, 45.7] & -3.11 [-3.23, -2.97] & -2.82 [-2.94, -2.69] \\
+ & & \quad $t$ & [40.7, 45.9] & [-3.26, -2.95] & [-2.97, -2.68] \\
+ &  & 1-NN, LiDAR features & 14.8 [11.9, 17.7] & -0.16 [-0.24, -0.09] & -0.23 [-0.29, -0.18] \\
+ & & \quad $t$ & [11.6, 18.1] & [-0.24, -0.08] & [-0.29, -0.17] \\
+\midrule
+31 (V2I) & 8 & Most common beam & 0.0 [-0.2, 0.2] & 0.00 [0.00, 0.00] & 0.00 [0.00, 0.00] \\
+ & & \quad $t$ & [-0.3, 0.3] & [-0.01, 0.00] & [0.00, 0.00] \\
+ &  & 1-NN, LiDAR features & -1.5 [-4.5, 1.8] & 0.07 [-0.04, 0.18] & -0.16 [-0.33, -0.03] \\
+ & & \quad $t$ & [-5.6, 2.6] & [-0.08, 0.22] & [-0.35, 0.03] \\
+ &  & LiDAR geometric & 3.3 [1.3, 4.9] & -0.06 [-0.14, 0.00] & -0.28 [-0.50, -0.15] \\
+ & & \quad $t$ & [0.9, 5.8] & [-0.15, 0.03] & [-0.49, -0.07] \\
+\midrule
+36 (V2V) & 24 & Most common beam & 2.3 [-8.8, 13.5] & -3.81 [-8.42, 0.05] & 3.64 [1.81, 5.66] \\
+ &  & 1-NN, LiDAR features & 0.1 [-2.7, 3.0] & -0.32 [-1.53, 0.74] & -1.43 [-2.70, -0.34] \\
+\bottomrule\end{tabular}\end{table*}

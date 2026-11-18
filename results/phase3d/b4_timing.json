@@ -1,0 +1,702 @@
+{
+ "T_beam_us": {
+  "primary_120kHz_1sym": 8.919270833333334,
+  "fr2_2_960kHz_1sym": 1.1149088541666667,
+  "ssb_120kHz_4sym": 35.677083333333336
+ },
+ "sensor_latency_s": {
+  "lidar": {
+   "mean": 0.05,
+   "worst": 0.1
+  },
+  "radar": {
+   "mean": 0.025,
+   "worst": 0.05
+  }
+ },
+ "measured_ms": {
+  "one_nn_cpu_ms": 1.4458499990723794,
+  "radar_ensemble3_cuda_ms": 8.652749997054343,
+  "radar_ensemble3_cpu_ms": 55.643150000832975,
+  "classifier60_cuda_ms": 1.3727499990636716,
+  "classifier60_cpu_ms": 6.533600000693696,
+  "classifier140_cuda_ms": 3.6130500011495315,
+  "classifier140_cpu_ms": 18.41690000037488
+ },
+ "processing_ms": {
+  "radar_picker": 1.1207999996258877,
+  "lidar_geometric": 2.668599998287391,
+  "radar_net": 3.2675500042387284,
+  "lidar_net": 3.755600002477877,
+  "fused_net": 3.5751000032178126,
+  "one_nn_lidar": 2.7374500041332794,
+  "one_nn_radar": 2.4098499980027555,
+  "radar_ensemble3": 9.61674999598472,
+  "codeword_classifier": 2.6643500041245716
+ },
+ "rows": {
+  "radar_picker|primary_120kHz_1sym|8": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.192154166292553,
+   "latency_worst_ms": 51.19215416629255
+  },
+  "radar_picker|primary_120kHz_1sym|16": {
+   "air_ms": 0.14270833333333333,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.26350833295922,
+   "latency_worst_ms": 51.26350833295922
+  },
+  "radar_picker|primary_120kHz_1sym|32": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.406216666292554,
+   "latency_worst_ms": 51.40621666629256
+  },
+  "radar_picker|primary_120kHz_1sym|64": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.69163333295922,
+   "latency_worst_ms": 51.69163333295922
+  },
+  "radar_picker|fr2_2_960kHz_1sym|8": {
+   "air_ms": 0.008919270833333333,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.129719270459223,
+   "latency_worst_ms": 51.12971927045922
+  },
+  "radar_picker|fr2_2_960kHz_1sym|16": {
+   "air_ms": 0.017838541666666666,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.138638541292554,
+   "latency_worst_ms": 51.13863854129256
+  },
+  "radar_picker|fr2_2_960kHz_1sym|32": {
+   "air_ms": 0.03567708333333333,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.15647708295922,
+   "latency_worst_ms": 51.15647708295922
+  },
+  "radar_picker|fr2_2_960kHz_1sym|64": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.192154166292553,
+   "latency_worst_ms": 51.19215416629255
+  },
+  "radar_picker|ssb_120kHz_4sym|8": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.406216666292554,
+   "latency_worst_ms": 51.40621666629256
+  },
+  "radar_picker|ssb_120kHz_4sym|16": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 26.69163333295922,
+   "latency_worst_ms": 51.69163333295922
+  },
+  "radar_picker|ssb_120kHz_4sym|32": {
+   "air_ms": 1.1416666666666666,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 27.262466666292553,
+   "latency_worst_ms": 52.26246666629255
+  },
+  "radar_picker|ssb_120kHz_4sym|64": {
+   "air_ms": 2.283333333333333,
+   "processing_ms": 1.1207999996258877,
+   "latency_mean_ms": 28.40413333295922,
+   "latency_worst_ms": 53.40413333295922
+  },
+  "lidar_geometric|primary_120kHz_1sym|8": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 52.73995416495406,
+   "latency_worst_ms": 102.73995416495406
+  },
+  "lidar_geometric|primary_120kHz_1sym|16": {
+   "air_ms": 0.14270833333333333,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 52.81130833162072,
+   "latency_worst_ms": 102.81130833162072
+  },
+  "lidar_geometric|primary_120kHz_1sym|32": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 52.954016664954054,
+   "latency_worst_ms": 102.95401666495405
+  },
+  "lidar_geometric|primary_120kHz_1sym|64": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 53.239433331620724,
+   "latency_worst_ms": 103.23943333162073
+  },
+  "lidar_geometric|fr2_2_960kHz_1sym|8": {
+   "air_ms": 0.008919270833333333,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 52.67751926912072,
+   "latency_worst_ms": 102.67751926912072
+  },
+  "lidar_geometric|fr2_2_960kHz_1sym|16": {
+   "air_ms": 0.017838541666666666,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 52.68643853995406,
+   "latency_worst_ms": 102.68643853995405
+  },
+  "lidar_geometric|fr2_2_960kHz_1sym|32": {
+   "air_ms": 0.03567708333333333,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 52.704277081620724,
+   "latency_worst_ms": 102.70427708162073
+  },
+  "lidar_geometric|fr2_2_960kHz_1sym|64": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 52.73995416495406,
+   "latency_worst_ms": 102.73995416495406
+  },
+  "lidar_geometric|ssb_120kHz_4sym|8": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 52.954016664954054,
+   "latency_worst_ms": 102.95401666495405
+  },
+  "lidar_geometric|ssb_120kHz_4sym|16": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 53.239433331620724,
+   "latency_worst_ms": 103.23943333162073
+  },
+  "lidar_geometric|ssb_120kHz_4sym|32": {
+   "air_ms": 1.1416666666666666,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 53.81026666495406,
+   "latency_worst_ms": 103.81026666495406
+  },
+  "lidar_geometric|ssb_120kHz_4sym|64": {
+   "air_ms": 2.283333333333333,
+   "processing_ms": 2.668599998287391,
+   "latency_mean_ms": 54.95193333162072,
+   "latency_worst_ms": 104.95193333162072
+  },
+  "radar_net|primary_120kHz_1sym|8": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.338904170905394,
+   "latency_worst_ms": 53.338904170905394
+  },
+  "radar_net|primary_120kHz_1sym|16": {
+   "air_ms": 0.14270833333333333,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.41025833757206,
+   "latency_worst_ms": 53.41025833757206
+  },
+  "radar_net|primary_120kHz_1sym|32": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.552966670905395,
+   "latency_worst_ms": 53.55296667090539
+  },
+  "radar_net|primary_120kHz_1sym|64": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.83838333757206,
+   "latency_worst_ms": 53.83838333757206
+  },
+  "radar_net|fr2_2_960kHz_1sym|8": {
+   "air_ms": 0.008919270833333333,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.27646927507206,
+   "latency_worst_ms": 53.27646927507206
+  },
+  "radar_net|fr2_2_960kHz_1sym|16": {
+   "air_ms": 0.017838541666666666,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.285388545905395,
+   "latency_worst_ms": 53.2853885459054
+  },
+  "radar_net|fr2_2_960kHz_1sym|32": {
+   "air_ms": 0.03567708333333333,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.30322708757206,
+   "latency_worst_ms": 53.30322708757206
+  },
+  "radar_net|fr2_2_960kHz_1sym|64": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.338904170905394,
+   "latency_worst_ms": 53.338904170905394
+  },
+  "radar_net|ssb_120kHz_4sym|8": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.552966670905395,
+   "latency_worst_ms": 53.55296667090539
+  },
+  "radar_net|ssb_120kHz_4sym|16": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 28.83838333757206,
+   "latency_worst_ms": 53.83838333757206
+  },
+  "radar_net|ssb_120kHz_4sym|32": {
+   "air_ms": 1.1416666666666666,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 29.409216670905394,
+   "latency_worst_ms": 54.409216670905394
+  },
+  "radar_net|ssb_120kHz_4sym|64": {
+   "air_ms": 2.283333333333333,
+   "processing_ms": 3.2675500042387284,
+   "latency_mean_ms": 30.55088333757206,
+   "latency_worst_ms": 55.55088333757206
+  },
+  "lidar_net|primary_120kHz_1sym|8": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 53.82695416914454,
+   "latency_worst_ms": 103.82695416914454
+  },
+  "lidar_net|primary_120kHz_1sym|16": {
+   "air_ms": 0.14270833333333333,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 53.89830833581121,
+   "latency_worst_ms": 103.89830833581121
+  },
+  "lidar_net|primary_120kHz_1sym|32": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 54.04101666914454,
+   "latency_worst_ms": 104.04101666914454
+  },
+  "lidar_net|primary_120kHz_1sym|64": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 54.32643333581121,
+   "latency_worst_ms": 104.3264333358112
+  },
+  "lidar_net|fr2_2_960kHz_1sym|8": {
+   "air_ms": 0.008919270833333333,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 53.76451927331121,
+   "latency_worst_ms": 103.76451927331121
+  },
+  "lidar_net|fr2_2_960kHz_1sym|16": {
+   "air_ms": 0.017838541666666666,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 53.77343854414455,
+   "latency_worst_ms": 103.77343854414454
+  },
+  "lidar_net|fr2_2_960kHz_1sym|32": {
+   "air_ms": 0.03567708333333333,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 53.79127708581121,
+   "latency_worst_ms": 103.79127708581122
+  },
+  "lidar_net|fr2_2_960kHz_1sym|64": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 53.82695416914454,
+   "latency_worst_ms": 103.82695416914454
+  },
+  "lidar_net|ssb_120kHz_4sym|8": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 54.04101666914454,
+   "latency_worst_ms": 104.04101666914454
+  },
+  "lidar_net|ssb_120kHz_4sym|16": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 54.32643333581121,
+   "latency_worst_ms": 104.3264333358112
+  },
+  "lidar_net|ssb_120kHz_4sym|32": {
+   "air_ms": 1.1416666666666666,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 54.89726666914454,
+   "latency_worst_ms": 104.89726666914454
+  },
+  "lidar_net|ssb_120kHz_4sym|64": {
+   "air_ms": 2.283333333333333,
+   "processing_ms": 3.755600002477877,
+   "latency_mean_ms": 56.03893333581121,
+   "latency_worst_ms": 106.03893333581121
+  },
+  "fused_net|primary_120kHz_1sym|8": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 53.64645416988448,
+   "latency_worst_ms": 103.64645416988448
+  },
+  "fused_net|primary_120kHz_1sym|16": {
+   "air_ms": 0.14270833333333333,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 53.717808336551144,
+   "latency_worst_ms": 103.71780833655114
+  },
+  "fused_net|primary_120kHz_1sym|32": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 53.860516669884476,
+   "latency_worst_ms": 103.86051666988448
+  },
+  "fused_net|primary_120kHz_1sym|64": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 54.145933336551145,
+   "latency_worst_ms": 104.14593333655114
+  },
+  "fused_net|fr2_2_960kHz_1sym|8": {
+   "air_ms": 0.008919270833333333,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 53.584019274051144,
+   "latency_worst_ms": 103.58401927405114
+  },
+  "fused_net|fr2_2_960kHz_1sym|16": {
+   "air_ms": 0.017838541666666666,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 53.59293854488448,
+   "latency_worst_ms": 103.59293854488448
+  },
+  "fused_net|fr2_2_960kHz_1sym|32": {
+   "air_ms": 0.03567708333333333,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 53.610777086551145,
+   "latency_worst_ms": 103.61077708655115
+  },
+  "fused_net|fr2_2_960kHz_1sym|64": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 53.64645416988448,
+   "latency_worst_ms": 103.64645416988448
+  },
+  "fused_net|ssb_120kHz_4sym|8": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 53.860516669884476,
+   "latency_worst_ms": 103.86051666988448
+  },
+  "fused_net|ssb_120kHz_4sym|16": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 54.145933336551145,
+   "latency_worst_ms": 104.14593333655114
+  },
+  "fused_net|ssb_120kHz_4sym|32": {
+   "air_ms": 1.1416666666666666,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 54.71676666988448,
+   "latency_worst_ms": 104.71676666988448
+  },
+  "fused_net|ssb_120kHz_4sym|64": {
+   "air_ms": 2.283333333333333,
+   "processing_ms": 3.5751000032178126,
+   "latency_mean_ms": 55.858433336551144,
+   "latency_worst_ms": 105.85843333655114
+  },
+  "one_nn_lidar|primary_120kHz_1sym|8": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 52.808804170799945,
+   "latency_worst_ms": 102.80880417079995
+  },
+  "one_nn_lidar|primary_120kHz_1sym|16": {
+   "air_ms": 0.14270833333333333,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 52.88015833746661,
+   "latency_worst_ms": 102.88015833746661
+  },
+  "one_nn_lidar|primary_120kHz_1sym|32": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 53.02286667079994,
+   "latency_worst_ms": 103.02286667079994
+  },
+  "one_nn_lidar|primary_120kHz_1sym|64": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 53.30828333746661,
+   "latency_worst_ms": 103.30828333746662
+  },
+  "one_nn_lidar|fr2_2_960kHz_1sym|8": {
+   "air_ms": 0.008919270833333333,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 52.74636927496661,
+   "latency_worst_ms": 102.74636927496661
+  },
+  "one_nn_lidar|fr2_2_960kHz_1sym|16": {
+   "air_ms": 0.017838541666666666,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 52.75528854579995,
+   "latency_worst_ms": 102.75528854579994
+  },
+  "one_nn_lidar|fr2_2_960kHz_1sym|32": {
+   "air_ms": 0.03567708333333333,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 52.77312708746661,
+   "latency_worst_ms": 102.77312708746662
+  },
+  "one_nn_lidar|fr2_2_960kHz_1sym|64": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 52.808804170799945,
+   "latency_worst_ms": 102.80880417079995
+  },
+  "one_nn_lidar|ssb_120kHz_4sym|8": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 53.02286667079994,
+   "latency_worst_ms": 103.02286667079994
+  },
+  "one_nn_lidar|ssb_120kHz_4sym|16": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 53.30828333746661,
+   "latency_worst_ms": 103.30828333746662
+  },
+  "one_nn_lidar|ssb_120kHz_4sym|32": {
+   "air_ms": 1.1416666666666666,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 53.879116670799945,
+   "latency_worst_ms": 103.87911667079995
+  },
+  "one_nn_lidar|ssb_120kHz_4sym|64": {
+   "air_ms": 2.283333333333333,
+   "processing_ms": 2.7374500041332794,
+   "latency_mean_ms": 55.02078333746661,
+   "latency_worst_ms": 105.02078333746661
+  },
+  "one_nn_radar|primary_120kHz_1sym|8": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.48120416466942,
+   "latency_worst_ms": 52.48120416466942
+  },
+  "one_nn_radar|primary_120kHz_1sym|16": {
+   "air_ms": 0.14270833333333333,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.552558331336087,
+   "latency_worst_ms": 52.55255833133609
+  },
+  "one_nn_radar|primary_120kHz_1sym|32": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.695266664669422,
+   "latency_worst_ms": 52.69526666466942
+  },
+  "one_nn_radar|primary_120kHz_1sym|64": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.98068333133609,
+   "latency_worst_ms": 52.98068333133609
+  },
+  "one_nn_radar|fr2_2_960kHz_1sym|8": {
+   "air_ms": 0.008919270833333333,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.418769268836087,
+   "latency_worst_ms": 52.41876926883609
+  },
+  "one_nn_radar|fr2_2_960kHz_1sym|16": {
+   "air_ms": 0.017838541666666666,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.427688539669422,
+   "latency_worst_ms": 52.427688539669425
+  },
+  "one_nn_radar|fr2_2_960kHz_1sym|32": {
+   "air_ms": 0.03567708333333333,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.44552708133609,
+   "latency_worst_ms": 52.44552708133609
+  },
+  "one_nn_radar|fr2_2_960kHz_1sym|64": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.48120416466942,
+   "latency_worst_ms": 52.48120416466942
+  },
+  "one_nn_radar|ssb_120kHz_4sym|8": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.695266664669422,
+   "latency_worst_ms": 52.69526666466942
+  },
+  "one_nn_radar|ssb_120kHz_4sym|16": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 27.98068333133609,
+   "latency_worst_ms": 52.98068333133609
+  },
+  "one_nn_radar|ssb_120kHz_4sym|32": {
+   "air_ms": 1.1416666666666666,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 28.55151666466942,
+   "latency_worst_ms": 53.55151666466942
+  },
+  "one_nn_radar|ssb_120kHz_4sym|64": {
+   "air_ms": 2.283333333333333,
+   "processing_ms": 2.4098499980027555,
+   "latency_mean_ms": 29.693183331336087,
+   "latency_worst_ms": 54.69318333133609
+  },
+  "radar_ensemble3|primary_120kHz_1sym|8": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 34.688104162651385,
+   "latency_worst_ms": 59.688104162651385
+  },
+  "radar_ensemble3|primary_120kHz_1sym|16": {
+   "air_ms": 0.14270833333333333,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 34.75945832931805,
+   "latency_worst_ms": 59.75945832931805
+  },
+  "radar_ensemble3|primary_120kHz_1sym|32": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 34.90216666265138,
+   "latency_worst_ms": 59.90216666265138
+  },
+  "radar_ensemble3|primary_120kHz_1sym|64": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 35.18758332931805,
+   "latency_worst_ms": 60.18758332931805
+  },
+  "radar_ensemble3|fr2_2_960kHz_1sym|8": {
+   "air_ms": 0.008919270833333333,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 34.62566926681805,
+   "latency_worst_ms": 59.62566926681805
+  },
+  "radar_ensemble3|fr2_2_960kHz_1sym|16": {
+   "air_ms": 0.017838541666666666,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 34.63458853765138,
+   "latency_worst_ms": 59.63458853765138
+  },
+  "radar_ensemble3|fr2_2_960kHz_1sym|32": {
+   "air_ms": 0.03567708333333333,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 34.65242707931805,
+   "latency_worst_ms": 59.65242707931805
+  },
+  "radar_ensemble3|fr2_2_960kHz_1sym|64": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 34.688104162651385,
+   "latency_worst_ms": 59.688104162651385
+  },
+  "radar_ensemble3|ssb_120kHz_4sym|8": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 34.90216666265138,
+   "latency_worst_ms": 59.90216666265138
+  },
+  "radar_ensemble3|ssb_120kHz_4sym|16": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 35.18758332931805,
+   "latency_worst_ms": 60.18758332931805
+  },
+  "radar_ensemble3|ssb_120kHz_4sym|32": {
+   "air_ms": 1.1416666666666666,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 35.758416662651385,
+   "latency_worst_ms": 60.758416662651385
+  },
+  "radar_ensemble3|ssb_120kHz_4sym|64": {
+   "air_ms": 2.283333333333333,
+   "processing_ms": 9.61674999598472,
+   "latency_mean_ms": 36.90008332931805,
+   "latency_worst_ms": 61.90008332931805
+  },
+  "codeword_classifier|primary_120kHz_1sym|8": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 52.73570417079124,
+   "latency_worst_ms": 102.73570417079124
+  },
+  "codeword_classifier|primary_120kHz_1sym|16": {
+   "air_ms": 0.14270833333333333,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 52.8070583374579,
+   "latency_worst_ms": 102.8070583374579
+  },
+  "codeword_classifier|primary_120kHz_1sym|32": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 52.949766670791234,
+   "latency_worst_ms": 102.94976667079123
+  },
+  "codeword_classifier|primary_120kHz_1sym|64": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 53.235183337457904,
+   "latency_worst_ms": 103.23518333745791
+  },
+  "codeword_classifier|fr2_2_960kHz_1sym|8": {
+   "air_ms": 0.008919270833333333,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 52.6732692749579,
+   "latency_worst_ms": 102.6732692749579
+  },
+  "codeword_classifier|fr2_2_960kHz_1sym|16": {
+   "air_ms": 0.017838541666666666,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 52.68218854579124,
+   "latency_worst_ms": 102.68218854579123
+  },
+  "codeword_classifier|fr2_2_960kHz_1sym|32": {
+   "air_ms": 0.03567708333333333,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 52.700027087457904,
+   "latency_worst_ms": 102.70002708745791
+  },
+  "codeword_classifier|fr2_2_960kHz_1sym|64": {
+   "air_ms": 0.07135416666666666,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 52.73570417079124,
+   "latency_worst_ms": 102.73570417079124
+  },
+  "codeword_classifier|ssb_120kHz_4sym|8": {
+   "air_ms": 0.28541666666666665,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 52.949766670791234,
+   "latency_worst_ms": 102.94976667079123
+  },
+  "codeword_classifier|ssb_120kHz_4sym|16": {
+   "air_ms": 0.5708333333333333,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 53.235183337457904,
+   "latency_worst_ms": 103.23518333745791
+  },
+  "codeword_classifier|ssb_120kHz_4sym|32": {
+   "air_ms": 1.1416666666666666,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 53.80601667079124,
+   "latency_worst_ms": 103.80601667079124
+  },
+  "codeword_classifier|ssb_120kHz_4sym|64": {
+   "air_ms": 2.283333333333333,
+   "processing_ms": 2.6643500041245716,
+   "latency_mean_ms": 54.9476833374579,
+   "latency_worst_ms": 104.9476833374579
+  }
+ },
+ "sweep263": {
+  "primary_120kHz_1sym": {
+   "air_ms": 2.3457682291666666
+  },
+  "fr2_2_960kHz_1sym": {
+   "air_ms": 0.2932210286458333
+  },
+  "ssb_120kHz_4sym": {
+   "air_ms": 9.383072916666666
+  }
+ },
+ "hardware": {
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "cpu_threads": 16
+ }
+}

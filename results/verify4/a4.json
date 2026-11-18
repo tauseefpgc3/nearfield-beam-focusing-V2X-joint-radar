@@ -1,0 +1,54 @@
+{
+ "definitions": {
+  "results/phase2/feasibility/e23_sweep.json (Phase 2b E2/E3)": "per-axis: |range| and |sideways| components (median_abs, p90_abs, rms); sigma = per-axis std",
+  "results/phase3b/results_b.json position_error": "per-axis: |range| and |sideways| medians / p90",
+  "results/phase3b/results_b.json stress err_median_m": "Euclidean horizontal median",
+  "results/phase3c/c1.json position_error": "Euclidean horizontal (euclid) plus range and sideways components",
+  "results/phase3c/position_error_cdf.json": "Euclidean horizontal quantiles",
+  "paper_assets_v2 canonical_macros_v2.tex PosErr*RangeCm/SideCm": "per-axis medians (to be replaced)",
+  "paper_assets_v2 canonical_macros_v2.tex CPosErr*OnVariedCm": "Euclidean median",
+  "paper_assets_v2 fig_required_accuracy.pdf": "per-axis: mean of range and sideways medians (curve and marks; axis labelled per-axis)",
+  "paper_assets_v2 tab_varied.tex / tab_stress.tex / fig_position_cdf.pdf": "Euclidean horizontal"
+ },
+ "reproduction_max_abs_diff_m": 7.216449660063518e-16,
+ "reproduced": true,
+ "e2_euclidean": {
+  "sigma0.02": {
+   "sigma_per_axis_m": 0.02,
+   "per_axis_mean_of_medians_m": 0.013537355613567933,
+   "euclid_median_m": 0.023816593654878985,
+   "euclid_p90_m": 0.042977395140147895
+  },
+  "sigma0.05": {
+   "sigma_per_axis_m": 0.05,
+   "per_axis_mean_of_medians_m": 0.03366836533621788,
+   "euclid_median_m": 0.05929031643138968,
+   "euclid_p90_m": 0.10710397377578465
+  },
+  "sigma0.1": {
+   "sigma_per_axis_m": 0.1,
+   "per_axis_mean_of_medians_m": 0.06595727287533276,
+   "euclid_median_m": 0.11598349494733572,
+   "euclid_p90_m": 0.21419687433215548
+  },
+  "sigma0.2": {
+   "sigma_per_axis_m": 0.2,
+   "per_axis_mean_of_medians_m": 0.14170789053604732,
+   "euclid_median_m": 0.24329642388545034,
+   "euclid_p90_m": 0.4261266864199724
+  },
+  "sigma0.5": {
+   "sigma_per_axis_m": 0.5,
+   "per_axis_mean_of_medians_m": 0.339741619601752,
+   "euclid_median_m": 0.60298778814263,
+   "euclid_p90_m": 1.073104920964103
+  },
+  "sigma1": {
+   "sigma_per_axis_m": 1.0,
+   "per_axis_mean_of_medians_m": 0.6762891157627724,
+   "euclid_median_m": 1.2014624126621398,
+   "euclid_p90_m": 2.147964075369578
+  }
+ },
+ "rule": "Paper assets: horizontal Euclidean error |p_hat - p| (median, p90) everywhere; per-axis only as labelled supplements."
+}

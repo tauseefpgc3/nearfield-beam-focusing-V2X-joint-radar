@@ -1,0 +1,16 @@
+{
+ "scenario": 31,
+ "n_test": 1188,
+ "gps_valid": 1188,
+ "inside_grid": 0.6675084175084175,
+ "visible": 0.4764309764309764,
+ "receiver_range_m": {
+  "median": 31.91857736288525,
+  "p90": 61.95554966008551
+ },
+ "network_top1": {
+  "visible": 0.010954063604240281,
+  "not_visible": 0.13834405144694537
+ },
+ "visible_frames": 566
+}

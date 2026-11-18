@@ -1056,140 +1056,254 @@
    "text": "17.3"
   },
   {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    50
+   ],
+   "text": "50"
+  },
+  {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    90
+   ],
+   "text": "90"
+  },
+  {
    "kind": "value",
    "target": "canonical_macros_v2.tex",
-   "src": "results/phase3b/results_b.json",
+   "src": "results/phase3c/position_error_cdf.json",
    "path": [
-    "position_error",
+    "standard",
     "lidar_net",
-    "all",
-    "range",
-    "median"
+    50
    ],
    "op": null,
    "path2": null,
    "scale": 100,
    "fmt": "{:.1f}",
-   "text": "1.6"
+   "text": "3.1"
   },
   {
    "kind": "value",
    "target": "canonical_macros_v2.tex",
-   "src": "results/phase3b/results_b.json",
+   "src": "results/phase3c/position_error_cdf.json",
    "path": [
-    "position_error",
+    "standard",
     "lidar_net",
-    "all",
-    "sideways",
-    "median"
+    90
    ],
    "op": null,
    "path2": null,
    "scale": 100,
    "fmt": "{:.1f}",
-   "text": "2.0"
+   "text": "9.3"
+  },
+  {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    50
+   ],
+   "text": "50"
+  },
+  {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    90
+   ],
+   "text": "90"
   },
   {
    "kind": "value",
    "target": "canonical_macros_v2.tex",
-   "src": "results/phase3b/results_b.json",
+   "src": "results/phase3c/position_error_cdf.json",
    "path": [
-    "position_error",
+    "standard",
     "lidar_geometric",
-    "all",
-    "range",
-    "median"
+    50
    ],
    "op": null,
    "path2": null,
    "scale": 100,
    "fmt": "{:.1f}",
-   "text": "6.2"
+   "text": "6.6"
   },
   {
    "kind": "value",
    "target": "canonical_macros_v2.tex",
-   "src": "results/phase3b/results_b.json",
+   "src": "results/phase3c/position_error_cdf.json",
    "path": [
-    "position_error",
+    "standard",
     "lidar_geometric",
-    "all",
-    "sideways",
-    "median"
+    90
    ],
    "op": null,
    "path2": null,
    "scale": 100,
    "fmt": "{:.1f}",
-   "text": "1.8"
+   "text": "58.9"
+  },
+  {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    50
+   ],
+   "text": "50"
+  },
+  {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    90
+   ],
+   "text": "90"
   },
   {
    "kind": "value",
    "target": "canonical_macros_v2.tex",
-   "src": "results/phase3b/results_b.json",
+   "src": "results/phase3c/position_error_cdf.json",
    "path": [
-    "position_error",
+    "standard",
     "radar_net",
-    "all",
-    "range",
-    "median"
+    50
    ],
    "op": null,
    "path2": null,
    "scale": 100,
    "fmt": "{:.1f}",
-   "text": "85.8"
+   "text": "183.3"
   },
   {
    "kind": "value",
    "target": "canonical_macros_v2.tex",
-   "src": "results/phase3b/results_b.json",
+   "src": "results/phase3c/position_error_cdf.json",
    "path": [
-    "position_error",
+    "standard",
     "radar_net",
-    "all",
-    "sideways",
-    "median"
+    90
    ],
    "op": null,
    "path2": null,
    "scale": 100,
    "fmt": "{:.1f}",
-   "text": "108.1"
+   "text": "355.7"
+  },
+  {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    50
+   ],
+   "text": "50"
+  },
+  {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    90
+   ],
+   "text": "90"
   },
   {
    "kind": "value",
    "target": "canonical_macros_v2.tex",
-   "src": "results/phase3b/results_b.json",
+   "src": "results/phase3c/position_error_cdf.json",
    "path": [
-    "position_error",
+    "standard",
     "radar_picker",
-    "all",
-    "range",
-    "median"
+    50
    ],
    "op": null,
    "path2": null,
    "scale": 100,
    "fmt": "{:.1f}",
-   "text": "87.4"
+   "text": "150.9"
   },
   {
    "kind": "value",
    "target": "canonical_macros_v2.tex",
-   "src": "results/phase3b/results_b.json",
+   "src": "results/phase3c/position_error_cdf.json",
    "path": [
-    "position_error",
+    "standard",
     "radar_picker",
-    "all",
-    "sideways",
-    "median"
+    90
    ],
    "op": null,
    "path2": null,
    "scale": 100,
    "fmt": "{:.1f}",
-   "text": "80.1"
+   "text": "335.5"
+  },
+  {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    50
+   ],
+   "text": "50"
+  },
+  {
+   "kind": "key",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "quantiles",
+    90
+   ],
+   "text": "90"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "standard",
+    "fused_net",
+    50
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "3.1"
+  },
+  {
+   "kind": "value",
+   "target": "canonical_macros_v2.tex",
+   "src": "results/phase3c/position_error_cdf.json",
+   "path": [
+    "standard",
+    "fused_net",
+    90
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100,
+   "fmt": "{:.1f}",
+   "text": "9.7"
   },
   {
    "kind": "value",
@@ -7025,6 +7139,20 @@
    "src": "results/phase3c/c2.json",
    "path": [
     "ds8",
+    "test_sequences"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
     "network",
     "top1_acc",
     "mean"
@@ -7525,6 +7653,20 @@
     "scenario"
    ],
    "text": "31"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "test_sequences"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "8"
   },
   {
    "kind": "value",
@@ -8151,6 +8293,20 @@
    "src": "results/phase3c/c2.json",
    "path": [
     "ds36",
+    "test_sequences"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "24"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
     "network",
     "top1_acc",
     "mean"
@@ -8641,6 +8797,4368 @@
    "scale": 100,
    "fmt": "{:.1f}",
    "text": "41.4"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|top1_acc"
+   ],
+   "text": "1"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss1_db"
+   ],
+   "text": "1"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss3_db"
+   ],
+   "text": "3"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds8",
+    "scenario"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "G"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "43.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "41.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "45.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss1_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-3.11"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss1_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-3.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss1_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.97"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss3_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.82"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss3_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.94"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss3_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.69"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "40.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "45.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss1_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-3.26"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss1_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.95"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss3_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.97"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "most_common|loss3_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.68"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "14.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "11.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "17.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss1_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss1_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.24"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss1_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.09"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss3_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss3_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.29"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss3_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.18"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "11.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "18.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss1_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.24"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss1_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.08"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss3_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.29"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds8",
+    "cells",
+    "one_nn|loss3_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.17"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds31",
+    "scenario"
+   ],
+   "text": "31"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "G"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "-0.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss1_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss1_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss1_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss3_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss3_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss3_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "-0.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss1_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.01"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss1_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss3_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "most_common|loss3_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "-1.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "-4.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "1.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss1_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.07"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss1_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.04"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss1_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.18"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss3_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss3_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.33"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss3_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "-5.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "2.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss1_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.08"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss1_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.22"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss3_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.35"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "one_nn|loss3_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "3.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "1.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "4.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss1_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.06"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss1_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.14"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss1_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss3_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.28"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss3_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.50"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss3_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.15"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|top1_acc",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.9"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|top1_acc",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "5.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss1_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.15"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss1_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.03"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss3_db",
+    "t_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.49"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds31",
+    "cells",
+    "geometric|loss3_db",
+    "t_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.07"
+  },
+  {
+   "kind": "key",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/phase3c/c2.json",
+   "path": [
+    "ds36",
+    "scenario"
+   ],
+   "text": "36"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "G"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.0f}",
+   "text": "24"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "most_common|top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "2.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "most_common|top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "-8.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "most_common|top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "13.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "most_common|loss1_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-3.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "most_common|loss1_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-8.42"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "most_common|loss1_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "most_common|loss3_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "most_common|loss3_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "most_common|loss3_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "5.66"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "one_nn|top1_acc",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "0.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "one_nn|top1_acc",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "-2.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "one_nn|top1_acc",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 100.0,
+   "fmt": "{:.1f}",
+   "text": "3.0"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "one_nn|loss1_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "one_nn|loss1_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.53"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "one_nn|loss1_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.74"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "one_nn|loss3_db",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-1.43"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "one_nn|loss3_db",
+    "boot_lo"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-2.70"
+  },
+  {
+   "kind": "value",
+   "target": "tab_realdata_cmp.tex",
+   "src": "results/verify4/a6b_realdata_ci.json",
+   "path": [
+    "ds36",
+    "cells",
+    "one_nn|loss3_db",
+    "boot_hi"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "-0.34"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|8|all"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|16|all"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|140|8|all"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|140|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|140|16|all"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|140|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|60|8|all"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|60|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|60|16|all"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|60|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|140|8|all"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|140|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|140|16|all"
+   ],
+   "text": "140"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|140|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.61"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.92"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.65"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.93"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.68"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|fused_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.93"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|fused_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|fused_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.98"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|fused_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.72"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|fused_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.00"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|fused_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.70"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|fused_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.07"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|fused_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.75"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.46"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.88"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.52"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_geometric|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.93"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_geometric|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.57"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_geometric|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.01"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|lidar_geometric|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|varied_trained_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.27"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|varied_trained_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.39"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|varied_trained_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|varied_trained_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.42"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|varied_trained_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.24"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|varied_trained_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.29"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|varied_trained_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.30"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|varied_trained_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.32"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|codeword_classifier|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.46"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|codeword_classifier|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.95"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|codeword_classifier|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "18.21"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|codeword_classifier|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "13.28"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|codeword_classifier|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.35"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|codeword_classifier|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.97"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|codeword_classifier|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "18.38"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|codeword_classifier|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "13.46"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_lidar|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "22.55"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_lidar|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_lidar|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "22.57"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_lidar|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.62"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|one_nn_lidar|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "22.98"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|one_nn_lidar|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "18.28"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|one_nn_lidar|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "23.07"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|one_nn_lidar|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "18.37"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "19.86"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.36"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "19.91"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.38"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.13"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.56"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_net|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.21"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_net|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_ensemble3|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_ensemble3|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.56"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_ensemble3|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.10"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_ensemble3|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.58"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_ensemble3|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_ensemble3|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.51"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_ensemble3|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.24"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_ensemble3|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.55"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_picker|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_picker|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.96"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_picker|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.68"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_picker|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.96"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_picker|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.17"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_picker|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_picker|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.29"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|radar_picker|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.69"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_radar|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "32.18"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_radar|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "29.60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_radar|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "32.37"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_radar|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "29.71"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|one_nn_radar|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "32.53"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|one_nn_radar|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "30.28"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|one_nn_radar|140|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "32.62"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|one_nn_radar|140|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "30.30"
+  },
+  {
+   "kind": "key",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|sweep263|60|263|all"
+   ],
+   "text": "263"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|sweep263|60|263|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|sweep263|60|263|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|sweep263|140|263|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.09"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|sweep263|140|263|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.09"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|sweep263|60|263|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|sweep263|60|263|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|sweep263|140|263|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.07"
+  },
+  {
+   "kind": "value",
+   "target": "tab_baselines.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "fresh|sweep263|140|263|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.07"
+  },
+  {
+   "kind": "key",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|8|all"
+   ],
+   "text": "60"
+  },
+  {
+   "kind": "key",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3c/setup_params.json",
+   "path": [
+    "codebook",
+    "rings"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|8|all"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|16|all"
+   ],
+   "text": "16"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.87"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "lidar_net|60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.77"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.61"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "lidar_net|60|16",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|fused_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.93"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "fused_net|60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.86"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|fused_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "0.67"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "fused_net|60|16",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.31"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.81"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "lidar_geometric|60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.82"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|lidar_geometric|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.46"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "lidar_geometric|60|16",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.23"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|varied_trained_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "2.27"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "varied_trained_net|60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "4.80"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|varied_trained_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "1.39"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "varied_trained_net|60|16",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "3.60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_lidar|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "22.55"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "one_nn_lidar|60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "24.62"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_lidar|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.63"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "one_nn_lidar|60|16",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "22.56"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_net|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "19.86"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "radar_net|60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "22.15"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_net|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.36"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "radar_net|60|16",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.36"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_ensemble3|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.05"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "radar_ensemble3|60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "22.33"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_ensemble3|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "15.56"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "radar_ensemble3|60|16",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.52"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_picker|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "17.64"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "radar_picker|60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "20.21"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|radar_picker|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "12.96"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "radar_picker|60|16",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "18.43"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_radar|60|8|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "32.18"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "one_nn_radar|60|8",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "34.95"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|one_nn_radar|60|16|all",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "29.60"
+  },
+  {
+   "kind": "value",
+   "target": "tab_fixed_shape.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "fixed_shape_baseline_test",
+    "one_nn_radar|60|16",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "32.59"
+  },
+  {
+   "kind": "key",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "lidar_net|primary_120kHz_1sym|8"
+   ],
+   "text": "8"
+  },
+  {
+   "kind": "key",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "T_beam_us",
+    "primary_120kHz_1sym"
+   ],
+   "text": "120"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "T_beam_us",
+    "primary_120kHz_1sym"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.2f}",
+   "text": "8.92"
+  },
+  {
+   "kind": "key",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "sensor_latency_s",
+    "lidar"
+   ],
+   "text": "10"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "sensor_latency_s",
+    "lidar",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1000,
+   "fmt": "{:.0f}",
+   "text": "50"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "sensor_latency_s",
+    "lidar",
+    "worst"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1000,
+   "fmt": "{:.0f}",
+   "text": "100"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "sensor_latency_s",
+    "radar",
+    "mean"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1000,
+   "fmt": "{:.0f}",
+   "text": "25"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "sensor_latency_s",
+    "radar",
+    "worst"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1000,
+   "fmt": "{:.0f}",
+   "text": "50"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "lidar_net|primary_120kHz_1sym|8",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.071"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "lidar_net|primary_120kHz_1sym|8",
+    "processing_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "3.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "lidar_net|primary_120kHz_1sym|8",
+    "latency_mean_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "53.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "lidar_net|primary_120kHz_1sym|8",
+    "latency_worst_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "103.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "fused_net|primary_120kHz_1sym|8",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.071"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "fused_net|primary_120kHz_1sym|8",
+    "processing_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "3.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "fused_net|primary_120kHz_1sym|8",
+    "latency_mean_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "53.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "fused_net|primary_120kHz_1sym|8",
+    "latency_worst_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "103.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "lidar_geometric|primary_120kHz_1sym|8",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.071"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "lidar_geometric|primary_120kHz_1sym|8",
+    "processing_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "lidar_geometric|primary_120kHz_1sym|8",
+    "latency_mean_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "52.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "lidar_geometric|primary_120kHz_1sym|8",
+    "latency_worst_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "102.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "codeword_classifier|primary_120kHz_1sym|8",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.071"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "codeword_classifier|primary_120kHz_1sym|8",
+    "processing_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "codeword_classifier|primary_120kHz_1sym|8",
+    "latency_mean_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "52.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "codeword_classifier|primary_120kHz_1sym|8",
+    "latency_worst_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "102.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "one_nn_lidar|primary_120kHz_1sym|8",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.071"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "one_nn_lidar|primary_120kHz_1sym|8",
+    "processing_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "one_nn_lidar|primary_120kHz_1sym|8",
+    "latency_mean_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "52.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "one_nn_lidar|primary_120kHz_1sym|8",
+    "latency_worst_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "102.8"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_net|primary_120kHz_1sym|8",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.071"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_net|primary_120kHz_1sym|8",
+    "processing_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "3.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_net|primary_120kHz_1sym|8",
+    "latency_mean_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "28.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_net|primary_120kHz_1sym|8",
+    "latency_worst_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "53.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_ensemble3|primary_120kHz_1sym|8",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.071"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_ensemble3|primary_120kHz_1sym|8",
+    "processing_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "9.6"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_ensemble3|primary_120kHz_1sym|8",
+    "latency_mean_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "34.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_ensemble3|primary_120kHz_1sym|8",
+    "latency_worst_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "59.7"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_picker|primary_120kHz_1sym|8",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.071"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_picker|primary_120kHz_1sym|8",
+    "processing_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "1.1"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_picker|primary_120kHz_1sym|8",
+    "latency_mean_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "26.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "radar_picker|primary_120kHz_1sym|8",
+    "latency_worst_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "51.2"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "one_nn_radar|primary_120kHz_1sym|8",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "0.071"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "one_nn_radar|primary_120kHz_1sym|8",
+    "processing_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.4"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "one_nn_radar|primary_120kHz_1sym|8",
+    "latency_mean_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "27.5"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "rows",
+    "one_nn_radar|primary_120kHz_1sym|8",
+    "latency_worst_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "52.5"
+  },
+  {
+   "kind": "key",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/results_d.json",
+   "path": [
+    "tables",
+    "test|sweep263|60|263|all"
+   ],
+   "text": "263"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "sweep263",
+    "primary_120kHz_1sym",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.3f}",
+   "text": "2.346"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "sweep263",
+    "primary_120kHz_1sym",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.3"
+  },
+  {
+   "kind": "value",
+   "target": "tab_acq_time.tex",
+   "src": "results/phase3d/b4_timing.json",
+   "path": [
+    "sweep263",
+    "primary_120kHz_1sym",
+    "air_ms"
+   ],
+   "op": null,
+   "path2": null,
+   "scale": 1.0,
+   "fmt": "{:.1f}",
+   "text": "2.3"
   },
   {
    "kind": "key",

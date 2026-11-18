@@ -1,0 +1,14 @@
+\begin{table}[t]\centering\caption{Standard test set, 60 GHz, mean loss vs.\ genie (dB): sweep shape chosen on validation vs.\ a fixed shape of the top $M/8$ angles $\times$ all 8 rings.}\label{tab:fixed_shape}
+\small\begin{tabular}{@{}lcccc@{}}\toprule
+Method & \multicolumn{2}{c}{$M$=8} & \multicolumn{2}{c}{$M$=16} \\
+ & chosen & fixed & chosen & fixed \\\midrule
+LiDAR net & 0.87 & 1.77 & 0.61 & 1.23 \\
+Fused net & 0.93 & 1.86 & 0.67 & 1.31 \\
+LiDAR geometric & 1.81 & 2.82 & 1.46 & 2.23 \\
+LiDAR net, varied-trained & 2.27 & 4.80 & 1.39 & 3.60 \\
+1-NN, LiDAR & 22.55 & 24.62 & 17.63 & 22.56 \\
+Radar net & 19.86 & 22.15 & 15.36 & 20.36 \\
+Radar net, 3-model ensemble & 20.05 & 22.33 & 15.56 & 20.52 \\
+Radar picker & 17.64 & 20.21 & 12.96 & 18.43 \\
+1-NN, radar & 32.18 & 34.95 & 29.60 & 32.59 \\
+\bottomrule\end{tabular}\end{table}

@@ -1,0 +1,9 @@
+{
+ "users": 1200,
+ "candidates": 6577,
+ "rejected": {
+  "not_test_block": 5271,
+  "near_train": 106
+ },
+ "offset": 10000000
+}

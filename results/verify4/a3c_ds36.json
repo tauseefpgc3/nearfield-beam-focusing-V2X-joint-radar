@@ -1,0 +1,30 @@
+{
+ "heading_pm2|mirror=False": {
+  "frames": 1190,
+  "best_theta": 209,
+  "score_best": 4.7403361344537815,
+  "score_median": 4.019747899159664,
+  "contrast": 1.1792620466185848
+ },
+ "heading_pm2|mirror=True": {
+  "frames": 1190,
+  "best_theta": 333,
+  "score_best": 4.96890756302521,
+  "score_median": 4.142857142857143,
+  "contrast": 1.199391480730223
+ },
+ "heading_pm5|mirror=False": {
+  "frames": 1191,
+  "best_theta": 206,
+  "score_best": 4.775818639798489,
+  "score_median": 4.049538203190596,
+  "contrast": 1.1793489529338588
+ },
+ "heading_pm5|mirror=True": {
+  "frames": 1191,
+  "best_theta": 334,
+  "score_best": 4.9773299748110835,
+  "score_median": 4.17296389588581,
+  "contrast": 1.1927565392354127
+ }
+}

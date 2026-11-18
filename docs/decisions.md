@@ -1535,3 +1535,42 @@ after the fix, and the old numbers are kept.
 - With index 1,000,000 + k, the new users' geometry seeds (21261116 + k) would equal the
   original users' 20 dB radar-noise seeds (21261120 + i).
 - With 10,000,000 + k, no new stream seed equals any original one.
+
+### D-034 results (2026-11-18)
+
+**Bug fixes and deviations recorded during the run (before / after):**
+- **.gitignore excluded src/data (C1).** `data/` also matched `src/data/`, so a fresh clone
+  failed at p1_lidar_split (`ModuleNotFoundError: src.data`). Before: C1 FAIL at step 2.
+  Fix: anchor to `/data/` and commit src/data (90e52fd). After: C1 PASS.
+- **Non-finite power rows in DeepSense scenario 31 (Phase 3c C2).** 79 frames have NaN
+  power; they are excluded in eval_c2 (`excluded_nonfinite_power`), as recorded in the D-033 note.
+- **Deviation note times corrected (3c92496).** The A3 lag-window note was first stamped
+  19:05/19:20 but was written at 18:40; the A3 scenario 31 run preceded it.
+- **Paper assets.** Internal decision IDs removed from table captions (the trace check
+  flagged "034" as an untraced number). No result changed.
+
+**A — verification**
+
+| Item | Verdict | Evidence |
+|---|---|---|
+| A1 varied labels | PASS | All 20 _var nets use lidar_bev_var.h5 with labels = each car's own antenna (error 3.6e-15 m); 5 users checked by hand (a1_a2.json) |
+| A2 channel/genie | PASS (identical) | No vehicle body in the channel model. 263-beam sweep on the varied set: 0.67 / 0.09 dB (60 / 140 GHz, all), 4.11 / 2.27 dB (adv ≥ 3 dB) |
+| A3 DeepSense alignment | FAIL on the pre-registered criteria; no pipeline bug; no retrain | s31: LiDAR and labels mutually aligned, receiver GPS ~0.2 s behind; receiver inside the grid 4/10 (66.8% of all test frames), visible 47.6%. s36: no stable LiDAR-to-GPS rotation (contrast ~1.2, per-sequence SD 83°); projection unreliable |
+| A4 position error | Inconsistency found and fixed | Per-axis medians were used in the PosErr macros and fig_required_accuracy; Euclidean elsewhere. Assets now use Euclidean (median, p90) everywhere |
+| A5 reproduction | PASS | 34 headline cells from checkpoints; max diff 1.3e-15 dB |
+| A6 cluster bootstrap | Under-covers at G = 8 (s31, 0.874) | Rule switch to cluster-t for s8 and s31; s8 1-NN K=1 loss cell under-covers with both (0.77–0.79). With t, two s31 calls become not significant: vs 1-NN loss K=3 [−0.35, +0.03] dB and vs geometric loss K=1 [−0.15, +0.03] dB (a6b_realdata_ci.json, tab_realdata_cmp) |
+
+**B — gap-filling** (60 GHz, M = 8, standard test set unless stated)
+- B1 1-NN: LiDAR 22.55 dB (+21.7 dB vs the LiDAR net), radar 32.18 dB (+12.3 dB vs the radar net).
+- B2 radar ensemble (3 models): +0.19 [0.01, 0.38] dB vs a single radar net (test), +0.03 [−0.15, 0.21] (fresh); 2.9× the processing (9.6 vs 3.3 ms).
+- B3 sweep shape: every method and seed chooses M angles × 1 ring; the fixed M/8 × 8 shape is worse (LiDAR net 1.77 vs 0.87 dB).
+- B4 acquisition time (120 kHz, 8.92 µs/beam): M = 8 air time 0.071 ms vs 2.35 ms for the 263-beam sweep; mean latency is dominated by the sensor frame age (LiDAR net 53.8 ms, radar net 28.3 ms).
+- B5 fresh set (1,200 users, evaluated once): replicates the test set (LiDAR net 0.93 vs 0.87 dB; sweep 0.63 vs 0.67 dB).
+- B6 direct codeword classifier: chosen G|1e-3 (60 GHz) and D|3e-4 (140 GHz); all 10 runs learned. Test M = 8: 17.46 dB vs 0.87 for the LiDAR net (+16.6 [16.1, 17.1] dB); fresh +16.4; varied +15.0; 140 GHz +17.3. Not a bug (b6_diagnostic.json): labels equal the genie argmax; train loss 1.50 dB; 34% of test codewords never occur in training under the block split.
+
+**C — reproducibility**
+- C1 PASS: fresh clone at 90e52fd regenerated the LiDAR-net and geometric rows (60 GHz, M = 8–64), max diff 2.2e-16 dB.
+- C2: zenodo_package/ (not committed): location_nets.zip 80 files 642.3 MB; design_selection.zip 19 / 152.5 MB; codeword_classifier.zip 16 / 149.6 MB; deepsense_lidar_nets/deepsense_lidar_nets.zip 60 / 475.0 MB (separate; DeepSense licence); README.md, SHA256SUMS.txt, manifest.json. Total 1.42 GB. Upload left to the author.
+- C3: results_d.json, set "varied", subset adv_ge3 (LiDAR net 11.05 / 6.60 / 3.04 / 1.25 dB at 60 GHz vs sweep 4.10).
+
+**Assets:** regenerated (new: tab_realdata_cmp, tab_baselines, tab_fixed_shape, tab_acq_time); trace check PASS (787 values, 113 keys).

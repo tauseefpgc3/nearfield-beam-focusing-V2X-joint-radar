@@ -1,0 +1,14 @@
+\begin{table}[t]\centering\caption{Acquisition time (ms), $M$=8, $T_\mathrm{beam}$ = one OFDM symbol with normal CP at 120 kHz (8.92 $\mu$s). Latency adds the sensor frame age: LiDAR at 10 Hz (mean 50, worst 100 ms), radar (mean 25, worst 50 ms). Processing measured on one laptop GPU, batch 1.}\label{tab:acq_time}
+\small\begin{tabular}{@{}lcccc@{}}\toprule
+Method & air & processing & latency, mean & latency, worst \\\midrule
+LiDAR net & 0.071 & 3.8 & 53.8 & 103.8 \\
+Fused net & 0.071 & 3.6 & 53.6 & 103.6 \\
+LiDAR geometric & 0.071 & 2.7 & 52.7 & 102.7 \\
+Direct codeword classifier & 0.071 & 2.7 & 52.7 & 102.7 \\
+1-NN, LiDAR & 0.071 & 2.7 & 52.8 & 102.8 \\
+Radar net & 0.071 & 3.3 & 28.3 & 53.3 \\
+Radar net, 3-model ensemble & 0.071 & 9.6 & 34.7 & 59.7 \\
+Radar picker & 0.071 & 1.1 & 26.2 & 51.2 \\
+1-NN, radar & 0.071 & 2.4 & 27.5 & 52.5 \\
+Reference sweep (263 beams) & 2.346 & -- & 2.3 & 2.3 \\
+\bottomrule\end{tabular}\end{table}

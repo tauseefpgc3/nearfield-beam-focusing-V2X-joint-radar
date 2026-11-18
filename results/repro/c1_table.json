@@ -1,0 +1,40 @@
+{
+ "cells": {
+  "lidar_net|60|8": {
+   "clone": 0.8671549498716653,
+   "banked": 0.8671549498716651
+  },
+  "geometric|60|8": {
+   "clone": 1.8133133407556654,
+   "banked": 1.8133133407556654
+  },
+  "lidar_net|60|16": {
+   "clone": 0.6111554336464198,
+   "banked": 0.6111554336464199
+  },
+  "geometric|60|16": {
+   "clone": 1.4629894141434518,
+   "banked": 1.4629894141434518
+  },
+  "lidar_net|60|32": {
+   "clone": 0.3852811688681352,
+   "banked": 0.3852811688681353
+  },
+  "geometric|60|32": {
+   "clone": 1.04227349004491,
+   "banked": 1.04227349004491
+  },
+  "lidar_net|60|64": {
+   "clone": 0.1918122714985471,
+   "banked": 0.1918122714985471
+  },
+  "geometric|60|64": {
+   "clone": 0.6244738492110801,
+   "banked": 0.6244738492110801
+  }
+ },
+ "max_abs_diff_db": 2.220446049250313e-16,
+ "verdict": "PASS",
+ "clone_commit": "90e52fd",
+ "first_attempt": "commit 29e2efc failed: src/data excluded by .gitignore 'data/'; fixed in 90e52fd"
+}

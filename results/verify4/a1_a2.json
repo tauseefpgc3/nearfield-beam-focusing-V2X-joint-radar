@@ -1,0 +1,220 @@
+{
+ "check1_training_target": {
+  "label_line": [
+   "with h5py.File(os.path.join(P2, \"users.h5\"), \"r\") as hf: xy = torch.tensor(hf[\"ant_xyz\"][:, :2], dtype=torch.float32)",
+   "Xtr, Xva = load_inputs(a.sensor, tr, a.radar_bev, a.lidar_bev), load_inputs(a.sensor, va, a.radar_bev, a.lidar_bev); Ytr = xy[tr]"
+  ],
+  "all_var_checkpoints_use_varied_bev": true,
+  "checkpoint_bev_paths": [
+   "data/processed/phase3b/lidar_bev_var.h5"
+  ],
+  "n_checkpoints": 20
+ },
+ "check2_own_antenna_equals_label_max_err_m": 3.552713678800501e-15,
+ "check2_centre_matches_renderer_max_err_m": 0.0,
+ "check3_template_vs_own_antenna_m": {
+  "matches_abs_xi_plus_1p3": 3.497202527569243e-15,
+  "train_median": 0.18312278061724155,
+  "train_max": 0.534704274917638,
+  "ant_xi_range": [
+   -1.686246541863711,
+   -0.7624368941365117
+  ]
+ },
+ "check4_five_training_users": [
+  {
+   "user": 2,
+   "heading_deg": 139.34268067470043,
+   "L": 3.852921291418359,
+   "W": 1.7210193209281508,
+   "H": 1.3598851804932273,
+   "ant_xi_m": -1.0764796559951348,
+   "antenna_label_xy": [
+    7.8064,
+    0.6581
+   ],
+   "own_antenna_xy": [
+    7.8064,
+    0.6581
+   ],
+   "car_centre_xy": [
+    6.9898,
+    1.3595
+   ],
+   "template_antenna_xy": [
+    7.976,
+    0.5125
+   ],
+   "template_minus_own_m": 0.22352034400486476,
+   "returns_in_own_box": 2564,
+   "returns_in_template_box": 2565,
+   "own_box_returns_centroid_minus_centre_m": [
+    -0.801,
+    -0.077
+   ]
+  },
+  {
+   "user": 5,
+   "heading_deg": 279.92615802086317,
+   "L": 4.877700648290685,
+   "W": 1.6569413691210377,
+   "H": 1.4198519842872623,
+   "ant_xi_m": -1.4410843536986333,
+   "antenna_label_xy": [
+    7.3459,
+    10.8518
+   ],
+   "own_antenna_xy": [
+    7.3459,
+    10.8518
+   ],
+   "car_centre_xy": [
+    7.5943,
+    9.4322
+   ],
+   "template_antenna_xy": [
+    7.3702,
+    10.7128
+   ],
+   "template_minus_own_m": 0.1410843536986327,
+   "returns_in_own_box": 1033,
+   "returns_in_template_box": 821,
+   "own_box_returns_centroid_minus_centre_m": [
+    -0.455,
+    -0.728
+   ]
+  },
+  {
+   "user": 8,
+   "heading_deg": 45.28467772363328,
+   "L": 4.064935878840188,
+   "W": 1.6979790827165633,
+   "H": 1.3909329538491864,
+   "ant_xi_m": -0.897319469220079,
+   "antenna_label_xy": [
+    10.8867,
+    15.8803
+   ],
+   "own_antenna_xy": [
+    10.8867,
+    15.8803
+   ],
+   "car_centre_xy": [
+    11.5181,
+    16.5179
+   ],
+   "template_antenna_xy": [
+    10.6034,
+    15.5941
+   ],
+   "template_minus_own_m": 0.4026805307799194,
+   "returns_in_own_box": 198,
+   "returns_in_template_box": 78,
+   "own_box_returns_centroid_minus_centre_m": [
+    -1.018,
+    -1.243
+   ]
+  },
+  {
+   "user": 9,
+   "heading_deg": 111.41629132264934,
+   "L": 4.5861892426764115,
+   "W": 1.7468454208066082,
+   "H": 1.422261546420841,
+   "ant_xi_m": -1.5561334144717707,
+   "antenna_label_xy": [
+    4.3828,
+    -6.386
+   ],
+   "own_antenna_xy": [
+    4.3828,
+    -6.386
+   ],
+   "car_centre_xy": [
+    3.8145,
+    -4.9374
+   ],
+   "template_antenna_xy": [
+    4.2892,
+    -6.1476
+   ],
+   "template_minus_own_m": 0.2561334144717706,
+   "returns_in_own_box": 3511,
+   "returns_in_template_box": 1695,
+   "own_box_returns_centroid_minus_centre_m": [
+    -0.738,
+    1.372
+   ]
+  },
+  {
+   "user": 10,
+   "heading_deg": 167.64476228942965,
+   "L": 3.888529093785034,
+   "W": 1.8544199389867362,
+   "H": 1.4385086915547556,
+   "ant_xi_m": -0.9634092471575615,
+   "antenna_label_xy": [
+    9.779,
+    -15.1877
+   ],
+   "own_antenna_xy": [
+    9.779,
+    -15.1877
+   ],
+   "car_centre_xy": [
+    8.8379,
+    -14.9815
+   ],
+   "template_antenna_xy": [
+    10.1078,
+    -15.2597
+   ],
+   "template_minus_own_m": 0.33659075284243806,
+   "returns_in_own_box": 418,
+   "returns_in_template_box": 402,
+   "own_box_returns_centroid_minus_centre_m": [
+    -0.39,
+    0.681
+   ]
+  }
+ ],
+ "A1_verdict": "PASS",
+ "A2_channel_function_args": [
+  "pts",
+  "g",
+  "lam"
+ ],
+ "A2_draw_uses_vehicle_geometry": false,
+ "A2_note": "Both test sets index the same channels_{f}GHz.h5 gains by user id; the varied set changes only the LiDAR BEV. Channel = LoS to the antenna point + 2-4 point reflectors; no car body (blockage/scattering) in the channel.",
+ "A2_sweep263_varied_test": {
+  "60": {
+   "all": {
+    "mean_db": 0.6710351610112739,
+    "n": 1193
+   },
+   "adv_ge3": {
+    "mean_db": 4.104702387673058,
+    "n": 195
+   },
+   "d_ge_2m": {
+    "mean_db": 0.4172147779911821,
+    "n": 1137
+   }
+  },
+  "140": {
+   "all": {
+    "mean_db": 0.09140490554967734,
+    "n": 1193
+   },
+   "adv_ge3": {
+    "mean_db": 2.269522925338775,
+    "n": 47
+   },
+   "d_ge_2m": {
+    "mean_db": 0.00017238884012744135,
+    "n": 1137
+   }
+  }
+ },
+ "A2_verdict": "IDENTICAL (antenna-anchored; the varied set re-renders only the LiDAR)"
+}

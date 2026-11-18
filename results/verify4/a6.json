@@ -1,0 +1,86 @@
+{
+ "ds8": {
+  "G": 16,
+  "population_sequences": 33,
+  "population_frames": 1611,
+  "cells": {
+   "most_common|top1": {
+    "population_mean": 0.4325574177529485,
+    "coverage_cluster_bootstrap": 0.967,
+    "coverage_cluster_t": 0.981
+   },
+   "most_common|loss1_db": {
+    "population_mean": -3.166608353338106,
+    "coverage_cluster_bootstrap": 0.975,
+    "coverage_cluster_t": 0.986
+   },
+   "one_nn|top1": {
+    "population_mean": 0.15074487895716945,
+    "coverage_cluster_bootstrap": 0.986,
+    "coverage_cluster_t": 0.994
+   },
+   "one_nn|loss1_db": {
+    "population_mean": -0.20173031627819843,
+    "coverage_cluster_bootstrap": 0.772,
+    "coverage_cluster_t": 0.786
+   }
+  },
+  "rule_switch_to_t": true
+ },
+ "ds31": {
+  "G": 8,
+  "population_sequences": 21,
+  "population_frames": 2763,
+  "cells": {
+   "most_common|top1": {
+    "population_mean": -0.00025334781035107017,
+    "coverage_cluster_bootstrap": 0.874,
+    "coverage_cluster_t": 0.968
+   },
+   "most_common|loss1_db": {
+    "population_mean": 3.195116021090844e-05,
+    "coverage_cluster_bootstrap": 0.919,
+    "coverage_cluster_t": 0.981
+   },
+   "one_nn|top1": {
+    "population_mean": -0.04042707202316323,
+    "coverage_cluster_bootstrap": 0.951,
+    "coverage_cluster_t": 0.976
+   },
+   "one_nn|loss1_db": {
+    "population_mean": 0.24334429040070632,
+    "coverage_cluster_bootstrap": 0.957,
+    "coverage_cluster_t": 0.987
+   }
+  },
+  "rule_switch_to_t": true
+ },
+ "ds36": {
+  "G": 24,
+  "population_sequences": 49,
+  "population_frames": 9799,
+  "cells": {
+   "most_common|top1": {
+    "population_mean": 0.06595060720481682,
+    "coverage_cluster_bootstrap": 0.981,
+    "coverage_cluster_t": 0.991
+   },
+   "most_common|loss1_db": {
+    "population_mean": -2.8948334146694137,
+    "coverage_cluster_bootstrap": 0.976,
+    "coverage_cluster_t": 0.977
+   },
+   "one_nn|top1": {
+    "population_mean": 0.012067557914072867,
+    "coverage_cluster_bootstrap": 0.991,
+    "coverage_cluster_t": 0.994
+   },
+   "one_nn|loss1_db": {
+    "population_mean": -0.7926525745042813,
+    "coverage_cluster_bootstrap": 0.988,
+    "coverage_cluster_t": 0.993
+   }
+  },
+  "rule_switch_to_t": false
+ }
+}
