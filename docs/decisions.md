@@ -1351,3 +1351,170 @@ at the prior. `eval_c2.py` also reports the relative drop and `learned` = final 
 
 **Trace check.** `scripts/paper_v2/trace_check.py` treats the dataset name "DeepSense 6G" as
 text. Final verdict: PASS (518 values, 72 keys, every table and figure number traced).
+
+## D-034 — PRE-REGISTERED: Phase 3d, verification, gap-filling, reproducibility (written 2026-11-18, before any Part B or C run)
+
+**Frozen** as in D-033: simulator, split, sensors, varied-vehicle generator, geometric
+estimator, the location networks (architecture, H head, training settings) and the sweep rule
+(A × R = M, shape chosen on validation). Only B6 trains new networks; Part A may retrain a
+DeepSense scenario only if A3 finds a bug.
+
+**Bug-fix rule.** Any fix is a dated deviation in this log. Results are reported before and
+after the fix, and the old numbers are kept.
+
+**Paths.** Part A scripts in `scripts/verify4/`, Part B in `scripts/phase3d/`, Part C in
+`scripts/repro/`. Outputs in `results/verify4/` and `results/phase3d/`.
+
+**Pre-analysis observations (code reading only, before writing this entry).**
+- The varied-vehicle renderer keeps each user's antenna at its frozen position and places
+  the car around it (car centre = antenna − ant_xi · heading).
+- The channel model has the antenna and point reflectors only; the car body is not in the
+  channel.
+- The paper assets mix position-error definitions: per-axis range/sideways medians in the
+  macros and the required-accuracy figure, Euclidean elsewhere.
+- Scenario 36 CSV rows carry per-device file timestamps that differ by up to about 2 s
+  (power vs LiDAR) within one row.
+
+### Part A — verification (fresh scripts; each item gets PASS / FAIL with evidence)
+
+**A1 Varied-vehicle labels.**
+- Check 1: the training target of every `_var` checkpoint is `users.h5` ant_xyz[:, :2], and
+  the BEV file is `lidar_bev_var.h5` (checkpoint args).
+- Check 2: for every user, the varied car centre + ant_xi · heading equals ant_xyz to
+  1e-9 m.
+- Check 3: the template antenna (car centre − 1.3 m · heading) differs from it by
+  |ant_xi + 1.3|.
+- Check 4: in the rendered varied cloud, the vehicle-box returns surround the car's own
+  centre.
+- Shown by hand for 5 training users (fixed list: the first 5 training indices).
+- PASS if all four checks hold.
+
+**A2 Channel and genie, standard vs varied.**
+- Check that the gain matrices used for both test sets are the same array, and that the
+  generator has no vehicle-geometry input.
+- Report the 263-beam full-sweep loss on the varied test set (all, adv ≥ 3 dB, ≥ 2 m;
+  both frequencies).
+- "Identical" if the max |ΔG| is 0. Either way, the result goes in the paper's limitations
+  (no body blockage or scattering).
+
+**A3 DeepSense sanity, scenarios 31 and 36.**
+- **Frames:** 10 test frames each, `default_rng(34)`. Render the BEV grid with the
+  receiver's GPS position projected into the LiDAR frame.
+  - Scenario 31: ENU about unit 1, rotated by one azimuth.
+  - Scenario 36: unit 2 relative to unit 1, in unit 1's heading frame, with heading from
+    unit 1's GPS track.
+- **Rotation:** fitted on training frames by maximising the mean LiDAR point count within
+  2 m of the projected position, over 0–359° in 1° steps.
+- **Time alignment:** repeat the fit with the GPS (and, separately, the beam label) shifted
+  by k ∈ [−10, 10] frames within a sequence. The best k should be 0 ± 1.
+- **Label check:** circular correlation between the label's beam angle and the GPS bearing,
+  at k = 0 vs the best k.
+- **PASS:** receiver inside the grid on ≥ 9 of 10 frames, best lag within ±1 for both
+  checks, and the fitted rotation stable across sequences (circular SD < 10°).
+- **On FAIL:**
+  - Find the cause. If it is a pipeline bug, fix it, record a deviation and retrain that
+    scenario (same 20 seeds, same design and grid rule), then report before and after.
+  - If the cause is the dataset itself (e.g. device clock offsets), report it and do not
+    retrain.
+- The rendered images derive from licensed data: they are kept locally and only summary
+  statistics are committed.
+
+**A4 Position error definition.**
+- List the definition used in every existing report.
+- From now on, all paper assets use the horizontal Euclidean error ‖p̂ − p‖ (median, p90).
+- The required-accuracy curve (Phase 2b, E2) is re-expressed in the same measure: the
+  injected errors are regenerated exactly (`default_rng(2032)`, same order). The rerun must
+  reproduce the banked per-axis medians before the Euclidean medians are banked.
+- Per-axis components may appear only as clearly labelled supplementary values.
+
+**A5 Independent reproduction.**
+- A new script with its own network definition, decoder, beam set, loss and shape
+  selection, importing nothing from phase3/3b/3c/verify3 evaluation code. It loads the
+  checkpoints with strict=True; the simulator and the geometric estimator are called as
+  black boxes.
+- Cells: single-vehicle LiDAR net (20 seeds), geometric estimator and 263-beam sweep, on
+  the standard and varied test sets, M ∈ {8, 16, 32, 64}, 60/140 GHz, all users.
+- PASS if every cell matches the banked value (`results_b.json`, `c1.json`) within
+  0.005 dB.
+
+**A6 DeepSense cluster bootstrap.**
+- Report G (test sequences) next to every real-data CI: 16 / 8 / 24 for scenarios
+  8 / 31 / 36.
+- **Validity check (Monte Carlo):**
+  - Pool the per-frame network-minus-baseline differences on the validation and test
+    sequences of each scenario; the population mean is the pooled mean.
+  - Draw G sequences without replacement (G = that scenario's test count), compute the
+    percentile cluster-bootstrap CI (2,000 resamples), repeat 1,000 times
+    (`default_rng(36)`), and report the coverage.
+- **Rule:** if coverage < 0.93, real-data CIs in the paper switch to the cluster-robust
+  t-interval with G − 1 df, and both are reported.
+
+### Part B — gap-filling (evaluation only, except B6)
+
+- **B1 1-NN.**
+  - Features: the BEV channel 0 (LiDAR log-count; radar 20 dB range-angle BEV), 4 × 4
+    average-pooled and L2-normalised.
+  - The nearest training user (Euclidean) gives the position estimate, which then goes
+    through the frozen sweep with the shape chosen on validation (validation queries
+    against the training set). Test at 20 dB radar.
+- **B2 Radar ensemble.**
+  - Six disjoint triples of radar seeds, in seed order: (11, 22, 33), …, (176, 187, 198).
+  - Ensemble map = mean of the three softmax maps, decoded with the frozen local
+    soft-argmax on its log.
+  - Report: mean ± t-CI over the 6 ensembles; paired bootstrap vs the 20-seed single radar
+    net (read by CI); cost = 3 × measured inference + preprocessing (CUDA and CPU, batch 1).
+- **B3 Sweep shapes.**
+  - Tabulate, for every method, frequency and M, the shapes chosen on validation (per-seed
+    counts).
+  - Add a fixed-shape baseline: M/8 nearest angles × all 8 rings (at M = 8: the top
+    predicted angle × 8 rings), for every method.
+- **B4 Acquisition time.**
+  - Formula: M × T_beam + sensor latency + preprocessing + inference, against 263 × T_beam.
+  - T_beam (primary): one OFDM symbol with normal CP at 120 kHz SCS = 8.92 µs (NR FR2
+    numerology, one reference symbol per beam).
+  - T_beam (sensitivity): 960 kHz SCS = 1.12 µs (NR FR2-2), and an SSB of 4 symbols at
+    120 kHz = 35.7 µs.
+  - Sensor latency: LiDAR at 10 Hz, mean frame age 50 ms, worst case 100 ms. Radar assumed
+    20 Hz: 25 ms mean, 50 ms worst.
+  - Processing: from `cost.json`.
+  - Report air-time overhead and time-to-beam separately.
+- **B5 Fresh test set.**
+  - Draw candidate users with the frozen generator at new indices 1,000,000 + k (new
+    channel, radar, LiDAR and noise seeds). Keep a candidate only if it falls in a test block
+    (role 2) and lies ≥ 0.5 m from every training user. Stop at 1,200.
+  - Generate channels (60/140 GHz), fixed radar at 20 dB only, and the standard-vehicle
+    LiDAR.
+  - Evaluate once, with shapes from the original validation: all frozen models (radar
+    picker, geometric, radar/LiDAR/fused nets, varied-trained net), B1, B2, B6, and the
+    263-beam sweep.
+  - Report next to the original test set (all, adv ≥ 3 dB, ≥ 2 m). No decision uses it.
+- **B6 Direct codeword classifier (trains).**
+  - Same LiDAR U-Net backbone; separate per frequency; label = genie codeword (2,048
+    classes); cross-entropy loss; frozen optimiser settings.
+  - Candidate heads: (G) global average pool of the deepest encoder features → linear;
+    (D) full decoder → global average and max pool → linear.
+  - Grid: head ∈ {G, D} × lr ∈ {1e-3, 3e-4}, seed 11, per frequency.
+  - Selection: lowest validation mean loss at M = 8, with the sweep = the top-M codewords
+    by logit.
+  - Then seeds 11–55 (5 seeds) of the chosen setting, tested once at M ∈ {8, 16, 32, 64}.
+  - Comparison with the LiDAR location net: 5-seed vs 20-seed means, paired bootstrap, read
+    by CI.
+  - Learning check: final training loss < 0.95 × prior.
+
+### Part C — reproducibility
+
+- **C1 Scripts and fresh-clone rerun.**
+  - Commit every local script the results depend on, including all of `scripts/phase2`.
+  - In a fresh clone (with checkpoints from the C2 package), regenerate users, channels,
+    split and LiDAR, then the single-vehicle LiDAR net and geometric rows of the standard
+    test-set loss table (60 GHz, all users, M = 8–64).
+  - PASS if the clone matches the banked values within 0.005 dB.
+- **C2 Zenodo package.**
+  - Contents: every checkpoint cited by the paper, a README, and a SHA-256 manifest. No
+    DeepSense data.
+  - The DeepSense-trained weights go in a separate folder, so they can be left out.
+  - Report the file list and total size. The upload is left to the author.
+- **C3 Near-field subset.** Varied test set, adv ≥ 3 dB, M = 8–64, both frequencies, every
+  method (as in B5) plus the 263-beam sweep.
+
+**End.** Regenerate the paper assets and rerun the trace check.
