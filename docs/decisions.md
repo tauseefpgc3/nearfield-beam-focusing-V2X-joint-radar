@@ -1731,3 +1731,27 @@ Users moved to within 1 m of the array: at most 4 (at v ≥ 10 m/s).
 
 **Assets.** New: tab_motion, tab_motion_poserr, tab_realdata_visible, fig_motion. Trace check
 PASS (1,038 values, 138 keys).
+
+### D-035 addendum (2026-11-19) — two additions for the headline table, before any rerun
+
+**Why.** The headline table (tab_headline) needs two things motion.json does not hold:
+- the users ≥ 2 m subset at v > 0 (Phase 3e saved only all users and adv ≥ 3 dB);
+- a 95% CI for the 263-beam sweep, which the "smallest M within the sweep's 95% CI" rule
+  compares against.
+
+**Additions.**
+1. Subset d_ge_2m: horizontal distance of the static true antenna from the array ≥ 2 m (the
+   eval_d definition). Membership is fixed across speeds, as for adv ≥ 3 dB. It is added to
+   every E1/E2 loss cell and to the break-even read.
+2. Sweep CI: per-user bootstrap of the sweep's mean loss (B.boot, 10,000 resamples, seed 0),
+   per frequency, speed and subset, stored as `sweep263_ci`. The `sweep263` means are
+   unchanged.
+
+**Procedure.** Evaluation-only rerun of motion.py with the same frozen models, seeds, users,
+τ draws and earlier-frame noise streams. Output goes to results/phase3e/motion_v2.json.
+Every key and value of motion.json except runtime_s must reproduce exactly (bit-for-bit
+equal floats); if any cell differs, stop and report without using the new file.
+
+**Headline rule.** For each frequency and test set, at v = 0, 10 and 20 m/s, all users: the
+smallest M in {8, 16, 32, 64} at which the compensated LiDAR net's mean loss is ≤ the upper end
+of the sweep's 95% CI. "None" if no M qualifies.
