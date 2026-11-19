@@ -1,0 +1,8 @@
+{
+ "compared": 1267,
+ "identical": 1267,
+ "skipped_too_large_for_original": 6,
+ "max_above_ground_points": 46710,
+ "median_ms_new": 13.860299994121306,
+ "median_ms_original": 31.25279999221675
+}

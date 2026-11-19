@@ -1,0 +1,17 @@
+\begin{table*}[t]\centering\caption{Multi-car test scenes. Top: association success (selected cluster holds at least half of the user car's returns) and radio blockage (another vehicle on the array-to-antenna line; not in the channel model). Bottom: mean loss (dB) at the primary condition by number of other vehicles $K_o$ and by LiDAR occlusion of the user car.}\label{tab:multicar_scene}
+\small\begin{tabular}{@{}lcccccc@{}}\toprule
+Association success, $\sigma$=1 m / 3 m & \multicolumn{6}{l}{95.0\% / 87.7\%} \\
+$K_o$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+Test users & 188 & 222 & 192 & 214 & 218 & 210 \\
+Radio-blocked (\%) & 0.0 & 0.0 & 0.0 & 0.9 & 2.3 & 2.9 \\\midrule
+LiDAR net, multi-car-trained & 1.95 & 3.33 & 3.41 & 4.55 & 5.61 & 6.32 \\
+LiDAR net, single-vehicle (frozen) & 1.05 & 2.04 & 2.67 & 3.77 & 4.14 & 5.63 \\
+LiDAR net, varied-trained (frozen) & 1.74 & 3.25 & 3.51 & 4.57 & 5.20 & 5.84 \\
+LiDAR geometric (frozen) & 3.51 & 4.31 & 6.51 & 5.40 & 6.79 & 7.89 \\
+Sweep & 0.61 & 0.92 & 0.68 & 0.66 & 0.88 & 0.76 \\\midrule
+Occlusion & visible (1206) & partly occluded (32) & fully occluded (6) & \multicolumn{3}{c}{} \\
+LiDAR net, multi-car-trained & 4.00 & 10.60 & 20.39 & \multicolumn{3}{c}{} \\
+LiDAR net, single-vehicle (frozen) & 3.06 & 8.76 & 14.15 & \multicolumn{3}{c}{} \\
+LiDAR net, varied-trained (frozen) & 3.85 & 9.90 & 16.94 & \multicolumn{3}{c}{} \\
+LiDAR geometric (frozen) & 5.51 & 12.17 & 21.18 & \multicolumn{3}{c}{} \\
+\bottomrule\end{tabular}\end{table*}

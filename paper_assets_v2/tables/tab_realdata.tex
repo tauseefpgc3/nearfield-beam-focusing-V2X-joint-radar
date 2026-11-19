@@ -1,5 +1,5 @@
-\begin{table*}[t]\centering\caption{DeepSense 6G test splits (whole sequences held out): top-$K$ accuracy (\%), power loss vs.\ the best beam (dB, mean), and the top-1 beam-change rate between consecutive frames (\%). Network: mean $\pm$ half-width of the 95\% CI over seeds.}\label{tab:realdata}
-\small\begin{tabular}{@{}llccccccc@{}}\toprule
+\begin{table*}[t]\centering\caption{DeepSense 6G test splits (whole sequences held out): top-$K$ accuracy (\%), power loss vs.\ the best beam (dB, mean), and the top-1 beam-change rate between consecutive frames (\%). Network: mean $\pm$ half-width of the 95\% CI over seeds; for the cross-validated scenarios, over runs (one run = one seed across all folds).}\label{tab:realdata}
+\resizebox{\textwidth}{!}{\begin{tabular}{@{}llccccccc@{}}\toprule
 Scenario & Method & top-1 & top-3 & top-5 & top-8 & loss, $K$=1 & loss, $K$=3 & change \\\midrule
 8 (V2I), $G$=16 & LiDAR net & 56.0 $\pm$ 4.3 & 88.2 $\pm$ 3.8 & 95.3 $\pm$ 2.8 & 97.9 $\pm$ 1.7 & 0.37 $\pm$ 0.24 & 0.05 $\pm$ 0.04 & 54.3 $\pm$ 3.8 \\
  & Most common beam & 12.7 & 27.6 & 36.1 & 44.4 & 3.48 & 2.87 & 0.0 \\
@@ -16,4 +16,20 @@ Scenario & Method & top-1 & top-3 & top-5 & top-8 & loss, $K$=1 & loss, $K$=3 & 
  & Most common beam & 17.2 & 50.0 & 58.9 & 70.4 & 12.88 & 3.68 & 0.0 \\
  & 1-NN, LiDAR features & 19.4 & 38.7 & 45.7 & 50.2 & 9.39 & 8.75 & 36.7 \\
  & Ground truth & \multicolumn{6}{c}{} & 41.4 \\
-\bottomrule\end{tabular}\end{table*}
+\midrule
+\multicolumn{9}{@{}l}{\emph{Unseen scenarios, grouped sequence cross-validation (each sequence tested once)}} \\
+32 (V2I, day), $G$=15 & LiDAR net & 12.0 $\pm$ 1.6 & 23.6 $\pm$ 2.7 & 29.8 $\pm$ 3.4 & 39.1 $\pm$ 3.6 & 1.41 $\pm$ 0.07 & 1.07 $\pm$ 0.03 & 8.1 $\pm$ 10.1 \\
+ & Most common beam & 13.4 & 25.8 & 32.7 & 42.2 & 1.36 & 1.06 & 0.0 \\
+ & 1-NN, LiDAR features & 6.2 & 14.0 & 20.0 & 26.7 & 1.66 & 1.41 & 50.7 \\
+ & Ground truth & \multicolumn{6}{c}{} & 61.8 \\
+\midrule
+33 (V2I, night), $G$=18 & LiDAR net & 11.9 $\pm$ 3.4 & 23.5 $\pm$ 2.9 & 32.2 $\pm$ 2.3 & 43.3 $\pm$ 3.5 & 1.92 $\pm$ 0.16 & 1.20 $\pm$ 0.08 & 16.8 $\pm$ 14.7 \\
+ & Most common beam & 16.4 & 27.4 & 35.3 & 46.0 & 1.70 & 1.10 & 0.0 \\
+ & 1-NN, LiDAR features & 5.1 & 15.3 & 23.6 & 31.7 & 2.07 & 1.61 & 53.4 \\
+ & Ground truth & \multicolumn{6}{c}{} & 60.8 \\
+\midrule
+34 (V2I, night), $G$=31 & LiDAR net & 7.5 $\pm$ 0.0 & 20.7 $\pm$ 0.0 & 29.5 $\pm$ 0.6 & 40.1 $\pm$ 0.0 & 2.23 $\pm$ 0.00 & 1.38 $\pm$ 0.00 & 0.8 $\pm$ 2.1 \\
+ & Most common beam & 7.5 & 20.7 & 29.7 & 40.1 & 2.23 & 1.38 & 0.0 \\
+ & 1-NN, LiDAR features & 5.5 & 15.2 & 22.7 & 29.6 & 2.38 & 1.89 & 48.6 \\
+ & Ground truth & \multicolumn{6}{c}{} & 61.3 \\
+\bottomrule\end{tabular}}\end{table*}

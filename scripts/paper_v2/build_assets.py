@@ -22,7 +22,7 @@ J = dict(b="results/phase3b/results_b.json", cost="results/phase3b/cost.json", c
          a4="results/verify4/a4.json", a6="results/verify4/a6.json", a6b="results/verify4/a6b_realdata_ci.json",
          d="results/phase3d/results_d.json", b4="results/phase3d/b4_timing.json",
          m3e="results/phase3e/motion.json", e3="results/phase3e/e3_visible.json",
-         m3e2="results/phase3e/motion_v2.json")
+         m3e2="results/phase3e/motion_v2.json", p4a="results/phase4/a_results.json", p4b="results/phase4/b_results.json")
 # protocol constants (D-032/D-033 definitions, not results); the trace check reports them separately
 CONST = {"95", "1", "3", "2", "10", "20", "0"}
 FR, MS = (60, 140), (8, 16, 32, 64)
@@ -241,8 +241,9 @@ def tab_realdata():
     t = "tab_realdata.tex"
     if not R.has("c2"): R.skipped.append(t); return
     body = ("\\begin{table*}[t]\\centering\\caption{DeepSense 6G test splits (whole sequences held out): top-$K$ accuracy (\\%), power loss vs.\\ the best beam (dB, mean), "
-            "and the top-1 beam-change rate between consecutive frames (\\%). Network: mean $\\pm$ half-width of the 95\\% CI over seeds.}\\label{tab:realdata}\n"
-            "\\small\\begin{tabular}{@{}ll" + "c" * 7 + "@{}}\\toprule\nScenario & Method & top-" + "& top-".join(R.key(t, "c2", [s0, "network", f"top{K}_acc"], str(K)) + " " for K, s0 in
+            "and the top-1 beam-change rate between consecutive frames (\\%). Network: mean $\\pm$ half-width of the 95\\% CI over seeds"
+            + ("; for the cross-validated scenarios, over runs (one run = one seed across all folds)" if R.has("p4a") else "") + ".}\\label{tab:realdata}\n"
+            "\\resizebox{\\textwidth}{!}{\\begin{tabular}{@{}ll" + "c" * 7 + "@{}}\\toprule\nScenario & Method & top-" + "& top-".join(R.key(t, "c2", [s0, "network", f"top{K}_acc"], str(K)) + " " for K, s0 in
             zip((1, 3, 5, 8), [next(iter(R.get("c2", [])))] * 4)) + "& loss, $K$=" + R.key(t, "c2", [next(iter(R.get("c2", []))), "network", "loss1_mean_db"], "1")
             + " & loss, $K$=" + R.key(t, "c2", [next(iter(R.get("c2", []))), "network", "loss3_mean_db"], "3") + " & change \\\\\\midrule\n")
     NMB = dict(most_common="Most common beam", one_nn="1-NN, LiDAR features", geometric="LiDAR geometric")
@@ -256,7 +257,92 @@ def tab_realdata():
             body += f" & {bn} & " + " & ".join([R.v(t, "c2", bb + [f"top{K}_acc"], "{:.1f}", scale=100) for K in (1, 3, 5, 8)] + [R.v(t, "c2", bb + [f"loss{K}_mean_db"]) for K in (1, 3)]
                                                + [R.v(t, "c2", bb + ["beam_change_rate"], "{:.1f}", scale=100)]) + " \\\\\n"
         body += f" & Ground truth & \\multicolumn{{6}}{{c}}{{}} & {R.v(t, 'c2', [s, 'ground_truth_beam_change_rate'], '{:.1f}', scale=100)} \\\\\n"
-        body += "\\midrule\n" if s != list(R.get("c2", []))[-1] else ""
+        body += "\\midrule\n" if (s != list(R.get("c2", []))[-1] or R.has("p4a")) else ""
+    if R.has("p4a"):
+        body += "\\multicolumn{9}{@{}l}{\\emph{Unseen scenarios, grouped sequence cross-validation (each sequence tested once)}} \\\\\n"
+        for s in R.get("p4a", []):
+            sn = R.key(t, "p4a", [s, "scenario"], s[2:]) + (" (V2I, day)" if s == "ds32" else " (V2I, night)") + ", $G$=" + R.v(t, "p4a", [s, "G"], "{:.0f}")
+            net = [s, "network"]; cell = lambda k, sc=100.0, fmt="{:.1f}": R.v(t, "p4a", net + [k, "mean"], fmt, scale=sc) + " $\\pm$ " + R.v(t, "p4a", net + [k, "hi"], fmt, op="half_diff", path2=net + [k, "lo"], scale=sc)
+            body += f"{sn} & LiDAR net & " + " & ".join([cell(f"top{K}_acc") for K in (1, 3, 5, 8)] + [cell(f"loss{K}_mean_db", 1.0, "{:.2f}") for K in (1, 3)] + [cell("beam_change_rate")]) + " \\\\\n"
+            for b, bn in (("most_common", "Most common beam"), ("one_nn", "1-NN, LiDAR features")):
+                bb = [s, "baselines", b]
+                body += f" & {bn} & " + " & ".join([R.v(t, "p4a", bb + [f"top{K}_acc"], "{:.1f}", scale=100) for K in (1, 3, 5, 8)] + [R.v(t, "p4a", bb + [f"loss{K}_mean_db"]) for K in (1, 3)]
+                                                   + [R.v(t, "p4a", bb + ["beam_change_rate"], "{:.1f}", scale=100)]) + " \\\\\n"
+            body += f" & Ground truth & \\multicolumn{{6}}{{c}}{{}} & {R.v(t, 'p4a', [s, 'ground_truth_beam_change_rate'], '{:.1f}', scale=100)} \\\\\n"
+            body += "\\midrule\n" if s != list(R.get("p4a", []))[-1] else ""
+    body += "\\bottomrule\\end{tabular}}\\end{table*}\n"; wtab(t, body)
+
+
+def tab_realdata_cv_cmp():
+    """D-036 A: network minus baseline on DeepSense 32-34 (5-fold sequence CV), with G next to every CI."""
+    t = "tab_realdata_cv_cmp.tex"
+    if not R.has("p4a"): R.skipped.append(t); return
+    body = ("\\begin{table*}[t]\\centering\\caption{Unseen DeepSense 6G scenarios (grouped sequence cross-validation): network (run mean) minus baseline, frame-pooled. "
+            "First bracket: sequence-cluster bootstrap 95\\% CI; second: cluster-robust $t$-interval, both over all $G$ sequences. Top-1 in percentage points (higher is better); "
+            "losses in dB (lower is better). Learned: runs whose final training loss is below 95\\% of the label-prior entropy.}\\label{tab:realdata_cv_cmp}\n"
+            "\\resizebox{\\textwidth}{!}{\\begin{tabular}{@{}lllccc@{}}\\toprule\nScenario & $G$ & Baseline & $\\Delta$ top-1 (pp) & $\\Delta$ loss, $K$=1 (dB) & $\\Delta$ loss, $K$=3 (dB) \\\\\\midrule\n")
+    for s in R.get("p4a", []):
+        first = True
+        for b, bn in (("most_common", "Most common beam"), ("one_nn", "1-NN, LiDAR features")):
+            row = (R.key(t, "p4a", [s, "scenario"], s[2:]) + " (learned " + R.v(t, "p4a", [s, "learned_count"], "{:.0f}") + "/" + R.v(t, "p4a", [s, "runs"], "{:.0f}") + ")" if first else "") + " & "
+            row += (R.v(t, "p4a", [s, "G"], "{:.0f}") if first else "") + f" & {bn}"
+            for k, sc, fmt in (("top1_acc", 100.0, "{:.1f}"), ("loss1_db", 1.0, "{:.2f}"), ("loss3_db", 1.0, "{:.2f}")):
+                c = [s, "baselines", b, "network_minus_baseline", k]
+                row += (" & " + R.v(t, "p4a", c + ["mean"], fmt, scale=sc) + " [" + R.v(t, "p4a", c + ["boot_lo"], fmt, scale=sc) + ", " + R.v(t, "p4a", c + ["boot_hi"], fmt, scale=sc)
+                        + "] [" + R.v(t, "p4a", c + ["t_lo"], fmt, scale=sc) + ", " + R.v(t, "p4a", c + ["t_hi"], fmt, scale=sc) + "]")
+            body += row + " \\\\\n"; first = False
+        body += "\\midrule\n" if s != list(R.get("p4a", []))[-1] else ""
+    body += "\\bottomrule\\end{tabular}}\\end{table*}\n"; wtab(t, body)
+
+
+B_MODELS = (("multicar_net", "LiDAR net, multi-car-trained"), ("single_vehicle_net", "LiDAR net, single-vehicle (frozen)"),
+            ("varied_trained_net", "LiDAR net, varied-trained (frozen)"), ("lidar_geometric", "LiDAR geometric (frozen)"))
+
+
+def tab_multicar():
+    """D-036 B: multi-car scenes, motion-compensated, sigma = 3 m, all test users."""
+    t = "tab_multicar.tex"
+    if not R.has("p4b"): R.skipped.append(t); return
+    ci = lambda c: R.v(t, "p4b", c + ["mean"]) + "\\,[" + R.v(t, "p4b", c + ["lo"]) + ", " + R.v(t, "p4b", c + ["hi"]) + "]"
+    pr = R.get("p4b", ["primary"])
+    body = ("\\begin{table*}[t]\\centering\\caption{Multi-car scenes (user car plus " + R.key(t, "p4b", ["scenes", "K_o_counts", "0"], "0") + "--" + R.key(t, "p4b", ["scenes", "K_o_counts", "5"], "5") + " other vehicles, varied user car), GPS association with $\\sigma$ = "
+            + R.key(t, "p4b", ["association", "3"], "3") + " m, two-frame motion compensation: mean loss vs.\\ genie (dB) with 95\\% CI, all "
+            + R.v(t, "p4b", ["n_test"], "{:.0f}") + " test users. Association rule per model chosen on validation. Primary read (pre-registered): multi-car-trained net at "
+            + R.key(t, "p4b", ["tables", "multicar_net|3|60|32|10|all"], "60") + " GHz, $M$=" + R.key(t, "p4b", ["tables", "multicar_net|3|60|32|10|all"], "32") + ", $v$=10 m/s: "
+            + ci(["primary", "net"]) + " dB vs.\\ sweep " + ci(["primary", "sweep"]) + " dB, " + ("matches" if pr["matches_sweep_in_traffic"] else "does not match")
+            + " the sweep in traffic. The channel model has no blockage by other vehicles (" + R.v(t, "p4b", ["radio_blockage", "blocked_fraction"], "{:.1f}", scale=100)
+            + "\\% of test users have another vehicle on the array-to-antenna line), so all results, including the sweep, are optimistic for those users.}\\label{tab:multicar}\n"
+            "\\resizebox{\\textwidth}{!}{\\begin{tabular}{@{}ll" + "c" * 8 + "@{}}\\toprule\n & & \\multicolumn{4}{c}{" + R.key(t, "p4b", ["tables", "multicar_net|3|60|8|0|all"], "60")
+            + " GHz} & \\multicolumn{4}{c}{" + R.key(t, "p4b", ["tables", "multicar_net|3|140|8|0|all"], "140") + " GHz} \\\\\n\\cmidrule(lr){3-6}\\cmidrule(lr){7-10}\n$v$ (m/s) & Method & "
+            + " & ".join("$M$=" + R.key(t, "p4b", ["tables", f"multicar_net|3|60|{M}|0|all"], str(M)) for _ in FR for M in MS) + " \\\\\\midrule\n")
+    for v in (0, 10, 20):
+        vs = R.key(t, "p4b", ["tables", f"multicar_net|3|60|8|{v}|all"], str(v))
+        for i, (m, nm) in enumerate(B_MODELS):
+            body += (vs if i == 0 else "") + " & " + nm + " (" + R.get("p4b", ["chosen_rule", m]) + ") & " + " & ".join(ci(["tables", f"{m}|3|{f}|{M}|{v}|all"]) for f in FR for M in MS) + " \\\\\n"
+        body += " & Sweep & " + " & ".join("\\multicolumn{4}{c}{" + ci(["sweep263", f"{f}|{v}|all"]) + "}" for f in FR) + " \\\\\n"
+        body += "\\midrule\n" if v != 20 else ""
+    body += "\\bottomrule\\end{tabular}}\\end{table*}\n"; wtab(t, body)
+
+
+def tab_multicar_scene():
+    """D-036 B: association, occlusion, radio blockage, and loss by traffic (primary condition)."""
+    t = "tab_multicar_scene.tex"
+    if not R.has("p4b"): R.skipped.append(t); return
+    body = ("\\begin{table*}[t]\\centering\\caption{Multi-car test scenes. Top: association success (selected cluster holds at least half of the user car's returns) and "
+            "radio blockage (another vehicle on the array-to-antenna line; not in the channel model). Bottom: mean loss (dB) at the primary condition by number of other "
+            "vehicles $K_o$ and by LiDAR occlusion of the user car.}\\label{tab:multicar_scene}\n\\small\\begin{tabular}{@{}l" + "c" * 6 + "@{}}\\toprule\n")
+    body += ("Association success, $\\sigma$=" + R.key(t, "p4b", ["association", "1"], "1") + " m / " + R.key(t, "p4b", ["association", "3"], "3") + " m & \\multicolumn{6}{l}{"
+             + R.v(t, "p4b", ["association", "1", "success_rate"], "{:.1f}", scale=100) + "\\% / " + R.v(t, "p4b", ["association", "3", "success_rate"], "{:.1f}", scale=100) + "\\%} \\\\\n")
+    body += "$K_o$ & " + " & ".join(R.key(t, "p4b", ["scenes", "K_o_counts", str(k)], str(k)) for k in range(6)) + " \\\\\n"
+    body += "Test users & " + " & ".join(R.v(t, "p4b", ["scenes", "K_o_counts", str(k)], "{:.0f}") for k in range(6)) + " \\\\\n"
+    body += "Radio-blocked (\\%) & " + " & ".join(R.v(t, "p4b", ["radio_blockage", "by_K_o", str(k)], "{:.1f}", scale=100) for k in range(6)) + " \\\\\\midrule\n"
+    for m, nm in B_MODELS:
+        body += nm + " & " + " & ".join(R.v(t, "p4b", ["tables", f"{m}|3|60|32|10|K_o={k}", "mean"]) for k in range(6)) + " \\\\\n"
+    body += "Sweep & " + " & ".join(R.v(t, "p4b", ["sweep263", f"60|10|K_o={k}", "mean"]) for k in range(6)) + " \\\\\\midrule\n"
+    occ = [c for c in ("visible", "partly_occluded", "fully_occluded") if f"60|10|{c}" in R.get("p4b", ["sweep263"])]
+    body += "Occlusion & " + " & ".join(c.replace("_", " ") + " (" + R.v(t, "p4b", ["subset_sizes", c], "{:.0f}") + ")" for c in occ) + " & \\multicolumn{" + str(6 - len(occ)) + "}{c}{} \\\\\n"
+    for m, nm in B_MODELS:
+        body += nm + " & " + " & ".join(R.v(t, "p4b", ["tables", f"{m}|3|60|32|10|{c}", "mean"]) for c in occ) + " & \\multicolumn{" + str(6 - len(occ)) + "}{c}{} \\\\\n"
     body += "\\bottomrule\\end{tabular}\\end{table*}\n"; wtab(t, body)
 
 
@@ -616,7 +702,7 @@ def fig_motion():
 def main():
     for d in (FIG, TAB): os.makedirs(d, exist_ok=True)
     macros(); tab_setup(); tab_main(); tab_varied(); tab_stress(); tab_cost(); tab_realdata(); tab_realdata_cmp()
-    tab_baselines(); tab_fixed_shape(); tab_acq_time(); tab_motion(); tab_motion_poserr(); tab_realdata_visible(); tab_headline()
+    tab_baselines(); tab_fixed_shape(); tab_acq_time(); tab_motion(); tab_motion_poserr(); tab_realdata_visible(); tab_headline(); tab_realdata_cv_cmp(); tab_multicar(); tab_multicar_scene()
     fig_loss_vs_beams(); fig_required_accuracy(); fig_position_cdf(); fig_varied_offset(); fig_stress(); fig_focus_value(); fig_nearfield(); fig_motion()
     json.dump(dict(constants=sorted(CONST), items=R.items, skipped=R.skipped), open(os.path.join(OUT, "trace_manifest.json"), "w"), indent=1)
     print("items", len(R.items), "skipped", R.skipped)

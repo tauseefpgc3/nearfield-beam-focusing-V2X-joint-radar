@@ -1999,3 +1999,167 @@ single-car test sets: different users.
 - Experiment B: generation of 6,000 scenes, plus 3 × 6 second frames on validation and test;
   15 trainings at about 11 min each.
 - Roughly 1.5–2 days of compute in total.
+
+### D-036 results (2026-11-20)
+
+Everything below was run once, on the designs frozen at tag revision-plan-v7. Nothing was chosen
+on test data. The existing simulated test set and the Phase 3d fresh test set were not used.
+
+**Step 0 (data check; recorded before D-036, commit ec6651a).**
+
+| | 32 | 33 | 34 |
+|---|---|---|---|
+| Frames | 3,235 | 3,981 | 4,439 |
+| Sequences | 15 | 18 | 31 |
+| CSV beam agrees with the power vector | 100% | 100% | 100% |
+| A3 GPS-alignment verdict | FAIL | FAIL (rotation SD 113°, LiDAR lag −17 frames) | FAIL |
+
+- No capture timestamps exist. The dataset's same-index row pairing is accepted (amendment 1), so
+  LiDAR-to-label alignment for 32–34 cannot be independently verified.
+- No GPS-based item (geometric estimator, visible-frames subset) was run on 32–34.
+
+**Experiment A — DeepSense 32, 33, 34 (grouped 5-fold sequence CV, 5 seeds per fold).**
+
+Setup:
+- Every sequence was tested exactly once.
+- Frames whose raw power vector contains NaN are excluded from scoring (frozen Phase 3c rule).
+  Scored frames: 3,214 / 3,943 / 4,389.
+- A "run" is one seed across all five folds, so each scenario has 5 runs.
+- Network CIs below: sequence-cluster bootstrap, then cluster-robust t, over all G sequences.
+
+Learning check (final training loss < 0.95 × label-prior entropy):
+
+| Scenario | Models learned (of 25) | By fold |
+|---|---|---|
+| 32 | 6 | [1, 1, 3, 1, 0] |
+| 33 | 14 | [2, 4, 2, 4, 2] |
+| 34 | 0 | none |
+
+The 34 models end at the prior (for example 3.7279 vs 3.7282), so they output the label prior.
+
+| Scenario | G | Network top-1 | Most common | 1-NN | Net − most common, top-1 (pp) | Net − most common, loss K=1 (dB) | Net − 1-NN, top-1 (pp) |
+|---|---|---|---|---|---|---|---|
+| 32 | 15 | 12.0% [7.5, 16.3] [7.0, 17.0] | 13.4% | 6.2% | −1.4 [−2.5, −0.5], worse | +0.05 [+0.01, +0.10], worse | +5.8 [+1.7, +9.8], better |
+| 33 | 18 | 11.9% [7.7, 17.1] [6.5, 17.4] | 16.4% | 5.1% | −4.5 [−10.3, −0.3], worse | +0.21 [+0.03, +0.47], worse | +6.8 [+1.8, +12.4], better |
+| 34 | 31 | 7.5% [6.0, 9.1] [5.8, 9.2] | 7.5% | 5.5% | +0.0 [−0.1, +0.1], no detectable difference | −0.00 [−0.01, +0.01], none | +2.0 [−0.3, +4.3], none |
+
+- **Read:** the network does not beat the most-common beam on any of the three unseen scenarios.
+  It is worse on 32 and 33 and identical to it on 34. It beats 1-NN on 32 and 33.
+- Ground-truth top-1 beam-change rate between consecutive frames: 61.8% / 60.8% / 61.3%.
+- Full table: tab_realdata (rows added for 32–34) and tab_realdata_cv_cmp. File:
+  results/phase4/a_results.json.
+- **Note on the JSON:** the `verdict_boot` field under `network_cluster` compares a raw metric
+  against 0 and has no meaning. It is not used in any table.
+
+**Experiment B — multi-car simulation.**
+
+Data and setup:
+- 6,000 new users: train 2,962, val 793, test 1,244 (1,001 dropped by the guard).
+- The new renderer reproduces the frozen one for a single standard car (max abs diff 0.0).
+- Test scenes:
+  - K_o = 0…5: 188 / 222 / 192 / 214 / 218 / 210 users. All 3,170 drawn vehicles were placed.
+  - Vehicle types: car 1,929, van 558, truck 255, parked car 343, parked van 85.
+  - LiDAR occlusion of the user car: visible 1,206, partly occluded 32, fully occluded 6.
+- **Multi-car nets:** all 15 runs passed the learning check (final loss 2.84–2.86 vs prior 8.69).
+
+Rule choice on validation (mean loss at M = 8, 60 GHz, v = 0, pooled over σ ∈ {1, 3}):
+
+| Model | R0 | R1 | R2 | Chosen |
+|---|---|---|---|---|
+| Single-vehicle net | 11.28 | 3.94 | 6.29 | R1 |
+| Varied-trained net | 13.96 | 4.88 | 8.09 | R1 |
+| Multi-car net | 9.39 | 5.21 | 5.42 | R1 |
+| Geometric | 14.54 | 8.36 | 9.77 | R1 |
+
+Association success (selected cluster holds ≥ 50% of the user car's returns):
+
+| | σ = 1 m | σ = 3 m |
+|---|---|---|
+| All test users | 95.0% (no candidate 0.4%) | 87.7% (no candidate 0.0%) |
+| Visible | 95.6% | 88.9% |
+| Partly occluded | 90.6% | 59.4% |
+| Fully occluded | 0% | 0% |
+
+Radio blockage (another vehicle on the array-to-antenna line; not in the channel model):
+- 1.0% of test users (13): 0% at K_o ≤ 2, 0.9% / 2.3% / 2.9% at K_o = 3 / 4 / 5.
+- Per-vehicle blocking rate: van 2.0%, truck 0.4%, parked van 1.2%, car and parked car 0%.
+- **The channel model lacks this blockage, so results for blocked users are optimistic for every
+  method, including the sweep.**
+
+τ (frame age + b4 processing + median association time 16.2 ms):
+
+| | Mean | 95th percentile |
+|---|---|---|
+| Nets | 70.4 ms | 114.8 ms |
+| Geometric | 69.3 ms | 113.7 ms |
+
+**Primary (amendment 2).** Multi-car-trained net (R1), 60 GHz, M = 32, v = 10 m/s, compensated,
+σ = 3 m, all 1,244 test users:
+- Net: 4.25 [4.02, 4.48] dB (5 seeds).
+- 263-beam sweep: 0.76 [0.65, 0.87] dB.
+- **It does not match the sweep in traffic.**
+
+Secondary results at the primary condition, unless stated:
+
+- **Frozen minus multi-car (per-user bootstrap):**
+  - Single-vehicle net: −0.99 [−1.30, −0.69] dB. The frozen single-vehicle net is better than the
+    retrained one.
+  - Varied-trained net: −0.18 [−0.49, +0.12] dB, no detectable difference.
+  - Geometric: +1.50 [+0.90, +2.13] dB, geometric worse.
+- **Traffic effect, K_o ≥ 1 minus K_o = 0:**
+  - +2.6 to +2.7 dB for every method. Multi-car net +2.71 [+1.77, +3.60].
+  - K_o = 0: multi-car 1.95, single-vehicle 1.05, sweep 0.61 dB.
+  - K_o ≥ 1: 4.66 / 3.65 / 0.78 dB.
+- **By occlusion (multi-car net / single-vehicle net / sweep):**
+  - Visible: 4.00 / 3.06 / 0.78 dB.
+  - Partly occluded: 10.60 / 8.76 / 0.08 dB.
+  - Fully occluded: 20.39 / 14.15 / 0.02 dB.
+- **Radio-blocked users:** multi-car 16.66 dB, sweep 0.01 dB (n = 13; the channel has no blockage).
+- **All conditions** (tab_multicar), multi-car net, σ = 3 m, 60 GHz:
+  - v = 0: 6.98 / 5.35 / 3.59 / 1.97 dB at M = 8 / 16 / 32 / 64.
+  - v = 20: 8.72 / 6.64 / 4.49 / 2.46 dB.
+  - 140 GHz is within about 0.2 dB of 60 GHz for the nets, while the sweep falls to 0.16–0.35 dB.
+- **Smallest M within the sweep's CI:** only the frozen single-vehicle net, σ = 1 m, 60 GHz, at
+  v = 0 and v = 10 (M = 64). Every other method, σ, frequency and speed: none.
+- **Median position error, σ = 3 m:** multi-car 26 / 34 cm at v = 0 / 10; single-vehicle
+  23 / 25 cm. For the nets the 90th percentiles are 3.5–5.8 m: wrong associations.
+- **Context for the level:** the error with no other vehicles (K_o = 0) is about the D-032
+  varied-car level (20 cm median, varied-trained net). D-032 also found the single-vehicle net
+  better than the varied-trained net on varied cars, as here.
+
+Files: results/phase4/b_results.json; assets tab_multicar and tab_multicar_scene.
+
+**Deviations (Phase 4).**
+1. **Loader (pre-declared).** ds_prepare / a3 gained path and CSV-name entries for 32–34
+   (S31_FMT). There are no logic changes.
+2. **Clustering reimplemented after the first B test run crashed (2026-11-20).**
+   - The first run ran out of memory: one dense test scene (46,710 above-ground points) produced
+     a 1.37e9-pair list.
+   - The run had finished validation and the v = 0 test frames; no results were written.
+   - `clusters()` now uses an exact grid/union-find method with the original numbering.
+   - Equivalence: identical labels on all 1,267 frames the original could run (every validation
+     frame, plus the first 120 test users at v = 0 and v = 20, both frames). Six frames were too
+     large for the original. Check: results/phase4/b_cluster_check.json.
+   - The original is kept as `clusters_pairs`.
+   - The full evaluation was rerun from the start. Validation reproduced the crashed run's numbers
+     exactly.
+   - The clustering is faster (median 14 vs 31 ms), so the association-time term in τ (pre-registered
+     as measured) is 16.2 ms. It would have been about twice as large with the original method.
+3. **Sweep shape choice.** Per seed on validation as pre-registered, using the chosen rule's
+   validation estimates pooled over σ ∈ {1, 3}. D-036 did not say which σ.
+4. **Association success.** Counted on the t0 frame at v = 0 with the shared cluster labels.
+   Because the gate and selection are the same under R1 and R2, it is one number per σ.
+5. **Parked vehicles.** Placed with the same 200-attempt rule (lateral jitter ±0.3 m, heading
+   noise 2°) as moving vehicles. Each draws a speed offset that is never used, which keeps the
+   draw order fixed.
+6. **Asset-only.**
+   - tab_realdata and tab_realdata_cv_cmp are wrapped in \resizebox to text width. tab_realdata was
+     already 19 pt too wide before Phase 4 and 44 pt with the new rows.
+   - The tab_multicar caption's K_o range is registered for the trace check.
+
+**Not done.**
+- Geometric estimator and visible-frames subset on 32–34: excluded by D-036.
+- The Zenodo upload is still left to the user.
+
+**Assets.** Trace check PASS (2,614 values, 219 keys, no skipped assets). The new and changed
+tables compile without errors or overfull boxes.
