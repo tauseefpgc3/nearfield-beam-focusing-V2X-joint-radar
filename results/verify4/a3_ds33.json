@@ -1,0 +1,246 @@
+{
+ "scenario": 33,
+ "frames": 3981,
+ "gps_valid": 3981,
+ "geometry_fit": {
+  "frames_used": 1307,
+  "best_lag_frames": -17,
+  "best_theta_deg": 85,
+  "score_best": 3.813014827018122,
+  "theta_at_lag0_deg": 84,
+  "score_lag0": 3.4475899005355775,
+  "score_lag0_median_over_theta": 1.327467482785004,
+  "best_lag_within_10": -4,
+  "score_by_lag": [
+   3.718,
+   3.786,
+   3.762,
+   3.813,
+   3.79,
+   3.773,
+   3.722,
+   3.68,
+   3.623,
+   3.575,
+   3.562,
+   3.56,
+   3.57,
+   3.566,
+   3.601,
+   3.605,
+   3.608,
+   3.571,
+   3.518,
+   3.482,
+   3.448,
+   3.423,
+   3.377,
+   3.332,
+   3.3,
+   3.265,
+   3.232,
+   3.244,
+   3.26,
+   3.27,
+   3.293,
+   3.3,
+   3.311,
+   3.312,
+   3.322,
+   3.332,
+   3.348,
+   3.333,
+   3.341,
+   3.314,
+   3.335
+  ]
+ },
+ "per_sequence_theta": {
+  "n_sequences": 11,
+  "theta_deg": [
+   255,
+   250,
+   85,
+   246,
+   85,
+   84,
+   263,
+   90,
+   84,
+   90,
+   253
+  ],
+  "circular_sd_deg": 112.55958858362072
+ },
+ "label_lag": {
+  "best_lag_frames": -1,
+  "mi_by_lag": [
+   1.0228,
+   1.038,
+   1.0651,
+   1.0886,
+   1.1216,
+   1.1417,
+   1.177,
+   1.2071,
+   1.2389,
+   1.2653,
+   1.2998,
+   1.3348,
+   1.378,
+   1.4197,
+   1.4643,
+   1.5136,
+   1.5702,
+   1.6348,
+   1.705,
+   1.7495,
+   1.7467,
+   1.7073,
+   1.6532,
+   1.6112,
+   1.57,
+   1.5285,
+   1.4763,
+   1.4272,
+   1.3901,
+   1.3452,
+   1.3069,
+   1.2775,
+   1.247,
+   1.2164,
+   1.1906,
+   1.1621,
+   1.1301,
+   1.1038,
+   1.0758,
+   1.0576,
+   1.0406
+  ],
+  "mi_lag0": 1.7466870001779822
+ },
+ "test_frames": [
+  {
+   "row": 984,
+   "seq": 5,
+   "receiver_lidar_xy": [
+    -48.48,
+    2.32
+   ],
+   "inside_grid": false,
+   "points_within_2m": 0,
+   "median_points_within_2m_same_range": 0.0,
+   "label": 38
+  },
+  {
+   "row": 986,
+   "seq": 5,
+   "receiver_lidar_xy": [
+    -48.47,
+    2.53
+   ],
+   "inside_grid": false,
+   "points_within_2m": 0,
+   "median_points_within_2m_same_range": 0.0,
+   "label": 5
+  },
+  {
+   "row": 1022,
+   "seq": 5,
+   "receiver_lidar_xy": [
+    -47.73,
+    7.66
+   ],
+   "inside_grid": false,
+   "points_within_2m": 0,
+   "median_points_within_2m_same_range": 0.0,
+   "label": 10
+  },
+  {
+   "row": 1046,
+   "seq": 5,
+   "receiver_lidar_xy": [
+    -44.88,
+    12.11
+   ],
+   "inside_grid": false,
+   "points_within_2m": 2,
+   "median_points_within_2m_same_range": 0.0,
+   "label": 12
+  },
+  {
+   "row": 1056,
+   "seq": 5,
+   "receiver_lidar_xy": [
+    -42.67,
+    13.2
+   ],
+   "inside_grid": false,
+   "points_within_2m": 1,
+   "median_points_within_2m_same_range": 0.0,
+   "label": 13
+  },
+  {
+   "row": 1058,
+   "seq": 5,
+   "receiver_lidar_xy": [
+    -42.15,
+    13.34
+   ],
+   "inside_grid": false,
+   "points_within_2m": 1,
+   "median_points_within_2m_same_range": 0.0,
+   "label": 15
+  },
+  {
+   "row": 1140,
+   "seq": 5,
+   "receiver_lidar_xy": [
+    -5.59,
+    10.57
+   ],
+   "inside_grid": true,
+   "points_within_2m": 0,
+   "median_points_within_2m_same_range": 1.0,
+   "label": 40
+  },
+  {
+   "row": 1860,
+   "seq": 11,
+   "receiver_lidar_xy": [
+    -33.48,
+    18.57
+   ],
+   "inside_grid": true,
+   "points_within_2m": 3,
+   "median_points_within_2m_same_range": 0.0,
+   "label": 21
+  },
+  {
+   "row": 1969,
+   "seq": 11,
+   "receiver_lidar_xy": [
+    -40.29,
+    18.76
+   ],
+   "inside_grid": false,
+   "points_within_2m": 0,
+   "median_points_within_2m_same_range": 0.0,
+   "label": 19
+  },
+  {
+   "row": 2455,
+   "seq": 14,
+   "receiver_lidar_xy": [
+    -40.59,
+    15.64
+   ],
+   "inside_grid": false,
+   "points_within_2m": 0,
+   "median_points_within_2m_same_range": 0.0,
+   "label": 8
+  }
+ ],
+ "inside_grid_count": 2,
+ "verdict": "FAIL"
+}

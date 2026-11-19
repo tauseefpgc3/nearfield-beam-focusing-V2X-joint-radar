@@ -1,0 +1,162 @@
+{
+ "31": {
+  "rows": 7012,
+  "lidar_index_eq_power_index": 1.0,
+  "lidar_index_eq_csv_index": 1.0,
+  "lidar_minus_power_index": {
+   "min": 0.0,
+   "p5": 0.0,
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0
+  },
+  "csv_timestamp_step_s": {
+   "min": 0.0,
+   "p5": 0.08887294999967707,
+   "median": 0.09205000000019936,
+   "p95": 0.18350065000063293,
+   "max": 0.547193000000334
+  },
+  "zip_mtime_lidar_minus_power_s": {
+   "min": -618.0,
+   "p5": -606.0,
+   "median": -526.0,
+   "p95": -450.0,
+   "max": -418.0
+  },
+  "zip_mtime_lidar_spread_within_sequence_s": {
+   "min": 158.0,
+   "p5": 160.0,
+   "median": 192.0,
+   "p95": 192.0,
+   "max": 192.0
+  },
+  "csv_duration_within_sequence_s": {
+   "min": 6.514672999999675,
+   "p5": 7.9513271999997865,
+   "median": 12.451121500000227,
+   "p95": 20.894029650000036,
+   "max": 28.10531699999956
+  }
+ },
+ "32": {
+  "rows": 3235,
+  "lidar_index_eq_power_index": 1.0,
+  "lidar_index_eq_csv_index": 1.0,
+  "lidar_minus_power_index": {
+   "min": 0.0,
+   "p5": 0.0,
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0
+  },
+  "csv_timestamp_step_s": {
+   "min": 0.0,
+   "p5": 0.08911364999944453,
+   "median": 0.09168050000016592,
+   "p95": 0.18259525000021312,
+   "max": 0.19028499999967607
+  },
+  "zip_mtime_lidar_minus_power_s": {
+   "min": -9470.0,
+   "p5": -9428.0,
+   "median": -8984.0,
+   "p95": -5796.800000000001,
+   "max": -5318.0
+  },
+  "zip_mtime_lidar_spread_within_sequence_s": {
+   "min": 14.0,
+   "p5": 43.400000000000006,
+   "median": 174.0,
+   "p95": 4189.6,
+   "max": 4198.0
+  },
+  "csv_duration_within_sequence_s": {
+   "min": 10.096927999999934,
+   "p5": 10.561037100000158,
+   "median": 18.328974999999446,
+   "p95": 38.251573400000325,
+   "max": 40.250058000000536
+  }
+ },
+ "33": {
+  "rows": 3981,
+  "lidar_index_eq_power_index": 1.0,
+  "lidar_index_eq_csv_index": 1.0,
+  "lidar_minus_power_index": {
+   "min": 0.0,
+   "p5": 0.0,
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0
+  },
+  "csv_timestamp_step_s": {
+   "min": 0.0,
+   "p5": 0.08899379999947996,
+   "median": 0.09181700000044657,
+   "p95": 0.1829189000023689,
+   "max": 0.2325970000019879
+  },
+  "zip_mtime_lidar_minus_power_s": {
+   "min": -138582.0,
+   "p5": -138552.0,
+   "median": -137884.0,
+   "p95": -137238.0,
+   "max": -137176.0
+  },
+  "zip_mtime_lidar_spread_within_sequence_s": {
+   "min": 40.0,
+   "p5": 45.1,
+   "median": 87.0,
+   "p95": 1452.0,
+   "max": 1452.0
+  },
+  "csv_duration_within_sequence_s": {
+   "min": 11.822023999999146,
+   "p5": 13.634961800001202,
+   "median": 18.851180499999828,
+   "p95": 35.12558050000052,
+   "max": 39.54751000000033
+  }
+ },
+ "34": {
+  "rows": 4439,
+  "lidar_index_eq_power_index": 1.0,
+  "lidar_index_eq_csv_index": 1.0,
+  "lidar_minus_power_index": {
+   "min": 0.0,
+   "p5": 0.0,
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0
+  },
+  "csv_timestamp_step_s": {
+   "min": 0.0,
+   "p5": 0.08972410000005766,
+   "median": 0.09380550000059884,
+   "p95": 0.18336904999978287,
+   "max": 0.2775499999988824
+  },
+  "zip_mtime_lidar_minus_power_s": {
+   "min": -116.0,
+   "p5": -114.0,
+   "median": -94.0,
+   "p95": -74.0,
+   "max": -72.0
+  },
+  "zip_mtime_lidar_spread_within_sequence_s": {
+   "min": 2.0,
+   "p5": 2.0,
+   "median": 4.0,
+   "p95": 27.0,
+   "max": 50.0
+  },
+  "csv_duration_within_sequence_s": {
+   "min": 7.505756999998994,
+   "p5": 7.717007499999454,
+   "median": 12.932909000002837,
+   "p95": 26.07299199999943,
+   "max": 37.20134700000199
+  }
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "scenario": 32,
+ "frames": 3235,
+ "sequences": 15,
+ "beams": 64,
+ "split_frames": {
+  "train": 2050,
+  "val": 872,
+  "test": 313
+ },
+ "split_sequences": {
+  "train": 11,
+  "val": 3,
+  "test": 1
+ },
+ "grid": {
+  "R_clip": 47.882225036621094,
+  "x0": -39.28393552780151,
+  "y0": -37.200199909210205,
+  "cell": 0.8,
+  "NX": 88,
+  "NY": 96,
+  "z_ground": -1.254013180732727,
+  "i99": 129.0,
+  "two_d": false
+ },
+ "points_per_frame_median": 18234.0,
+ "csv_beam_vs_power_argmax": 1.0,
+ "labels_used": 61
+}

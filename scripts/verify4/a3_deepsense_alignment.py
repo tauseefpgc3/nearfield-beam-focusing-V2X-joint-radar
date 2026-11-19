@@ -31,8 +31,8 @@ def enu(lat, lon, lat0, lon0):
 
 
 def gps(s, df):
-    if s == 31:
-        root = DP.SC[31]["root"]; u1 = np.loadtxt(os.path.join(root, "unit1", "GPS_data", "gps_location.txt"))
+    if s in DP.S31_FMT:
+        root = DP.SC[s]["root"]; u1 = np.loadtxt(os.path.join(root, "unit1", "GPS_data", "gps_location.txt"))
         u2 = np.array([np.loadtxt(os.path.join(root, p)) for p in df.unit2_loc])
         rel = enu(u2[:, 0], u2[:, 1], u1[0], u1[1]); return rel, np.ones(len(df), bool)
     p1 = enu(df.unit1_gps1_lat.to_numpy(), df.unit1_gps1_lon.to_numpy(), df.unit1_gps1_lat.iloc[0], df.unit1_gps1_lon.iloc[0])
@@ -82,7 +82,7 @@ def run(s):
     with h5py.File(os.path.join(ROOT, "data", "processed", "phase3c", f"ds{s}.h5"), "r") as h:
         split = h["split"][:]; lab = h["label"][:].astype(int); g = {k: h.attrs[k] for k in ("x0", "y0", "cell", "NX", "NY", "z_ground", "R_clip")}
     rel, ok = gps(s, df); R = dict(scenario=s, frames=n, gps_valid=int(ok.sum()))
-    step = 2 if s == 31 else 3; fit = np.where((split == 0) & ok)[0][::step]
+    step = 2 if s in DP.S31_FMT else 3; fit = np.where((split == 0) & ok)[0][::step]
     with Pool(8) as pool: Qs = pool.map(ng_points, [(s, lid[i], float(g["z_ground"])) for i in fit], chunksize=16)
     lags = np.arange(-KMAX, KMAX + 1); S = np.zeros((len(lags), 360)); N = np.zeros(len(lags))
     per_seq = {}

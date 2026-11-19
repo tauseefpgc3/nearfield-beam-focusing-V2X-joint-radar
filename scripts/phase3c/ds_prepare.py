@@ -20,14 +20,19 @@ OUT = os.path.join(ROOT, "data", "processed", "phase3c"); RES = os.path.join(ROO
 CELLS = (0.2, 0.25, 0.4, 0.5, 0.8, 1.0, 1.25); MAXSIDE = 128; SPLIT_SEED = 20261118
 SC = {8: dict(root=os.path.join(RAW, "ex", "s8", "DEV[95%]"), csv="scenario8.csv"),
       31: dict(root=os.path.join(RAW, "ex", "s31", "scenario31"), csv="scenario31_dev.csv"),
-      36: dict(root=os.path.join(RAW, "ex", "s36", "scenario36"), csv=os.path.join(RAW, "Scenario36", "scenario36.csv"))}
+      36: dict(root=os.path.join(RAW, "ex", "s36", "scenario36"), csv=os.path.join(RAW, "Scenario36", "scenario36.csv")),
+      # D-036 (loader only): scenarios 32-34, same testbed and file format as 31
+      32: dict(root=os.path.join(RAW, "ex", "s32", "scenario32"), csv="scenario32_dev.csv"),
+      33: dict(root=os.path.join(RAW, "ex", "s33", "scenario33"), csv="scenario33_dev.csv"),
+      34: dict(root=os.path.join(RAW, "ex", "s34", "scenario34"), csv="scenario34.csv")}
+S31_FMT = (31, 32, 33, 34)
 
 
 def index(s):
     c = SC[s]; df = pd.read_csv(os.path.join(c["root"], c["csv"]))
     if s == 8:
         lid = df.unit1_lidar; pw = [[p] for p in df.unit1_pwr_60ghz]
-    elif s == 31:
+    elif s in S31_FMT:
         lid = df.unit1_lidar; pw = [[p] for p in df.unit1_pwr_60ghz]
     else:
         lid = df.unit1_lidar1; pw = [[df[f"unit1_pwr{k}"][i] for k in range(1, 5)] for i in range(len(df))]
@@ -40,7 +45,7 @@ def load_points(args):
     if s == 8:
         d = sio.loadmat(path)["data"]; r, a = d[:, 0], d[:, 1]; k = r > 0
         return np.c_[r[k] * np.cos(a[k]), r[k] * np.sin(a[k]), np.zeros(k.sum()), np.zeros(k.sum())].astype(np.float32)
-    if s == 31:
+    if s in S31_FMT:
         with open(path) as f:
             n = 0
             while True:
@@ -115,7 +120,7 @@ def main(s):
                 split_frames={k: int((split == i).sum()) for i, k in enumerate(("train", "val", "test"))},
                 split_sequences={k: int(len(np.unique(seq[split == i]))) for i, k in enumerate(("train", "val", "test"))},
                 grid=g, points_per_frame_median=float(np.median(npts)),
-                csv_beam_vs_power_argmax=(None if s == 36 else float(np.mean(df[{8: "unit1_beam_index", 31: "unit1_beam"}[s]].to_numpy() - 1 == lab))),
+                csv_beam_vs_power_argmax=(None if s == 36 else float(np.mean(df["unit1_beam_index" if s == 8 else "unit1_beam"].to_numpy() - 1 == lab))),
                 labels_used=int(len(np.unique(lab[split == 0]))))
     if s == 36: info["csv_overall_beam_vs_power_argmax"] = float(np.mean(df["unit1_overall-beam"].to_numpy() == lab))
     json.dump(info, open(os.path.join(RES, f"c2_design_ds{s}.json"), "w"), indent=1); print(json.dumps(info, indent=1))
