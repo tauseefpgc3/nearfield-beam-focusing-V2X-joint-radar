@@ -21,7 +21,8 @@ J = dict(b="results/phase3b/results_b.json", cost="results/phase3b/cost.json", c
          d8="results/phase3c/c2_design_ds8.json", d31="results/phase3c/c2_design_ds31.json", d36="results/phase3c/c2_design_ds36.json",
          a4="results/verify4/a4.json", a6="results/verify4/a6.json", a6b="results/verify4/a6b_realdata_ci.json",
          d="results/phase3d/results_d.json", b4="results/phase3d/b4_timing.json",
-         m3e="results/phase3e/motion.json", e3="results/phase3e/e3_visible.json")
+         m3e="results/phase3e/motion.json", e3="results/phase3e/e3_visible.json",
+         m3e2="results/phase3e/motion_v2.json")
 # protocol constants (D-032/D-033 definitions, not results); the trace check reports them separately
 CONST = {"95", "1", "3", "2", "10", "20", "0"}
 FR, MS = (60, 140), (8, 16, 32, 64)
@@ -498,6 +499,62 @@ def tab_motion():
     body += "\\bottomrule\\end{tabular}\\end{table*}\n"; wtab(t, body)
 
 
+HL_SUBS = (("all", "all users"), ("adv_ge3", "adv. $\\geq$ 3 dB"), ("d_ge_2m", "$\\geq$ 2 m"))
+HL_V = (0, 10, 20)
+
+
+def headline_min_m(st, f, v):
+    """Smallest M at which the compensated LiDAR net's mean loss (all users) is <= the upper end of the
+    sweep's 95% CI at that speed (D-035 addendum); returns (M, cell key) or (None, None)."""
+    hi = R.get("m3e2", ["sweep263_ci", f"{f}|{v}|all", "hi"])
+    for M in MS:
+        k = f"{st}|lidar_net|comp|{f}|{M}|{v}|all"
+        if R.get("m3e2", ["tables", k, "mean"]) <= hi: return M, k
+    return None, None
+
+
+def tab_headline():
+    """D-035 addendum: headline table, compensated methods vs the 263-beam sweep, from motion_v2.json."""
+    t = "tab_headline.tex"
+    if not R.has("m3e2"): R.skipped.append(t); return
+    tb = "primary_120kHz_1sym"; ci = lambda c: (R.v(t, "m3e2", c + ["mean"]) + "\\,[" + R.v(t, "m3e2", c + ["lo"]) + ", " + R.v(t, "m3e2", c + ["hi"]) + "]")
+    sw_air = R.v(t, "b4", ["sweep263", tb, "air_ms"])
+    body = ("\\begin{table*}[t]\\centering\\caption{Headline comparison: mean loss vs.\\ genie (dB) with 95\\% CI, car moving at speed $v$ along its heading. "
+            "Estimators are motion-compensated with the velocity from two consecutive LiDAR frames; delay = frame age plus processing (LiDAR net mean "
+            + R.v(t, "m3e2", ["tau_ms", "lidar_net", "mean"], "{:.1f}") + " ms). CIs: networks, t-interval over " + R.v(t, "m3e2", ["tables", "test|lidar_net|comp|60|8|0|all", "n_runs"], "{:.0f}")
+            + " seeds; geometric estimator and sweep, per-user bootstrap. Reference sweep: " + R.key(t, "d", ["tables", "test|sweep263|60|263|all"], "263")
+            + " beams chosen at the frame instant (air time " + sw_air + " ms); its users and channels are the same for both test sets. "
+            "Subsets: all " + R.key(t, "d", ["subset_sizes", "test", "60", "all"], "1193") + " users; near-field advantage $\\geq$ 3 dB ("
+            + R.v(t, "m3e2", ["subset_sizes", "60"], "{:.0f}") + " users at 60 GHz, " + R.v(t, "m3e2", ["subset_sizes", "140"], "{:.0f}") + " at 140 GHz); range $\\geq$ 2 m ("
+            + R.v(t, "d", ["subset_sizes", "test", "60", "d_ge_2m"], "{:.0f}") + " users). Pos.\\ err.: median horizontal residual position error at the sweep instant (cm).}\\label{tab:headline}\n"
+            "\\resizebox{\\textwidth}{!}{\\begin{tabular}{@{}llc" + "c" * 12 + "@{}}\\toprule\n & & & "
+            + " & ".join("\\multicolumn{4}{c}{" + nm + "}" for _, nm in HL_SUBS) + " \\\\\n"
+            "\\cmidrule(lr){4-7}\\cmidrule(lr){8-11}\\cmidrule(lr){12-15}\n$v$ (m/s) & Method & Pos.\\ err. & "
+            + " & ".join("$M$=" + R.key(t, "m3e2", ["tables", f"test|lidar_net|comp|60|{M}|0|all"], str(M)) for _ in HL_SUBS for M in MS) + " \\\\\n"
+            " & air time (ms) & & " + " & ".join(R.v(t, "b4", ["rows", f"lidar_net|{tb}|{M}", "air_ms"], "{:.3f}") for _ in HL_SUBS for M in MS) + " \\\\\\midrule\n")
+    rows = (("lidar_net", "LiDAR net, comp."), ("lidar_geometric", "LiDAR geometric, comp."))
+    for st, stn in (("test", "Standard test set"), ("varied", "Varied test set")):
+        for f in FR:
+            body += "\\multicolumn{15}{@{}l}{\\emph{" + stn + ", " + R.key(t, "m3e2", ["tables", f"{st}|lidar_net|comp|{f}|8|0|all"], str(f)) + " GHz}} \\\\\n"
+            for v in HL_V:
+                vs = R.key(t, "m3e2", ["tables", f"{st}|lidar_net|comp|{f}|8|{v}|all"], str(v))
+                for i, (m, nm) in enumerate(rows):
+                    body += (vs if i == 0 else "") + " & " + nm + " & " + R.v(t, "m3e2", ["position_error", f"{st}|{m}|comp|{v}", "median"], "{:.1f}", scale=100) + " & "
+                    body += " & ".join(ci(["tables", f"{st}|{m}|comp|{f}|{M}|{v}|{sub}"]) for sub, _ in HL_SUBS for M in MS) + " \\\\\n"
+                body += " & Sweep (" + sw_air + " ms) & -- & " + " & ".join("\\multicolumn{4}{c}{" + ci(["sweep263_ci", f"{f}|{v}|{sub}"]) + "}" for sub, _ in HL_SUBS) + " \\\\\n"
+            body += "\\midrule\n" if not (st == "varied" and f == FR[-1]) else ""
+    body += "\\bottomrule\\end{tabular}}\n\n\\medskip\\small Smallest $M$ at which the compensated LiDAR net (all users) is within the sweep's 95\\% CI or better:\n\n"
+    body += "\\begin{tabular}{@{}l" + "c" * len(HL_V) + "@{}}\\toprule\n$v$ (m/s) & " + " & ".join(R.key(t, "m3e2", ["speeds", list(R.get("m3e2", ["speeds"])).index(v)], str(v)) for v in HL_V) + " \\\\\\midrule\n"
+    for st, stn in (("test", "Standard"), ("varied", "Varied")):
+        for f in FR:
+            cells = []
+            for v in HL_V:
+                M, k = headline_min_m(st, f, v)
+                cells.append(R.key(t, "m3e2", ["tables", k], str(M)) if M else "none ($M\\leq$" + R.key(t, "m3e2", ["tables", f"{st}|lidar_net|comp|{f}|64|{v}|all"], "64") + ")")
+            body += stn + ", " + R.key(t, "m3e2", ["tables", f"{st}|lidar_net|comp|{f}|8|0|all"], str(f)) + " GHz & " + " & ".join(cells) + " \\\\\n"
+    body += "\\bottomrule\\end{tabular}\\end{table*}\n"; wtab(t, body)
+
+
 def tab_motion_poserr():
     t = "tab_motion_poserr.tex"
     if not R.has("m3e"): R.skipped.append(t); return
@@ -559,7 +616,7 @@ def fig_motion():
 def main():
     for d in (FIG, TAB): os.makedirs(d, exist_ok=True)
     macros(); tab_setup(); tab_main(); tab_varied(); tab_stress(); tab_cost(); tab_realdata(); tab_realdata_cmp()
-    tab_baselines(); tab_fixed_shape(); tab_acq_time(); tab_motion(); tab_motion_poserr(); tab_realdata_visible()
+    tab_baselines(); tab_fixed_shape(); tab_acq_time(); tab_motion(); tab_motion_poserr(); tab_realdata_visible(); tab_headline()
     fig_loss_vs_beams(); fig_required_accuracy(); fig_position_cdf(); fig_varied_offset(); fig_stress(); fig_focus_value(); fig_nearfield(); fig_motion()
     json.dump(dict(constants=sorted(CONST), items=R.items, skipped=R.skipped), open(os.path.join(OUT, "trace_manifest.json"), "w"), indent=1)
     print("items", len(R.items), "skipped", R.skipped)

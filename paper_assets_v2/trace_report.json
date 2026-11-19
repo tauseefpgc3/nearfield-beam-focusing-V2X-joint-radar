@@ -1,6 +1,6 @@
 {
- "values_rechecked": 1038,
- "keys_rechecked": 138,
+ "values_rechecked": 2052,
+ "keys_rechecked": 187,
  "files": {
   "canonical_macros_v2.tex": {
    "numbers": 151,
@@ -36,6 +36,15 @@
    "protocol_constants": [
     "1",
     "3"
+   ]
+  },
+  "tab_headline.tex": {
+   "numbers": 1083,
+   "untraced": [],
+   "protocol_constants": [
+    "2",
+    "3",
+    "95"
    ]
   },
   "tab_main.tex": {

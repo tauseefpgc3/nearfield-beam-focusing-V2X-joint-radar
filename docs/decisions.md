@@ -1755,3 +1755,17 @@ equal floats); if any cell differs, stop and report without using the new file.
 **Headline rule.** For each frequency and test set, at v = 0, 10 and 20 m/s, all users: the
 smallest M in {8, 16, 32, 64} at which the compensated LiDAR net's mean loss is ≤ the upper end
 of the sweep's 95% CI. "None" if no M qualifies.
+of the sweep's 95% CI. "None" if no M qualifies.
+
+### D-035 addendum results (2026-11-19)
+- Rerun reproduced every one of the 4,135 values in motion.json exactly (runtime excluded); the
+  d_ge_2m cells at v = 0 match results_d.json to 1.1e-16 dB. Output: results/phase3e/motion_v2.json.
+- New asset tab_headline (compensated LiDAR net and geometric estimator vs the 263-beam sweep;
+  v = 0, 10, 20 m/s; both sets and frequencies; M = 8–64; all / adv ≥ 3 dB / ≥ 2 m, with 95% CIs;
+  air time; median residual position error). Trace check PASS (2,052 values, 187 keys).
+- Smallest M at which the compensated LiDAR net (all users) is ≤ the sweep's upper 95% CI,
+  at v = 0 / 10 / 20 m/s:
+  - Standard, 60 GHz: 16 / 32 / 32.
+  - Standard, 140 GHz: none / 64 / 64.
+  - Varied, 60 GHz: 32 / 32 / 64.
+  - Varied, 140 GHz: none / none / none.

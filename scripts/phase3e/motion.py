@@ -6,7 +6,7 @@ the static estimate (preds_d.npz) with the frozen validation shape, scored on th
 E2 compensation: an earlier frame at t0 - 0.1 s is rendered (static clutter, fresh noise),
 the same estimator gives p_prev; v_hat = (p_t0 - p_prev) / 0.1; beams from p_t0 + v_hat * tau.
 
-    python scripts/phase3e/motion.py     # -> results/phase3e/motion.json
+    python scripts/phase3e/motion.py     # -> results/phase3e/motion_v2.json (D-035 addendum; motion.json = original run)
 """
 import json, os, sys, time
 import h5py, numpy as np, torch
@@ -135,6 +135,8 @@ def main():
             G[(f, v, "sweep")] = moved_gains(f, v * T_SWEEP * H[te])
         log("gains", f)
     adv = {f: B.CH[f]["adv"][te] for f in FR}; xyt = ant[te, :2]
+    d2m = np.hypot(*xyt.T) >= 2   # D-035 addendum: eval_d d_ge_2m, static position, fixed across speeds
+    SUBS = lambda f: (("all", np.ones(len(te), bool)), ("adv_ge3", adv[f] >= 3), ("d_ge_2m", d2m))
     T, PER, PE, VE, NEAR = {}, {}, {}, {}, {}
     for v in SPEEDS:
         NEAR[str(v)] = {m: int((np.hypot(*(xyt + v * tau[m][:, None] * H[te]).T) < 1.0).sum()) for m in METH}
@@ -152,21 +154,23 @@ def main():
                         for M in MS:
                             Ls = [B.loss_db(Gm, B.beam_set(ev[r], B.CH[f]["u"], B.CH[f]["rings"], *shp[(m, f, M)][r])) for r in range(len(ev))]
                             PER[(sname, m, mode, f, M, v)] = np.mean(Ls, 0)
-                            for sub, msk in (("all", np.ones(len(te), bool)), ("adv_ge3", adv[f] >= 3)):
+                            for sub, msk in SUBS(f):
                                 T[f"{sname}|{m}|{mode}|{f}|{M}|{v}|{sub}"] = ci_seed(Ls, msk) if len(Ls) > 1 else ci_user(Ls[0], msk)
             log("losses", sname, m)
     # reference sweep: chosen on the channel at t0, used T_SWEEP later
-    SW = {}
+    SW, SWC = {}, {}
     for f in FR:
         G0 = B.CH[f]["G"][te]; Sw = np.c_[np.arange(256)[None].repeat(len(te), 0) * 8, G0[:, 0::8].argmax(1)[:, None] * 8 + np.arange(1, 8)[None]]
         for v in SPEEDS:
             L = B.loss_db(G[(f, v, "sweep")], Sw)
-            for sub, msk in (("all", np.ones(len(te), bool)), ("adv_ge3", adv[f] >= 3)): SW[f"{f}|{v}|{sub}"] = float(L[msk].mean())
+            for sub, msk in SUBS(f): SW[f"{f}|{v}|{sub}"] = float(L[msk].mean()); SWC[f"{f}|{v}|{sub}"] = B.boot(L[msk])
     # v = 0 bug check against results_d
     diffs = [abs(T[f"{s}|{m}|stale|{f}|{M}|0|{sub}"]["mean"] - RD["tables"][f"{s}|{m}|{f}|{M}|{sub}"]["mean"])
              for s in ("test", "varied") for m in METH for f in FR for M in MS for sub in ("all", "adv_ge3")]
     diffs.append(max(abs(SW[f"{f}|0|{sub}"] - RD["tables"][f"test|sweep263|{f}|263|{sub}"]["mean"]) for f in FR for sub in ("all", "adv_ge3")))
     R["v0_check_max_abs_diff_db"] = float(max(diffs)); log("v0 check", R["v0_check_max_abs_diff_db"])
+    R["v0_check_d_ge_2m_max_abs_diff_db"] = float(max(abs(T[f"{s}|{m}|stale|{f}|{M}|0|d_ge_2m"]["mean"] - RD["tables"][f"{s}|{m}|{f}|{M}|d_ge_2m"]["mean"])
+        for s in ("test", "varied") for m in METH for f in FR for M in MS)); log("v0 check d_ge_2m", R["v0_check_d_ge_2m_max_abs_diff_db"])
     # primary read: increase over v = 0 (stale) and compensated minus stale, M = 8, all users
     INC, CMP = {}, {}
     for sname in ("test", "varied"):
@@ -183,13 +187,13 @@ def main():
             for mode in ("stale", "comp"):
                 for f in FR:
                     for M in MS:
-                        for sub in ("all", "adv_ge3"):
+                        for sub in ("all", "adv_ge3", "d_ge_2m"):
                             vs = [v for v in SPEEDS if T[f"{sname}|{m}|{mode}|{f}|{M}|{v}|{sub}"]["mean"] > SW[f"{f}|{v}|{sub}"]]
                             BE[f"{sname}|{m}|{mode}|{f}|{M}|{sub}"] = vs[0] if vs else None
-    R.update(tables=T, sweep263=SW, increase_vs_static_M8=INC, comp_minus_stale_M8=CMP, break_even_speed=BE,
+    R.update(tables=T, sweep263=SW, sweep263_ci=SWC, increase_vs_static_M8=INC, comp_minus_stale_M8=CMP, break_even_speed=BE,
              position_error=PE, speed_error=VE, users_moved_within_1m_of_array=NEAR,
              subset_sizes={str(f): int((adv[f] >= 3).sum()) for f in FR}, runtime_s=time.time() - t0)
-    json.dump(R, open(os.path.join(OUTD, "motion.json"), "w"), indent=1); log("done")
+    json.dump(R, open(os.path.join(OUTD, "motion_v2.json"), "w"), indent=1); log("done")
 
 
 if __name__ == "__main__":
