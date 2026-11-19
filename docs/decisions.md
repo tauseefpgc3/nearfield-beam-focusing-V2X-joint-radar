@@ -1769,3 +1769,233 @@ of the sweep's 95% CI. "None" if no M qualifies.
   - Standard, 140 GHz: none / 64 / 64.
   - Varied, 60 GHz: 32 / 32 / 64.
   - Varied, 140 GHz: none / none / none.
+
+## D-036 — Phase 4: two robustness experiments — pre-registered 2026-11-19 (signed off with amendments 1–5)
+
+Tag `revision-plan-v7` is set on the commit that adds this entry, before any training or
+evaluation. Frozen designs: the LiDAR network
+and DeepSense pipeline at `revision-plan-v6`, the D-031 geometric estimator, and the channel,
+array, codebook and LiDAR renderer as used in D-035. The existing simulated test set and the
+Phase 3d fresh test set are not used for anything new.
+
+---
+
+### Step 0 — data check (done before this entry; commit ec6651a)
+
+**Downloads.** All three are read only; members are copied to data/deepsense_raw/ex/s{S}/.
+
+| | 32 (day) | 33 (night) | 34 (night) |
+|---|---|---|---|
+| File | scenario32.zip | scenario33.zip | scenario34_new.zip |
+| Zip size | 4.07 GB | 5.16 GB | 5.66 GB |
+| Frames (CSV rows = LiDAR = power = unit-2 GPS files) | 3,235 | 3,981 | 4,439 |
+| Sequences | 15 | 18 | 31 |
+| Rows with finite power | 3,214 | 3,943 | 4,389 |
+
+- **Modalities:** unit-1 LiDAR (.ply x, y, z, intensity), 64-beam 60 GHz power, unit-1 GPS
+  (static), unit-2 GPS per frame, radar, camera.
+- **CSV:** the same columns as scenario 31.
+- **Copied:** CSV, LiDAR, power and GPS only (3.44 / 4.24 / 4.89 GB).
+
+**Labels.** Arg-max of the power vector equals the CSV beam index (minus 1) on 100% of rows in
+all three scenarios. Beams seen in training (old split): 61 / 63 / 64.
+
+**File pairing (decision 1).** On every CSV row of scenarios 31–34, the LiDAR file index equals
+the power file index and the CSV index.
+- Neither file type carries a capture timestamp (the .ply header holds only point fields; the
+  power file holds only 64 numbers).
+- The zip member times are export times, not capture times. LiDAR and power files of the same
+  row differ by −7 to −10 min (31), −1.5 to −2.6 h (32), about −38 h (33) and −1 to −2 min (34).
+  Within one sequence the LiDAR times spread over up to 70 min, although a sequence lasts
+  7–40 s by the CSV.
+- The CSV row step is a median of 0.092–0.094 s in all four scenarios (10 Hz, some 0.18 s gaps).
+- **Decision (amendment 1):** the dataset's own row pairing (same index on every row) is
+  accepted. Capture timestamps are not available, so LiDAR-to-label alignment for 32–34 cannot
+  be independently verified. The paper states this. No frame is shifted.
+
+**GPS alignment (A3 method; reported as a dataset limitation, decision 3).**
+
+| | 31 (ref.) | 32 | 33 | 34 |
+|---|---|---|---|---|
+| Best LiDAR–GPS lag (frames) | −2 | −5 | −17 | +6 |
+| Best label–GPS lag (frames) | −2 | 0 | −1 | +2 |
+| Alignment score at lag 0 vs background | 12.4 vs 2.5 | 2.6 vs 0.9 | 3.4 vs 1.3 | 2.8 vs 0.9 |
+| Per-sequence rotation spread | 34° | 20° | 113° | 18° |
+| Receiver inside the grid (10 test frames) | 4 | 10 | 2 | 8 |
+| Verdict | FAIL | FAIL | FAIL | FAIL |
+
+The visible-frame shares under the A3b rule (old split) were 27%, 35% and 18%. They depend on
+this alignment and are not used.
+
+**Deviation (loader only).** Scenarios 32–34 were added to ds_prepare's path table and use
+scenario 31's .ply reader:
+- 32 and 33 have no top folder in the zip;
+- 34's CSV is scenario34.csv, not _dev.
+
+The A3 script uses the scenario-31 GPS reader for them. Nothing else changed.
+
+---
+
+### Experiment A — unseen real scenarios 32, 33, 34
+
+**Pipeline.** As Phase 3c, unchanged:
+- preprocessing and the grid rule (designed from the training frames of each fold);
+- the LiDAR network design and settings (AdamW lr 1e-3, wd 1e-4, cosine, 40 epochs,
+  batch 16, final epoch);
+- labels = arg-max of power; only rows with finite power are used.
+
+**Splits (pre-registered change).** The Phase 3c 60/20/20 sequence split gives scenario 32 a
+single test sequence, so no cluster CI would exist. Scenarios 32–34 therefore use grouped
+5-fold cross-validation over sequences:
+- **Folds:** the unique sequences are shuffled with default_rng(20261118), the Phase 3c split
+  seed. They are cut into 5 folds at cumulative frame fractions 0.2, 0.4, 0.6 and 0.8 (the
+  Phase 3c cumulative-fraction rule). Every sequence is tested exactly once.
+- **Validation within fold k:** the sequences of the other four folds are shuffled with
+  default_rng(20261118 + k). Validation is the leading sequences up to 25% of their frames,
+  which keeps Phase 3c's 60:20 train:validation ratio. The rest is training.
+- **Seeds:** 5 per fold (11, 22, 33, 44, 55); 75 trainings in all.
+- **Runs:** run j is seed j in every fold, so each test frame is predicted once per run.
+- **CIs:** cluster over all sequences of the scenario (G = 15, 18, 31), with the cluster
+  bootstrap (10,000 resamples, default_rng(0)) and cluster-t.
+
+Scenario 31 keeps its banked Phase 3c single-split result (G = 8). The table states the
+protocol per scenario.
+
+**Learning check.** Per seed and fold: final training loss < 0.95 × the label-prior entropy.
+- Reported as the count passing out of 25 per scenario.
+- Failing runs stay in the results.
+
+**Baselines.** Fitted per fold on the training frames:
+- the most-common beam;
+- 1-NN on LiDAR features (the eval_c2 feature).
+
+The geometric estimator and the visible-frame subset are not run on 32–34 (decision 3).
+
+**Metrics.** As eval_c2: top-1/3/5/8 accuracy, mean (and median) power loss vs the best beam at
+K = 1, 3, 5, 8, and beam-change rate.
+- Network: mean over the 5 runs.
+- Network minus each baseline: paired per frame; cluster bootstrap and cluster-t, with G next
+  to every CI.
+
+**Read.**
+- For each scenario and baseline, the network beats the baseline on a metric only if both the
+  cluster-bootstrap and the cluster-t intervals for the difference exclude 0 in its favour.
+- "Works on scenario S" = top-1 better than both the most-common beam and 1-NN.
+- Each scenario is reported separately; no pooling.
+- A scenario is unusable only if its LiDAR frames are empty or broken; GPS problems do not
+  qualify, because the network does not use GPS. Nothing is substituted.
+
+---
+
+### Experiment B — multi-car simulation
+
+**New parameters and their reasons.**
+
+| Item | Value | Reason |
+|---|---|---|
+| Road | straight road through the user car's antenna position, along its frozen heading ψ: 4 lanes, 2 per direction (lanes 0–1 heading ψ, lanes 2–3 heading ψ + π) | keeps the frozen user distribution (position and heading as D-029), so the frozen net is tested on what it was trained for, while the surroundings become a real road |
+| Lane width | 3.5 m | typical urban and arterial lane (3.0–3.75 m) |
+| Lane order | lateral coordinate η to the left of ψ: lane 0 (kerb, direction ψ), 1 (ψ), 2 (ψ + π), 3 (kerb, ψ + π); lane j centre at η = 3.5·(j − ℓ_u) m | right-hand traffic |
+| User lane | ℓ_u uniform over lanes 0, 1; user at the lane centre | the user drives with the traffic in its direction |
+| Other vehicles per scene | K_o ~ U{0, …, 5}, independent per scene | 0 = empty-road control, inside the same test set; 5 cars within ±30 m is dense urban traffic |
+| Vehicle mix (moving) | car 70%, van / SUV 20%, truck / bus 10% | urban mix with heavy vehicles, which occlude most |
+| Car | L ~ U[3.8, 5.0], W ~ U[1.65, 1.95], H ~ U[1.35, 1.50] m; two-box shape as D-032 varied vehicles | the D-032 passenger-car range |
+| Van / SUV | L ~ U[4.8, 6.0], W ~ U[1.90, 2.10], H ~ U[1.9, 2.6] m; single box | panel vans and large SUVs |
+| Truck / bus | L ~ U[8, 12], W ~ U[2.40, 2.55], H ~ U[3.0, 3.8] m; single box | rigid trucks and buses; EU limit 2.55 m wide, 4 m high |
+| User car (amendment 3) | drawn from the D-032 varied-vehicle distribution (L ~ U[3.8, 5.0], W ~ U[1.65, 1.95], H ~ U[1.35, 1.50] m, antenna at fraction U[−0.34, −0.20] of L from the centre; two-box shape), from default_rng(20270601 + i) in that draw order | multi-car scenes are tested with varied cars; both frozen nets (single-vehicle and varied-trained) are reported as baselines |
+| Longitudinal placement | each moving vehicle: lane uniform over 0–3, centre at s ~ U[−30, 30] m along the road from the user, lateral jitter U[−0.3, 0.3] m, heading = lane direction + N(0, 2°) | ±30 m covers the LiDAR ROI ([−20, 40] × [−20, 20] m) along any heading; jitter as in real lane keeping |
+| Minimum gap | ≥ 2.0 m bumper to bumper in the same lane; footprints must not overlap (any lane); no footprint within 1.0 m of the RSU pole (0, 0) | a stopped queue keeps about 2 m; nothing stands in the pole |
+| Placement | rejection sampling, up to 200 draws per vehicle; if a vehicle cannot be placed, the scene has fewer (actual count recorded and used for the by-count results) | no forced overlaps |
+| Parked vehicles (amendment 4) | each other vehicle is parked with probability 0.15: placed in a 2.5 m parking strip outside the kerb lane on its side (lane 0 side or lane 3 side, equally likely), heading = that side's lane direction, type car 80% / van 20% | kerbside parking is common on urban roads, and parked cars are frequent static occluders |
+| Other-vehicle speeds (amendment 4) | moving, same direction as the user (lanes 0–1): speed max(0, v + U[−3, 3]) m/s along ψ; moving, opposite direction (lanes 2–3): speed max(0, v + U[−3, 3]) m/s along ψ + π (opposite sign); parked: 0 | vehicles in one traffic stream travel within a few m/s (about ±10 km/h) of each other; oncoming traffic on the same road shares the speed regime; parked cars do not move |
+| Second frame | 0.1 s before t0 (one 10 Hz LiDAR period). All vehicles moved back by their own velocity × 0.1 s; background clutter static; fresh range noise and dropout | matches D-035 E2 |
+| Delay τ | as D-035: frame age U[0, 100 ms] from default_rng(2036) per test user + the b4 processing time of the estimator + the measured median association time per frame (rules R1, R2) | same latency model |
+| Channel | frozen: user LoS + 2–4 static point reflectors (p1_channels draw order with the new user seed); other vehicles are not in the radio channel | the brief fixes the channel model |
+| Radio blockage (amendment 5, evaluation only) | per test scene at t0: blocked if the straight segment from the array (0, 0, 2.0 m) to the user antenna (x, y, 1.5 m) intersects any other vehicle box. Reported: blocked fraction overall, by number of other vehicles, and by vehicle type (share of scenes blocked by at least one vehicle of that type, and per-vehicle blocking rate by type) | **The channel model does not include this blockage, so results for blocked users are optimistic for every method, including the sweep.** Losses are also reported for blocked and unblocked users separately |
+| LiDAR | frozen renderer (D-031), ray-cast against all vehicle boxes. Background points are removed if any vehicle occludes them | the occlusion is the point of the experiment |
+| GPS report | reported user antenna position = truth + e, e ~ N(0, σ²I₂), σ ∈ {1, 3} m. The same e at t0 and t0 − 0.1 s | GNSS error decorrelates over tens of seconds, so it is effectively the same across 0.1 s; σ = 1 m good open-sky GNSS, 3 m urban |
+| Scene seeds | users default_rng(20270101 + i), the p1_channels draw order; user car default_rng(20270601 + i); vehicles default_rng(20270201 + i); LiDAR noise default_rng(20270301 + i); second frame default_rng(20270401 + 1000·k + i) for speed index k; GPS error default_rng(20270501 + i) | new seeds, disjoint from all earlier ones |
+| Users and split | 6,000 users, the D-029 spatial-block rule (15 sectors × 4 bands, deterministic rotation, 0.5 m training guard) | same split rule, new draws |
+
+**Association (choosing the user car).**
+- **Clusters:** connected components of non-ground LiDAR returns (z > 0.3 m) at 0.8 m linking
+  distance, at least 10 points. With 600 background points over 2,400 m², random chaining at
+  0.8 m is rare.
+- **Gate:** a cluster is a candidate if its nearest return lies within 3σ + 0.5 m of the
+  GPS-reported antenna position. The 2-D GPS error exceeds 3σ with probability e^(−4.5) = 1.1%;
+  the antenna lies within 0.5 m of the user car's outer surface.
+- **Selection:** the candidate nearest the GPS report. If there is no candidate, the user car is
+  taken as unseen and the estimate falls back to the GPS report itself.
+
+Candidate rules (only the rule is chosen on validation):
+- **R0 none:** the frozen estimator on the raw scene.
+- **R1 erase others:** remove the returns of all non-selected clusters. The selected cluster,
+  ground and background stay, so the input resembles training.
+- **R2 crop:** keep only returns within 3σ + 3 m of the GPS report (plus ground).
+
+**Truth labels for the results.**
+- **Association success:** the selected cluster holds ≥ 50% of the user car's returns. The
+  renderer records which returns hit the user car.
+- **Occlusion:** the number of rays whose first hit is the user car, divided by the same count
+  with the user car rendered alone. Both counts are taken before noise and dropout, so they are
+  deterministic.
+  Classes: visible ≥ 0.5, partly occluded 0 < r < 0.5, fully occluded 0.
+
+**Models.**
+1. **Frozen baselines (amendment 3):**
+   - the single-vehicle LiDAR net (lidar_H_lr0.001_s{seed}.pt, 20 seeds);
+   - the varied-trained LiDAR net (…_var.pt, 20 seeds);
+   - the D-031 geometric estimator.
+   Each uses the association rule chosen for it on validation.
+2. **Multi-car LiDAR net:**
+   - The frozen design and settings (D-031 U-Net, H head, lr 1e-3, AdamW wd 1e-4, cosine,
+     40 epochs, batch 16, final epoch).
+   - Trained on the multi-car training scenes at v = 0, after association.
+   - Each training scene's σ is assigned 1 or 3 by default_rng(2037).
+   - One training run per candidate rule: R0, R1, R2 × 5 seeds (11, 22, 33, 44, 55).
+   - Learning check: final loss < 0.95 × prior.
+3. **Rule choice (each model):** on validation, by the mean loss at M = 8, 60 GHz, v = 0,
+   averaged over σ ∈ {1, 3} and seeds. Only the chosen rule is tested, once.
+4. **Sweep shapes:** the validation choice per seed (as D-035), on the new validation set.
+
+**Metrics** (new test set).
+- Loss vs genie at M = 8, 16, 32, 64, both frequencies, v ∈ {0, 10, 20} m/s, with two-frame
+  motion compensation (D-035 E2), σ ∈ {1, 3}.
+- Association success rate per σ (and per occlusion class).
+- Loss by number of other vehicles (0–5) and by occlusion class.
+- The 263-beam sweep with per-user bootstrap CI.
+- Median residual position error.
+
+CIs:
+- Nets: t-interval over seeds (20 for the frozen net, 5 for the multi-car net).
+- Geometric estimator and sweep: per-user bootstrap (10,000, seed 0).
+
+**Read (amendment 2).**
+1. **Primary:** the multi-car-trained LiDAR net (its chosen rule) vs the 263-beam sweep.
+   - Condition: 60 GHz, M = 32, v = 10 m/s with two-frame motion compensation, σ = 3 m, all
+     test users.
+   - "Matches the sweep in traffic" if the net's mean loss is within the sweep's 95% CI or better,
+     i.e. ≤ the upper end of the sweep's CI. Otherwise it does not.
+   - The net's own 5-seed CI is reported next to it.
+2. **Secondary:**
+   - Frozen-vs-retrained: each frozen net minus the multi-car net at the primary condition;
+     per-user paired difference of seed means, per-user bootstrap.
+   - All other frequencies, M, speeds and σ.
+   - Degradation with traffic: K_o = 0 vs K_o ≥ 1, two-sample bootstrap.
+   - By occlusion class and by radio blockage.
+   - Smallest M at which each compensated method is ≤ the sweep's upper 95% CI.
+
+All results are reported whichever way they go. No comparison is made against the earlier
+single-car test sets: different users.
+
+**Assets.**
+- The real-data table gains scenarios 32–34, with a protocol column (single split G = 8 for 31;
+  5-fold CV for 32–34).
+- New table tab_multicar (+ by-count / occlusion breakdown).
+- Trace check must PASS.
+
+**Cost estimate.**
+- Experiment A: 75 trainings.
+- Experiment B: generation of 6,000 scenes, plus 3 × 6 second frames on validation and test;
+  15 trainings at about 11 min each.
+- Roughly 1.5–2 days of compute in total.
